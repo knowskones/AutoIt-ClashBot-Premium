@@ -46,7 +46,7 @@ Func CheckDarkStorage2()
  $SDark = getDarkElixir(51, 66 + 57)
  SetLog("Dark Elixir Left: " & $SDark & " / Dark Elixir Target: " & $itxtSpellDarkStorage, $COLOR_BLUE)
  If $SDark <> $SDark2 And ($SDark - $itxtSpellDarkStorage >= 0) Then
- SetLog("There is still plenty Dark Elixir left, proceed for next Lightning Attack... ", $COLOR_RED)
+ SetLog("There is still plenty Dark Elixir left, proceed for next Lightning Attack... ", $COLOR_GREEN)
 	Return True
  ElseIf ($SDark - $itxtSpellDarkStorage <= -1) Then
  SetLog("Dark Elixir do not meet min requirement, skipping Lightning Attack...", $COLOR_RED)
