@@ -40,6 +40,7 @@ Global $config = @ScriptDir & "\config.ini"
 Global $dirLogs = @ScriptDir & "\logs\"
 Global $dirLoots = @ScriptDir & "\Loots\"
 Global $dirAllTowns = @ScriptDir & "\AllTowns\"
+Global $dirDarkStorages = @ScriptDir & "\DarkStorages\"
 Global $sLogPath ; `Will create a new log file every time the start button is pressed
 Global $hLogFileHandle
 Global $Restart = False

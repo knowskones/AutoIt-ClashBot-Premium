@@ -37,6 +37,7 @@ _USkin_Init(@ScriptDir & "\skins\orange.msstyles")
 DirCreate($dirLogs)
 DirCreate($dirLoots)
 DirCreate($dirAllTowns)
+DirCreate($dirDarkStorages)
 
 While 1
 	Switch TrayGetMsg()
