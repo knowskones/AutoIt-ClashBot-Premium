@@ -147,6 +147,7 @@ EndFunc   ;==>LaunchTroop
 Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	$Barb = -1
 	$Arch = -1
+    $Wizard = -1
 	$CC = -1
 	$King = -1
 	$Queen = -1
@@ -155,6 +156,8 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			$Barb = $i
 		ElseIf $atkTroops[$i][0] = $eArcher Then
 			$Arch = $i
+		ElseIf $atkTroops[$i][0] = $eWizard Then
+			$Wizard = $i
 		ElseIf $atkTroops[$i][0] = $eCastle Then
 			$CC = $i
 		ElseIf $atkTroops[$i][0] = $eKing Then
@@ -218,6 +221,9 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eArcher, $nbSides, 1, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
+	If LaunchTroop($eWizard, $nbSides, 1, 2) Then
+		If _Sleep(SetSleep(1), False) Then Return
+	EndIf
 	If LaunchTroop($eBarbarian, $nbSides, 2, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
@@ -238,6 +244,9 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 	If LaunchTroop($eArcher, $nbSides, 2, 2) Then
+		If _Sleep(SetSleep(1), False) Then Return
+	EndIf
+	If LaunchTroop($eWizard, $nbSides, 2, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 	If LaunchTroop($eGoblin, $nbSides, 2, 2) Then
@@ -263,8 +272,8 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	SetLog("Dropping left over troops", $COLOR_BLUE)
 	For $x = 0 To 1
 		PrepareAttack(True) ;Check remaining quantities
-		For $i = $eBarbarian To $eArcher ; launch all remaining troops
-			If $i = $eBarbarian Or $i = $eArcher Then
+		For $i = $eBarbarian To $eWizard ; launch all remaining troops
+			If $i = $eBarbarian Or $i = $eArcher Or $i = $eWizard Then
 				LaunchTroop($i, $nbSides, 0, 1)
 			Else
 				LaunchTroop($i, $nbSides, 0, 1, 2)

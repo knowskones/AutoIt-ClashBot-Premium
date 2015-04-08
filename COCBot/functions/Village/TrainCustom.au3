@@ -657,6 +657,10 @@ Func TrainCustom()
 			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 30)
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
+			Case 4
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				     Click(325, 425, 5) ;Wizard
+				  WEnd
 			Case Else
 			   If _Sleep(50) Then Return
 			   _CaptureRegion()
@@ -681,6 +685,10 @@ Func TrainCustom()
 			Case 3
 			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 30)
 					 Click(535, 320, 20) ;Goblin
+				  WEnd
+			Case 4
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
 			   If _Sleep(50) Then Return
@@ -707,6 +715,10 @@ Func TrainCustom()
 			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 30)
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
+			Case 4
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				     Click(325, 425, 5) ;Wizard
+				  WEnd
 			Case Else
 			   If _Sleep(50) Then Return
 			   _CaptureRegion()
@@ -731,6 +743,10 @@ Func TrainCustom()
 			Case 3
 			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 30)
 					 Click(535, 320, 20) ;Goblin
+				  WEnd
+			Case 4
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
 			   If _Sleep(50) Then Return

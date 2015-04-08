@@ -74,7 +74,7 @@ Global $SearchCount = 0 ;Number of searches
 Global $THaddtiles, $THside, $THi
 
 ;Troop types
-Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
+Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eWizard, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
 
 ;Attack Settings
 Global $TopLeft[5][2] = [[79, 281], [170, 205], [234, 162], [296, 115], [368, 66]]
@@ -108,7 +108,7 @@ Global $checkQPower = False ; Check for Queen activate power
 
 Global $THLoc
 
-Global $King, $Queen, $CC, $Barb, $Arch, $Minion, $Hog, $Valkyrie
+Global $King, $Queen, $CC, $Barb, $Arch, $Wizard, $Minion, $Hog, $Valkyrie
 Global $LeftTHx, $RightTHx, $BottomTHy, $TopTHy
 Global $AtkTroopTH
 Global $GetTHLoc
@@ -168,7 +168,7 @@ Global $ArchersComp
 Global $GiantsComp
 Global $GoblinsComp
 Global $WBComp
-Global $CurBarb, $CurArch, $CurGiant, $CurGoblin, $CurWB, $CurMinion, $CurHog, $CurValkyrie
+Global $CurBarb, $CurArch, $CurGiant, $CurGoblin, $CurWB, $CurWizard, $CurMinion, $CurHog, $CurValkyrie
 Global $ArmyComp
 Global $TownHallPos[2] = [-1, -1] ;Position of TownHall
 Global $barrackPos[4][2] ;Positions of each barracks
