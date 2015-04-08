@@ -420,6 +420,12 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "misc", "chkTrap", 0)
 	EndIf
 
+	If GUICtrlRead($chkRaxRestart) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "chkRaxRestart", 1)
+	Else
+		IniWrite($config, "misc", "chkRaxRestart", 0)
+	EndIf
+
 	If GUICtrlRead($chkBoostRax1) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostRax1", 1)
 	Else

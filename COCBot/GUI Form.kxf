@@ -3572,8 +3572,8 @@
 								</object>
 								<object type="TACheckbox" name="chkTrap">
 									<properties>
-										<property name="Left" vt="Int16">280</property>
-										<property name="Top" vt="Int8">25</property>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">215</property>
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Auto rearm for Traps, Crossbows  Inferno Towers</property>
@@ -3838,7 +3838,7 @@
 								</object>
 								<object type="TACheckbox" name="chkTakeTownSS">
 									<properties>
-										<property name="Left" vt="Int16">320</property>
+										<property name="Left" vt="Int16">450</property>
 										<property name="Top" vt="Int16">215</property>
 										<property name="Width" vt="Int16">141</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3852,7 +3852,7 @@
 								</object>
 								<object type="TACheckbox" name="chkTakeLootSS">
 									<properties>
-										<property name="Left" vt="Int16">150</property>
+										<property name="Left" vt="Int16">300</property>
 										<property name="Top" vt="Int16">215</property>
 										<property name="Width" vt="Int8">118</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3868,7 +3868,7 @@
 								</object>
 								<object type="TACheckbox" name="chkAlertSearch">
 									<properties>
-										<property name="Left" vt="Int8">10</property>
+										<property name="Left" vt="Int16">155</property>
 										<property name="Top" vt="Int16">215</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3895,15 +3895,30 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACheckbox" name="chkRaxRestart">
+									<properties>
+										<property name="Left" vt="Int16">300</property>
+										<property name="Top" vt="Int8">24</property>
+										<property name="Width" vt="Int16">240</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Restart bluestack if fail to detect all 4 barracks</property>
+										<property name="Caption" vt="String">Restart Bluestack if fail to locate all 4 Barracks</property>
+										<property name="TabOrder" vt="Int8">23</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 								<object type="TACheckbox" name="chkMultiLight">
 									<properties>
-										<property name="Left" vt="Int16">280</property>
+										<property name="Left" vt="Int16">300</property>
 										<property name="Top" vt="Int16">159</property>
 										<property name="Width" vt="Int16">150</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Cast Lightning as long as Elixir more than Min requirement</property>
 										<property name="Caption" vt="String">Cast more than 1 Lightning</property>
-										<property name="TabOrder" vt="Int8">23</property>
+										<property name="TabOrder" vt="Int8">24</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>

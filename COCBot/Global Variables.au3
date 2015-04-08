@@ -117,6 +117,7 @@ Global $itxtReconnect
 Global $itxtReturnh
 Global $icmbSearchsp
 Global $ichkTrap
+Global $ichkRaxRestart
 Global $itxtKingSkill ;Delay before activating King Skill
 Global $itxtQueenSkill ;Delay before activating Queen Skill
 Global $itxtSpellDarkStorage

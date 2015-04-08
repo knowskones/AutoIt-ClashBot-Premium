@@ -6,6 +6,8 @@ $error[2] = False
 $error[3] = False
 
 Func handleBarracksError($i) ;Sets the text for the log
+If $ichkRaxRestart = 0 then Return
+
 If $i = 0 then $error[0] = True
 If $i = 1 then $error[1] = True
 If $i = 2 then $error[2] = True
@@ -23,6 +25,8 @@ EndIf
 EndFunc   ;==>_AllWordsExist
 
 Func resetBarracksError()
+If $ichkRaxRestart = 0 then Return
+
 	$error[0] = False
 	$error[1] = False
 	$error[2] = False

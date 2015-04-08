@@ -127,6 +127,7 @@ Func readConfig() ;Reads config and sets it to the variables
 		$ichkMultiLight = IniRead($config, "misc", "MultiLightning", "0")
 		$icmbSearchsp = IniRead($config, "misc", "searchspd", "0")
 		$ichkTrap = IniRead($config, "misc", "chkTrap", "0")
+		$ichkRaxRestart = IniRead($config, "misc", "chkRaxRestart", "0")
 		$TownHallPos[0] = IniRead($config, "misc", "xTownHall", "-1")
 		$TownHallPos[1] = IniRead($config, "misc", "yTownHall", "-1")
 		$ArmyPos[0] = IniRead($config, "misc", "xArmy", "0")

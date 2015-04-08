@@ -29,6 +29,7 @@ Func TrainCustom()
 		Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
 		If IsArray($TrainPos) = False Then
 			SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
+			handleBarracksError($i)
 			If _Sleep(500) Then ExitLoop
 		Else
 			Click($TrainPos[0], $TrainPos[1]) ;Click Train Troops button
@@ -742,5 +743,6 @@ Func TrainCustom()
 		ClickP($TopLeftClient, 2, 250); Click away twice with 250ms delay
 	Next
 	SetLog("Training Troops Complete...", $COLOR_BLUE)
+	resetBarracksError()
     $FirstTrain = False
  EndFunc   ;==>TrainCustom

@@ -355,6 +355,12 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 		GUICtrlSetState($chkTrap, $GUI_UNCHECKED)
 	EndIf
 
+	If $ichkRaxRestart = 1 Then
+		GUICtrlSetState($chkRaxRestart, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkRaxRestart, $GUI_UNCHECKED)
+	EndIf
+
 	If $SpellDarkStorage = 1 Then
 		GUICtrlSetState($chkSpellDarkStorage, $GUI_CHECKED)
 	Else
