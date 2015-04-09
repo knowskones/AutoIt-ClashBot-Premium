@@ -42,8 +42,8 @@ Func getDigitTrainTroops(ByRef $x, $y)
 	EndIf
 
 	;Search for digit 4
-	Local $c1 = Hex(0x616074, 6), $c2 = Hex(0x59584C, 6), $c3 = Hex(0x535246, 6)
-	Local $pixel1[3] = [$x, $y + 4, $c1], $pixel2[3] = [$x + 3, $y + 1, $c2], $pixel3[3] = [$x + 4, $y + 6, $c3]
+	Local $c1 = Hex(0x7A7A6C, 6), $c2 = Hex(0x676659, 6), $c3 = Hex(0x59584B, 6)
+	Local $pixel1[3] = [$x + 3, $y + 4, $c1], $pixel2[3] = [$x + 5, $y + 4, $c2], $pixel3[3] = [$x + 3, $y + 1, $c3]
 	If boolPixelSearch($pixel1, $pixel2, $pixel3) Then
 		Return 4
 	EndIf

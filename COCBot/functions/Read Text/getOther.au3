@@ -46,11 +46,11 @@ Func getOther($x_start, $y_start, $type, $totalcamp = False)
 		Case "Troops"
 			$Number = getDigitTrainTroops($x, $y)
 
-			While $Number = ""
+			While $x < 547
 				If $i >= 19 Then ExitLoop
 				$i += 1
 				$x += 1
-				$Number = getDigitTrainTroops($x, $y)
+				$Number &= getDigitTrainTroops($x, $y)
 			WEnd
 
 		Case "Builder"
