@@ -52,7 +52,6 @@ Func CheckArmyCamp()
 				If _ColorCheck($TroopKind, Hex(0xF85CCB, 6), 20) Then
 					$CurArch -= $TroopQ
 					$TroopName = "Archers"
-					SetLog($CurArch)
 				ElseIf _ColorCheck($TroopKind, Hex(0xF8E439, 6), 20) Then
 					$CurBarb -= $TroopQ
 					$TroopName = "Barbarians"

@@ -34,7 +34,6 @@ Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 	If IsArray($pos) Then
 		If CheckPixel($pos) Then
 			if $TroopCount = 0 Then $TroopCount = getother(528, 258, "Troops")
-			SetLog($TroopCount)
 			if $TroopCount < $itxtcampCap and Not $fullArmy Then
 				if ($itxtcampCap - $TroopCount) > $howMuch Then
 					ClickP($pos, $howMuch, 20)
@@ -117,14 +116,6 @@ Func Train()
 	$CurBarb=Round($CurBarb)
 	$CurGoblin=Round($CurGoblin)
 
-	SetLog($CurGiant)
-	SetLog($CurWB)
-	SetLog($CurArch)
-	SetLog($CurBarb)
-	SetLog($CurGoblin)
-
-	SetLog($CurGiant+$CurWB+$CurArch+$CurBarb+$CurGoblin)
-
 	;Divide equally to barracks
 	if $CurGiant > 0 Then
 		$GiantEBarrack = DivideValue($CurGiant, $WorkingBarracks)
@@ -161,12 +152,6 @@ Func Train()
 			$GoblinEBarrack[$i] = 0
 		Next
 	EndIf
-
-	SetLog("Giant: " & $GiantEBarrack[0]  & " " &$GiantEBarrack[1] & " " &$GiantEBarrack[2] & " " &$GiantEBarrack[3])
-	SetLog("Wall: " & $WallEBarrack[0]  & " " &$WallEBarrack[1] & " " &$WallEBarrack[2] & " " &$GiantEBarrack[3])
-	SetLog("Arch: " & $ArchEBarrack[0]  & " " &$ArchEBarrack[1] & " " &$ArchEBarrack[2] & " " &$ArchEBarrack[3])
-	SetLog("Barb: " & $BarbEBarrack[0]  & " " &$BarbEBarrack[1] & " " &$BarbEBarrack[2] & " " &$BarbEBarrack[3])
-	SetLog("Goblin: " & $GoblinEBarrack[0]  & " " &$GoblinEBarrack[1] & " " &$GoblinEBarrack[2] & " " &$GoblinEBarrack[3])
 
 	For $i = 0 To 3 ;iterate through barracks
 		If _Sleep(500) Then ExitLoop
