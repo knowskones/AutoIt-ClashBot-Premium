@@ -37,6 +37,7 @@
 #include "functions\Other\BlockInputEx.au3"
 #include "functions\Other\_NumberFormat.au3"
 #include "functions\Other\stuckHandler.au3"
+#include "functions\Other\divideDigit.au3"
 
 #include "functions\Pixels\_CaptureRegion.au3"
 #include "functions\Pixels\_ColorCheck.au3"
@@ -59,6 +60,7 @@
 #include "functions\Read Text\getString.au3"
 #include "functions\Read Text\getDigitTownHall.au3"
 #include "functions\Read Text\getDigitLastRaid.au3"
+#include "functions\Read Text\getDigitTrainTroops.au3"
 
 #include "functions\Search\checkNextButton.au3"
 #include "functions\Search\CompareResources.au3"
