@@ -2,18 +2,14 @@
 
 Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 	If $GoldChangeCheck = True Then
-;		If $checkKPower Or $checkQPower Then
-;			If _Sleep(15000 - $delayActivateKQ) Then Return
-;		Else
-			If _Sleep(15000) Then Return
-;		EndIf
+		If _Sleep(15000) Then Return
 		While GoldElixirChange()
 			If _Sleep(1000) Then Return
 		WEnd
 	EndIf
 
-	$checkKPower = False
-	$checkQPower = False
+	AdlibUnRegister("UseKingSkill")
+	AdlibUnRegister("UseQueenSkill")
 	SetLog("Returning Home", $COLOR_BLUE)
 	If $RunState = False Then Return
 	Click(62, 519) ;Click Surrender

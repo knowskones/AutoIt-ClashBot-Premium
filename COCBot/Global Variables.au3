@@ -102,10 +102,6 @@ Global $checkUseClanCastle ; Use Clan Castle settings
 Global $checkAttackTH ; Attack Outside Townhall settings
 Global $icmbUnitDelay, $icmbWaveDelay, $iRandomspeedatk
 
-Global $checkKPower = False ; Check for King activate power
-Global $checkQPower = False ; Check for Queen activate power
-;Global $delayActivateKQ = 10000 ;Delay before activating KQ
-
 Global $THLoc
 
 Global $King, $Queen, $CC, $Barb, $Arch, $Wizard, $Minion, $Hog, $Valkyrie
