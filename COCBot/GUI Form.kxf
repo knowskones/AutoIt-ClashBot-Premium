@@ -5813,6 +5813,30 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TAMenuItem" name="menuItemAlloy">
+									<properties>
+										<property name="Caption" vt="String">Alloy</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAMenuItem" name="menuItemHex">
+									<properties>
+										<property name="Caption" vt="String">Hex</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAMenuItem" name="menuItemCore">
+									<properties>
+										<property name="Caption" vt="String">Core</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAMenuItem" name="menuItemFresco">
+									<properties>
+										<property name="Caption" vt="String">Fresco</property>
+									</properties>
+									<components/>
+								</object>
 								<object type="TAMenuItem" name="menuItemSoft">
 									<properties>
 										<property name="Caption" vt="String">Soft</property>

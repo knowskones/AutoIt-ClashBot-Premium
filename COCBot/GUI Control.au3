@@ -123,6 +123,7 @@ Func Initiate()
 		$PauseBot = False
 		$Checkrearm = True
 		$CreateSpell = True
+		GUICtrlSetState($menuItemTheme, $GUI_DISABLE)
 		GUICtrlSetState($cmbBoostBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_DISABLE)
@@ -227,6 +228,7 @@ Func btnStop()
 		$PauseBot = False
 		EnableBS($HWnD, $SC_MINIMIZE)
 		EnableBS($HWnD, $SC_CLOSE)
+		GUICtrlSetState($menuItemTheme, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnSearchMode, $GUI_ENABLE)
@@ -425,6 +427,7 @@ Func btnSearchMode()
 		GUICtrlSetState($btnStart, $GUI_HIDE)
 		GUICtrlSetState($btnStop, $GUI_SHOW)
 
+		GUICtrlSetState($menuItemTheme, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateTownHall, $GUI_DISABLE)
@@ -447,6 +450,7 @@ Func btnSearchMode()
 		GUICtrlSetState($btnStart, $GUI_SHOW)
 		GUICtrlSetState($btnStop, $GUI_HIDE)
 
+		GUICtrlSetState($menuItemTheme, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateTownHall, $GUI_ENABLE)
@@ -977,6 +981,14 @@ Func btnTheme()
 			$themePath = @ScriptDir & "\skins\gray2.msstyles"
 		Case $menuItemBlack
 			$themePath = @ScriptDir & "\skins\dark0.msstyles"
+		Case $menuItemAlloy
+			$themePath = @ScriptDir & "\skins\aa.msstyles"
+		Case $menuItemHex
+			$themePath = @ScriptDir & "\skins\hex.msstyles"
+		Case $menuItemCore
+			$themePath = @ScriptDir & "\skins\core.msstyles"
+		Case $menuItemFresco
+			$themePath = @ScriptDir & "\skins\fresco.msstyles"
 		Case $menuItemSoft
 			$themePath = @ScriptDir & "\skins\gray4.msstyles"
 		Case $menuItemGreen
@@ -988,7 +1000,7 @@ Func btnTheme()
 		Case $menuItemRed
 			$themePath = @ScriptDir & "\skins\red.msstyles"
 		Case Else
-			SetLog("Unknown Theme")
+			SetLog("Unknown Theme", $COLOR_RED)
 			Return
 	EndSwitch
 
@@ -997,7 +1009,11 @@ EndFunc   ;==>btnTheme
 
 Func ApplyTheme($path)
 	If $path <> "" Then
-		_USkin_LoadSkin($path)
+		If FileExists($path) Then
+			_USkin_LoadSkin($path)
+		Else
+			SetLog("Theme file not found", $COLOR_RED)
+		EndIf
 	Else
 		_USkin_RemoveSkin()
 	EndIf
