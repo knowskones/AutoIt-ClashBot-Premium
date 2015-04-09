@@ -52,6 +52,7 @@ Func getOther($x_start, $y_start, $type, $totalcamp = False)
 				$x += 1
 				$Number &= getDigitTrainTroops($x, $y)
 			WEnd
+			if $Number = "" Then Return "0"
 
 		Case "Builder"
 			$Number = getDigit($x, $y, "Builder")
