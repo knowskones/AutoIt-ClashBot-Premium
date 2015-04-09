@@ -1,11 +1,11 @@
 #RequireAdmin
 #AutoIt3Wrapper_UseX64=n
 #pragma compile(Icon, "Icons\cocbot.ico")
-#pragma compile(FileDescription, Clash of Clans Bot - A Free/Open Sourced Clash of Clans bot - https://clashbot.org)
-#pragma compile(ProductName, Clash of Clans Bot)
+#pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
+#pragma compile(ProductName, ClashBot)
 #pragma compile(ProductVersion, 5.7)
 #pragma compile(FileVersion, 5.7)
-#pragma compile(LegalCopyright, © The Bytecode Club)
+#pragma compile(LegalCopyright, © Application Automation LLC)
 
 $sBotVersion = "6.0.2 Beta"
 $sBotTitle = "AutoIt ClashBot v" & $sBotVersion
@@ -22,8 +22,7 @@ If @AutoItX64 = 1 Then
 EndIf
 
 If Not FileExists(@ScriptDir & "\License.txt") Then
-	$license = InetGet("http://www.gnu.org/licenses/gpl-3.0.txt", @ScriptDir & "\License.txt")
-	InetClose($license)
+	FileCreate(@ScriptDir & "\License.txt", "Copyright 2015 Application Automation LLC")
 EndIf
 #include "_UskinLibrary.au3"
 _Uskin_LoadDLL()
@@ -44,7 +43,7 @@ While 1
 		Case $tiAbout
 			MsgBox(64 + $MB_APPLMODAL + $MB_TOPMOST, $sBotTitle, "Clash of Clans Bot" & @CRLF & @CRLF & _
 					"Version: " & $sBotVersion & @CRLF & _
-					"Released under the GNU GPLv3 license.", 0, $frmBot)
+					"Copyright 2015 Application Automation LLC.", 0, $frmBot)
 		Case $tiExit
 			ExitLoop
 	EndSwitch
