@@ -171,6 +171,7 @@ Global $WBComp
 Global $CurBarb, $CurArch, $CurGiant, $CurGoblin, $CurWB, $CurWizard, $CurMinion, $CurHog, $CurValkyrie
 Global $ArmyComp
 Global $WorkingBarracks = 0
+Global $TroopCount = 0
 Global $TownHallPos[2] = [-1, -1] ;Position of TownHall
 Global $barrackPos[4][2] ;Positions of each barracks
 Global $barrackTroop[4] ;Barrack troop set
