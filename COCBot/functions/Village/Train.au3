@@ -104,28 +104,18 @@ Func Train()
 
 	Local $GiantEBarrack[$WorkingBarracks], $WallEBarrack[$WorkingBarracks], $ArchEBarrack[$WorkingBarracks], $BarbEBarrack[$WorkingBarracks], $GoblinEBarrack[$WorkingBarracks]
 
-	;If $ArmyComp = 0 Then
-		$CurGiant += GUICtrlRead($txtNumGiants) + $CurGiant
-		$CurWB += GUICtrlRead($txtNumWallbreakers) + $CurWB
-		Local $AddtlTroops = (GUICtrlRead($txtNumGiants) * 5) + (GUICtrlRead($txtNumWallbreakers) * 2)
-		$CurArch += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtArchers)) / 100)
-		$CurBarb += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtBarbarians)) / 100)
-		$CurGoblin += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtGoblins)) / 100)
-	;EndIf
+	$CurGiant += GUICtrlRead($txtNumGiants) + $CurGiant
+	$CurWB += GUICtrlRead($txtNumWallbreakers) + $CurWB
+	Local $AddtlTroops = (GUICtrlRead($txtNumGiants) * 5) + (GUICtrlRead($txtNumWallbreakers) * 2)
+	$CurArch += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtArchers)) / 100)
+	$CurBarb += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtBarbarians)) / 100)
+	$CurGoblin += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtGoblins)) / 100)
 
 	$CurGiant=Round($CurGiant)
 	$CurWB=Round($CurWB)
 	$CurArch=Round($CurArch)
 	$CurBarb=Round($CurBarb)
 	$CurGoblin=Round($CurGoblin)
-
-	SetLog($CurGiant)
-	SetLog($CurWB)
-	SetLog($CurArch)
-	SetLog($CurBarb)
-	SetLog($CurGoblin)
-
-	SetLog($CurGiant+$CurWB+$CurArch+$CurBarb+$CurGoblin)
 
 	;Divide equally to barracks
 	if $CurGiant > 0 Then
@@ -163,12 +153,6 @@ Func Train()
 			$GoblinEBarrack[$i] = 0
 		Next
 	EndIf
-
-	SetLog("Giant: " & $GiantEBarrack[0]  & " " &$GiantEBarrack[1] & " " &$GiantEBarrack[2] & " " &$GiantEBarrack[3])
-	SetLog("Wall: " & $WallEBarrack[0]  & " " &$WallEBarrack[1] & " " &$WallEBarrack[2] & " " &$GiantEBarrack[3])
-	SetLog("Arch: " & $ArchEBarrack[0]  & " " &$ArchEBarrack[1] & " " &$ArchEBarrack[2] & " " &$ArchEBarrack[3])
-	SetLog("Barb: " & $BarbEBarrack[0]  & " " &$BarbEBarrack[1] & " " &$BarbEBarrack[2] & " " &$BarbEBarrack[3])
-	SetLog("Goblin: " & $GoblinEBarrack[0]  & " " &$GoblinEBarrack[1] & " " &$GoblinEBarrack[2] & " " &$GoblinEBarrack[3])
 
 	For $i = 0 To 3 ;iterate through barracks
 		If _Sleep(500) Then ExitLoop
