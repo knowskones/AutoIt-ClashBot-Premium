@@ -33,8 +33,6 @@ Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 	Local $pos = GetTrainPos($troopKind)
 	If IsArray($pos) Then
 		If CheckPixel($pos) Then
-			$TroopCount = getother(528, 258, "Troops")
-
 			if $TroopCount <= $itxtcampCap and Not $fullArmy Then
 				if ($itxtcampCap - $TroopCount) > $howMuch Then
 					ClickP($pos, $howMuch, 20)
