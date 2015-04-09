@@ -118,25 +118,11 @@ Func Train()
 	$CurBarb=Round($CurBarb)
 	$CurGoblin=Round($CurGoblin)
 
-	SetLog($CurGiant)
-	SetLog($CurWB)
-	SetLog($CurArch)
-	SetLog($CurBarb)
-	SetLog($CurGoblin)
-
-	SetLog($CurGiant+$CurWB+$CurArch+$CurBarb+$CurGoblin)
-
 	$GiantEBarrack = DivideValue($CurGiant, $WorkingBarracks)
 	$WallEBarrack = DivideValue($CurWB, $WorkingBarracks)
 	$ArchEBarrack = DivideValue($CurArch, $WorkingBarracks)
 	$BarbEBarrack = DivideValue($CurBarb, $WorkingBarracks)
 	$GoblinEBarrack = DivideValue($CurGoblin, $WorkingBarracks)
-
-	SetLog("Giant: " & $GiantEBarrack[0]  & " " &$GiantEBarrack[1] & " " &$GiantEBarrack[2] & " " &$GiantEBarrack[3])
-	SetLog("Giant: " & $WallEBarrack[0]  & " " &$WallEBarrack[1] & " " &$WallEBarrack[2] & " " &$GiantEBarrack[3])
-	SetLog("Giant: " & $ArchEBarrack[0]  & " " &$ArchEBarrack[1] & " " &$ArchEBarrack[2] & " " &$ArchEBarrack[3])
-	SetLog("Giant: " & $BarbEBarrack[0]  & " " &$BarbEBarrack[1] & " " &$BarbEBarrack[2] & " " &$BarbEBarrack[3])
-	SetLog("Giant: " & $GoblinEBarrack[0]  & " " &$GoblinEBarrack[1] & " " &$GoblinEBarrack[2] & " " &$GoblinEBarrack[3])
 
 	For $i = 0 To 3 ;iterate through barracks
 		If _Sleep(500) Then ExitLoop
