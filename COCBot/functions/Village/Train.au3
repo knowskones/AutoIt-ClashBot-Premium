@@ -239,12 +239,11 @@ Func Train()
 					If GUICtrlRead($txtArchers) <> "0" And $CurArch > 0 Then
 						if $ArchEBarrack[$i] > $troopFirstArch Then
 							TrainIt($eArcher, $ArchEBarrack[$i] - $troopFirstArch)
-							SetLog($ArchEBarrack[$i] - $troopFirstArch)
 						EndIf
 					EndIf
 
 					If GUICtrlRead($txtNumGiants) <> "0" And $CurGiant > 0 Then
-						if GiantEBarrack[$i] > $troopFirstGiant Then
+						if $GiantEBarrack[$i] > $troopFirstGiant Then
 							TrainIt($eGiant, $GiantEBarrack[$i] - $troopFirstGiant)
 						EndIf
 					EndIf
@@ -258,7 +257,6 @@ Func Train()
 					If GUICtrlRead($txtBarbarians) <> "0" And $CurBarb > 0 Then
 						if $BarbEBarrack[$i] > $troopFirstBarba Then
 							TrainIt($eBarbarian, $BarbEBarrack[$i] - $troopFirstBarba)
-							SetLog($BarbEBarrack[$i] - $troopFirstBarba)
 						EndIf
 					EndIf
 
