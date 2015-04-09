@@ -2799,9 +2799,9 @@
 						</object>
 					</components>
 				</object>
-				<object type="TTabSheet" name="pageOtherSettings">
+				<object type="TTabSheet" name="pageUpgradeSettings">
 					<properties>
-						<property name="Caption" vt="String">Other</property>
+						<property name="Caption" vt="String">Upgrades</property>
 					</properties>
 					<components>
 						<object type="TAGroup" name="groupWalls">
