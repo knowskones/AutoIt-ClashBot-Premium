@@ -33,7 +33,21 @@ Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 	Local $pos = GetTrainPos($troopKind)
 	If IsArray($pos) Then
 		If CheckPixel($pos) Then
-			ClickP($pos, $howMuch, 20)
+			$TroopCount = getother(528, 258, "Troops")
+
+			if $TroopCount <= $itxtcampCap and Not $fullArmy Then
+				if ($itxtcampCap - $TroopCount) > $howMuch Then
+					ClickP($pos, $howMuch, 20)
+				Else
+					ClickP($pos, $itxtcampCap - $TroopCount, 20)
+				EndIf
+			else
+				ClickP($pos, $howMuch, 20)
+			EndIf
+
+			if _Sleep(100) Then Return
+			$TroopCount = getother(528, 258, "Troops")
+
 			If _Sleep($iSleep) Then Return False
 			Return True
 		EndIf
@@ -58,24 +72,7 @@ Func Train()
 		$CurGoblin = 0
 	EndIf
 
-	If $ArmyComp = 0 Then
-		$CurGiant += GUICtrlRead($txtNumGiants)
-		$CurWB += GUICtrlRead($txtNumWallbreakers)
-		$CurArch += (($itxtcampCap * ((GUICtrlRead($cmbRaidcap) + 5) / 100)) - (GUICtrlRead($txtNumGiants) * 5) - (GUICtrlRead($txtNumWallbreakers) * 2)) * GUICtrlRead($txtArchers) / 100
-		$CurArch = Round($CurArch) + 4; ===> make sure always cook full
-		$CurBarb += (($itxtcampCap * ((GUICtrlRead($cmbRaidcap) + 5) / 100)) - (GUICtrlRead($txtNumGiants) * 5) - (GUICtrlRead($txtNumWallbreakers) * 2)) * GUICtrlRead($txtBarbarians) / 100
-		$CurBarb = Round($CurBarb)
-		$CurGoblin += (($itxtcampCap * ((GUICtrlRead($cmbRaidcap) + 5) / 100)) - (GUICtrlRead($txtNumGiants) * 5) - (GUICtrlRead($txtNumWallbreakers) * 2)) * GUICtrlRead($txtGoblins) / 100
-		$CurGoblin = Round($CurGoblin)
-	EndIf
-
-	Local $GiantEBarrack, $WallEBarrack, $ArchEBarrack, $BarbEBarrack, $GoblinEBarrack
-	$GiantEBarrack = Floor($CurGiant / 4)
-	$WallEBarrack = Floor($CurWB / 4)
-	$ArchEBarrack = Floor($CurArch / 4)
-	$BarbEBarrack = Floor($CurBarb / 4)
-	$GoblinEBarrack = Floor($CurGoblin / 4)
-
+	Local $TroopCount
 	Local $troopFirstGiant, $troopSecondGiant, $troopFirstWall, $troopSecondWall, $troopFirstGoblin, $troopSecondGoblin, $troopFirstBarba, $troopSecondBarba, $troopFirstArch, $troopSecondArch
 	$troopFirstGiant = 0
 	$troopSecondGiant = 0
@@ -87,6 +84,37 @@ Func Train()
 	$troopSecondBarba = 0
 	$troopFirstArch = 0
 	$troopSecondArch = 0
+
+	;Determine working barracks
+	For $i = 0 To 3 ;iterate through barracks
+		ClickP($TopLeftClient) ;Click Away
+		If _Sleep(200) Then ExitLoop
+		Click($barrackPos[$i][0], $barrackPos[$i][1]) ;Click Barrack
+
+		Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
+		If IsArray($TrainPos) = False Then
+			SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
+			handleBarracksError($i)
+		Else
+			$WorkingBarracks += 1
+		EndIf
+	Next
+
+	Local $GiantEBarrack[$WorkingBarracks], $WallEBarrack[$WorkingBarracks], $ArchEBarrack[$WorkingBarracks], $BarbEBarrack[$WorkingBarracks], $GoblinEBarrack[$WorkingBarracks]
+
+	;Divide equally to barracks
+	$CurGiant += GUICtrlRead($txtNumGiants) + $CurGiant
+	$CurWB += GUICtrlRead($txtNumWallbreakers) + $CurWB
+	Local $AddtlTroops = ($CurGiant * 5) + ($CurWB * 2)
+	$CurArch = ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtArchers)) / 100) + $CurArch
+	$CurBarb = ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtBarbarians)) / 100) + $CurBarb
+	$CurGoblin = ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtGoblins)) / 100) + $CurGoblin
+
+	$GiantEBarrack = DivideValue($CurGiant, $WorkingBarracks)
+	$WallEBarrack = DivideValue($CurWB, $WorkingBarracks)
+	$ArchEBarrack = DivideValue($CurArch, $WorkingBarracks)
+	$BarbEBarrack = DivideValue($CurBarb, $WorkingBarracks)
+	$GoblinEBarrack = DivideValue($CurGoblin, $WorkingBarracks)
 
 	For $i = 0 To 3 ;iterate through barracks
 		If _Sleep(500) Then ExitLoop
@@ -160,6 +188,7 @@ Func Train()
 			Else ; Custom Troops
 				SetLog("====== Barrack " & $i + 1 & " : ======", $COLOR_BLUE)
 				_CaptureRegion()
+
 				If $fullArmy Then
 					;While _WaitForPixel(496, 200, Hex(0x880000, 6), 20, 500, 10)
 					Click(496, 190, 80, 2)
@@ -203,72 +232,66 @@ Func Train()
 					EndIf
 				EndIf
 
-				If GUICtrlRead($txtArchers) <> "0" And $CurArch > 0 Then
-					;If _ColorCheck(_GetPixelColor(261, 366), Hex(0x39D8E0, 6), 20) And $CurArch > 0 Then
-					If $CurArch > 0 Then
-						If $ArchEBarrack = 0 Then
-							TrainIt($eArcher, 1)
-						ElseIf $ArchEBarrack >= $CurArch Then
-							TrainIt($eArcher, $CurArch)
-						Else
-							TrainIt($eArcher, $ArchEBarrack)
+				if Not $fullarmy Then
+					If GUICtrlRead($txtArchers) <> "0" And $CurArch > 0 Then
+						if $ArchEBarrack[$i] > $troopFirstArch Then
+							TrainIt($eArcher, $ArchEBarrack[$i] - $troopFirstArch)
+							SetLog($ArchEBarrack[$i] - $troopFirstArch)
 						EndIf
 					EndIf
-				EndIf
 
-				If GUICtrlRead($txtNumGiants) <> "0" And $CurGiant > 0 Then
-					;If _ColorCheck(_GetPixelColor(475, 366), Hex(0x3DD8E0, 6), 20) And $CurGiant > 0 Then
-					If $CurGiant > 0 Then
-						If $GiantEBarrack = 0 Then
-							TrainIt($eGiant, 1)
-						ElseIf $GiantEBarrack >= $CurGiant Or $GiantEBarrack = 0 Then
-							TrainIt($eGiant, $CurGiant)
-						Else
-							TrainIt($eGiant, $GiantEBarrack)
+					If GUICtrlRead($txtNumGiants) <> "0" And $CurGiant > 0 Then
+						if GiantEBarrack[$i] > $troopFirstGiant Then
+							TrainIt($eGiant, $GiantEBarrack[$i] - $troopFirstGiant)
 						EndIf
 					EndIf
-				EndIf
 
-
-				If GUICtrlRead($txtNumWallbreakers) <> "0" And $CurWB > 0 Then
-					;If _ColorCheck(_GetPixelColor(688, 366), Hex(0x3AD8E0, 6), 20) And $CurWB > 0  Then
-					If $CurWB > 0 Then
-						If $WallEBarrack = 0 Then
-							TrainIt($eWallbreaker, 1)
-						ElseIf $WallEBarrack >= $CurWB Or $WallEBarrack = 0 Then
-							TrainIt($eWallbreaker, $CurWB)
-						Else
-							TrainIt($eWallbreaker, $WallEBarrack)
+					If GUICtrlRead($txtNumWallbreakers) <> "0" And $CurWB > 0 Then
+						if $WallEBarrack[$i] > $troopFirstWall Then
+							TrainIt($eWallbreaker, $WallEBarrack[$i] - $troopFirstWall)
 						EndIf
 					EndIf
-				EndIf
 
-
-				If GUICtrlRead($txtBarbarians) <> "0" And $CurBarb > 0 Then
-					;If _ColorCheck(_GetPixelColor(369, 366), Hex(0x39D8E0, 6), 20) And $CurBarb > 0 Then
-					If $CurBarb > 0 Then
-						If $BarbEBarrack = 0 Then
-							TrainIt($eBarbarian, 1)
-						ElseIf $BarbEBarrack >= $CurBarb Or $BarbEBarrack = 0 Then
-							TrainIt($eBarbarian, $CurBarb)
-						Else
-							TrainIt($eBarbarian, $BarbEBarrack)
+					If GUICtrlRead($txtBarbarians) <> "0" And $CurBarb > 0 Then
+						if $BarbEBarrack[$i] > $troopFirstBarba Then
+							TrainIt($eBarbarian, $BarbEBarrack[$i] - $troopFirstBarba)
+							SetLog($BarbEBarrack[$i] - $troopFirstBarba)
 						EndIf
 					EndIf
-				EndIf
 
-
-				If GUICtrlRead($txtGoblins) <> "0" And $CurGoblin > 0 Then
-					;If _ColorCheck(_GetPixelColor(261, 366), Hex(0x39D8E0, 6), 20) And $CurGoblin > 0 Then
-					If $CurGoblin > 0 Then
-						If $GoblinEBarrack = 0 Then
-							TrainIt($eGoblin, 1)
-						ElseIf $GoblinEBarrack >= $CurGoblin Or $GoblinEBarrack = 0 Then
-							TrainIt($eGoblin, $CurGoblin)
-						Else
-							TrainIt($eGoblin, $GoblinEBarrack)
+					If GUICtrlRead($txtGoblins) <> "0" And $CurGoblin > 0 Then
+						if $GoblinEBarrack[$i] - $troopFirstGoblin Then
+							TrainIt($eGoblin, $GoblinEBarrack[$i] - $troopFirstGoblin)
 						EndIf
 					EndIf
+				Else
+					_CaptureRegion()
+					While _ColorCheck(_GetPixelColor(420, 190), Hex(0xF0F0F0, 6), 20)
+						Click(420, 190, 20) ;Removing useless troops
+						_CaptureRegion()
+					WEnd
+
+					If GUICtrlRead($txtArchers) <> "0" And $CurArch > 0 Then
+						TrainIt($eArcher, $ArchEBarrack[$i])
+					EndIf
+
+					If GUICtrlRead($txtNumGiants) <> "0" And $CurGiant > 0 Then
+						TrainIt($eGiant, $GiantEBarrack[$i])
+					EndIf
+
+					If GUICtrlRead($txtNumWallbreakers) <> "0" And $CurWB > 0 Then
+						TrainIt($eWallbreaker, $WallEBarrack[$i])
+					EndIf
+
+					If GUICtrlRead($txtBarbarians) <> "0" And $CurBarb > 0 Then
+						TrainIt($eBarbarian, $BarbEBarrack[$i])
+					EndIf
+
+					If GUICtrlRead($txtGoblins) <> "0" And $CurGoblin > 0 Then
+						TrainIt($eGoblin, $GoblinEBarrack[$i])
+					EndIf
+
+					$TroopCount = 0
 				EndIf
 
 				If _Sleep(900) Then ExitLoop
@@ -309,10 +332,10 @@ Func Train()
 					EndIf
 				EndIf
 
-
 				If $troopSecondGiant > $troopFirstGiant And GUICtrlRead($txtNumGiants) <> "0" Then
 					$ArmyComp += ($troopSecondGiant - $troopFirstGiant) * 5
 					$CurGiant -= ($troopSecondGiant - $troopFirstGiant)
+					if $TroopCount = $itxtcampCap Then $CurGiant = 0
 					SetLog("Barrack " & ($i + 1) & " Training Giant : " & ($troopSecondGiant - $troopFirstGiant), $COLOR_GREEN)
 					SetLog("Giant Remaining : " & $CurGiant, $COLOR_BLUE)
 				EndIf
@@ -321,6 +344,7 @@ Func Train()
 				If $troopSecondWall > $troopFirstWall And GUICtrlRead($txtNumWallbreakers) <> "0" Then
 					$ArmyComp += ($troopSecondWall - $troopFirstWall) * 2
 					$CurWB -= ($troopSecondWall - $troopFirstWall)
+					if $TroopCount = $itxtcampCap Then $CurWB = 0
 					SetLog("Barrack " & ($i + 1) & " Training WallBreaker : " & ($troopSecondWall - $troopFirstWall), $COLOR_GREEN)
 					SetLog("WallBreaker Remaining : " & $CurWB, $COLOR_BLUE)
 				EndIf
@@ -328,6 +352,7 @@ Func Train()
 				If $troopSecondGoblin > $troopFirstGoblin And GUICtrlRead($txtGoblins) <> "0" Then
 					$ArmyComp += ($troopSecondGoblin - $troopFirstGoblin)
 					$CurGoblin -= ($troopSecondGoblin - $troopFirstGoblin)
+					if $TroopCount = $itxtcampCap Then $CurGoblin = 0
 					SetLog("Barrack " & ($i + 1) & " Training Goblin : " & ($troopSecondGoblin - $troopFirstGoblin), $COLOR_GREEN)
 					SetLog("Goblin Remaining : " & $CurGoblin, $COLOR_BLUE)
 				EndIf
@@ -335,6 +360,7 @@ Func Train()
 				If $troopSecondBarba > $troopFirstBarba And GUICtrlRead($txtBarbarians) <> "0" Then
 					$ArmyComp += ($troopSecondBarba - $troopFirstBarba)
 					$CurBarb -= ($troopSecondBarba - $troopFirstBarba)
+					if $TroopCount = $itxtcampCap Then $CurBarb = 0
 					SetLog("Barrack " & ($i + 1) & " Training Barbarian : " & ($troopSecondBarba - $troopFirstBarba), $COLOR_GREEN)
 					SetLog("Barbarian Remaining : " & $CurBarb, $COLOR_BLUE)
 				EndIf
@@ -342,6 +368,7 @@ Func Train()
 				If $troopSecondArch > $troopFirstArch And GUICtrlRead($txtArchers) <> "0" Then
 					$ArmyComp += ($troopSecondArch - $troopFirstArch)
 					$CurArch -= ($troopSecondArch - $troopFirstArch)
+					if $TroopCount = $itxtcampCap Then $CurArch = 0
 					SetLog("Barrack " & ($i + 1) & " Training Archer : " & ($troopSecondArch - $troopFirstArch), $COLOR_GREEN)
 					SetLog("Archer Remaining : " & $CurArch, $COLOR_BLUE)
 				EndIf
