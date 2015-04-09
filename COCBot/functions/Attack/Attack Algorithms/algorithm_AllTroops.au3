@@ -306,7 +306,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 
 		If $itxtQueenSkill < $itxtKingSkill Then
 			If $checkQPower Then
-			    SetLog("Waiting " & $itxtKingSkill & " seconds before activating Queen's abilities", $COLOR_ORANGE)
+			    SetLog("Waiting " & $itxtQueenSkill & " seconds before activating Queen's abilities", $COLOR_ORANGE)
 				_Sleep($itxtQueenSkill * 1000, False)
 				SetLog("Activate Queen's power", $COLOR_BLUE)
 				SelectDropTroupe($Queen)
