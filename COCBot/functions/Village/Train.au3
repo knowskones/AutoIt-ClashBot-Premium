@@ -85,20 +85,23 @@ Func Train()
 	$troopFirstArch = 0
 	$troopSecondArch = 0
 
-	;Determine working barracks
-	For $i = 0 To 3 ;iterate through barracks
-		ClickP($TopLeftClient) ;Click Away
-		If _Sleep(200) Then ExitLoop
-		Click($barrackPos[$i][0], $barrackPos[$i][1]) ;Click Barrack
 
-		Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
-		If IsArray($TrainPos) = False Then
-			SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
-			handleBarracksError($i)
-		Else
-			$WorkingBarracks += 1
-		EndIf
-	Next
+	;Determine working barracks
+	if $WorkingBarracks = 0 Then
+		For $i = 0 To 3 ;iterate through barracks
+			ClickP($TopLeftClient) ;Click Away
+			If _Sleep(200) Then ExitLoop
+			Click($barrackPos[$i][0], $barrackPos[$i][1]) ;Click Barrack
+
+			Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
+			If IsArray($TrainPos) = False Then
+				SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
+				handleBarracksError($i)
+			Else
+				$WorkingBarracks += 1
+			EndIf
+		Next
+	EndIf
 
 	Local $GiantEBarrack[$WorkingBarracks], $WallEBarrack[$WorkingBarracks], $ArchEBarrack[$WorkingBarracks], $BarbEBarrack[$WorkingBarracks], $GoblinEBarrack[$WorkingBarracks]
 
