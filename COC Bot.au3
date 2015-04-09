@@ -1,5 +1,8 @@
 #RequireAdmin
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_UseUpx=y
 #AutoIt3Wrapper_UseX64=n
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #pragma compile(Icon, "Icons\cocbot.ico")
 #pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
 #pragma compile(ProductName, ClashBot)
@@ -21,12 +24,13 @@ If @AutoItX64 = 1 Then
 	Exit
 EndIf
 
-If Not FileExists(@ScriptDir & "\License.txt") Then
-	FileCreate(@ScriptDir & "\License.txt", "Copyright 2015 Application Automation LLC")
-EndIf
+;If Not FileExists(@ScriptDir & "\License.txt") Then
+	;FileCreate(@ScriptDir & "\License.txt", "Copyright 2015 Application Automation LLC")
+;EndIf
+
 #include "_UskinLibrary.au3"
 _Uskin_LoadDLL()
-_USkin_Init(@ScriptDir & "\skins\orange.msstyles")
+_USkin_Init(@ScriptDir & "\skins\alloy.msstyles")
 #include "COCBot\Global Variables.au3"
 #include "COCBot\Functions.au3"
 #include "COCBot\GUI Form.au3"
