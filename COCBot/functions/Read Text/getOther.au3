@@ -37,6 +37,16 @@ Func getOther($x_start, $y_start, $type, $totalcamp = False)
 			$Number = getDigitTownHall($x, $y)
 
 			While $Number = ""
+				If $i >= 19 Then ExitLoop
+				$i += 1
+				$x += 1
+				$Number = getDigitTownHall($x, $y)
+			WEnd
+
+		Case "Troops"
+			$Number = getDigitTrainTroops($x, $y)
+
+			While $Number = ""
 				If $i >= 50 Then ExitLoop
 				$i += 1
 				$x += 1
