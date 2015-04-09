@@ -34,15 +34,15 @@ Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 	If IsArray($pos) Then
 		If CheckPixel($pos) Then
 			if $TroopCount = 0 Then $TroopCount = getother(528, 258, "Troops")
+			SetLog($TroopCount)
 			if $TroopCount < $itxtcampCap and Not $fullArmy Then
 				if ($itxtcampCap - $TroopCount) > $howMuch Then
 					ClickP($pos, $howMuch, 20)
 				Else
 					ClickP($pos, $itxtcampCap - $TroopCount, 20)
 				EndIf
-			else
-				ClickP($pos, $howMuch, 20)
 			EndIf
+			if $fullArmy Then ClickP($pos, $howMuch, 20)
 
 			if _Sleep(100) Then Return
 			$TroopCount = getother(528, 258, "Troops")
@@ -104,8 +104,8 @@ Func Train()
 
 	Local $GiantEBarrack[$WorkingBarracks], $WallEBarrack[$WorkingBarracks], $ArchEBarrack[$WorkingBarracks], $BarbEBarrack[$WorkingBarracks], $GoblinEBarrack[$WorkingBarracks]
 
-	$CurGiant += GUICtrlRead($txtNumGiants) + $CurGiant
-	$CurWB += GUICtrlRead($txtNumWallbreakers) + $CurWB
+	$CurGiant += GUICtrlRead($txtNumGiants)
+	$CurWB += GUICtrlRead($txtNumWallbreakers)
 	Local $AddtlTroops = (GUICtrlRead($txtNumGiants) * 5) + (GUICtrlRead($txtNumWallbreakers) * 2)
 	$CurArch += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtArchers)) / 100)
 	$CurBarb += ((($itxtcampCap - $AddtlTroops) * GUICtrlRead($txtBarbarians)) / 100)
@@ -116,6 +116,14 @@ Func Train()
 	$CurArch=Round($CurArch)
 	$CurBarb=Round($CurBarb)
 	$CurGoblin=Round($CurGoblin)
+
+	SetLog($CurGiant)
+	SetLog($CurWB)
+	SetLog($CurArch)
+	SetLog($CurBarb)
+	SetLog($CurGoblin)
+
+	SetLog($CurGiant+$CurWB+$CurArch+$CurBarb+$CurGoblin)
 
 	;Divide equally to barracks
 	if $CurGiant > 0 Then
@@ -153,6 +161,12 @@ Func Train()
 			$GoblinEBarrack[$i] = 0
 		Next
 	EndIf
+
+	SetLog("Giant: " & $GiantEBarrack[0]  & " " &$GiantEBarrack[1] & " " &$GiantEBarrack[2] & " " &$GiantEBarrack[3])
+	SetLog("Wall: " & $WallEBarrack[0]  & " " &$WallEBarrack[1] & " " &$WallEBarrack[2] & " " &$GiantEBarrack[3])
+	SetLog("Arch: " & $ArchEBarrack[0]  & " " &$ArchEBarrack[1] & " " &$ArchEBarrack[2] & " " &$ArchEBarrack[3])
+	SetLog("Barb: " & $BarbEBarrack[0]  & " " &$BarbEBarrack[1] & " " &$BarbEBarrack[2] & " " &$BarbEBarrack[3])
+	SetLog("Goblin: " & $GoblinEBarrack[0]  & " " &$GoblinEBarrack[1] & " " &$GoblinEBarrack[2] & " " &$GoblinEBarrack[3])
 
 	For $i = 0 To 3 ;iterate through barracks
 		If _Sleep(500) Then ExitLoop
@@ -274,30 +288,35 @@ Func Train()
 					If GUICtrlRead($txtArchers) <> "0" And $CurArch > 0 Then
 						if $ArchEBarrack[$i] > $troopFirstArch Then
 							TrainIt($eArcher, $ArchEBarrack[$i] - $troopFirstArch)
+							$CurArch -= $troopFirstArch
 						EndIf
 					EndIf
 
 					If GUICtrlRead($txtNumGiants) <> "0" And $CurGiant > 0 Then
 						if $GiantEBarrack[$i] > $troopFirstGiant Then
 							TrainIt($eGiant, $GiantEBarrack[$i] - $troopFirstGiant)
+							$CurGiant -= $troopFirstGiant
 						EndIf
 					EndIf
 
 					If GUICtrlRead($txtNumWallbreakers) <> "0" And $CurWB > 0 Then
 						if $WallEBarrack[$i] > $troopFirstWall Then
 							TrainIt($eWallbreaker, $WallEBarrack[$i] - $troopFirstWall)
+							$CurWB -= $troopFirstWall
 						EndIf
 					EndIf
 
 					If GUICtrlRead($txtBarbarians) <> "0" And $CurBarb > 0 Then
 						if $BarbEBarrack[$i] > $troopFirstBarba Then
 							TrainIt($eBarbarian, $BarbEBarrack[$i] - $troopFirstBarba)
+							$CurBarb -= $troopFirstBarba
 						EndIf
 					EndIf
 
 					If GUICtrlRead($txtGoblins) <> "0" And $CurGoblin > 0 Then
 						if $GoblinEBarrack[$i] - $troopFirstGoblin Then
 							TrainIt($eGoblin, $GoblinEBarrack[$i] - $troopFirstGoblin)
+							$CurGoblin -= $troopFirstGoblin
 						EndIf
 					EndIf
 				Else

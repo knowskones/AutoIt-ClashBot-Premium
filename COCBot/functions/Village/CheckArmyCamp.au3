@@ -37,45 +37,45 @@ Func CheckArmyCamp()
 			$fullArmy = True
 		Else
 			_CaptureRegion()
-			If $FirstStart Then
-				$ArmyComp = 0
-				$CurGiant = 0
-				$CurWB = 0
-				$CurArch = 0
-				$CurBarb = 0
-				$CurGoblin = 0
-			EndIf
+			$ArmyComp = 0
+			$CurGiant = 0
+			$CurWB = 0
+			$CurArch = 0
+			$CurBarb = 0
+			$CurGoblin = 0
+
 			For $i = 0 To 6
 				Local $TroopKind = _GetPixelColor(230 + 71 * $i, 359)
 				Local $TroopKind2 = _GetPixelColor(230 + 71 * $i, 385)
 				Local $TroopName = "-"
 				Local $TroopQ = getOther(229 + 71 * $i, 413, "Camp")
 				If _ColorCheck($TroopKind, Hex(0xF85CCB, 6), 20) Then
-					If ($FirstStart) Then $CurArch -= $TroopQ
+					$CurArch -= $TroopQ
 					$TroopName = "Archers"
+					SetLog($CurArch)
 				ElseIf _ColorCheck($TroopKind, Hex(0xF8E439, 6), 20) Then
-					If ($FirstStart) Then $CurBarb -= $TroopQ
+					$CurBarb -= $TroopQ
 					$TroopName = "Barbarians"
 				ElseIf _ColorCheck($TroopKind, Hex(0xF8D198, 6), 20) Then
-					If ($FirstStart) Then $CurGiant -= $TroopQ
+					$CurGiant -= $TroopQ
 					$TroopName = "Giants"
 				ElseIf _ColorCheck($TroopKind, Hex(0x93EC60, 6), 20) Then
-					If ($FirstStart) Then $CurGoblin -= $TroopQ
+					$CurGoblin -= $TroopQ
 					$TroopName = "Goblins"
 				ElseIf _ColorCheck($TroopKind, Hex(0x48A8E8, 6), 20) Then
-					If ($FirstStart) Then $CurWB -= $TroopQ
+					$CurWB -= $TroopQ
 					$TroopName = "Wallbreakers"
 				ElseIf _ColorCheck($TroopKind, Hex(0xB8786E, 6), 20) Then
-					If ($FirstStart) Then $CurWizard -= $TroopQ
+					$CurWizard -= $TroopQ
 					$TroopName = "Wizards"
 				ElseIf _ColorCheck($TroopKind, Hex(0x131D38, 6), 20) Then
-					If ($FirstStart) Then $CurMinion -= $TroopQ
+					$CurMinion -= $TroopQ
 					$TroopName = "Minions"
 				ElseIf _ColorCheck($TroopKind2, Hex(0x212018, 6), 20) Then
-					If ($FirstStart) Then $CurHog -= $TroopQ
+					$CurHog -= $TroopQ
 					$TroopName = "Hogs"
 				ElseIf _ColorCheck($TroopKind, Hex(0x983B08, 6), 20) Then
-					If ($FirstStart) Then $CurValkyrie -= $TroopQ
+					$CurValkyrie -= $TroopQ
 					$TroopName = "Valkyries"
 				EndIf
 				If $TroopQ <> 0 Then SetLog("- " & $TroopName & " " & $TroopQ, $COLOR_GREEN)

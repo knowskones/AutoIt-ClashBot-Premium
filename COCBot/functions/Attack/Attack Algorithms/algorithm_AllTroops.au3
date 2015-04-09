@@ -345,7 +345,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 		While $var = False
 			If $checkKPower and $varKing = False Then
 				$PositionKing = 47 + (72 * $King)
-				$HealthKing = _WaitForPixelSearch($PositionKing, 555, $PositionKing + 20, 555, Hex(0xE5101F, 6), 5, 200) ;Finds Health
+				$HealthKing = _WaitForPixelSearch($PositionKing, 555, $PositionKing + 20, 555, Hex(0xDD8208, 6), 5, 100) ;Finds Health
 				If IsArray($HealthKing) = True Then
 					SetLog("Activate King's power", $COLOR_BLUE)
 					SelectDropTroupe($King)
@@ -354,7 +354,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			EndIf
 			If $checkQPower and $varQueen = False Then
 				$PositionQueen = 47 + (72 * $Queen)
-				$HealthQueen = _WaitForPixelSearch($PositionQueen, 555, $PositionQueen + 20, 555, Hex(0xE5101F, 6), 5, 200) ;Finds Health
+				$HealthQueen = _WaitForPixelSearch($PositionQueen, 555, $PositionQueen + 20, 555, Hex(0xDD8208, 6), 5, 100) ;Finds Health
 				If IsArray($HealthQueen) = True Then
 					SetLog("Activate Queen's power", $COLOR_BLUE)
 					SelectDropTroupe($Queen)
