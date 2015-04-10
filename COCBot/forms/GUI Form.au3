@@ -9,7 +9,7 @@ Opt("MouseClickDelay", 10)
 Opt("MouseClickDownDelay", 10)
 Opt("TrayMenuMode", 3)
 #Region ### START Koda GUI section ### Form=GUI Form.kxf
-$frmBot = GUICreate("sBotTitle", 645, 431, -1, -1)
+$frmBot = GUICreate("sBotTitle", 645, 430, -1, -1)
 $menuFile = GUICtrlCreateMenu("&File")
 $menuItemExit = GUICtrlCreateMenuItem("E&xit", $menuFile)
 $menuConfig = GUICtrlCreateMenu("&Config")
@@ -643,7 +643,6 @@ $chkForceBS = GUICtrlCreateCheckbox("Force Active", 190, 355, 78, 15)
 GUICtrlSetTip(-1, "Maximize Bluestack window if fail to locate")
 $btnAtkNow = GUICtrlCreateButton("Attack Now", 190, 320, 75, 30)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
-GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
 
