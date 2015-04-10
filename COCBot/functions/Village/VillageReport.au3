@@ -33,11 +33,11 @@ Func VillageReport()
 			   _Push("Total Raid", "[G]: " & _NumberFormat($GoldGained) & " [E]: " & _NumberFormat($ElixirGained) & " [T]: " & $TrophyGained & " [Attacked]: " & GUICtrlRead($lblresultvillagesattacked) & " [Skipped]: " & GUICtrlRead($lblresultvillagesskipped) & " [Trophies Won]: " & GUICtrlRead($lblresulttrophiesdropped) & " [Wall Upgrade]: " & GUICtrlRead($lblwallupgradecount) & " [Run Time]: " & StringFormat("%02i:%02i:%02i", $hour, $min, $sec))
 			   SetLog("Push: Total Raid",$COLOR_GREEN)
 			EndIf
-		 EndIf
-		 If $PushBulletEnabled = 1 and $PushBulletvillagereport = 1 Then
+		EndIf
+		If $PushBulletEnabled = 1 and $PushBulletvillagereport = 1 Then
 			_Push("Village Report", "[G]: " &_NumberFormat($GoldCount) & " [E]: " & _NumberFormat($ElixirCount) & " [T]: " & $TrophyCount & " [GEM]: " & $GemCount)
 			SetLog("Push: Village Report",$COLOR_GREEN)
-		 EndIf
+		EndIf
 	Else
 		$GoldCount = GetOther(440, 625, "Resource")
 		$ElixirCount = GetOther(282, 625, "Resource")
@@ -83,15 +83,16 @@ Func VillageReport()
 	    GUICtrlSetData($lblresultdelast, $LastRaidDarkElixir)
 	    GUICtrlSetData($lblresulttrophylast, $LastRaidTrophy)
 
-	    if $PushBulletEnabled = 1 and $PushBulletlastraid = 1 And $PushBullettype = 0 and $Raid = 1 Then
-		If _Sleep(2000) Then Return
-			_PushFile($FileName, "loots", "image/jpeg", "Last Raid", $FileName)
-			$Raid = 0
-	    EndIf
-	    if $PushBulletEnabled = 1 and $PushBulletlastraid = 1 And $PushBullettype = 1 and $Raid = 1 and $TakeLootSnapShot = 1 Then
-			_Push("Last Raid", "[G]: " & _NumberFormat($LastRaidGold) & " [E]: " & _NumberFormat($LastRaidElixir) & " [D]: " & _NumberFormat($LastRaidDarkElixir) & " [T]: " & $LastRaidTrophy)
-			SetLog("Push: Last Raid",$COLOR_GREEN)
-			$Raid = 0
+	    if $PushBulletEnabled = 1 and $PushBulletlastraid = 1 and $Raid = 1 Then
+			if $PushBullettype = 0 and $TakeLootSnapShot = 1 Then
+				If _Sleep(2000) Then Return
+				_PushFile($FileName, "loots", "image/jpeg", "Last Raid", $FileName)
+				$Raid = 0
+			Elseif $PushBullettype = 1 Then
+				_Push("Last Raid", "[G]: " & _NumberFormat($LastRaidGold) & " [E]: " & _NumberFormat($LastRaidElixir) & " [D]: " & _NumberFormat($LastRaidDarkElixir) & " [T]: " & $LastRaidTrophy)
+				SetLog("Push: Last Raid",$COLOR_GREEN)
+				$Raid = 0
+			EndIf
 		EndIf
 	EndIf
 	GUICtrlSetData($lblresultgoldnow, $GoldCount)
