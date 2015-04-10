@@ -45,6 +45,7 @@ Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 
 			if _Sleep(200) Then Return
 			$TroopCount = getother(528, 258, "Troops")
+			if $TroopCount = 0 Then $TroopCount = getother(528, 258, "Troops") ; ensure it captures TroopCount
 
 			If _Sleep($iSleep) Then Return False
 			Return True
@@ -376,7 +377,7 @@ Func Train()
 				If $troopSecondGiant > $troopFirstGiant And GUICtrlRead($txtNumGiants) <> "0" Then
 					$ArmyComp += ($troopSecondGiant - $troopFirstGiant) * 5
 					$CurGiant -= ($troopSecondGiant - $troopFirstGiant)
-					if $TroopCount = $itxtcampCap Then $CurGiant = 0
+					if $TroopCount >= $itxtcampCap Then $CurGiant = 0
 					SetLog("Barrack " & ($i + 1) & " Training Giant : " & ($troopSecondGiant - $troopFirstGiant), $COLOR_GREEN)
 					SetLog("Giant Remaining : " & $CurGiant, $COLOR_BLUE)
 				EndIf
@@ -385,7 +386,7 @@ Func Train()
 				If $troopSecondWall > $troopFirstWall And GUICtrlRead($txtNumWallbreakers) <> "0" Then
 					$ArmyComp += ($troopSecondWall - $troopFirstWall) * 2
 					$CurWB -= ($troopSecondWall - $troopFirstWall)
-					if $TroopCount = $itxtcampCap Then $CurWB = 0
+					if $TroopCount >= $itxtcampCap Then $CurWB = 0
 					SetLog("Barrack " & ($i + 1) & " Training WallBreaker : " & ($troopSecondWall - $troopFirstWall), $COLOR_GREEN)
 					SetLog("WallBreaker Remaining : " & $CurWB, $COLOR_BLUE)
 				EndIf
@@ -393,7 +394,7 @@ Func Train()
 				If $troopSecondGoblin > $troopFirstGoblin And GUICtrlRead($txtGoblins) <> "0" Then
 					$ArmyComp += ($troopSecondGoblin - $troopFirstGoblin)
 					$CurGoblin -= ($troopSecondGoblin - $troopFirstGoblin)
-					if $TroopCount = $itxtcampCap Then $CurGoblin = 0
+					if $TroopCount >= $itxtcampCap Then $CurGoblin = 0
 					SetLog("Barrack " & ($i + 1) & " Training Goblin : " & ($troopSecondGoblin - $troopFirstGoblin), $COLOR_GREEN)
 					SetLog("Goblin Remaining : " & $CurGoblin, $COLOR_BLUE)
 				EndIf
@@ -401,7 +402,7 @@ Func Train()
 				If $troopSecondBarba > $troopFirstBarba And GUICtrlRead($txtBarbarians) <> "0" Then
 					$ArmyComp += ($troopSecondBarba - $troopFirstBarba)
 					$CurBarb -= ($troopSecondBarba - $troopFirstBarba)
-					if $TroopCount = $itxtcampCap Then $CurBarb = 0
+					if $TroopCount >= $itxtcampCap Then $CurBarb = 0
 					SetLog("Barrack " & ($i + 1) & " Training Barbarian : " & ($troopSecondBarba - $troopFirstBarba), $COLOR_GREEN)
 					SetLog("Barbarian Remaining : " & $CurBarb, $COLOR_BLUE)
 				EndIf
@@ -409,7 +410,7 @@ Func Train()
 				If $troopSecondArch > $troopFirstArch And GUICtrlRead($txtArchers) <> "0" Then
 					$ArmyComp += ($troopSecondArch - $troopFirstArch)
 					$CurArch -= ($troopSecondArch - $troopFirstArch)
-					if $TroopCount = $itxtcampCap Then $CurArch = 0
+					if $TroopCount >= $itxtcampCap Then $CurArch = 0
 					SetLog("Barrack " & ($i + 1) & " Training Archer : " & ($troopSecondArch - $troopFirstArch), $COLOR_GREEN)
 					SetLog("Archer Remaining : " & $CurArch, $COLOR_BLUE)
 				EndIf
