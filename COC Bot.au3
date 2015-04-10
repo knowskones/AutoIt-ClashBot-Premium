@@ -2,13 +2,14 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_UseUpx=y
 #AutoIt3Wrapper_UseX64=n
+#AutoIt3Wrapper_Run_Au3Stripper=y
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #pragma compile(Icon, "Icons\cocbot.ico")
 #pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
 #pragma compile(ProductName, ClashBot)
-#pragma compile(ProductVersion, 5.7)
-#pragma compile(FileVersion, 5.7)
-#pragma compile(LegalCopyright, © Application Automation LLC)
+#pragma compile(ProductVersion, 6.0.2)
+#pragma compile(FileVersion, 6.0.2)
+#pragma compile(LegalCopyright, 2015 © Application Automation LLC)
 
 $sBotVersion = "6.0.2 Beta"
 $sBotTitle = "AutoIt ClashBot v" & $sBotVersion
