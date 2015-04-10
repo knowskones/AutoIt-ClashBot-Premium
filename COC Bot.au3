@@ -7,11 +7,11 @@
 #pragma compile(Icon, "Icons\cocbot.ico")
 #pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
 #pragma compile(ProductName, ClashBot)
-#pragma compile(ProductVersion, 6.0.2)
-#pragma compile(FileVersion, 6.0.2)
+#pragma compile(ProductVersion, 6.1)
+#pragma compile(FileVersion, 6.1)
 #pragma compile(LegalCopyright, 2015 © Application Automation LLC)
 
-$sBotVersion = "6.0.2 Beta"
+$sBotVersion = "6.1 Beta" ;Edit version in compile option above aswell
 $sBotTitle = "AutoIt ClashBot v" & $sBotVersion
 
 If _Singleton($sBotTitle, 1) = 0 Then
@@ -31,10 +31,11 @@ EndIf
 
 #include "_UskinLibrary.au3"
 _Uskin_LoadDLL()
-_USkin_Init(@ScriptDir & "\skins\alloy.msstyles")
+_USkin_Init(@ScriptDir & "\skins\orange.msstyles")
 #include "COCBot\Global Variables.au3"
 #include "COCBot\Functions.au3"
-#include "COCBot\GUI Form.au3"
+#include "COCBot\forms\GUI Form.au3"
+#include "COCBot\Login.au3"
 #include "COCBot\GUI Control.au3"
 #include-once
 
