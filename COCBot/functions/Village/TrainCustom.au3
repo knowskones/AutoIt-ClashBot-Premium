@@ -70,7 +70,7 @@ Func TrainCustom()
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
-						SetLog("Barrack " & $i+1 & " raining in progress, Barbarian Remaining : " & $LeftTrain0, $COLOR_BLUE)
+						SetLog("Barrack " & $i+1 & " Training in progress, Barbarian Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					EndIf
 
 					Case 1
@@ -219,7 +219,7 @@ Func TrainCustom()
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
-						SetLog("Barrack " & $i+1 & " raining in progress, Barbarian Remaining : " & $LeftTrain1, $COLOR_BLUE)
+						SetLog("Barrack " & $i+1 & " Training in progress, Barbarian Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					EndIf
 
 					Case 1
@@ -368,7 +368,7 @@ Func TrainCustom()
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
-						SetLog("Barrack " & $i+1 & " raining in progress, Barbarian Remaining : " & $LeftTrain2, $COLOR_BLUE)
+						SetLog("Barrack " & $i+1 & " Training in progress, Barbarian Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					EndIf
 
 					Case 1
@@ -517,7 +517,7 @@ Func TrainCustom()
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
-						SetLog("Barrack " & $i+1 & " raining in progress, Barbarian Remaining : " & $LeftTrain3, $COLOR_BLUE)
+						SetLog("Barrack " & $i+1 & " Training in progress, Barbarian Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					EndIf
 
 					Case 1
