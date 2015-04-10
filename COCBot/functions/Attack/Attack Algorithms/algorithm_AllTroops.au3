@@ -1,6 +1,5 @@
 ; Improved attack algorithm, using Barbarians, Archers, Goblins, Giants and Wallbreakers as they are available
 ; Create by Fast French, edited by safar46
-
 Func SetSleep($type)
 	Switch $type
 		Case 0
@@ -34,24 +33,62 @@ Func DropOnEdge($troop, $edge, $number, $slotsPerEdge = 0, $edge2 = -1, $x = -1)
 	If $number = 0 Then Return
 	If _Sleep(100, False) Then Return
 	SelectDropTroupe($troop) ;Select Troop
-	If _Sleep(300, False) Then Return
+	If _Sleep(1000, False) Then Return
 	If $slotsPerEdge = 0 Or $number < $slotsPerEdge Then $slotsPerEdge = $number
 	If $number = 1 Or $slotsPerEdge = 1 Then ; Drop on a single point per edge => on the middle
-		Click($edge[2][0], $edge[2][1], $number)
-		If $edge2 <> -1 Then Click($edge2[2][0], $edge2[2][1], $number)
-		If _Sleep(50, False) Then Return
+     $Unitdrop = 0
+	 While $Unitdrop <= $number
+		Click($edge[2][0], $edge[2][1])
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $number Then ExitLoop
+	 WEnd
+		If $edge2 <> -1 Then
+     $Unitdrop = 0
+	 While $Unitdrop <= $number
+		Click($edge2[2][0], $edge2[2][1])
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $number Then ExitLoop
+	 WEnd
+		EndIf
+	  		If _Sleep(50, False) Then Return
 	ElseIf $slotsPerEdge = 2 Then ; Drop on 2 points per edge
 		Local $half = Ceiling($number / 2)
-		Click($edge[1][0], $edge[1][1], $half)
+     $Unitdrop = 0
+	 While $Unitdrop <= $half
+		Click($edge[1][0], $edge[1][1])
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $half Then ExitLoop
+	 WEnd
 		If $edge2 <> -1 Then
 			If _Sleep(SetSleep(0), False) Then Return
-			Click($edge2[1][0], $edge2[1][1], $half)
+     $Unitdrop = 0
+	 While $Unitdrop <= $half
+		Click($edge2[1][0], $edge2[1][1])
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $half Then ExitLoop
+	 WEnd
 		EndIf
 		If _Sleep(SetSleep(0), False) Then Return
-		Click($edge[3][0], $edge[3][1], $number - $half)
+     $Unitdrop = 0
+	 While $Unitdrop <= $number - $half
+		Click($edge[3][0], $edge[3][1])
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $number - $half Then ExitLoop
+	 WEnd
 		If $edge2 <> -1 Then
 			If _Sleep(SetSleep(0), False) Then Return
-			Click($edge2[3][0], $edge2[3][1], $number - $half)
+     $Unitdrop = 0
+	 While $Unitdrop <= $number - $half
+		Click($edge2[3][0], $edge2[3][1])
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $number - $half Then ExitLoop
+	 WEnd
 		EndIf
 		If _Sleep(SetSleep(0), False) Then Return
 	Else
@@ -70,14 +107,26 @@ Func DropOnEdge($troop, $edge, $number, $slotsPerEdge = 0, $edge2 = -1, $x = -1)
 			Local $nbtroopPerSlot = Round($nbTroopsLeft / ($slotsPerEdge - $i)) ; progressively adapt the number of drops to fill at the best
 			Local $posX = $minX + (($maxX - $minX) * $i) / ($slotsPerEdge - 1)
 			Local $posY = $minY + (($maxY - $minY) * $i) / ($slotsPerEdge - 1)
-			Click($posX, $posY, $nbtroopPerSlot)
+     $Unitdrop = 0
+	 While $Unitdrop <= $nbtroopPerSlot
+		Click($posX, $posY)
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $nbtroopPerSlot Then ExitLoop
+	 WEnd
 			If $edge2 <> -1 Then ; for 2, 3 and 4 sides attack use 2x dropping
 				Local $posX2 = $maxX2 - (($maxX2 - $minX2) * $i) / ($slotsPerEdge - 1)
 				Local $posY2 = $maxY2 - (($maxY2 - $minY2) * $i) / ($slotsPerEdge - 1)
 				If $x = 0 Then
 					If _Sleep(SetSleep(0), False) Then Return ; add delay for first wave attack to prevent skip dropping troops, must add for 4 sides attack
 				EndIf
-				Click($posX2, $posY2, $nbtroopPerSlot)
+     $Unitdrop = 0
+	 While $Unitdrop <= $nbtroopPerSlot
+		Click($posX2, $posY2)
+		If _Sleep($DeploySpeed, False) Then ExitLoop
+		$Unitdrop += 1
+		If $Unitdrop >= $nbtroopPerSlot Then ExitLoop
+	 WEnd
 				$nbTroopsLeft -= $nbtroopPerSlot
 			Else
 				$nbTroopsLeft -= $nbtroopPerSlot
@@ -115,7 +164,7 @@ Func DropOnEdges($troop, $nbSides, $number, $slotsPerEdge = 0)
 	Next
 EndFunc   ;==>DropOnEdges
 
-Func LaunchTroop($troopKind, $nbSides, $waveNb, $maxWaveNb, $slotsPerEdge = 0)
+Func LaunchTroop($troopKind, $SlowDeploy, $nbSides, $waveNb, $maxWaveNb, $slotsPerEdge = 0)
 	Local $troop = -1
 	Local $troopNb = 0
 	Local $name = ""
@@ -128,6 +177,12 @@ Func LaunchTroop($troopKind, $nbSides, $waveNb, $maxWaveNb, $slotsPerEdge = 0)
 			$name = NameOfTroop($troopKind, $plural)
 		EndIf
 	Next
+
+	If $SlowDeploy = True Then
+		$DeploySpeed = Round(Random(4, 6)) * 50
+	Else
+		$DeploySpeed = Round(Random(1, 5))
+	EndIf
 
 	If ($troop = -1) Or ($troopNb = 0) Then
 		;if $waveNb > 0 Then SetLog("Skipping wave of " & $name & " (" & $troopKind & ") : nothing to drop" )
@@ -209,25 +264,25 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	; ========= Feel free to experiment something else ===============================
 	; ================================================================================?
 	algorithmTH()
-	If LaunchTroop($eGiant, $nbSides, 1, 1, 1) Then
+	If LaunchTroop($eGiant, True, $nbSides, 1, 1, 1) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eBarbarian, $nbSides, 1, 2) Then
+	If LaunchTroop($eBarbarian, False, $nbSides, 1, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eWallbreaker, $nbSides, 1, 1, 1) Then
+	If LaunchTroop($eWallbreaker, True, $nbSides, 1, 1, 1) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eArcher, $nbSides, 1, 2) Then
+	If LaunchTroop($eArcher, False, $nbSides, 1, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eWizard, $nbSides, 1, 2) Then
+	If LaunchTroop($eWizard, True, $nbSides, 1, 1, 1) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eBarbarian, $nbSides, 2, 2) Then
+	If LaunchTroop($eBarbarian, False, $nbSides, 2, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eGoblin, $nbSides, 1, 2) Then
+	If LaunchTroop($eGoblin, False, $nbSides, 1, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 
@@ -237,22 +292,19 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	Else
 		dropCC($TopLeft[3][0], $TopLeft[3][1], $CC)
 	EndIf
-	If LaunchTroop($eHog, $nbSides, 1, 1, 1) Then
+	If LaunchTroop($eHog, True, $nbSides, 1, 1, 1) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eValkyrie, $nbSides, 1, 1, 1) Then
+	If LaunchTroop($eValkyrie, False, $nbSides, 1, 1, 1) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eArcher, $nbSides, 2, 2) Then
+	If LaunchTroop($eArcher, False, $nbSides, 2, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eWizard, $nbSides, 2, 2) Then
+	If LaunchTroop($eGoblin, False, $nbSides, 2, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eGoblin, $nbSides, 2, 2) Then
-		If _Sleep(SetSleep(1), False) Then Return
-	EndIf
-	If LaunchTroop($eMinion, $nbSides, 2, 2) Then
+	If LaunchTroop($eMinion, False, $nbSides, 2, 2) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 
@@ -274,9 +326,9 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 		PrepareAttack(True) ;Check remaining quantities
 		For $i = $eBarbarian To $eWizard ; launch all remaining troops
 			If $i = $eBarbarian Or $i = $eArcher Or $i = $eWizard Then
-				LaunchTroop($i, $nbSides, 0, 1)
+				LaunchTroop($i, False, $nbSides, 0, 1)
 			Else
-				LaunchTroop($i, $nbSides, 0, 1, 2)
+				LaunchTroop($i, False, $nbSides, 0, 1, 2)
 			EndIf
 			If _Sleep(500, False) Then Return
 		Next

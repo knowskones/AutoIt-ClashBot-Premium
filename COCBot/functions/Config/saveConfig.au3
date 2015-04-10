@@ -150,7 +150,11 @@ Func saveConfig() ;Saves the controls settings to the config
 
 	IniWrite($config, "attack", "UnitD", _GUICtrlComboBox_GetCurSel($cmbUnitDelay))
 	IniWrite($config, "attack", "WaveD", _GUICtrlComboBox_GetCurSel($cmbWaveDelay))
-	IniWrite($config, "attack", "randomatk", GUICtrlRead($chkRandomSpeedAtk))
+	If GUICtrlRead($chkRandomSpeedAtk) = $GUI_CHECKED Then
+		IniWrite($config, "attack", "randomatk", 1)
+	Else
+		IniWrite($config, "attack", "randomatk", 0)
+	EndIf
 
 	;Donate Settings-------------------------------------------------------------------------
 	If GUICtrlRead($chkRequest) = $GUI_CHECKED Then

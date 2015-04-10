@@ -82,6 +82,8 @@ Global $TopRight[5][2] = [[480, 63], [540, 104], [589, 146], [655, 190], [779, 2
 Global $BottomLeft[5][2] = [[79, 342], [142, 389], [210, 446], [276, 492], [339, 539]]
 Global $BottomRight[5][2] = [[523, 537], [595, 484], [654, 440], [715, 393], [779, 344]]
 Global $Edges[4] = [$BottomRight, $TopLeft, $BottomLeft, $TopRight]
+Global $Unitdrop
+Global $SlowDeploy, $DeploySpeed
 
 Global $atkTroops[9][2] ;9 Slots of troops -  Name, Amount
 Global $fullArmy ;Check for full army or not
@@ -212,7 +214,7 @@ Global $botPos[2] ; Position of bot used for Hide function
 Global $frmBotPosX ; Position X of the GUI
 Global $frmBotPosY ; Position Y of the GUI
 Global $Hide = False ; If hidden or not
-Global $themePath = @ScriptDir & "\skins\alloy.msstyles" ; Path to load theme from
+Global $themePath = @ScriptDir & "\skins\orange.msstyles" ; Path to load theme from
 
 Global $ichkBotStop, $icmbBotCommand, $icmbBotCond, $icmbHoursStop
 Global $CommandStop = -1
