@@ -4,7 +4,7 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 #Region ### START Koda GUI section ### Form=Login Form.kxf
-$frmLogin = GUICreate("Login", 221, 113, 192, 125)
+$frmLogin = GUICreate("Login", 221, 113, -1, -1)
 GUISetFont(12, 400, 0, "Arial")
 $lblUsername = GUICtrlCreateLabel("Username", 5, 10, 80, 22)
 $txtUsername = GUICtrlCreateInput("", 90, 8, 121, 26)
