@@ -9,9 +9,9 @@ GUISetFont(12, 400, 0, "Arial")
 $lblUsername = GUICtrlCreateLabel("Username", 5, 10, 80, 22)
 $txtUsername = GUICtrlCreateInput("", 90, 8, 121, 26)
 $lblPassword = GUICtrlCreateLabel("Password", 5, 45, 78, 22)
-$txtPassword = GUICtrlCreateInput("", 90, 43, 121, 26, BitOR($GUI_SS_DEFAULT_INPUT, $ES_PASSWORD))
+$txtPassword = GUICtrlCreateInput("", 90, 43, 121, 26, BitOR($GUI_SS_DEFAULT_INPUT,$ES_PASSWORD))
 $btnLogin = GUICtrlCreateButton("Login", 5, 78, 207, 25)
-GUICtrlSetCursor(-1, 0)
+GUICtrlSetCursor (-1, 0)
 #EndRegion ### END Koda GUI section ###
 
 GUICtrlSetState($btnLogin, $GUI_DEFBUTTON)

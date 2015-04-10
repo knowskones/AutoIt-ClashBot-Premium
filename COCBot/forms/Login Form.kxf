@@ -13,6 +13,7 @@
 		<property name="Font.Name" vt="String">Arial</property>
 		<property name="Font.Style" vt="Set"/>
 		<property name="OldCreateOrder" vt="True">True</property>
+		<property name="Position" vt="Ident">poDesktopCenter</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -45,7 +46,7 @@
 			</properties>
 			<components/>
 		</object>
-		<object type="TAInput" name="lblPassword">
+		<object type="TAInput" name="txtUsername">
 			<properties>
 				<property name="Left" vt="Int8">90</property>
 				<property name="Top" vt="Int8">8</property>
@@ -58,7 +59,7 @@
 			</properties>
 			<components/>
 		</object>
-		<object type="TALabel" name="txtUsername">
+		<object type="TALabel" name="lblPassword">
 			<properties>
 				<property name="Left" vt="Int8">5</property>
 				<property name="Top" vt="Int8">45</property>
