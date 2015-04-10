@@ -49,9 +49,14 @@ EndFunc   ;==>SpellDarkStorage
 
 Func CheckDarkStorage2()
  $SDark2 = $SDark
- If _Sleep(2000) Then Return
- $SDark = getDarkElixir(51, 66 + 57)
- If _Sleep(1000) Then Return
+ If _Sleep(3000) Then Return
+ Local $i = 0
+ While 1
+    $SDark = getDarkElixir(51, 66 + 57)
+	If _Sleep(500, False) Then ExitLoop
+	$i += 1
+	If $i >= 20 Or $SDark <> "" Then ExitLoop
+ WEnd
  SetLog("Dark Elixir Left: " & $SDark & " / Dark Elixir Target: " & $itxtSpellDarkStorage, $COLOR_BLUE)
  If $SDark <> $SDark2 And ($SDark - $itxtSpellDarkStorage >= 0) Then
  SetLog("There is still plenty Dark Elixir left, proceed for next Lightning Attack... ", $COLOR_GREEN)
