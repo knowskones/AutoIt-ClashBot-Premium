@@ -212,7 +212,7 @@ Global $botPos[2] ; Position of bot used for Hide function
 Global $frmBotPosX ; Position X of the GUI
 Global $frmBotPosY ; Position Y of the GUI
 Global $Hide = False ; If hidden or not
-Global $themePath = @ScriptDir & "\skins\orange.msstyles" ; Path to load theme from
+Global $themePath = @ScriptDir & "\skins\alloy.msstyles" ; Path to load theme from
 
 Global $ichkBotStop, $icmbBotCommand, $icmbBotCond, $icmbHoursStop
 Global $CommandStop = -1

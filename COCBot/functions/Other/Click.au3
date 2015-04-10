@@ -1,11 +1,11 @@
 Func Click($x, $y, $times = 1, $speed = 0)
 	If $times <> 1 Then
 		For $i = 0 To ($times - 1)
-			ControlClick($Title, "", "", "left", "1", $x, $y)
+			ControlClick($Title, "", "", "primary", "1", $x, $y)
 			If _Sleep($speed) Then ExitLoop
 		Next
 	Else
-		ControlClick($Title, "", "", "left", "1", $x, $y)
+		ControlClick($Title, "", "", "primary", "1", $x, $y)
 	EndIf
 EndFunc   ;==>Click
 

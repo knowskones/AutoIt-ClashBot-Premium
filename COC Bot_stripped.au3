@@ -1,4 +1,7 @@
 #RequireAdmin
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Compile_Both=y
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #pragma compile(Icon, "Icons\cocbot.ico")
 #pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
 #pragma compile(ProductName, ClashBot)
