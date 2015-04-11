@@ -440,6 +440,14 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 			GUICtrlSetState($UseSkillTimed, $GUI_UNCHECKED)
 	EndSwitch
 
+	If $ichkKeepLogs = 1 Then
+		GUICtrlSetState($chkKeepLogs, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkKeepLogs, $GUI_UNCHECKED)
+	EndIf
+	GUICtrlSetData($txtKeepLogs, $itxtKeepLogs)
+	chkKeepLogs()
+
 	;Push Bullet
     If $PushBulletEnabled = 1 Then
 	   GUICtrlSetState($chkPushBulletEnabled, $GUI_CHECKED)

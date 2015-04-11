@@ -161,6 +161,8 @@ Func readConfig() ;Reads config and sets it to the variables
 		$ichkBoostKing = IniRead($config, "misc", "BoostKing", "0")
 		$ichkBoostQueen = IniRead($config, "misc", "BoostQueen", "0")
 		$ichkBoostSpell = IniRead($config, "misc", "BoostSpell", "0")
+		$itxtKeepLogs = IniRead($config, "misc", "NumberLogs", "20")
+		$ichkKeepLogs = IniRead($config, "misc", "KeepLogs", "0")
 		;Push Bullet--------------------------------------------------------------------------
 		$PushBulletEnabled = IniRead($config, "notification", "pushbullet", "0")
 		$PushBullettoken = IniRead($config, "notification", "accounttoken", "")

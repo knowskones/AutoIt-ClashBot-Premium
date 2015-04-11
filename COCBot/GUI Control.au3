@@ -54,6 +54,8 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					ElseIf GUICtrlRead($chkSpellDarkStorage) = $GUI_CHECKED Then
 						GUICtrlSetState($chkMultiLight, $GUI_ENABLE)
 					EndIf
+				Case $chkKeepLogs
+					chkKeepLogs()
 			EndSwitch
 		Case 274
 			Switch $wParam
@@ -948,6 +950,14 @@ Func Randomspeedatk()
 		GUICtrlSetState($cmbWaveDelay, $GUI_ENABLE)
 	EndIf
 EndFunc   ;==>Randomspeedatk
+
+Func chkKeepLogs()
+	If GUICtrlRead($chkKeepLogs) = $GUI_CHECKED Then
+		GUICtrlSetState($txtKeepLogs, $GUI_ENABLE)
+	Else
+		GUICtrlSetState($txtKeepLogs, $GUI_DISABLE)
+	EndIf
+EndFunc   ;==>chkKeepLogs
 
 Func tabMain()
 	If _GUICtrlTab_GetCurSel($tabMain) = 0 Then

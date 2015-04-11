@@ -311,6 +311,12 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "misc", "skillactivate", "1")
 	EndIf
 
+	If GuiCtrlRead($chkKeepLogs) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "KeepLogs", 1)
+	Else
+		IniWrite($config, "misc", "KeepLogs", 0)
+	EndIf
+	IniWrite($config, "misc", "NumberLogs", GUICtrlRead($txtKeepLogs))
 
 	;General Settings--------------------------------------------------------------------------
 	Local $frmBotPos = WinGetPos($sBotTitle)
