@@ -4438,7 +4438,7 @@
 								<object type="TACheckbox" name="chkkeeplogs">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">187</property>
 										<property name="Width" vt="Int8">70</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set number of logs you want to keep</property>
@@ -4453,7 +4453,7 @@
 								<object type="TAInput" name="txtkeeplogs">
 									<properties>
 										<property name="Left" vt="Int8">86</property>
-										<property name="Top" vt="Int16">182</property>
+										<property name="Top" vt="Int16">183</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">3</property>
