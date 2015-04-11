@@ -19,8 +19,18 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 	EndIf
 
 	While 1
-		If $AtkDeadEnabled Then SetLog("~Dead - Gold: " & $MinDeadGold & "; Elixir: " & $MinDeadElixir & "; Dark: " & $MinDeadDark & "; Trophy: " & $MinDeadTrophy & "; Townhall: " & $MaxDeadTH, $COLOR_GREEN)
-		If $AtkAnyEnabled Then SetLog("~Any  - Gold: " & $MinGold & "; Elixir: " & $MinElixir & "; Dark: " & $MinDark & "; Trophy: " & $MinTrophy & "; Townhall: " & $MaxTH, $COLOR_GREEN)
+		If $AtkDeadEnabled Then SetLog("~Dead - " & _
+				((GUICtrlRead($chkDeadGE) = $GUI_CHECKED) ? "Gold: " & $MinDeadGold & "; Elixir: " & $MinDeadElixir & "; " : "") & _
+				((GUICtrlRead($chkDeadMeetDE) = $GUI_CHECKED) ? "Dark: " & $MinDeadDark & "; " : "" ) & _
+				((GUICtrlRead($chkDeadMeetTrophy) = $GUI_CHECKED) ? "Trophy: " & $MinDeadTrophy & "; " : "" ) & _
+				((GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED) ? "Townhall: " & $MaxDeadTH & "; " : "" ) & _
+				((GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED) ? "TH Outside" : "") , $COLOR_GREEN)
+		If $AtkAnyEnabled Then SetLog("~Any  - " & _
+				((GUICtrlRead($chkMeetGE) = $GUI_CHECKED) ? "Gold: " & $MinGold & "; Elixir: " & $MinElixir & "; " : "") & _
+				((GUICtrlRead($chkMeetDE) = $GUI_CHECKED) ? "Dark: " & $MinDark & "; " : "" ) & _
+				((GUICtrlRead($chkMeetTrophy) = $GUI_CHECKED) ? "Trophy: " & $MinTrophy & "; " : "" ) & _
+				((GUICtrlRead($chkMeetTH) = $GUI_CHECKED) ? "Townhall: " & $MaxTH & "; " : "" ) & _
+				((GUICtrlRead($chkMeetTHO) = $GUI_CHECKED) ? "TH Outside" : "") , $COLOR_GREEN)
 		If $TakeAllTownSnapShot = 1 Then SetLog("Will save all of the towns when searching", $COLOR_GREEN)
 		$SearchCount = 0
 		_BlockInputEx(3, "", "", $HWnD)
