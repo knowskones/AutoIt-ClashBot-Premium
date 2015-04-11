@@ -482,6 +482,18 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "misc", "BoostRax4", 0)
 	EndIf
 
+	If GUICtrlRead($chkBoostDark1) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "BoostDark1", 1)
+	Else
+		IniWrite($config, "misc", "BoostDark1", 0)
+	EndIf
+
+	If GUICtrlRead($chkBoostDark2) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "BoostDark2", 1)
+	Else
+		IniWrite($config, "misc", "BoostDark2", 0)
+	EndIf
+
 	If GUICtrlRead($chkBoostKing) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostKing", 1)
 	Else

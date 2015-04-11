@@ -158,6 +158,8 @@ Func readConfig() ;Reads config and sets it to the variables
 		$ichkBoostRax2 = IniRead($config, "misc", "BoostRax2", "0")
 		$ichkBoostRax3 = IniRead($config, "misc", "BoostRax3", "0")
 		$ichkBoostRax4 = IniRead($config, "misc", "BoostRax4", "0")
+		$ichkBoostDark1 = IniRead($config, "misc", "BoostDark1", "0")
+		$ichkBoostDark2 = IniRead($config, "misc", "BoostDark2", "0")
 		$ichkBoostKing = IniRead($config, "misc", "BoostKing", "0")
 		$ichkBoostQueen = IniRead($config, "misc", "BoostQueen", "0")
 		$ichkBoostSpell = IniRead($config, "misc", "BoostSpell", "0")

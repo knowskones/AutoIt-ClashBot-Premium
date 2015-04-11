@@ -40,6 +40,30 @@ Func BoostAllBuilding()
 			BoostBuilding()
 		EndIf
 
+		If $ichkBoostDark1 = 1 Then; Dark Barrack 1
+			If $DarkBarrackPos[0][0] = "" Then
+			SetLog("Dark Barrack 1 not located, skip boosting...", $COLOR_RED)
+			$BoostAll += 1 ; Must add to avoid boosting error
+		Else
+			SetLog("Boosting Dark Barrack 1...", $COLOR_BLUE)
+			Click($DarkBarrackPos[0][0], $DarkBarrackPos[0][1]) ;Click Dark Barrack 1
+			If _Sleep(500) Then Return
+			BoostBuilding()
+			EndIf
+		EndIf
+
+		If $ichkBoostDark2 = 1 Then; Dark Barrack 2
+			If $DarkBarrackPos[1][0] = "" Then
+			SetLog("Dark Barrack 2 not located, skip boosting...", $COLOR_RED)
+			$BoostAll += 1 ; Must add to avoid boosting error
+		Else
+			SetLog("Boosting Dark Barrack 2...", $COLOR_BLUE)
+			Click($DarkBarrackPos[1][0], $DarkBarrackPos[1][1]) ;Click Dark Barrack 2
+			If _Sleep(500) Then Return
+			BoostBuilding()
+			EndIf
+		EndIf
+
 		If $ichkBoostKing = 1 Then; King Altar
 			If $KingPos[0] = "" Then
 				LocateKingAltar()
@@ -79,7 +103,7 @@ Func BoostAllBuilding()
 			BoostBuilding()
 		EndIf
 
-		If $BoostAll >= $ichkBoostRax1 + $ichkBoostRax2 + $ichkBoostRax3 + $ichkBoostRax4 + $ichkBoostKing + $ichkBoostQueen + $ichkBoostSpell Then
+		If $BoostAll >= $ichkBoostRax1 + $ichkBoostRax2 + $ichkBoostRax3 + $ichkBoostRax4 + $ichkBoostKing + $ichkBoostQueen + $ichkBoostSpell + $ichkBoostDark1 + $ichkBoostDark2 Then
 			_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, (GUICtrlRead($cmbBoostBarracks) - 1))
 			SetLog("Boost remaining : " & GUICtrlRead($cmbBoostBarracks), $COLOR_GREEN)
 			$BoostAll = 0

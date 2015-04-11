@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <object type="TAForm" name="frmBot">
 	<properties>
-		<property name="Left" vt="Int16">276</property>
+		<property name="Left" vt="Int16">275</property>
 		<property name="Top" vt="Int8">123</property>
-		<property name="Width" vt="Int16">660</property>
+		<property name="Width" vt="Int16">661</property>
 		<property name="Height" vt="Int16">468</property>
 		<property name="Caption" vt="String">sBotTitle</property>
 		<property name="Color" vt="Ident">clBtnFace</property>
@@ -15,7 +15,6 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
-		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -3809,7 +3808,7 @@
 								<property name="Left" vt="Int16">393</property>
 								<property name="Top" vt="Int8">10</property>
 								<property name="Width" vt="Int16">215</property>
-								<property name="Height" vt="Int16">166</property>
+								<property name="Height" vt="Int16">175</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Boosts</property>
@@ -3820,7 +3819,7 @@
 								<object type="TALabel" name="lblBoostBarracks">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">20</property>
+										<property name="Top" vt="Int8">24</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -3836,7 +3835,7 @@
 								<object type="TACombo" name="cmbBoostBarracks">
 									<properties>
 										<property name="Left" vt="Int8">80</property>
-										<property name="Top" vt="Int8">16</property>
+										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">40</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -3951,11 +3950,39 @@
 								<object type="TACheckbox" name="chkBoostSpell">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">125</property>
+										<property name="Top" vt="Int16">150</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Spell Factory</property>
+										<property name="TabOrder" vt="Int8">10</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkBoostDark1">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">125</property>
+										<property name="Width" vt="Int8">90</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Dark Barrack 1</property>
 										<property name="TabOrder" vt="Int8">8</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkBoostDark2">
+									<properties>
+										<property name="Left" vt="Int8">110</property>
+										<property name="Top" vt="Int8">125</property>
+										<property name="Width" vt="Int8">90</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Dark Barrack 2</property>
+										<property name="TabOrder" vt="Int8">9</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -3967,7 +3994,7 @@
 						<object type="TALabel" name="lblBuildingTip1">
 							<properties>
 								<property name="Left" vt="Int16">400</property>
-								<property name="Top" vt="Int16">180</property>
+								<property name="Top" vt="Int16">190</property>
 								<property name="Width" vt="Int16">200</property>
 								<property name="Height" vt="Int8">17</property>
 								<property name="AutoSize" vt="False">False</property>
@@ -3983,7 +4010,7 @@
 						<object type="TALabel" name="lblBuildingTip2">
 							<properties>
 								<property name="Left" vt="Int16">400</property>
-								<property name="Top" vt="Int16">200</property>
+								<property name="Top" vt="Int16">210</property>
 								<property name="Width" vt="Int16">200</property>
 								<property name="Height" vt="Int8">17</property>
 								<property name="AutoSize" vt="False">False</property>
@@ -3999,7 +4026,7 @@
 						<object type="TALabel" name="lblBuildingTip3">
 							<properties>
 								<property name="Left" vt="Int16">399</property>
-								<property name="Top" vt="Int16">220</property>
+								<property name="Top" vt="Int16">230</property>
 								<property name="Width" vt="Int16">200</property>
 								<property name="Height" vt="Int8">17</property>
 								<property name="AutoSize" vt="False">False</property>

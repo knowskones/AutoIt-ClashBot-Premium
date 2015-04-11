@@ -346,6 +346,16 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Else
 	   GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
 	EndIf
+    If $ichkBoostDark1 = 1 Then
+	   GUICtrlSetState($chkBoostDark1, $GUI_CHECKED)
+	Else
+	   GUICtrlSetState($chkBoostDark1, $GUI_UNCHECKED)
+	EndIf
+    If $ichkBoostDark1 = 1 Then
+	   GUICtrlSetState($chkBoostDark2, $GUI_CHECKED)
+	Else
+	   GUICtrlSetState($chkBoostDark2, $GUI_UNCHECKED)
+	EndIf
     If $ichkBoostKing = 1 Then
 	   GUICtrlSetState($chkBoostKing, $GUI_CHECKED)
 	Else

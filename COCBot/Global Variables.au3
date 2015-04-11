@@ -129,7 +129,7 @@ Global $ichkMultiLight
 Global $DELocation, $DElixx = 0, $DElixy = 0
 Global $LSpell
 Global $CreateSpell = True
-Global $ichkBoostRax1, $ichkBoostRax2, $ichkBoostRax3, $ichkBoostRax4, $ichkBoostKing, $ichkBoostQueen, $ichkBoostSpell
+Global $ichkBoostRax1, $ichkBoostRax2, $ichkBoostRax3, $ichkBoostRax4, $ichkBoostDark1, $ichkBoostDark2, $ichkBoostKing, $ichkBoostQueen, $ichkBoostSpell
 Global $DeBattleEnd
 Global $ichkKeepLogs, $itxtKeepLogs
 
