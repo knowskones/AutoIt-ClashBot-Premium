@@ -100,6 +100,30 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	_GUICtrlComboBox_SetCurSel($cmbTH, $icmbTH)
 	_GUICtrlComboBox_SetCurSel($cmbDeadTH, $icmbDeadTH)
 
+	;Search Settings------------------------------------------------------------------------
+	If $ichkredDead = 1 Then
+		GUICtrlSetState($chkredDead, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkredDead, $GUI_UNCHECKED)
+	EndIf
+	GUICtrlSetData($txtGoldRedDead, $itxtGoldRedDead)
+	GUICtrlSetData($txtElixRedDead, $itxtElixRedDead)
+	GUICtrlSetData($txtDERedDead, $itxtDERedDead)
+	GUICtrlSetData($txtTroRedDead, $itxtTroRedDead)
+	GUICtrlSetData($txtRedSearchDead, $itxtRedSearchDead)
+	GUICtrlSetData($txtGoldElixRedDead, $itxtGoldElixRedDead)
+
+	If $ichkredAny = 1 Then
+		GUICtrlSetState($chkredAny, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkredAny, $GUI_UNCHECKED)
+	EndIf
+	GUICtrlSetData($txtGoldRedAny, $itxtGoldRedAny)
+	GUICtrlSetData($txtElixRedAny, $itxtElixRedAny)
+	GUICtrlSetData($txtDERedAny, $itxtDERedAny)
+	GUICtrlSetData($txtTroRedAny, $itxtTroRedAny)
+	GUICtrlSetData($txtRedSearchAny, $itxtRedSearchAny)
+	GUICtrlSetData($txtGoldElixRedAny, $itxtGoldElixRedAny)
 	;Attack Settings-------------------------------------------------------------------------
 	_GUICtrlComboBox_SetCurSel($cmbDeadDeploy, $deployDeadSettings)
 	_GUICtrlComboBox_SetCurSel($cmbDeadAlgorithm, $icmbDeadAlgorithm)

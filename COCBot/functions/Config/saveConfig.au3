@@ -92,7 +92,29 @@ Func saveConfig() ;Saves the controls settings to the config
 	Else
 		IniWrite($config, "search", "TakeAllTownSnapShot", 0)
 	EndIf
-
+	;Advance Search Settings------------------------------------------------------------------------
+	If GUICtrlRead($chkredDead) = $GUI_CHECKED Then
+		IniWrite($config, "advsearch", "chkredDead", 1)
+	Else
+		IniWrite($config, "advsearch", "chkredDead", 0)
+	EndIf
+	IniWrite($config, "advsearch", "GoldRedDead", GUICtrlRead($txtGoldRedDead))
+	IniWrite($config, "advsearch", "ElixRedDead", GUICtrlRead($txtElixRedDead))
+	IniWrite($config, "advsearch", "DERedDead", GUICtrlRead($txtDERedDead))
+	IniWrite($config, "advsearch", "TroRedDead", GUICtrlRead($txtTroRedDead))
+	IniWrite($config, "advsearch", "RedSearchDead", GUICtrlRead($txtRedSearchDead))
+	IniWrite($config, "advsearch", "GoldElixRedDead", GUICtrlRead($txtGoldElixRedDead))
+	If GUICtrlRead($chkredAny) = $GUI_CHECKED Then
+		IniWrite($config, "advsearch", "chkredAny", 1)
+	Else
+		IniWrite($config, "advsearch", "chkredAny", 0)
+	EndIf
+	IniWrite($config, "advsearch", "GoldRedAny", GUICtrlRead($txtGoldRedAny))
+	IniWrite($config, "advsearch", "ElixRedAny", GUICtrlRead($txtElixRedAny))
+	IniWrite($config, "advsearch", "DERedAny", GUICtrlRead($txtDERedAny))
+	IniWrite($config, "advsearch", "TroRedAny", GUICtrlRead($txtTroRedAny))
+	IniWrite($config, "advsearch", "RedSearchAny", GUICtrlRead($txtRedSearchAny))
+	IniWrite($config, "advsearch", "GoldElixRedAny", GUICtrlRead($txtGoldElixRedAny))
 	;Attack Settings-------------------------------------------------------------------------
 	IniWrite($config, "attack", "deploy-dead", _GUICtrlComboBox_GetCurSel($cmbDeadDeploy))
 	IniWrite($config, "attack", "algorithm-dead", _GUICtrlComboBox_GetCurSel($cmbDeadAlgorithm))

@@ -73,6 +73,10 @@ $THText[4] = "10"
 Global $SearchCount = 0 ;Number of searches
 Global $THaddtiles, $THside, $THi
 
+;Advance Search Settings
+Global $ichkredDead, $itxtGoldRedDead, $itxtElixRedDead, $itxtDERedDead, $itxtTroRedDead, $itxtRedSearchDead, $itxtGoldElixRedDead
+Global $ichkredAny, $itxtGoldRedAny, $itxtElixRedAny, $itxtDERedAny, $itxtTroRedAny, $itxtRedSearchAny, $itxtGoldElixRedAny
+
 ;Troop types
 Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eWizard, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
 
@@ -126,6 +130,7 @@ Global $DELocation, $DElixx = 0, $DElixy = 0
 Global $LSpell
 Global $CreateSpell = True
 Global $ichkBoostRax1, $ichkBoostRax2, $ichkBoostRax3, $ichkBoostRax4, $ichkBoostKing, $ichkBoostQueen, $ichkBoostSpell
+Global $DeBattleEnd
 
 ;Boosts Settings
 Global $BoostAll

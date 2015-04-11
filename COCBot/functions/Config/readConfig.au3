@@ -30,6 +30,22 @@ Func readConfig() ;Reads config and sets it to the variables
 		$AlertBaseFound = IniRead($config, "search", "AlertBaseFound", "0")
 		$TakeLootSnapShot = IniRead($config, "search", "TakeLootSnapShot", "0")
 		$TakeAllTownSnapShot = IniRead($config, "search", "TakeAllTownSnapShot", "0")
+		;Advance Search Settings------------------------------------------------------------------------
+		$ichkredDead = IniRead($config, "advsearch", "chkredDead", "0")
+		$itxtGoldRedDead = IniRead($config, "advsearch", "GoldRedDead", "0")
+		$itxtElixRedDead = IniRead($config, "advsearch", "ElixRedDead", "0")
+		$itxtDERedDead = IniRead($config, "advsearch", "DERedDead", "0")
+		$itxtTroRedDead = IniRead($config, "advsearch", "TroRedDead", "0")
+		$itxtRedSearchDead = IniRead($config, "advsearch", "RedSearchDead", "0")
+		$itxtGoldElixRedDead = IniRead($config, "advsearch", "GoldElixRedDead", "0")
+
+		$ichkredAny = IniRead($config, "advsearch", "chkredAny", "0")
+		$itxtGoldRedAny = IniRead($config, "advsearch", "GoldRedAny", "0")
+		$itxtElixRedAny = IniRead($config, "advsearch", "ElixRedAny", "0")
+		$itxtDERedAny = IniRead($config, "advsearch", "DERedAny", "0")
+		$itxtTroRedAny = IniRead($config, "advsearch", "TroRedAny", "0")
+		$itxtRedSearchAny = IniRead($config, "advsearch", "RedSearchAny", "0")
+		$itxtGoldElixRedAny = IniRead($config, "advsearch", "GoldElixRedAny", "0")
 		;Attack Settings-------------------------------------------------------------------------
 		$deployDeadSettings = IniRead($config, "attack", "deploy-dead", "0")
 		$icmbDeadAlgorithm = IniRead($config, "attack", "algorithm-dead", "0")

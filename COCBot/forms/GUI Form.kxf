@@ -983,7 +983,7 @@
 						<property name="ParentFont" vt="False">False</property>
 					</properties>
 					<components>
-						<object type="TAGroup" name="Group2">
+						<object type="TAGroup" name="GroupRedAny">
 							<properties>
 								<property name="Left" vt="Int16">220</property>
 								<property name="Top" vt="Int8">15</property>
@@ -1205,7 +1205,7 @@
 								</object>
 							</components>
 						</object>
-						<object type="TAGroup" name="Group3">
+						<object type="TAGroup" name="groupRedDead">
 							<properties>
 								<property name="Left" vt="Int8">10</property>
 								<property name="Top" vt="Int8">15</property>
@@ -1427,7 +1427,7 @@
 								</object>
 							</components>
 						</object>
-						<object type="TAGroup" name="Group4">
+						<object type="TAGroup" name="groupAvoidDef">
 							<properties>
 								<property name="Left" vt="Int16">430</property>
 								<property name="Top" vt="Int8">17</property>

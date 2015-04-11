@@ -2,16 +2,19 @@
 ;Every 20 searches, it will decrease minimum by certain amounts.
 
 Func CompareResources() ;Compares resources and returns true if conditions meet, otherwise returns false
-	If $SearchCount <> 0 And Mod($SearchCount, 20) = 0 Then
-		If $MinDeadGold - 5000 >= 0 Then $MinDeadGold -= 5000
-		If $MinDeadElixir - 5000 >= 0 Then $MinDeadElixir -= 5000
-		If $MinDeadDark - 100 >= 0 Then $MinDeadDark -= 100
-		If $MinDeadTrophy - 2 >= 0 Then $MinDeadTrophy -= 2
-		If $MinGold - 5000 >= 0 Then $MinGold -= 5000
-		If $MinElixir - 5000 >= 0 Then $MinElixir -= 5000
-		If $MinDark - 100 >= 0 Then $MinDark -= 100
-		If $MinTrophy - 2 >= 0 Then $MinTrophy -= 2
+	If $SearchCount <> 0 And Mod($SearchCount, $itxtRedSearchDead) = 0 And $ichkredDead = 1 Then
+		If $MinDeadGold - $itxtGoldRedDead >= 0 Then $MinDeadGold -= $itxtGoldRedDead
+		If $MinDeadElixir - $itxtElixRedDead >= 0 Then $MinDeadElixir -= $itxtElixRedDead
+		If $MinDeadDark - $itxtDERedDead >= 0 Then $MinDeadDark -= $itxtDERedDead
+		If $MinDeadTrophy - $itxtTroRedDead >= 0 Then $MinDeadTrophy -= $itxtTroRedDead
 		If $AtkDeadEnabled Then SetLog("~Dead - Gold: " & $MinDeadGold & "; Elixir: " & $MinDeadElixir & "; Dark: " & $MinDeadDark & "; Trophy: " & $MinDeadTrophy & "; Townhall: " & $MaxDeadTH, $COLOR_GREEN)
+	EndIf
+
+	If $SearchCount <> 0 And Mod($SearchCount, $itxtRedSearchAny) = 0 And $ichkredAny = 1 Then
+		If $MinGold - $itxtGoldRedAny >= 0 Then $MinGold -= $itxtGoldRedAny
+		If $MinElixir - $itxtElixRedAny >= 0 Then $MinElixir -= $itxtElixRedAny
+		If $MinDark - $itxtDERedAny >= 0 Then $MinDark -= $itxtDERedAny
+		If $MinTrophy - $itxtTroRedAny >= 0 Then $MinTrophy -= $itxtTroRedAny
 		If $AtkAnyEnabled Then SetLog("~Any  - Gold: " & $MinGold & "; Elixir: " & $MinElixir & "; Dark: " & $MinDark & "; Trophy: " & $MinTrophy & "; Townhall: " & $MaxTH, $COLOR_GREEN)
 	EndIf
 
