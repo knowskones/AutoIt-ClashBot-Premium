@@ -16,6 +16,28 @@ Func _RemoteControl()
    Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
    Local $findstr = StringRegExp ($Result, '"title":"Bot')
 
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"bot')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"Bot')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"bOt')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"boT')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"BOt')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"bOT')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"BoT')
+	EndIf
+
    if $findstr = 1 Then
      for $x = 0 to UBound($title) - 1
 		 if $title <> "" or $iden <> "" Then
