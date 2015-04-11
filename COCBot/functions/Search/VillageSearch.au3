@@ -63,35 +63,26 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			If CompareResources() Then
 				ExitLoop
 			Else
-				_CaptureRegion()
-				If _ColorCheck(_GetPixelColor(703, 520), Hex(0xD84400, 6), 20) Then
-					Click(750, 500) ;Click Next
-					GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
-					GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
-				ElseIf _ColorCheck(_GetPixelColor(71, 530), Hex(0xC00000, 6), 20) Then
-					SetLog("Cannot locate Next button, try to return home...", $COLOR_RED)
-					if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushError) = $GUI_CHECKED Then
-						_Push("Disconnected","Your bot got disconnected while searching for enemy..")
-				    EndIf
-					If _Sleep(500) Then Return
-					ReturnHome(False, False) ;Return home no screenshot ;If End battle is available
-					checkMainScreen()
-					If _Sleep(1000) Then Return
-					ZoomOut()
-					If _Sleep(1000) Then Return
-					checkMainScreen(False)
-					If _Sleep(1000) Then Return
-					PrepareSearch()
-				Else
-					SetLog("Cannot locate Next button & Surrender button, Restarting Bot", $COLOR_RED)
-					if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushError) = $GUI_CHECKED Then
-						_Push("Disconnected","Your bot got disconnected while searching for enemy..")
-				    EndIf
-					checkMainScreen()
-					$Restart = True
-					$DCattack = 1
-					ExitLoop (2)
-				EndIf
+				    Local $i = 0
+					While 1
+						If _Sleep(1000, False) Then ExitLoop
+						$i += 1
+						If $i >= 15 Or _WaitForPixel(703, 520, Hex(0xD84400, 6)) Then ExitLoop
+					WEnd
+					 If $i >= 15 Then
+						SetLog("Cannot locate Next button & Surrender button, Restarting Bot...", $COLOR_RED)
+						if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+							  _Push("Disconnected","Your bot got disconnected while searching for enemy..")
+						EndIf
+						checkMainScreen()
+						$Restart = True
+						$DCattack = True
+						ExitLoop (2)
+					 Else
+						Click(750, 500) ;Click Next
+						GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
+						GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
+					 EndIf
 			EndIf
 		WEnd
 

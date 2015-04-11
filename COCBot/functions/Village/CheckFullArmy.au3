@@ -8,7 +8,7 @@ Func CheckFullArmy()
 		_CaptureRegion()
 		$Pixel = (_ColorCheck(_GetPixelColor(653, 247), Hex(0xE0E4D0, 6), 20) And Not _ColorCheck(_GetPixelColor(475, 214), Hex(0xE0E4D0, 6), 20))
 	EndIf
-	If $Pixel Then
+	If $Pixel And _GUICtrlComboBox_GetCurSel($cmbTroopComp) <> 8 Then
 		$fullArmy = True
 		SetLog("Army Camp Full : " & $fullArmy, $COLOR_RED)
 	EndIf

@@ -248,7 +248,7 @@ Global $NoLeague
 Global $FirstStart = True
 Global $FirstDarkTrain = True
 Global $FirstTrain = True
-Global $DCattack = 0
+Global $DCattack = False
 Global $Checkrearm = True
 Global $lblgoldnowM, $lblresultgoldnowM, $imggoldnowM, $lblelixirnowM, $lblresultelixirnowM, $imgelixirnowM, $lbldenowM, $lblresultdenowM, $imgdenowM
 

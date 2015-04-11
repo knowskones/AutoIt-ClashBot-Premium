@@ -169,9 +169,9 @@ Func Train()
 			If _Sleep(500) Then ExitLoop
 		Else
 			Click($TrainPos[0], $TrainPos[1]) ;Click Train Troops button
+			If $i = 0 And not $fullArmy then CheckFullArmy()
 			If _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 8 Then SetLog("Barrack " & $i + 1 & " Training...", $COLOR_GREEN)
 			If _Sleep(1000) Then ExitLoop
-			If not $fullArmy then CheckFullArmy()
 
 			If _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 8 Then ; Use Barracks
 				_CaptureRegion()
