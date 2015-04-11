@@ -10,7 +10,6 @@ Func CheckFullArmy()
 	EndIf
 	If $Pixel Then
 		$fullArmy = True
-	ElseIf _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 8 Then
-		$fullArmy = False
+		SetLog("Army Camp Full : " & $fullArmy, $COLOR_RED)
 	EndIf
 EndFunc   ;==>CheckFullArmy

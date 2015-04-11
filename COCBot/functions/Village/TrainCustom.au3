@@ -35,6 +35,7 @@ Func TrainCustom()
 			Click($TrainPos[0], $TrainPos[1]) ;Click Train Troops button
 			SetLog("Barrack " & $i + 1 & " Training...", $COLOR_GREEN)
 			If _Sleep(1000) Then ExitLoop
+			If not $fullArmy then CheckFullArmy()
 
 			If $fullArmy Or $FirstTrain Then
 				If Not _ColorCheck(_GetPixelColor(497, 195), Hex(0xE0E4D0, 6), 20) Then
