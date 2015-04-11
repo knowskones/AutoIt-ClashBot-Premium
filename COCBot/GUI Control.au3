@@ -22,6 +22,8 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					If $RunState Then btnAtkNow()
 				Case $btnHide
 					If $RunState Then btnHide()
+				Case $btnPause
+					If $RunState Then btnPause()
 				Case $cmbTroopComp
 					cmbTroopComp()
 				Case $chkRequest
@@ -194,6 +196,7 @@ Func btnStart()
 
 	GUICtrlSetState($btnStart, $GUI_HIDE)
 	GUICtrlSetState($btnStop, $GUI_SHOW)
+	GUICtrlSetState($btnPause, $GUI_SHOW)
 	GUICtrlSetState($lblgoldnowM, $GUI_SHOW)
 	GUICtrlSetState($lblresultgoldnowM, $GUI_SHOW)
 	GUICtrlSetState($imggoldnowM, $GUI_SHOW)
@@ -256,6 +259,8 @@ Func btnStop()
 		GUICtrlSetState($btnAtkNow, $GUI_DISABLE)
 		GUICtrlSetState($btnStart, $GUI_SHOW)
 		GUICtrlSetState($btnStop, $GUI_HIDE)
+		GUICtrlSetState($btnPause, $GUI_HIDE)
+		GUICtrlSetData($btnPause, "Pause")
 		GUICtrlSetState($lblgoldnowM, $GUI_HIDE)
 		GUICtrlSetState($lblresultgoldnowM, $GUI_HIDE)
 		GUICtrlSetState($imggoldnowM, $GUI_HIDE)
@@ -274,6 +279,20 @@ Func btnStop()
 		SetLog("ClashBot has stopped", $COLOR_ORANGE)
 	EndIf
 EndFunc   ;==>btnStop
+
+Func btnPause()
+	If $RunState Then
+		If $PauseBot Then
+			SetLog("Clashbot has been resumed!", $COLOR_GREEN)
+			GUICtrlSetData($btnPause, "Pause")
+			$PauseBot = False
+		Else
+			SetLog("Clashbot has been paused!", $COLOR_RED)
+			GUICtrlSetData($btnPause, "Resume")
+			$PauseBot = True
+		EndIf
+	EndIf
+EndFunc   ;==>btnPause
 
 Func btnAtkNow()
 	$AttackNow = True
