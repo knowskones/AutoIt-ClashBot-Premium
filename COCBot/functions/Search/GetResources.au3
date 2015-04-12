@@ -8,7 +8,7 @@ Func GetResources() ;Reads resources
 		Local $txtDead = "-"
 
 		While getGold(51, 66) = "" ; Loops until gold is readable
-			If _Sleep(1000, False) Then Return
+			If _Sleep(1000) Then Return
 			$i += 1
 			If $i >= 10 Then ; If gold cannot be read by 10 seconds
 					SetLog("Cannot locate Next button, Restarting Bot...", $COLOR_RED)
@@ -22,7 +22,7 @@ Func GetResources() ;Reads resources
 			EndIf
 		WEnd
 
-		If _Sleep(300, False) Then Return
+		If _Sleep(300) Then Return
 
 	    If DuplicateCheck() = True Then
 			SetLog("Identical resource found between previous and current search, Restarting Bot...", $COLOR_RED)
@@ -35,7 +35,7 @@ Func GetResources() ;Reads resources
 			Return
 		 EndIf
 
-		If _Sleep(300, False) Then Return
+		If _Sleep(300) Then Return
 
 		$searchDead = checkDeadBase()
 		$searchTH = checkTownhall()
@@ -100,7 +100,7 @@ Func DuplicateCheck()
 $CheckDupGold1 = Number(getGold(51, 66))
 $CheckDupElixir1 = Number(getElixir(51, 66 + 29))
 If $CheckDupGold1 <> $CheckDupGold2 And $CheckDupElixir1 <> $CheckDupElixir2 Then
-   If _Sleep(300, False) Then Return
+   If _Sleep(300) Then Return
    $CheckDupGold2 = $CheckDupGold1
    $CheckDupElixir2 = $CheckDupElixir1
    Return False

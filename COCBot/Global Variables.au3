@@ -49,6 +49,7 @@ Global $hLogFileHandle
 Global $Restart = False
 Global $RunState = False
 Global $AttackNow = False
+Global $AllowPause = True
 Global $AlertBaseFound = 0
 Global $TakeLootSnapShot = 1
 Global $TakeAllTownSnapShot = 0

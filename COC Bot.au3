@@ -25,7 +25,7 @@ If @AutoItX64 = 1 Then
 EndIf
 
 ;If Not FileExists(@ScriptDir & "\License.txt") Then
-	;FileCreate(@ScriptDir & "\License.txt", "Copyright 2015 Application Automation LLC")
+;FileCreate(@ScriptDir & "\License.txt", "Copyright 2015 Application Automation LLC")
 ;EndIf
 
 #include "_UskinLibrary.au3"
@@ -73,86 +73,86 @@ Func runBot() ;Bot that runs everything in order
 		checkMainScreen(False)
 
 		If $DCattack = False Then
-		     If $Restart = True Then ContinueLoop
-		     If BotCommand() Then btnStop()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     VillageReport() ; populate resource stats and gather info required for upgrades
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     If _Sleep(1000) Then Return
-		     CheckCostPerSearch()
-		     If _Sleep(1000) Then Return
-		     If $Checkrearm = True Then
-		     	ReArm()
-		     	If _Sleep(2000) Then Return
-		     	checkMainScreen(False)
-		     	$Checkrearm = False
-		     EndIf
-		     DonateCC()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     If $CommandStop <> 0 And $CommandStop <> 3 Then
-		     	If ZoomOut() = False Then ContinueLoop
-		     	CheckArmyCamp()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     EndIf
-		     If $CommandStop <> 0 And $CommandStop <> 3 Then
-		     	If ZoomOut() = False Then ContinueLoop
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     	TrainTroop()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     	TrainDark()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     	CreateSpell()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     EndIf
-		     checkMainScreen(False)
-		     If ZoomOut() = False Then ContinueLoop
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     BoostAllBuilding()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     RequestCC()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     Collect()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     UpgradeWall()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     UpgradeBuilding()
-		     If _Sleep(1000) Then Return
-		     checkMainScreen(False)
-		     Idle()
-		     If _Sleep(1000) Then Return
-		     If $CommandStop <> 0 And $CommandStop <> 3 Then
-		     	If ZoomOut() = False Then ContinueLoop
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     	AttackMain()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     EndIf
+			If $Restart = True Then ContinueLoop
+			If BotCommand() Then btnStop()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			VillageReport() ; populate resource stats and gather info required for upgrades
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			If _Sleep(1000) Then Return
+			CheckCostPerSearch()
+			If _Sleep(1000) Then Return
+			If $Checkrearm = True Then
+				ReArm()
+				If _Sleep(2000) Then Return
+				checkMainScreen(False)
+				$Checkrearm = False
+			EndIf
+			DonateCC()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			If $CommandStop <> 0 And $CommandStop <> 3 Then
+				If ZoomOut() = False Then ContinueLoop
+				CheckArmyCamp()
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+			EndIf
+			If $CommandStop <> 0 And $CommandStop <> 3 Then
+				If ZoomOut() = False Then ContinueLoop
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+				TrainTroop()
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+				TrainDark()
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+				CreateSpell()
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+			EndIf
+			checkMainScreen(False)
+			If ZoomOut() = False Then ContinueLoop
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			BoostAllBuilding()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			RequestCC()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			Collect()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			UpgradeWall()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			UpgradeBuilding()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			Idle()
+			If _Sleep(1000) Then Return
+			If $CommandStop <> 0 And $CommandStop <> 3 Then
+				If ZoomOut() = False Then ContinueLoop
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+				AttackMain()
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
+			EndIf
 		Else
-			    SetLog("Resume from abnormal status, Army Camp checking...", $COLOR_RED)
-		     	CheckArmyCamp()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
-		     If $fullArmy Then
-			    SetLog("Army Camp full, skip village activity and proceed for raiding...", $COLOR_RED)
-		     	AttackMain()
-		     	If _Sleep(1000) Then Return
-		     	checkMainScreen(False)
+			SetLog("Resume from abnormal status, Army Camp checking...", $COLOR_RED)
+			CheckArmyCamp()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
+			If $fullArmy Then
+				SetLog("Army Camp full, skip village activity and proceed for raiding...", $COLOR_RED)
+				AttackMain()
+				If _Sleep(1000) Then Return
+				checkMainScreen(False)
 				If $Restart = True Then ContinueLoop
-		     EndIf
+			EndIf
 		EndIf
 	WEnd
 EndFunc   ;==>runBot
@@ -200,19 +200,23 @@ EndFunc   ;==>Idle
 
 Func AttackMain() ;Main control for attack functions
 	$DCattack = True
+	$AllowPause = False
+	GUICtrlSetState($btnPause, $GUI_DISABLE)
 	PrepareSearch()
-	If _Sleep(1000, False) Then Return
+	If _Sleep(1000) Then Return
 	VillageSearch()
 	If $CommandStop = 0 Then Return
-	If _Sleep(1000, False) Or $Restart = True Then Return
+	If _Sleep(1000) Or $Restart = True Then Return
 	PrepareAttack()
-	If _Sleep(1000, False) Then Return
+	If _Sleep(1000) Then Return
 	Attack()
 	$DCattack = False
 	If _Sleep(1000) Then Return
 	ReturnHome($TakeLootSnapShot)
 	If _Sleep(1000) Then Return
 	$FirstStart = True ;Ensure camps get recalculated after battle
+	$AllowPause = True
+	GUICtrlSetState($btnPause, $GUI_ENABLE)
 EndFunc   ;==>AttackMain
 
 Func Attack() ;Selects which algorithm
@@ -228,31 +232,31 @@ Func Attack() ;Selects which algorithm
 EndFunc   ;==>Attack
 
 Func TrainTroop()
-   If _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 10 Then
-	  TrainCustom()
-   Else
-	  Train()
-   EndIf
-EndFunc
+	If _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 10 Then
+		TrainCustom()
+	Else
+		Train()
+	EndIf
+EndFunc   ;==>TrainTroop
 
 Func log_cleanup($no_rotator)
-	local $dir_list[3] = ["Loots", "logs", "AllTowns"]
+	Local $dir_list[3] = ["Loots", "logs", "AllTowns"]
 	For $l = 0 To UBound($dir_list) - 1
-		local $dir = @ScriptDir & "\" & $dir_list[$l]
-		if FileExists($dir) == 0 then
+		Local $dir = @ScriptDir & "\" & $dir_list[$l]
+		If FileExists($dir) == 0 Then
 			SetLog("Dir Not Found !!!" & $dir, $COLOR_RED)
-			continueloop
-		endif
-		local $fArray = _FileListToArrayRec($dir, "*", $FLTAR_FILESFOLDERS, $FLTAR_RECUR, $FLTAR_SORT, $FLTAR_FULLPATH )
-		if UBound($fArray) == 0 Then continueloop
-			local $data_size = $fArray[0]
-			if $data_size > $no_rotator Then
-				For $i = 1 To Number($data_size - $no_rotator)
-					local $file_path = $fArray[$i]
-					If Not FileDelete($file_path) Then
-						SetLog("Failed to delete " & $file_path, $COLOR_RED)
-					EndIf
-				Next
-			endif
+			ContinueLoop
+		EndIf
+		Local $fArray = _FileListToArrayRec($dir, "*", $FLTAR_FILESFOLDERS, $FLTAR_RECUR, $FLTAR_SORT, $FLTAR_FULLPATH)
+		If UBound($fArray) == 0 Then ContinueLoop
+		Local $data_size = $fArray[0]
+		If $data_size > $no_rotator Then
+			For $i = 1 To Number($data_size - $no_rotator)
+				Local $file_path = $fArray[$i]
+				If Not FileDelete($file_path) Then
+					SetLog("Failed to delete " & $file_path, $COLOR_RED)
+				EndIf
+			Next
+		EndIf
 	Next
-EndFunc
+EndFunc   ;==>log_cleanup

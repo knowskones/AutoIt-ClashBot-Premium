@@ -36,7 +36,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 		_BlockInputEx(3, "", "", $HWnD)
 		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
 		While 1
-			If _Sleep(1000, False) Then ExitLoop (2)
+			If _Sleep(1000) Then ExitLoop (2)
 			GUICtrlSetState($btnAtkNow, $GUI_ENABLE)
 			GetResources() ;Reads Resource Values
 
@@ -50,7 +50,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			EndIf
 
 			; read setting directly to allow speed change while searching to use attack now
-			If _Sleep(_GUICtrlComboBox_GetCurSel($cmbSearchsp) * 1500, False) Then ExitLoop (2)
+			If _Sleep(_GUICtrlComboBox_GetCurSel($cmbSearchsp) * 1500) Then ExitLoop (2)
 
 			; Attack instantly if Attack Now button pressed
 			GUICtrlSetState($btnAtkNow, $GUI_DISABLE)
@@ -65,7 +65,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			Else
 				    Local $i = 0
 					While 1
-						If _Sleep(1000, False) Then ExitLoop
+						If _Sleep(1000) Then ExitLoop
 						$i += 1
 						If $i >= 15 Or _WaitForPixel(703, 520, Hex(0xD84400, 6)) Then ExitLoop ; Wait Next Button for 30 seconds
 					WEnd

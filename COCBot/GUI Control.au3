@@ -77,10 +77,10 @@ Func SetTime()
 EndFunc   ;==>SetTime
 
 Func SetTimeRC()
-    if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushBulletRemote) = $GUI_CHECKED Then
-		  _RemoteControl()
+	If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushBulletRemote) = $GUI_CHECKED Then
+		_RemoteControl()
 	EndIf
-EndFunc   ;==>SetTime
+EndFunc   ;==>SetTimeRC
 
 Func Initiate()
 	If IsArray(ControlGetPos($Title, "_ctl.Window", "[CLASS:BlueStacksApp; INSTANCE:1]")) Then
@@ -124,6 +124,7 @@ Func Initiate()
 		$AttackNow = False
 		$FirstStart = True
 		$PauseBot = False
+		$AllowPause = True
 		$Checkrearm = True
 		$CreateSpell = True
 		GUICtrlSetState($menuItemTheme, $GUI_DISABLE)
@@ -152,7 +153,7 @@ Func Initiate()
 		GUICtrlSetState($btnLocateUp3, $GUI_DISABLE)
 		$sTimer = TimerInit()
 		AdlibRegister("SetTime", 1000)
-		if $PushBulletinterval <> 0 Then
+		If $PushBulletinterval <> 0 Then
 			AdlibRegister("SetTimeRC", 60000 * $PushBulletinterval)
 		Else
 			AdlibRegister("SetTimeRC", 60000)
@@ -193,14 +194,15 @@ Func Check()
 EndFunc   ;==>Check
 
 Func btnStart()
-	If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($txtPushBulletTokenValue) = "" Then
-		SetLog ("Please set PushBullet account token")
+	If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($txtPushBulletTokenValue) = "" Then
+		SetLog("Please set PushBullet account token")
 		Return
 	EndIf
 
 	GUICtrlSetState($btnStart, $GUI_HIDE)
 	GUICtrlSetState($btnStop, $GUI_SHOW)
 	GUICtrlSetState($btnPause, $GUI_SHOW)
+	GUICtrlSetState($btnPause, $GUI_ENABLE)
 	GUICtrlSetState($lblgoldnowM, $GUI_SHOW)
 	GUICtrlSetState($lblresultgoldnowM, $GUI_SHOW)
 	GUICtrlSetState($imggoldnowM, $GUI_SHOW)
@@ -515,7 +517,7 @@ Func btnHide()
 EndFunc   ;==>btnHide
 
 Func cmbTroopComp()
-    If _GUICtrlComboBox_GetCurSel($cmbTroopComp) <> $icmbTroopComp And _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 10 Then
+	If _GUICtrlComboBox_GetCurSel($cmbTroopComp) <> $icmbTroopComp And _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 10 Then
 		$icmbTroopComp = _GUICtrlComboBox_GetCurSel($cmbTroopComp)
 		SetComboTroopComp()
 		_GUICtrlComboBox_SetCurSel($cmbAlgorithm, 9)
@@ -922,24 +924,24 @@ EndFunc   ;==>chkBackground
 
 Func chkNoAttack()
 	If GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
-	   if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
-		  SetLog("Please disable PushBullet if you intend to use donate only mode")
-		  GUICtrlSetState($chkNoAttack, $GUI_UNCHECKED)
-	   else
-		$CommandStop = 0
-		SetLog("~~~Donate / Train Only Activated~~~", $COLOR_PURPLE)
+		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
+			SetLog("Please disable PushBullet if you intend to use donate only mode")
+			GUICtrlSetState($chkNoAttack, $GUI_UNCHECKED)
+		Else
+			$CommandStop = 0
+			SetLog("~~~Donate / Train Only Activated~~~", $COLOR_PURPLE)
 		EndIf
-	 ElseIf GUICtrlRead($chkDonateOnly) = $GUI_CHECKED Then
-		 if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
-		 SetLog("Please disable PushBullet if you intend to do donate only mode")
-		 GUICtrlSetState($chkDonateOnly, $GUI_UNCHECKED)
-		 else
-		$CommandStop = 3
-		SetLog("~~~Donate Only Activated~~~", $COLOR_PURPLE)
+	ElseIf GUICtrlRead($chkDonateOnly) = $GUI_CHECKED Then
+		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
+			SetLog("Please disable PushBullet if you intend to do donate only mode")
+			GUICtrlSetState($chkDonateOnly, $GUI_UNCHECKED)
+		Else
+			$CommandStop = 3
+			SetLog("~~~Donate Only Activated~~~", $COLOR_PURPLE)
 		EndIf
 	Else
 		$CommandStop = -1
-	 EndIf
+	EndIf
 EndFunc   ;==>chkNoAttack
 
 ;Func btnLocateCollectors()

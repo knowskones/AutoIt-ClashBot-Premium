@@ -20,10 +20,10 @@ EndFunc   ;==>SetSleep
 ; Old mecanism, not used anymore
 Func OldDropTroop($troup, $position, $nbperspot)
 	SelectDropTroupe($troup) ;Select Troop
-	If _Sleep(100, False) Then Return
+	If _Sleep(100) Then Return
 	For $i = 0 To 4
 		Click($position[$i][0], $position[$i][1], $nbperspot, 1)
-		If _Sleep(50, False) Then Return
+		If _Sleep(50) Then Return
 	Next
 EndFunc   ;==>OldDropTroop
 
@@ -41,7 +41,7 @@ Func SeekEdges()
 	$Scan0 = DllStructGetData($BitmapData, "Scan0")
 	For $i = 0 To 41
 		For $j = 0 To 41
-		$YesEdge = False
+			$YesEdge = False
 			$m = ($Grid[$i][$j + 1][1] - $Grid[$i][$j][1]) / ($Grid[$i][$j + 1][0] - $Grid[$i][$j][0])
 			For $x = $Grid[$i][$j][0] To $Grid[$i][$j + 1][0]
 				$y = Round($m * ($x - $Grid[$i][$j][0]) + $Grid[$i][$j][1])
@@ -58,7 +58,7 @@ Func SeekEdges()
 			Next
 			If $YesEdge Then
 				$Grid[$i][$j][2] = 1
-				$Grid[$i][$j+1][2] = 1
+				$Grid[$i][$j + 1][2] = 1
 			EndIf
 			$YesEdge = False
 			$m = ($Grid[$i + 1][$j][1] - $Grid[$i][$j][1]) / ($Grid[$i + 1][$j][0] - $Grid[$i][$j][0])
@@ -77,7 +77,7 @@ Func SeekEdges()
 			Next
 			If $YesEdge Then
 				$Grid[$i][$j][2] = 1
-				$Grid[$i+1][$j][2] = 1
+				$Grid[$i + 1][$j][2] = 1
 			EndIf
 		Next
 	Next
@@ -100,7 +100,7 @@ Func SeekEdges()
 		Next
 		If $YesEdge Then
 			$Grid[$i][$j][2] = 1
-			$Grid[$i][$j+1][2] = 1
+			$Grid[$i][$j + 1][2] = 1
 		EndIf
 	Next
 	$j = 42
@@ -122,60 +122,60 @@ Func SeekEdges()
 		Next
 		If $YesEdge Then
 			$Grid[$i][$j][2] = 1
-			$Grid[$i+1][$j][2] = 1
+			$Grid[$i + 1][$j][2] = 1
 		EndIf
 	Next
 	_GDIPlus_BitmapUnlockBits($hAttackBitmap, $BitmapData)
 
 	; Clean it up
 	$j = 0
-	For $i = 1 to 41
+	For $i = 1 To 41
 		$Neighbors = 0
-		If $Grid[$i-1][$j][2]=1 Then $Neighbors +=1
-		If $Grid[$i+1][$j][2]=1 Then $Neighbors +=1
-		If $Grid[$i][$j+1][2]=1 Then $Neighbors +=1
-		If $Neighbors < 2 Then $Grid[$i][$j][2]=0
+		If $Grid[$i - 1][$j][2] = 1 Then $Neighbors += 1
+		If $Grid[$i + 1][$j][2] = 1 Then $Neighbors += 1
+		If $Grid[$i][$j + 1][2] = 1 Then $Neighbors += 1
+		If $Neighbors < 2 Then $Grid[$i][$j][2] = 0
 	Next
 	$i = 0
-	For $j = 1 to 41
+	For $j = 1 To 41
 		$Neighbors = 0
-		If $Grid[$i][$j-1][2]=1 Then $Neighbors +=1
-		If $Grid[$i][$j+1][2]=1 Then $Neighbors +=1
-		If $Grid[$i+1][$j][2]=1 Then $Neighbors +=1
-		If $Neighbors < 2 Then $Grid[$i][$j][2]=0
+		If $Grid[$i][$j - 1][2] = 1 Then $Neighbors += 1
+		If $Grid[$i][$j + 1][2] = 1 Then $Neighbors += 1
+		If $Grid[$i + 1][$j][2] = 1 Then $Neighbors += 1
+		If $Neighbors < 2 Then $Grid[$i][$j][2] = 0
 	Next
-	For $i =1 to 41
-		For $j = 1 to 41
-			If $Grid[$i][$j][2]=0 and $Grid[$i+1][$j][2]=1 and $Grid[$i][$j+1][2]=1 and $Grid[$i+1][$j+1][2]=1 Then $Grid[$i][$j][2]=2
-			If $Grid[$i][$j][2]=0 and $Grid[$i][$j-1][2]=1 and $Grid[$i+1][$j-1][2]=1 and $Grid[$i+1][$j][2]=1 Then $Grid[$i][$j][2]=2
-			If $Grid[$i][$j][2]=0 and $Grid[$i-1][$j][2]=1 and $Grid[$i][$j-1][2]=1 and $Grid[$i-1][$j-1][2]=1 Then $Grid[$i][$j][2]=2
-			If $Grid[$i][$j][2]=0 and $Grid[$i-1][$j][2]=1 and $Grid[$i][$j+1][2]=1 and $Grid[$i-1][$j+1][2]=1 Then $Grid[$i][$j][2]=2
+	For $i = 1 To 41
+		For $j = 1 To 41
+			If $Grid[$i][$j][2] = 0 And $Grid[$i + 1][$j][2] = 1 And $Grid[$i][$j + 1][2] = 1 And $Grid[$i + 1][$j + 1][2] = 1 Then $Grid[$i][$j][2] = 2
+			If $Grid[$i][$j][2] = 0 And $Grid[$i][$j - 1][2] = 1 And $Grid[$i + 1][$j - 1][2] = 1 And $Grid[$i + 1][$j][2] = 1 Then $Grid[$i][$j][2] = 2
+			If $Grid[$i][$j][2] = 0 And $Grid[$i - 1][$j][2] = 1 And $Grid[$i][$j - 1][2] = 1 And $Grid[$i - 1][$j - 1][2] = 1 Then $Grid[$i][$j][2] = 2
+			If $Grid[$i][$j][2] = 0 And $Grid[$i - 1][$j][2] = 1 And $Grid[$i][$j + 1][2] = 1 And $Grid[$i - 1][$j + 1][2] = 1 Then $Grid[$i][$j][2] = 2
 			$Neighbors = 0
-			If $Grid[$i][$j-1][2]=1 Then $Neighbors +=1
-			If $Grid[$i][$j+1][2]=1 Then $Neighbors +=1
-			If $Grid[$i-1][$j][2]=1 Then $Neighbors +=1
-			If $Grid[$i+1][$j][2]=1 Then $Neighbors +=1
-			If $Neighbors < 2 Then $Grid[$i][$j][2]=0
+			If $Grid[$i][$j - 1][2] = 1 Then $Neighbors += 1
+			If $Grid[$i][$j + 1][2] = 1 Then $Neighbors += 1
+			If $Grid[$i - 1][$j][2] = 1 Then $Neighbors += 1
+			If $Grid[$i + 1][$j][2] = 1 Then $Neighbors += 1
+			If $Neighbors < 2 Then $Grid[$i][$j][2] = 0
 		Next
 	Next
 	$j = 42
-	For $i = 1 to 41
+	For $i = 1 To 41
 		$Neighbors = 0
-		If $Grid[$i-1][$j][2]=1 Then $Neighbors +=1
-		If $Grid[$i+1][$j][2]=1 Then $Neighbors +=1
-		If $Grid[$i][$j-1][2]=1 Then $Neighbors +=1
-		If $Neighbors = 1 Then $Grid[$i][$j][2]=0
+		If $Grid[$i - 1][$j][2] = 1 Then $Neighbors += 1
+		If $Grid[$i + 1][$j][2] = 1 Then $Neighbors += 1
+		If $Grid[$i][$j - 1][2] = 1 Then $Neighbors += 1
+		If $Neighbors = 1 Then $Grid[$i][$j][2] = 0
 	Next
 	$i = 42
-	For $j = 1 to 41
+	For $j = 1 To 41
 		$Neighbors = 0
-		If $Grid[$i][$j-1][2]=1 Then $Neighbors +=1
-		If $Grid[$i][$j+1][2]=1 Then $Neighbors +=1
-		If $Grid[$i-1][$j][2]=1 Then $Neighbors +=1
-		If $Neighbors = 1 Then $Grid[$i][$j][2]=0
+		If $Grid[$i][$j - 1][2] = 1 Then $Neighbors += 1
+		If $Grid[$i][$j + 1][2] = 1 Then $Neighbors += 1
+		If $Grid[$i - 1][$j][2] = 1 Then $Neighbors += 1
+		If $Neighbors = 1 Then $Grid[$i][$j][2] = 0
 	Next
 	SetLog("Done!", $COLOR_BLUE)
-EndFunc
+EndFunc   ;==>SeekEdges
 
 Func CompareColor($cRed, $cGreen, $cBlue, $tol = 7)
 	For $w = 0 To $numEdges - 1
@@ -193,66 +193,66 @@ EndFunc   ;==>CompareColor
 ; improved function, that avoids to only drop on 5 discret drop points :
 Func DropOnEdge($troop, $edge, $number, $slotsPerEdge = 0, $edge2 = -1, $x = -1, $Center = 1)
 	If $number = 0 Then Return
-	If _Sleep(100, False) Then Return
+	If _Sleep(100) Then Return
 	SelectDropTroupe($troop) ;Select Troop
-	If _Sleep(1000, False) Then Return
+	If _Sleep(1000) Then Return
 	If $slotsPerEdge = 0 Or $number < $slotsPerEdge Then $slotsPerEdge = $number
 	If $number = 1 Or $slotsPerEdge = 1 Then ; Drop on a single point per edge => on the middle
-     $Unitdrop = 0
-	 While $Unitdrop <= $number
-		Click($edge[2][0], $edge[2][1], 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $number Then ExitLoop
-	 WEnd
+		$Unitdrop = 0
+		While $Unitdrop <= $number
+			Click($edge[2][0], $edge[2][1], 1, 0, $Center)
+			If _Sleep($DeploySpeed) Then ExitLoop
+			$Unitdrop += 1
+			If $Unitdrop >= $number Then ExitLoop
+		WEnd
 		If $edge2 <> -1 Then
-     $Unitdrop = 0
-	 While $Unitdrop <= $number
-		Click($edge2[2][0], $edge2[2][1], 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $number Then ExitLoop
-	 WEnd
+			$Unitdrop = 0
+			While $Unitdrop <= $number
+				Click($edge2[2][0], $edge2[2][1], 1, 0, $Center)
+				If _Sleep($DeploySpeed) Then ExitLoop
+				$Unitdrop += 1
+				If $Unitdrop >= $number Then ExitLoop
+			WEnd
 		EndIf
-	  		If _Sleep(50, False) Then Return
+		If _Sleep(50) Then Return
 	ElseIf $slotsPerEdge = 2 Then ; Drop on 2 points per edge
 		Local $half = Ceiling($number / 2)
-     $Unitdrop = 0
-	 While $Unitdrop <= $half
-		Click($edge[1][0], $edge[1][1], 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $half Then ExitLoop
-	 WEnd
+		$Unitdrop = 0
+		While $Unitdrop <= $half
+			Click($edge[1][0], $edge[1][1], 1, 0, $Center)
+			If _Sleep($DeploySpeed) Then ExitLoop
+			$Unitdrop += 1
+			If $Unitdrop >= $half Then ExitLoop
+		WEnd
 		If $edge2 <> -1 Then
-			If _Sleep(SetSleep(0), False) Then Return
-     $Unitdrop = 0
-	 While $Unitdrop <= $half
-		Click($edge2[1][0], $edge2[1][1], 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $half Then ExitLoop
-	 WEnd
+			If _Sleep(SetSleep(0)) Then Return
+			$Unitdrop = 0
+			While $Unitdrop <= $half
+				Click($edge2[1][0], $edge2[1][1], 1, 0, $Center)
+				If _Sleep($DeploySpeed) Then ExitLoop
+				$Unitdrop += 1
+				If $Unitdrop >= $half Then ExitLoop
+			WEnd
 		EndIf
-		If _Sleep(SetSleep(0), False) Then Return
-     $Unitdrop = 0
-	 While $Unitdrop <= $number - $half
-		Click($edge[3][0], $edge[3][1], 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $number - $half Then ExitLoop
-	 WEnd
+		If _Sleep(SetSleep(0)) Then Return
+		$Unitdrop = 0
+		While $Unitdrop <= $number - $half
+			Click($edge[3][0], $edge[3][1], 1, 0, $Center)
+			If _Sleep($DeploySpeed) Then ExitLoop
+			$Unitdrop += 1
+			If $Unitdrop >= $number - $half Then ExitLoop
+		WEnd
 		If $edge2 <> -1 Then
-			If _Sleep(SetSleep(0), False) Then Return
-     $Unitdrop = 0
-	 While $Unitdrop <= $number - $half
-		Click($edge2[3][0], $edge2[3][1], 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $number - $half Then ExitLoop
-	 WEnd
+			If _Sleep(SetSleep(0)) Then Return
+			$Unitdrop = 0
+			While $Unitdrop <= $number - $half
+				Click($edge2[3][0], $edge2[3][1], 1, 0, $Center)
+				If _Sleep($DeploySpeed) Then ExitLoop
+				$Unitdrop += 1
+				If $Unitdrop >= $number - $half Then ExitLoop
+			WEnd
 		EndIf
-		If _Sleep(SetSleep(0), False) Then Return
+		If _Sleep(SetSleep(0)) Then Return
 	Else
 		Local $minX = $edge[0][0]
 		Local $maxX = $edge[4][0]
@@ -269,31 +269,31 @@ Func DropOnEdge($troop, $edge, $number, $slotsPerEdge = 0, $edge2 = -1, $x = -1,
 			Local $nbtroopPerSlot = Round($nbTroopsLeft / ($slotsPerEdge - $i)) ; progressively adapt the number of drops to fill at the best
 			Local $posX = $minX + (($maxX - $minX) * $i) / ($slotsPerEdge - 1)
 			Local $posY = $minY + (($maxY - $minY) * $i) / ($slotsPerEdge - 1)
-     $Unitdrop = 0
-	 While $Unitdrop <= $nbtroopPerSlot
-		Click($posX, $posY, 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $nbtroopPerSlot Then ExitLoop
-	 WEnd
+			$Unitdrop = 0
+			While $Unitdrop <= $nbtroopPerSlot
+				Click($posX, $posY, 1, 0, $Center)
+				If _Sleep($DeploySpeed) Then ExitLoop
+				$Unitdrop += 1
+				If $Unitdrop >= $nbtroopPerSlot Then ExitLoop
+			WEnd
 			If $edge2 <> -1 Then ; for 2, 3 and 4 sides attack use 2x dropping
 				Local $posX2 = $maxX2 - (($maxX2 - $minX2) * $i) / ($slotsPerEdge - 1)
 				Local $posY2 = $maxY2 - (($maxY2 - $minY2) * $i) / ($slotsPerEdge - 1)
 				If $x = 0 Then
-					If _Sleep(SetSleep(0), False) Then Return ; add delay for first wave attack to prevent skip dropping troops, must add for 4 sides attack
+					If _Sleep(SetSleep(0)) Then Return ; add delay for first wave attack to prevent skip dropping troops, must add for 4 sides attack
 				EndIf
-     $Unitdrop = 0
-	 While $Unitdrop <= $nbtroopPerSlot
-		Click($posX2, $posY2, 1, 0, $Center)
-		If _Sleep($DeploySpeed, False) Then ExitLoop
-		$Unitdrop += 1
-		If $Unitdrop >= $nbtroopPerSlot Then ExitLoop
-	 WEnd
+				$Unitdrop = 0
+				While $Unitdrop <= $nbtroopPerSlot
+					Click($posX2, $posY2, 1, 0, $Center)
+					If _Sleep($DeploySpeed) Then ExitLoop
+					$Unitdrop += 1
+					If $Unitdrop >= $nbtroopPerSlot Then ExitLoop
+				WEnd
 				$nbTroopsLeft -= $nbtroopPerSlot
 			Else
 				$nbTroopsLeft -= $nbtroopPerSlot
 			EndIf
-			If _Sleep(SetSleep(0), False) Then Return
+			If _Sleep(SetSleep(0)) Then Return
 		Next
 	EndIf
 EndFunc   ;==>DropOnEdge
@@ -306,25 +306,25 @@ Func DropOnEdges($troop, $nbSides, $number, $slotsPerEdge = 0, $miniEdge = False
 	If $nbSides < -1 Then Return
 	Local $nbTroopsLeft = $number
 	If Not $miniEdge Then
-	If $nbSides = 4 Then
-		For $i = 0 To $nbSides - 3
-			Local $nbTroopsPerEdge = Round($nbTroopsLeft / ($nbSides - $i * 2))
-			DropOnEdge($troop, $Edges[$i], $nbTroopsPerEdge, $slotsPerEdge, $Edges[$i + 2], $i)
-			$nbTroopsLeft -= $nbTroopsPerEdge * 2
-		Next
-		Return
-	EndIf
-	For $i = 0 To $nbSides - 1
-		If $nbSides = 1 Or ($nbSides = 3 And $i = 2) Then
-			Local $nbTroopsPerEdge = Round($nbTroopsLeft / ($nbSides - $i))
-			DropOnEdge($troop, $Edges[$i], $nbTroopsPerEdge, $slotsPerEdge)
-			$nbTroopsLeft -= $nbTroopsPerEdge
-		ElseIf ($nbSides = 2 And $i = 0) Or ($nbSides = 3 And $i <> 1) Then
-			Local $nbTroopsPerEdge = Round($nbTroopsLeft / ($nbSides - $i * 2))
-			DropOnEdge($troop, $Edges[$i + 3], $nbTroopsPerEdge, $slotsPerEdge, $Edges[$i + 1])
-			$nbTroopsLeft -= $nbTroopsPerEdge * 2
+		If $nbSides = 4 Then
+			For $i = 0 To $nbSides - 3
+				Local $nbTroopsPerEdge = Round($nbTroopsLeft / ($nbSides - $i * 2))
+				DropOnEdge($troop, $Edges[$i], $nbTroopsPerEdge, $slotsPerEdge, $Edges[$i + 2], $i)
+				$nbTroopsLeft -= $nbTroopsPerEdge * 2
+			Next
+			Return
 		EndIf
-	Next
+		For $i = 0 To $nbSides - 1
+			If $nbSides = 1 Or ($nbSides = 3 And $i = 2) Then
+				Local $nbTroopsPerEdge = Round($nbTroopsLeft / ($nbSides - $i))
+				DropOnEdge($troop, $Edges[$i], $nbTroopsPerEdge, $slotsPerEdge)
+				$nbTroopsLeft -= $nbTroopsPerEdge
+			ElseIf ($nbSides = 2 And $i = 0) Or ($nbSides = 3 And $i <> 1) Then
+				Local $nbTroopsPerEdge = Round($nbTroopsLeft / ($nbSides - $i * 2))
+				DropOnEdge($troop, $Edges[$i + 3], $nbTroopsPerEdge, $slotsPerEdge, $Edges[$i + 1])
+				$nbTroopsLeft -= $nbTroopsPerEdge * 2
+			EndIf
+		Next
 	Else
 		Switch $THquadrant
 			Case 1
@@ -471,12 +471,12 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	_CaptureRegion()
 	$hAttackBitmap = _GDIPlus_BitmapCloneArea($hBitmap, 0, 0, 860, 720, _GDIPlus_ImageGetPixelFormat($hBitmap))
 
-	If $ichkRedLine=1 Then SeekEdges()
+	If $ichkRedLine = 1 Then SeekEdges()
 
 	$Barb = -1
 	$Arch = -1
 	$Balloon = -1
-    $Wizard = -1
+	$Wizard = -1
 	$CC = -1
 	$King = -1
 	$Queen = -1
@@ -498,208 +498,208 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 		EndIf
 	Next
 
-	If _Sleep(2000, False) Then Return
-		$attackTH = ($searchDead) ? $icmbDeadAttackTH : $icmbAttackTH
-		Local $OuterQuad
-		$OuterQuad = False
-		If $THquadrant >= 1 And $THquadrant <= 4 Then $OuterQuad = True
-		If $THquadrant >= 6 And $THquadrant <= 9 Then $OuterQuad = True
-		If ($OuterQuad And $attackTH = 2) Then
-			SetLog("~Attacking Townhall...")
-			$nbSides = -1
+	If _Sleep(2000) Then Return
+	$attackTH = ($searchDead) ? $icmbDeadAttackTH : $icmbAttackTH
+	Local $OuterQuad
+	$OuterQuad = False
+	If $THquadrant >= 1 And $THquadrant <= 4 Then $OuterQuad = True
+	If $THquadrant >= 6 And $THquadrant <= 9 Then $OuterQuad = True
+	If ($OuterQuad And $attackTH = 2) Then
+		SetLog("~Attacking Townhall...")
+		$nbSides = -1
+	Else
+		If $searchDead Then
+			Switch $deployDeadSettings
+				Case 0 ;Single sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in a single side...")
+					$nbSides = 1
+				Case 1 ;Two sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in two sides...")
+					$nbSides = 2
+				Case 2 ;Three sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in three sides...")
+					$nbSides = 3
+				Case 3 ;Four sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in all sides...")
+					$nbSides = 4
+			EndSwitch
 		Else
-			If $searchDead Then
-				Switch $deployDeadSettings
-					Case 0 ;Single sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in a single side...")
-						$nbSides = 1
-					Case 1 ;Two sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in two sides...")
-						$nbSides = 2
-					Case 2 ;Three sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in three sides...")
-						$nbSides = 3
-					Case 3 ;Four sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in all sides...")
-						$nbSides = 4
-				EndSwitch
-			Else
-				Switch $deploySettings
-					Case 0 ;Single sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in a single side...")
-						$nbSides = 1
-					Case 1 ;Two sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in two sides...")
-						$nbSides = 2
-					Case 2 ;Three sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in three sides...")
-						$nbSides = 3
-					Case 3 ;Four sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-						SetLog("~Attacking in all sides...")
-						$nbSides = 4
-				EndSwitch
-			EndIf
-			If ($OuterQuad And $attackTH = 1) Then SetLog("~With limited Townhall attack...")
-	If ($nbSides = 0) Then Return
+			Switch $deploySettings
+				Case 0 ;Single sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in a single side...")
+					$nbSides = 1
+				Case 1 ;Two sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in two sides...")
+					$nbSides = 2
+				Case 2 ;Three sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in three sides...")
+					$nbSides = 3
+				Case 3 ;Four sides ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					SetLog("~Attacking in all sides...")
+					$nbSides = 4
+			EndSwitch
 		EndIf
-		If _Sleep(1000) Then Return
+		If ($OuterQuad And $attackTH = 1) Then SetLog("~With limited Townhall attack...")
+		If ($nbSides = 0) Then Return
+	EndIf
+	If _Sleep(1000) Then Return
 
 	; ================================================================================?
 	; ========= Here is coded the main attack strategy ===============================
 	; ========= Feel free to experiment something else ===============================
 	; ================================================================================?
-		If LaunchTroop($eGiant, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-		If LaunchTroop($eBarbarian, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-		If LaunchTroop($eWallbreaker, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-		If LaunchTroop($eArcher, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-		If LaunchTroop($eBarbarian, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH >= 1)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-		If LaunchTroop($eGoblin, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
+	If LaunchTroop($eGiant, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eBarbarian, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eWallbreaker, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eArcher, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eBarbarian, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH >= 1)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eGoblin, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
 
 	; Deploy CC behind troops
-		If ($OuterQuad And $attackTH = 2) Then
-			Switch $THquadrant
-				Case 1
-					$DropX = $FurthestTopLeft[0][0]
-					$DropY = $FurthestTopLeft[0][1]
-				Case 2
-					$m = (537 - 238) / (535 - 128)
-					$m2 = (9 - 314) / (430 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 314 - ($m2 * 28)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 3
-					$DropX = $FurthestTopLeft[4][0]
-					$DropY = $FurthestTopLeft[4][1]
-				Case 4
-					$m = (85 - 388) / (527 - 130)
-					$m2 = (612 - 314) / (440 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 314 - ($m2 * 28)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 6
-					$m = (85 - 388) / (527 - 130)
-					$m2 = (612 - 314) / (440 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 9 - ($m2 * 430)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 7
-					$DropX = Round(($FurthestBottomRight[4][0] - $FurthestBottomRight[0][0]) / 4) + $FurthestBottomRight[0][0]
-					$DropY = Round(($FurthestBottomRight[4][1] - $FurthestBottomRight[0][1]) / 4) + $FurthestBottomRight[0][1]
-				Case 8
-					$m = (537 - 238) / (535 - 128)
-					$m2 = (9 - 314) / (430 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 612 - ($m2 * 440)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 9
-					$DropX = $FurthestBottomRight[4][0]
-					$DropY = $FurthestBottomRight[4][1]
-			EndSwitch
-			dropCC($DropX, $DropY, $CC, $AimTH)
-			If _Sleep(100) Then Return
-		Else
-	If $nbSides = 1 Then
-		dropCC($BottomRight[3][0], $BottomRight[3][1], $CC)
+	If ($OuterQuad And $attackTH = 2) Then
+		Switch $THquadrant
+			Case 1
+				$DropX = $FurthestTopLeft[0][0]
+				$DropY = $FurthestTopLeft[0][1]
+			Case 2
+				$m = (537 - 238) / (535 - 128)
+				$m2 = (9 - 314) / (430 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 314 - ($m2 * 28)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 3
+				$DropX = $FurthestTopLeft[4][0]
+				$DropY = $FurthestTopLeft[4][1]
+			Case 4
+				$m = (85 - 388) / (527 - 130)
+				$m2 = (612 - 314) / (440 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 314 - ($m2 * 28)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 6
+				$m = (85 - 388) / (527 - 130)
+				$m2 = (612 - 314) / (440 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 9 - ($m2 * 430)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 7
+				$DropX = Round(($FurthestBottomRight[4][0] - $FurthestBottomRight[0][0]) / 4) + $FurthestBottomRight[0][0]
+				$DropY = Round(($FurthestBottomRight[4][1] - $FurthestBottomRight[0][1]) / 4) + $FurthestBottomRight[0][1]
+			Case 8
+				$m = (537 - 238) / (535 - 128)
+				$m2 = (9 - 314) / (430 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 612 - ($m2 * 440)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 9
+				$DropX = $FurthestBottomRight[4][0]
+				$DropY = $FurthestBottomRight[4][1]
+		EndSwitch
+		dropCC($DropX, $DropY, $CC, $AimTH)
+		If _Sleep(100) Then Return
 	Else
-		dropCC($TopLeft[3][0], $TopLeft[3][1], $CC)
-	EndIf
+		If $nbSides = 1 Then
+			dropCC($BottomRight[3][0], $BottomRight[3][1], $CC)
+		Else
+			dropCC($TopLeft[3][0], $TopLeft[3][1], $CC)
 		EndIf
-	If LaunchTroop($eHog, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LaunchTroop($eValkyrie, True, $nbSides, 1, 1, 1,($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
+	If LaunchTroop($eHog, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eValkyrie, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eBalloon, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
+		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eMinion, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
+		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
+		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
-		EndIf
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
 
 	; ================================================================================?
 
 
 	; Deploy Heroes behind troops
 
-		If ($OuterQuad And $attackTH = 2) Then
-			Switch $THquadrant
-				Case 1
-					$DropX = $FurthestTopLeft[0][0]
-					$DropY = $FurthestTopLeft[0][1]
-				Case 2
-					$m = (537 - 238) / (535 - 128)
-					$m2 = (9 - 314) / (430 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 314 - ($m2 * 28)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 3
-					$DropX = $FurthestTopLeft[4][0]
-					$DropY = $FurthestTopLeft[4][1]
-				Case 4
-					$m = (85 - 388) / (527 - 130)
-					$m2 = (612 - 314) / (440 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 314 - ($m2 * 28)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 6
-					$m = (85 - 388) / (527 - 130)
-					$m2 = (612 - 314) / (440 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 9 - ($m2 * 430)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 7
-					$DropX = Round(($FurthestBottomRight[4][0] - $FurthestBottomRight[0][0]) / 4) + $FurthestBottomRight[0][0]
-					$DropY = Round(($FurthestBottomRight[4][1] - $FurthestBottomRight[0][1]) / 4) + $FurthestBottomRight[0][1]
-				Case 8
-					$m = (537 - 238) / (535 - 128)
-					$m2 = (9 - 314) / (430 - 28)
-					$b = $THy - ($m * $THx)
-					$b2 = 612 - ($m2 * 440)
-					$DropX = ($b - $b2) / ($m2 - $m)
-					$DropY = Round($m2 * $DropX + $b2)
-				Case 9
-					$DropX = $FurthestBottomRight[4][0]
-					$DropY = $FurthestBottomRight[4][1]
-			EndSwitch
-			dropHeroes($DropX, $DropY, $King, $Queen, $AimTH)
-			If _Sleep(100) Then Return
-		 Else
-			If $nbSides = 1 Then
-			   dropHeroes($BottomRight[3][0], $BottomRight[3][1], $King, $Queen)
-			Else
-			   dropHeroes($TopLeft[3][0], $TopLeft[3][1], $King, $Queen)
-			EndIf
+	If ($OuterQuad And $attackTH = 2) Then
+		Switch $THquadrant
+			Case 1
+				$DropX = $FurthestTopLeft[0][0]
+				$DropY = $FurthestTopLeft[0][1]
+			Case 2
+				$m = (537 - 238) / (535 - 128)
+				$m2 = (9 - 314) / (430 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 314 - ($m2 * 28)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 3
+				$DropX = $FurthestTopLeft[4][0]
+				$DropY = $FurthestTopLeft[4][1]
+			Case 4
+				$m = (85 - 388) / (527 - 130)
+				$m2 = (612 - 314) / (440 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 314 - ($m2 * 28)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 6
+				$m = (85 - 388) / (527 - 130)
+				$m2 = (612 - 314) / (440 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 9 - ($m2 * 430)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 7
+				$DropX = Round(($FurthestBottomRight[4][0] - $FurthestBottomRight[0][0]) / 4) + $FurthestBottomRight[0][0]
+				$DropY = Round(($FurthestBottomRight[4][1] - $FurthestBottomRight[0][1]) / 4) + $FurthestBottomRight[0][1]
+			Case 8
+				$m = (537 - 238) / (535 - 128)
+				$m2 = (9 - 314) / (430 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 612 - ($m2 * 440)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 9
+				$DropX = $FurthestBottomRight[4][0]
+				$DropY = $FurthestBottomRight[4][1]
+		EndSwitch
+		dropHeroes($DropX, $DropY, $King, $Queen, $AimTH)
+		If _Sleep(100) Then Return
+	Else
+		If $nbSides = 1 Then
+			dropHeroes($BottomRight[3][0], $BottomRight[3][1], $King, $Queen)
+		Else
+			dropHeroes($TopLeft[3][0], $TopLeft[3][1], $King, $Queen)
 		EndIf
+	EndIf
 
-	If _Sleep(SetSleep(1), False) Then Return
+	If _Sleep(SetSleep(1)) Then Return
 
-	If _Sleep(100, False) Then Return
+	If _Sleep(100) Then Return
 	SetLog("Dropping left over troops", $COLOR_BLUE)
 	For $x = 0 To 1
 		PrepareAttack(True) ;Check remaining quantities
@@ -709,7 +709,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			Else
 				LaunchTroop($i, False, $nbSides, 0, 1, 2)
 			EndIf
-			If _Sleep(500, False) Then Return
+			If _Sleep(500) Then Return
 		Next
 	Next
 	_GDIPlus_ImageDispose($hAttackBitmap)

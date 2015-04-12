@@ -27,18 +27,18 @@ Func _RemoteControl()
 					_Push("Request for Help", "You can remotely control your bot using the following command format\n\nBot <command> where <command> is:\n\nPause - pause the bot\nResume - resume the bot\nStats - send bot current statistics\nLogs - send the current log file\nBoost1 - Boost 1 barrack\nBoost2 - Boost 2 barracks\nBoost3 - Boost 3 barracks\nBoostAll - Boost all barracks\nHelp - send this help message\n\nEnter the command in the title of the message")
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot pause" Then
-					If $PauseBot = False Then
-						SetLog("Your request has been received. Bot is now paused")
-						_Push("Request to Pause", "Your request has been received. Bot is now paused")
-						;Local $hWnd = WinWait("[CLASS:AutoIt v3 GUI]", "", 10)
-						;WinActivate($hWnd)
-						;ControlClick("[CLASS:AutoIt v3 GUI]", "Stop Bot", "[CLASS:Button; TEXT:Stop Bot]", "left", "1")
-						;$StBot = 1
-						$PauseBot = True
-						GUICtrlSetData($btnPause, "Resume")
+					If $AllowPause Then
+						If $PauseBot = False Then
+							SetLog("Your request has been received. Bot is now paused")
+							_Push("Request to Pause", "Your request has been received. Bot is now paused")
+							$PauseBot = True
+							GUICtrlSetData($btnPause, "Resume")
+						Else
+							SetLog("Your bot is currently paused, no action was taken")
+							_Push("Request to Pause", "Your bot is currently paused, no action was taken")
+						EndIf
 					Else
-						SetLog("Your bot is currently paused, no action was taken")
-						_Push("Request to Pause", "Your bot is currently paused, no action was taken")
+						_Push("Request to Pause", "Sorry, pause function is disabled during attack, try again later")
 					EndIf
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot resume" Then
@@ -47,9 +47,6 @@ Func _RemoteControl()
 						_Push("Request to Resume", "Your request has been received. Bot is now resumed")
 						$PauseBot = False
 						GUICtrlSetData($btnPause, "Pause")
-						;Local $hWnd = WinWait("[CLASS:AutoIt v3 GUI]", "", 10)
-						;WinActivate($hWnd)
-						;ControlClick("[CLASS:AutoIt v3 GUI]", "Start Bot", "[CLASS:Button; TEXT:Start Bot]", "left", "1")
 					Else
 						SetLog("Your bot is currently running, no action was taken")
 						_Push("Request to Resume", "Your bot is currently running, no action was taken")

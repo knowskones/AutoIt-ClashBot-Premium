@@ -202,12 +202,12 @@ EndFunc   ;==>Idle
 Func AttackMain() ;Main control for attack functions
 	$DCattack = 1
 	PrepareSearch()
-	If _Sleep(1000, False) Then Return
+	If _Sleep(1000) Then Return
 	VillageSearch()
 	If $CommandStop = 0 Then Return
-	If _Sleep(1000, False) Or $Restart = True Then Return
+	If _Sleep(1000) Or $Restart = True Then Return
 	PrepareAttack()
-	If _Sleep(1000, False) Then Return
+	If _Sleep(1000) Then Return
 	Attack()
 	$DCattack = 0
 	If _Sleep(1000) Then Return

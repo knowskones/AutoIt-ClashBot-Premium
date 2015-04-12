@@ -15,7 +15,7 @@ Func algorithmTH() ;Attack Algorithm TH
 		Else
 			SetLog("Townhall location (" & $THx & ", " & $THy & ")")
 		EndIf
-		If _Sleep(100, False) Then Return
+		If _Sleep(100) Then Return
 		While 1
 			Local $i = 0
 			If $Barb <> -1 And $THLocation <> 0 Then
@@ -23,7 +23,7 @@ Func algorithmTH() ;Attack Algorithm TH
 				Local $numBarbPerSpot = Ceiling($atkTroops[$Barb][1] / 3)
 				If $atkTroops[$Barb][1] <> 0 Then
 					Click(68 + (72 * $Barb), 595) ;Select Troop
-					If _Sleep(100, False) Then ExitLoop (2)
+					If _Sleep(100) Then ExitLoop (2)
 					If $attackTH = 1 Then
 						If $GetTHLoc = 0 Then
 							If $THx < 287 And $THx > 584 And $THy < 465 Then
@@ -93,14 +93,14 @@ Func algorithmTH() ;Attack Algorithm TH
 						Click(($THx - ($BottomTHy + 10)), ($THy - $BottomTHy), $numBarbPerSpot, 200) ; TopLeft
 					EndIf
 				EndIf
-				If _Sleep(1000, False) Then ExitLoop
+				If _Sleep(1000) Then ExitLoop
 			EndIf
 			If $Arch <> -1 And $THLocation <> 0 Then
 				$atkTroops[$Arch][1] = Number(getNormal(40 + (72 * $Arch), 565))
 				Local $numArchPerSpot = Ceiling($atkTroops[$Arch][1] / 3)
 				If $atkTroops[$Arch][1] <> 0 Then
 					Click(68 + (72 * $Arch), 595) ;Select Troop
-					If _Sleep(100, False) Then ExitLoop (2)
+					If _Sleep(100) Then ExitLoop (2)
 					If $attackTH = 1 Then
 						If $GetTHLoc = 0 Then
 							If $THx < 287 And $THx > 584 And $THy < 465 Then

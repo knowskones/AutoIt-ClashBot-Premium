@@ -1,8 +1,8 @@
-Func _Sleep($iDelay, $bAllowPause = True)
+Func _Sleep($iDelay)
 	Local $iBegin = TimerInit()
 	While TimerDiff($iBegin) < $iDelay
 		If $RunState = False Then Return True
-		While ($PauseBot And $bAllowPause)
+		While ($PauseBot And $AllowPause)
 			Sleep(200)
 			tabMain()
 		WEnd
