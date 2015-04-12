@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <object type="TAForm" name="frmBot">
 	<properties>
-		<property name="Left" vt="Int16">194</property>
-		<property name="Top" vt="Int8">126</property>
+		<property name="Left" vt="Int16">218</property>
+		<property name="Top" vt="Int16">155</property>
 		<property name="Width" vt="Int16">661</property>
 		<property name="Height" vt="Int16">468</property>
 		<property name="Caption" vt="String">sBotTitle</property>
@@ -15,6 +15,7 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
+		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -1535,7 +1536,7 @@
 									<properties>
 										<property name="Left" vt="Int16">330</property>
 										<property name="Top" vt="Int8">22</property>
-										<property name="Width" vt="Int8">110</property>
+										<property name="Width" vt="Int8">102</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Attack with King</property>
 										<property name="TabOrder" vt="Int8">2</property>
@@ -1561,9 +1562,9 @@
 								</object>
 								<object type="TACheckbox" name="chkDeadUseClanCastle">
 									<properties>
-										<property name="Left" vt="Int16">445</property>
+										<property name="Left" vt="Int16">437</property>
 										<property name="Top" vt="Int8">22</property>
-										<property name="Width" vt="Int16">157</property>
+										<property name="Width" vt="Int16">165</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Attack with Clan Castle troops</property>
 										<property name="TabOrder" vt="Int8">4</property>
@@ -1573,16 +1574,25 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkDeadAttackTH">
+								<object type="TACombo" name="cmbDeadAttackTH">
 									<properties>
 										<property name="Left" vt="Int16">445</property>
-										<property name="Top" vt="Int8">57</property>
-										<property name="Width" vt="Int16">140</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Hint" vt="String">Troops target Townhall when on the outside of a dead base. Enforces a match during base search if Townhall on outside and base is dead</property>
-										<property name="Caption" vt="String">Attack Townhall</property>
+										<property name="Top" vt="Int8">54</property>
+										<property name="Width" vt="Int16">145</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="Hint" vt="String">Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="Text" vt="String">Don't attack TH</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">Don't attack TH</li>
+												<li vt="String">Limited TH attack</li>
+												<li vt="String">Full TH attack</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -1661,7 +1671,7 @@
 									<properties>
 										<property name="Left" vt="Int16">330</property>
 										<property name="Top" vt="Int8">22</property>
-										<property name="Width" vt="Int8">110</property>
+										<property name="Width" vt="Int8">102</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Attack with King</property>
 										<property name="TabOrder" vt="Int8">2</property>
@@ -1687,7 +1697,7 @@
 								</object>
 								<object type="TACheckbox" name="chkUseClanCastle">
 									<properties>
-										<property name="Left" vt="Int16">445</property>
+										<property name="Left" vt="Int16">437</property>
 										<property name="Top" vt="Int8">22</property>
 										<property name="Width" vt="Int16">157</property>
 										<property name="Height" vt="Int8">17</property>
@@ -1699,16 +1709,25 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkAttackTH">
+								<object type="TACombo" name="cmbAttackTH">
 									<properties>
 										<property name="Left" vt="Int16">445</property>
-										<property name="Top" vt="Int8">57</property>
-										<property name="Width" vt="Int16">140</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Hint" vt="String">Troops target Townhall when on the outside of a base. Enforces a match during base search if Townhall on outside</property>
-										<property name="Caption" vt="String">Attack Townhall</property>
+										<property name="Top" vt="Int8">54</property>
+										<property name="Width" vt="Int16">145</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="Hint" vt="String">Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="Text" vt="String">Don't attack TH</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">Don't attack TH</li>
+												<li vt="String">Limited TH attack</li>
+												<li vt="String">Full TH attack</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -4488,6 +4507,36 @@
 										<property name="Text" vt="String">20</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkWideEdge">
+									<properties>
+										<property name="Left" vt="Int16">155</property>
+										<property name="Top" vt="Int16">187</property>
+										<property name="Width" vt="Int16">174</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Consider townhalls slightly inside to still be outside</property>
+										<property name="Caption" vt="String">Look deeper for inside town hall</property>
+										<property name="TabOrder" vt="Int8">27</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkRedLine">
+									<properties>
+										<property name="Left" vt="Int16">450</property>
+										<property name="Top" vt="Int16">187</property>
+										<property name="Width" vt="Int8">117</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Look for red line and deploy troops near them</property>
+										<property name="Caption" vt="String">Attack near red line</property>
+										<property name="TabOrder" vt="Int8">28</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
 									<components/>
