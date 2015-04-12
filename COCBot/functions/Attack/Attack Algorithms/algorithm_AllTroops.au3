@@ -629,15 +629,15 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eBalloon, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
+	If LaunchTroop($eMinion, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1), False) Then Return
+	EndIf
 	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 		EndIf
-	If LaunchTroop($eMinion, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
-	EndIf
 
 	; ================================================================================?
 
