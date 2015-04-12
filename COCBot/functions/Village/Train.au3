@@ -30,6 +30,18 @@ Func GetTrainPos($troopKind)
 	EndSwitch
 EndFunc   ;==>GetTrainPos
 
+Func TrainCt($troopKind, $howMuch = 1, $iSleep = 100)
+	_CaptureRegion()
+	Local $pos = GetTrainPos($troopKind)
+	If IsArray($pos) Then
+		If CheckPixel($pos) Then
+			ClickP($pos, $howMuch, 20)
+			If _Sleep($iSleep) Then Return False
+			Return True
+		EndIf
+	EndIf
+EndFunc   ;==>TrainCt
+
 Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 	_CaptureRegion()
 	Local $pos = GetTrainPos($troopKind)
