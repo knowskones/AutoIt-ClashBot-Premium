@@ -733,11 +733,6 @@ TraySetIcon(@ScriptDir & "\Icons\cocbot.ico")
 ; add log text box
 $txtLog = _GUICtrlRichEdit_Create($frmBot, "", 8, 68, 480, 185, BitOR($ES_MULTILINE, $ES_READONLY, $WS_VSCROLL, 8912))
 
-; add tray items
-$tiAbout = TrayCreateItem("About")
-TrayCreateItem("")
-$tiExit = TrayCreateItem("Exit")
-
 ; Add Banner
 $hPic_background = GUICtrlCreatePic(@ScriptDir & "\images\GUI\banner.bmp", 0, 0, 0, 35)
 GUICtrlSetState($hPic_background, $GUI_DISABLE)
@@ -751,4 +746,7 @@ Func DisplayGUI()
 	$statLog = _GUICtrlStatusBar_Create($frmBot)
 	_GUICtrlStatusBar_SetSimple($statLog)
 	_GUICtrlStatusBar_SetText($statLog, "Status : Idle")
+	$tiAbout = TrayCreateItem("About")
+	TrayCreateItem("")
+	$tiExit = TrayCreateItem("Exit")
 EndFunc

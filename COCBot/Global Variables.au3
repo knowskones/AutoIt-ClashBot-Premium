@@ -37,6 +37,7 @@ Global $Buffer
 
 Global $Title = "BlueStacks App Player" ; Name of the Window
 Global $HWnD = WinGetHandle($Title) ;Handle for Bluestacks window
+Global $statLog, $tiAbout, $tiExit
 
 Global $config = @ScriptDir & "\config.ini"
 Global $dirLogs = @ScriptDir & "\logs\"
