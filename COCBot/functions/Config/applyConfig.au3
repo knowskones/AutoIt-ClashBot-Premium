@@ -1,6 +1,18 @@
 ;Applies all of the  variable to the GUI
 
 Func applyConfig() ;Applies the data from config to the controls in GUI
+	;Locate settings
+
+	If $TownHallPos[0] < 1 Then GUICtrlSetStyle($btnLocateTownHall, 0, $WS_EX_STATICEDGE)
+;	If $TownHallPos[0] < 1 Then GUICtrlSetColor($btnLocateTownHall, $COLOR_RED)
+	If $CCPos[0] < 1 Then GUICtrlSetStyle($btnLocateClanCastle2, 0, $WS_EX_STATICEDGE)
+	If $ArmyPos[0] < 1 Then GUICtrlSetStyle($btnLocateCamp, 0, $WS_EX_STATICEDGE)
+	If $barrackPos[0][0] < 1 Then GUICtrlSetStyle($btnLocateBarracks, 0, $WS_EX_STATICEDGE)
+	If $DarkBarrackPos[0][0] < 1 Then GUICtrlSetStyle($btnLocateDarkBarracks, 0, $WS_EX_STATICEDGE)
+	If $KingPos[0] < 1 Then GUICtrlSetStyle($btnLocateKingAltar, 0, $WS_EX_STATICEDGE)
+	If $QueenPos[0] < 1 Then GUICtrlSetStyle($btnLocateQueenAltar, 0, $WS_EX_STATICEDGE)
+	If $SFactoryPos[0] < 1 Then GUICtrlSetStyle($btnLocateSFactory, 0, $WS_EX_STATICEDGE)
+
 	;Search Settings------------------------------------------------------------------------
 	GUICtrlSetData($txtDeadMinGold, $MinDeadGold)
 	GUICtrlSetData($txtDeadMinElixir, $MinDeadElixir)

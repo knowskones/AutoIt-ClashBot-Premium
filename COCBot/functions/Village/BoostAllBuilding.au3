@@ -2,7 +2,7 @@
 Func BoostAllBuilding()
 	If (GUICtrlRead($cmbBoostBarracks) > 0) And ($boostsEnabled = 1) Then
 
-		If $barrackPos[0][0] = "" Then
+		If $barrackPos[0][0] < 1 Then
 			LocateBarrack()
 			SaveConfig()
 			If _Sleep(2000) Then Return
@@ -41,7 +41,7 @@ Func BoostAllBuilding()
 		EndIf
 
 		If $ichkBoostDark1 = 1 Then; Dark Barrack 1
-			If $DarkBarrackPos[0][0] = "" Then
+			If $DarkBarrackPos[0][0] < 1 Then
 			SetLog("Dark Barrack 1 not located, skip boosting...", $COLOR_RED)
 			$BoostAll += 1 ; Must add to avoid boosting error
 		Else
@@ -53,7 +53,7 @@ Func BoostAllBuilding()
 		EndIf
 
 		If $ichkBoostDark2 = 1 Then; Dark Barrack 2
-			If $DarkBarrackPos[1][0] = "" Then
+			If $DarkBarrackPos[1][0] < 1 Then
 			SetLog("Dark Barrack 2 not located, skip boosting...", $COLOR_RED)
 			$BoostAll += 1 ; Must add to avoid boosting error
 		Else

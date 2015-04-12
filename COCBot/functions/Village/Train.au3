@@ -54,7 +54,7 @@ Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 EndFunc   ;==>TrainIt
 
 Func Train()
-	If $barrackPos[0][0] = "" Then
+	If $barrackPos[0][0] < 1 Then
 		LocateBarrack()
 		SaveConfig()
 		If _Sleep(2000) Then Return

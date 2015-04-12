@@ -12,8 +12,8 @@ Func LocateBarrack()
 				ExitLoop
 			Else
 				For $i = 0 To 3
-					$barrackPos[$i][0] = ""
-					$barrackPos[$i][1] = ""
+					$barrackPos[$i][0] = 0
+					$barrackPos[$i][1] = 0
 				Next
 				ExitLoop (2)
 			EndIf
@@ -26,8 +26,8 @@ Func LocateBarrack()
 				ExitLoop
 			Else
 				For $i = 1 To 3
-					$barrackPos[$i][0] = ""
-					$barrackPos[$i][1] = ""
+					$barrackPos[$i][0] = 0
+					$barrackPos[$i][1] = 0
 				Next
 				ExitLoop (2)
 			EndIf
@@ -40,8 +40,8 @@ Func LocateBarrack()
 				ExitLoop
 			Else
 				For $i = 2 To 3
-					$barrackPos[$i][0] = ""
-					$barrackPos[$i][1] = ""
+					$barrackPos[$i][0] = 0
+					$barrackPos[$i][1] = 0
 				Next
 				ExitLoop (2)
 			EndIf
@@ -53,10 +53,10 @@ Func LocateBarrack()
 			ElseIf $MsgBox = 10 Then
 				ExitLoop
 			Else
-				$barrackPos[3][0] = ""
-				$barrackPos[3][1] = ""
+				$barrackPos[3][0] = 0
+				$barrackPos[3][1] = 0
 			EndIf
-			If GUICtrlRead($chkRequest) = $GUI_CHECKED And $CCPos[0] = -1 Then LocateClanCastle()
+			If GUICtrlRead($chkRequest) = $GUI_CHECKED And $CCPos[0] < 1 Then LocateClanCastle()
 			ExitLoop (2)
 		WEnd
 	WEnd
@@ -66,6 +66,7 @@ Func LocateBarrack()
 	SetLog("-Barrack 2 = " & "(" & $barrackPos[1][0] & "," & $barrackPos[1][1] & ")", $COLOR_GREEN)
 	SetLog("-Barrack 3 = " & "(" & $barrackPos[2][0] & "," & $barrackPos[2][1] & ")", $COLOR_GREEN)
 	SetLog("-Barrack 4 = " & "(" & $barrackPos[3][0] & "," & $barrackPos[3][1] & ")", $COLOR_GREEN)
+	If $barrackPos[0][0] > 0 Then GUICtrlSetStyle($btnLocateBarracks, 0, 0)
 EndFunc   ;==>LocateBarrack
 
 Func LocateDarkBarrack()
@@ -81,8 +82,8 @@ Func LocateDarkBarrack()
 				ExitLoop
 			Else
 				For $i = 0 To 1
-					$DarkBarrackPos[$i][0] = ""
-					$DarkBarrackPos[$i][1] = ""
+					$DarkBarrackPos[$i][0] = 0
+					$DarkBarrackPos[$i][1] = 0
 				Next
 				ExitLoop (2)
 			EndIf
@@ -95,8 +96,8 @@ Func LocateDarkBarrack()
 				ExitLoop
 			Else
 				For $i = 1 To 1
-					$DarkBarrackPos[$i][0] = ""
-					$DarkBarrackPos[$i][1] = ""
+					$DarkBarrackPos[$i][0] = 0
+					$DarkBarrackPos[$i][1] = 0
 				Next
 				ExitLoop (2)
 			EndIf
@@ -107,7 +108,7 @@ Func LocateDarkBarrack()
 	SetLog("-Locating Complete-", $COLOR_BLUE)
 	SetLog("-Dark Barrack 1 = " & "(" & $DarkBarrackPos[0][0] & "," & $DarkBarrackPos[0][1] & ")", $COLOR_GREEN)
 	SetLog("-Dark Barrack 2 = " & "(" & $DarkBarrackPos[1][0] & "," & $DarkBarrackPos[1][1] & ")", $COLOR_GREEN)
-
+	If $DarkBarrackPos[0][0] > 0 Then GUICtrlSetStyle($btnLocateDarkBarracks, 0, 0)
 EndFunc   ;==>LocateDarkBarrack
 
 Func LocateCamp()
@@ -117,6 +118,7 @@ Func LocateCamp()
 			$ArmyPos[0] = FindPos()[0]
 			$ArmyPos[1] = FindPos()[1]
 			SetLog("-ArmyCamp =  " & "(" & $ArmyPos[0] & "," & $ArmyPos[1] & ")", $COLOR_GREEN)
+			GUICtrlSetStyle($btnLocateCamp, 0, 0)
 		EndIf
 		ExitLoop
 	WEnd
@@ -136,6 +138,7 @@ Func LocateClanCastle()
 			$CCPos[0] = FindPos()[0]
 			$CCPos[1] = FindPos()[1]
 			SetLog("-Clan Castle =  " & "(" & $CCPos[0] & "," & $CCPos[1] & ")", $COLOR_GREEN)
+			GUICtrlSetStyle($btnLocateClanCastle2, 0, 0)
 		EndIf
 		ExitLoop
 	WEnd
@@ -149,6 +152,7 @@ Func LocateTownHall()
 			$TownHallPos[0] = FindPos()[0]
 			$TownHallPos[1] = FindPos()[1]
 			SetLog("-Townhall =  " & "(" & $TownHallPos[0] & "," & $TownHallPos[1] & ")", $COLOR_GREEN)
+			GUICtrlSetStyle($btnLocateTownHall, 0, 0)
 		EndIf
 		ExitLoop
 	WEnd
@@ -161,6 +165,7 @@ Func LocateKingAltar()
 			$KingPos[0] = FindPos()[0]
 			$KingPos[1] = FindPos()[1]
 			SetLog("-King Altar =  " & "(" & $KingPos[0] & "," & $KingPos[1] & ")", $COLOR_GREEN)
+			GUICtrlSetStyle($btnLocateKingAltar, 0, 0)
 		EndIf
 		ExitLoop
 	WEnd
@@ -173,6 +178,7 @@ Func LocateQueenAltar()
 			$QueenPos[0] = FindPos()[0]
 			$QueenPos[1] = FindPos()[1]
 			SetLog("-Queen Altar =  " & "(" & $QueenPos[0] & "," & $QueenPos[1] & ")", $COLOR_GREEN)
+			GUICtrlSetStyle($btnLocateQueenAltar, 0, 0)
 		EndIf
 		ExitLoop
 	WEnd
@@ -185,6 +191,7 @@ Func LocateSFactory()
 			$SFactoryPos[0] = FindPos()[0]
 			$SFactoryPos[1] = FindPos()[1]
 			SetLog("-Spell Factory =  " & "(" & $SFactoryPos[0] & "," & $SFactoryPos[1] & ")", $COLOR_GREEN)
+			GUICtrlSetStyle($btnLocateSFactory, 0, 0)
 		EndIf
 		ExitLoop
 	WEnd

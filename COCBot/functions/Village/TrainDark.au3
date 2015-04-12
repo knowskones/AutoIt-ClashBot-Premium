@@ -1,7 +1,7 @@
 Func TrainDark()
 	If $ichkDarkTroop = 0 Then Return
 
-	If $DarkBarrackPos[0][0] = "" Then
+	If $DarkBarrackPos[0][0] < 1 Then
 		LocateDarkBarrack()
 		SaveConfig()
 		If _Sleep(2000) Then Return
