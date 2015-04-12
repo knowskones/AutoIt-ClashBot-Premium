@@ -22,6 +22,8 @@ Func GetResources() ;Reads resources
 			EndIf
 		WEnd
 
+		If _Sleep(300, False) Then Return
+
 	    If DuplicateCheck() = True Then
 			SetLog("Identical resource found between previous and current search, Restarting Bot...", $COLOR_RED)
 			if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushError) = $GUI_CHECKED Then
@@ -95,14 +97,12 @@ Func GetResources() ;Reads resources
 EndFunc   ;==>GetResources
 
 Func DuplicateCheck()
-Local $CheckGold1, $CheckElixir1, $CheckGold2, $CheckElixir2
-$CheckGold1 = getGold(51, 66)
-$CheckElixir1 = getElixir(51, 66 + 29)
-
-If $CheckGold1 <> $CheckGold2 And $CheckElixir1 <> $CheckElixir2 Then
+$CheckDupGold1 = Number(getGold(51, 66))
+$CheckDupElixir1 = Number(getElixir(51, 66 + 29))
+If $CheckDupGold1 <> $CheckDupGold2 And $CheckDupElixir1 <> $CheckDupElixir2 Then
    If _Sleep(300, False) Then Return
-   $CheckGold2 = $CheckGold1
-   $CheckElixir2 = $CheckGold1
+   $CheckDupGold2 = $CheckDupGold1
+   $CheckDupElixir2 = $CheckDupElixir1
    Return False
 Else
    Return True

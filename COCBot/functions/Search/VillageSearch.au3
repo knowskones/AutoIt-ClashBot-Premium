@@ -67,7 +67,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 					While 1
 						If _Sleep(1000, False) Then ExitLoop
 						$i += 1
-						If $i >= 15 Or _WaitForPixel(703, 520, Hex(0xD84400, 6)) Then ExitLoop
+						If $i >= 15 Or _WaitForPixel(703, 520, Hex(0xD84400, 6)) Then ExitLoop ; Wait Next Button for 30 seconds
 					WEnd
 					 If $i >= 15 Then
 						SetLog("Cannot locate Next button & Surrender button, Restarting Bot...", $COLOR_RED)
@@ -82,7 +82,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 						Click(750, 500) ;Click Next
 						GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
 						GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
-					 EndIf
+				 EndIf
 			EndIf
 		WEnd
 

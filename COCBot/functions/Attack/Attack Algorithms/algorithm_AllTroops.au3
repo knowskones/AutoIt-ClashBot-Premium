@@ -683,11 +683,12 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			EndSwitch
 			dropHeroes($DropX, $DropY, $King, $Queen, $AimTH)
 			If _Sleep(100) Then Return
-	If $nbSides = 1 Then
-		dropHeroes($BottomRight[3][0], $BottomRight[3][1], $King, $Queen)
-	Else
-		dropHeroes($TopLeft[3][0], $TopLeft[3][1], $King, $Queen)
-	EndIf
+		 Else
+			If $nbSides = 1 Then
+			   dropHeroes($BottomRight[3][0], $BottomRight[3][1], $King, $Queen)
+			Else
+			   dropHeroes($TopLeft[3][0], $TopLeft[3][1], $King, $Queen)
+			EndIf
 		EndIf
 
 	If _Sleep(SetSleep(1), False) Then Return
