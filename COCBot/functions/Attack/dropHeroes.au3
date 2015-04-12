@@ -2,7 +2,7 @@ Global $KingTimer, $QueenTimer
 
 ;Will drop heroes in a specific coordinates, only if slot is not -1
 ;Only drops when option is clicked.
-Func dropHeroes($x, $y, $KingSlot = -1, $QueenSlot = -1) ;Drops for king and queen
+Func dropHeroes($x, $y, $KingSlot = -1, $QueenSlot = -1, $CenterLoc = 1) ;Drops for king and queen
 	While 1
 		If _Sleep(2000, False) Then ExitLoop
 
@@ -13,7 +13,7 @@ Func dropHeroes($x, $y, $KingSlot = -1, $QueenSlot = -1) ;Drops for king and que
 			SetLog("Dropping King", $COLOR_BLUE)
 			Click(68 + (72 * $KingSlot), 595) ;Select King
 			If _Sleep(500, False) Then Return
-			Click($x, $y)
+			Click($x, $y, 1, 0, $CenterLoc)
 			$KingTimer = TimerInit()
 			AdlibRegister("UseKingSkill")
 		EndIf
@@ -24,7 +24,7 @@ Func dropHeroes($x, $y, $KingSlot = -1, $QueenSlot = -1) ;Drops for king and que
 			SetLog("Dropping Queen", $COLOR_BLUE)
 			Click(68 + (72 * $QueenSlot), 595) ;Select Queen
 			If _Sleep(500, False) Then Return
-			Click($x, $y)
+			Click($x, $y, 1, 0, $CenterLoc)
 			$QueenTimer = TimerInit()
 			AdlibRegister("UseQueenSkill")
 		EndIf
