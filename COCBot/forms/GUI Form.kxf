@@ -2864,6 +2864,7 @@
 												<li vt="String">Archers</li>
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
+												<li vt="String">Balloons</li>
 												<li vt="String">Wizards</li>
 												<li vt="String">Nothing</li>
 											</list>
@@ -2891,6 +2892,7 @@
 												<li vt="String">Archers</li>
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
+												<li vt="String">Balloons</li>
 												<li vt="String">Wizards</li>
 												<li vt="String">Nothing</li>
 											</list>
@@ -2918,6 +2920,7 @@
 												<li vt="String">Archers</li>
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
+												<li vt="String">Balloons</li>
 												<li vt="String">Wizards</li>
 												<li vt="String">Nothing</li>
 											</list>
@@ -2945,6 +2948,7 @@
 												<li vt="String">Archers</li>
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
+												<li vt="String">Balloons</li>
 												<li vt="String">Wizards</li>
 												<li vt="String">Nothing</li>
 											</list>
@@ -3052,7 +3056,7 @@
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
 												<li vt="String">W.Breakers</li>
-												<li vt="String">Balloon(Training Only)</li>
+												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
 												<li vt="String">Healer(Training Only)</li>
 												<li vt="String">Dragon(Training Only)</li>
@@ -3083,13 +3087,12 @@
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
 												<li vt="String">W.Breakers</li>
-												<li vt="String">Balloon(Training Only)</li>
+												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
 												<li vt="String">Healer(Training Only)</li>
 												<li vt="String">Dragon(Training Only)</li>
 												<li vt="String">Pekka(Training Only)</li>
 												<li vt="String">Nothing</li>
-												<li vt="String"/>
 											</list>
 										</property>
 										<property name="CtrlStyle" vt="Int32">1344471619</property>
@@ -3115,7 +3118,7 @@
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
 												<li vt="String">W.Breakers</li>
-												<li vt="String">Balloon(Training Only)</li>
+												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
 												<li vt="String">Healer(Training Only)</li>
 												<li vt="String">Dragon(Training Only)</li>
@@ -3146,7 +3149,7 @@
 												<li vt="String">Giants</li>
 												<li vt="String">Goblins</li>
 												<li vt="String">W.Breakers</li>
-												<li vt="String">Balloon(Training Only)</li>
+												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
 												<li vt="String">Healer(Training Only)</li>
 												<li vt="String">Dragon(Training Only)</li>

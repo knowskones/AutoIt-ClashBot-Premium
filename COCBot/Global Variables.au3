@@ -84,7 +84,7 @@ Global $ichkredDead, $itxtGoldRedDead, $itxtElixRedDead, $itxtDERedDead, $itxtTr
 Global $ichkredAny, $itxtGoldRedAny, $itxtElixRedAny, $itxtDERedAny, $itxtTroRedAny, $itxtRedSearchAny, $itxtGoldElixRedAny
 
 ;Troop types
-Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eWizard, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
+Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eBalloon, $eWizard, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
 
 ;Attack Settings
 Global $TopLeft[5][2] = [[79, 281], [170, 205], [234, 162], [296, 115], [368, 66]]
@@ -173,7 +173,7 @@ Global $THLoc
 Global $THquadrant
 Global $ichkAvoidEdge, $chkAvoidEdge
 
-Global $King, $Queen, $CC, $Barb, $Arch, $Wizard, $Minion, $Hog, $Valkyrie
+Global $King, $Queen, $CC, $Barb, $Arch, $Balloon, $Wizard, $Minion, $Hog, $Valkyrie
 Global $LeftTHx, $RightTHx, $BottomTHy, $TopTHy
 Global $AtkTroopTH
 Global $GetTHLoc
@@ -235,7 +235,7 @@ Global $ArchersComp
 Global $GiantsComp
 Global $GoblinsComp
 Global $WBComp
-Global $CurBarb, $CurArch, $CurGiant, $CurGoblin, $CurWB, $CurWizard, $CurMinion, $CurHog, $CurValkyrie
+Global $CurBarb, $CurArch, $CurGiant, $CurGoblin, $CurWB, $CurBalloon, $CurWizard, $CurMinion, $CurHog, $CurValkyrie
 Global $ArmyComp
 Global $WorkingBarracks = 0
 Global $BarAvailable[4] = [True, True, True, True]

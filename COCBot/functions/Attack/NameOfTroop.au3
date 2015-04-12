@@ -10,6 +10,8 @@ Func NameOfTroop($kind, $plurial = 0)
 			Return "Giants"
 		Case $eWallbreaker
 			Return "Wall Breakers"
+		Case $eBalloon
+			Return "Balloons"
 		Case $eWizard
 			Return "Wizards"
 		Case $eMinion

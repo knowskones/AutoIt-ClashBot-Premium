@@ -1,4 +1,4 @@
-Func TrainCustom()
+  Func TrainCustom()
 
 	If $barrackPos[0][0] = "" Then
 		LocateBarrack()
@@ -659,7 +659,11 @@ Func TrainCustom()
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 30)
+					Click(261, 425, 5) ;Balloon
+				WEnd
+			Case 5
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 30)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
@@ -688,7 +692,11 @@ Func TrainCustom()
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 30)
+					Click(261, 425, 5) ;Balloon
+				WEnd
+			Case 5
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 30)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
@@ -717,7 +725,11 @@ Func TrainCustom()
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 30)
+					Click(261, 425, 5) ;Balloon
+				WEnd
+			Case 5
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 30)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
@@ -746,7 +758,11 @@ Func TrainCustom()
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 30)
+					Click(261, 425, 5) ;Balloon
+				WEnd
+			Case 5
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 30)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else

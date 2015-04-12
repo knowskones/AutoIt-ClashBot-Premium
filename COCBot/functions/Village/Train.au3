@@ -14,7 +14,9 @@ Func GetTrainPos($troopKind)
 			Return $TrainGoblin
 		Case $eWallbreaker ; 688, 366, 0x3AD8E0
 			Return $TrainWallbreaker
-		Case $eWizard ; 688, 366, 0x3AD8E0
+		Case $eBalloon
+			Return $TrainBalloon
+		Case $eWizard
 			Return $TrainWizard
 		Case $eMinion
 			Return $TrainMinion

@@ -1,4 +1,4 @@
-;                          x    y     color  tolerance
+   ;                          x    y     color  tolerance
 Global $IsMain[4]                   = [284,  28, 0x41B1CD, 20] ; origin: [284,  28, 0x41B1CD, 20]
 Global $IsMainGrayed[4]             = [284,  28, 0x215B69, 20] ; origin: [284,  28, 0x41B1CD, 20]
 Global $TopLeftClient[2]            = [  1,   1]
@@ -36,6 +36,7 @@ Global $TrainArcher[4]              = [369, 366, 0x39D8E0, 20] ;
 Global $TrainGiant[4]               = [475, 366, 0x3DD8E0, 20] ;
 Global $TrainGoblin[4]              = [581, 366, 0x39D8E0, 20] ;
 Global $TrainWallbreaker[4]         = [688, 366, 0x3AD8E0, 20] ;
+Global $TrainBalloon[4]    		    = [261, 425, 0x47ACC8, 20] ;
 Global $TrainWizard[4]    		    = [325, 425, 0xA46052, 20] ;
 
 Global $TrainMinion[4]				= [261, 365, 0x43D9E2, 10] ;
@@ -63,7 +64,8 @@ Func IdentifyTroopKind($position)
    If _ColorCheck($TroopPixel, Hex(0x7BC950, 6), 5) Then Return $eGoblin ;Check if slot is Goblin
    If _ColorCheck($TroopPixel, Hex(0xF8D49E, 6), 5) Then Return $eGiant ;Check if slot is Giant
    If _ColorCheck($TroopPixel, Hex(0x60A4D0, 6), 5) Then Return $eWallbreaker ;Check if slot is Wallbreaker
-   If _ColorCheck($TroopPixel, Hex(0xF8F3D0, 6), 5) Then Return $eWizard ;Check if slot is Wallbreaker
+   If _ColorCheck($TroopPixel, Hex(0x531510, 6), 5) Then Return $eBalloon ;Check if slot is Balloon
+   If _ColorCheck($TroopPixel, Hex(0xF8F3D0, 6), 5) Then Return $eWizard ;Check if slot is Wizard
    If _ColorCheck(_GetPixelColor(68 + (72 * $position), 586), Hex(0x162038, 6), 5) Then Return $eMinion ;Check if slot is Minions
    If _ColorCheck($TroopPixel, Hex(0x603B30, 6), 5) Then Return $eHog ;Check if slot is Hogs
    If _ColorCheck($TroopPixel, Hex(0xB9645F, 6), 5) Then Return $eValkyrie ;Check if slot is Valkyries
