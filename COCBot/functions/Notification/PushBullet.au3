@@ -12,14 +12,14 @@ Func _RemoteControl()
 
 	If $Result = "" Then Return
 
-	Local $title = StringLower(_StringBetween($Result, '"title":"', '"', "", False))
+	Local $title = _StringBetween($Result, '"title":"', '"', "", False)
 	Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
 	Local $findstr = StringRegExp(StringLower($Result), '"title":"bot')
 
 	If $findstr = 1 Then
 		For $x = 0 To UBound($title) - 1
 			If $title <> "" Or $iden <> "" Then
-				$title[$x] = StringStripWS($title[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
+				$title[$x] = StringLower(StringStripWS($title[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES))
 				$iden[$x] = StringStripWS($iden[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
 
 				If $title[$x] = "bot help" Then
@@ -35,6 +35,7 @@ Func _RemoteControl()
 						;ControlClick("[CLASS:AutoIt v3 GUI]", "Stop Bot", "[CLASS:Button; TEXT:Stop Bot]", "left", "1")
 						;$StBot = 1
 						$PauseBot = True
+						GUICtrlSetData($btnPause, "Resume")
 					Else
 						SetLog("Your bot is currently paused, no action was taken")
 						_Push("Request to Pause", "Your bot is currently paused, no action was taken")
@@ -45,6 +46,7 @@ Func _RemoteControl()
 						SetLog("Your request has been received. Bot is now resumed")
 						_Push("Request to Resume", "Your request has been received. Bot is now resumed")
 						$PauseBot = False
+						GUICtrlSetData($btnPause, "Pause")
 						;Local $hWnd = WinWait("[CLASS:AutoIt v3 GUI]", "", 10)
 						;WinActivate($hWnd)
 						;ControlClick("[CLASS:AutoIt v3 GUI]", "Start Bot", "[CLASS:Button; TEXT:Start Bot]", "left", "1")
