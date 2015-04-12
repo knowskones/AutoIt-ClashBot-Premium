@@ -33,8 +33,12 @@ Func Login($Username, $Password)
 
 	If $oHTTP.ResponseText == "1" Then
 		Return True
-	Else
+	ElseIf $oHTTP.ResponseText == "#denied#" Then
 		MsgBox(262160, "Error", "Invalid username and/or password.")
+		Return False
+	Else
+		MsgBox(262160, "Error", "You must purchase a VIP package, available in the store at http://clashbot.org/forums," _
+			& " to be able to run this premium bot release.")
 		Return False
 	EndIf
 EndFunc   ;==>Login
