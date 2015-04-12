@@ -15,7 +15,6 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
-		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
