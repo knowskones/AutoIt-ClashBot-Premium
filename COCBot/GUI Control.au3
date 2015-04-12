@@ -117,6 +117,10 @@ Func Initiate()
 		SetLog($Compiled & " running on " & @OSArch & " OS", $COLOR_GREEN)
 		SetLog("Bot is starting...", $COLOR_ORANGE)
 
+		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushBulletDelete) = $GUI_CHECKED Then
+			_DeletePush()
+		EndIf
+
 		$AttackNow = False
 		$FirstStart = True
 		$PauseBot = False
