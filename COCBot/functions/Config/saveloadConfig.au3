@@ -1,5 +1,3 @@
-Global $config
-
 Func btnLoadConfig($configfile)
 	Local $sFileOpenDialog = FileOpenDialog("Open config", @ScriptDir & "\", "Config (*.ini;)", $FD_FILEMUSTEXIST)
 
@@ -12,6 +10,8 @@ Func btnLoadConfig($configfile)
 		$config = $sFileOpenDialog
 		readConfig()
 		applyConfig()
+		$config = @ScriptDir & "\config.ini"
+		saveConfig()
 		MsgBox($MB_SYSTEMMODAL, "", "Config loaded successfully!" & @CRLF & $sFileOpenDialog)
 	EndIf
 EndFunc   ;==>btnLoadConfig
@@ -32,8 +32,13 @@ Func btnSaveConfig($configfile)
 			$sFileSaveDialog &= ".ini"
 		EndIf
 
+		Local $configUsername = IniRead($config, "login", "username", "")
+		Local $configSaveUsername = IniRead($config, "login", "saveUsername", 0)
 		$config = $sFileSaveDialog
 		saveConfig()
+		IniWrite($config, "login", "saveUsername", $configSaveUsername)
+		IniWrite($config, "login", "username", $configUsername)
+		$config = @ScriptDir & "\config.ini"
 		MsgBox($MB_SYSTEMMODAL, "", "Successfully saved the current configuration!" & @CRLF & $sFileSaveDialog)
 	EndIf
 EndFunc   ;==>btnSaveConfig
