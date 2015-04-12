@@ -43,7 +43,7 @@ Func CompareResources() ;Compares resources and returns true if conditions meet,
 			$THLO = 1
 	EndSwitch
 
-	If $THLoc = "Out" And ($checkAttackTH = 1 Or ($searchDead And $checkDeadAttackTH = 1)) Then
+	If $THLoc = "Out" And ($icmbAttackTH > 0 Or ($searchDead And $icmbDeadAttackTH > 0)) Then
 		SetLog("~~~~~~~Outside Townhall Found!~~~~~~~", $COLOR_PURPLE)
 		Return True
 	EndIf

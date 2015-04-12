@@ -92,6 +92,19 @@ Func saveConfig() ;Saves the controls settings to the config
 	Else
 		IniWrite($config, "search", "TakeAllTownSnapShot", 0)
 	EndIf
+
+	If GUICtrlRead($chkWideEdge) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "wideedge", 1)
+	Else
+		IniWrite($config, "misc", "wideedge", 0)
+	EndIf
+
+	If GUICtrlRead($chkRedLine) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "redline", 1)
+	Else
+		IniWrite($config, "misc", "redline", 0)
+	EndIf
+
 	;Advance Search Settings------------------------------------------------------------------------
 	If GUICtrlRead($chkredDead) = $GUI_CHECKED Then
 		IniWrite($config, "advsearch", "chkredDead", 1)
@@ -137,12 +150,7 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "attack", "use-cc-dead", 0)
 	EndIf
 
-	If GUICtrlRead($chkDeadAttackTH) = $GUI_CHECKED Then
-		IniWrite($config, "attack", "townhall-dead", 1)
-	Else
-		IniWrite($config, "attack", "townhall-dead", 0)
-	EndIf
-
+	IniWrite($config, "attack", "townhall-dead", _GUICtrlComboBox_GetCurSel($cmbDeadAttackTH))
 	IniWrite($config, "attack", "deploy", _GUICtrlComboBox_GetCurSel($cmbDeploy))
 	IniWrite($config, "attack", "algorithm", _GUICtrlComboBox_GetCurSel($cmbAlgorithm))
 
@@ -164,11 +172,7 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "attack", "use-cc", 0)
 	EndIf
 
-	If GUICtrlRead($chkAttackTH) = $GUI_CHECKED Then
-		IniWrite($config, "attack", "townhall", 1)
-	Else
-		IniWrite($config, "attack", "townhall", 0)
-	EndIf
+	IniWrite($config, "attack", "townhall", _GUICtrlComboBox_GetCurSel($cmbAttackTH))
 
 	IniWrite($config, "attack", "UnitD", _GUICtrlComboBox_GetCurSel($cmbUnitDelay))
 	IniWrite($config, "attack", "WaveD", _GUICtrlComboBox_GetCurSel($cmbWaveDelay))

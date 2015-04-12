@@ -97,6 +97,18 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 		GUICtrlSetState($chkTakeTownSS, $GUI_UNCHECKED)
 	EndIf
 
+	If $ichkWideEdge = 1 Then
+		GUICtrlSetState($chkWideEdge, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkWideEdge, $GUI_UNCHECKED)
+	EndIf
+
+	If $ichkRedLine = 1 Then
+		GUICtrlSetState($chkRedLine, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkRedLine, $GUI_UNCHECKED)
+	EndIf
+
 	_GUICtrlComboBox_SetCurSel($cmbTH, $icmbTH)
 	_GUICtrlComboBox_SetCurSel($cmbDeadTH, $icmbDeadTH)
 
@@ -146,11 +158,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 		GUICtrlSetState($chkDeadUseClanCastle, $GUI_UNCHECKED)
 	EndIf
 
-	If $checkDeadAttackTH = 1 Then
-		GUICtrlSetState($chkDeadAttackTH, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDeadAttackTH, $GUI_UNCHECKED)
-	EndIf
+	_GUICtrlComboBox_SetCurSel($cmbDeadAttackTH, $icmbDeadAttackTH)
 
 	_GUICtrlComboBox_SetCurSel($cmbDeploy, $deploySettings)
 	_GUICtrlComboBox_SetCurSel($cmbAlgorithm, $icmbAlgorithm)
@@ -173,11 +181,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 		GUICtrlSetState($chkUseClanCastle, $GUI_UNCHECKED)
 	EndIf
 
-	If $checkAttackTH = 1 Then
-		GUICtrlSetState($chkAttackTH, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkAttackTH, $GUI_UNCHECKED)
-	EndIf
+	_GUICtrlComboBox_SetCurSel($cmbAttackTH, $icmbAttackTH)
 
 	_GUICtrlComboBox_SetCurSel($cmbUnitDelay, $icmbUnitDelay)
 	_GUICtrlComboBox_SetCurSel($cmbWaveDelay, $icmbWaveDelay)
