@@ -1,19 +1,26 @@
-Global $atkTH[5]
-$atkTH[0] = @ScriptDir & "\images\TH\townhall6.bmp"
-$atkTH[1] = @ScriptDir & "\images\TH\townhall7.bmp"
-$atkTH[2] = @ScriptDir & "\images\TH\townhall8.bmp"
-$atkTH[3] = @ScriptDir & "\images\TH\townhall9.bmp"
-$atkTH[4] = @ScriptDir & "\images\TH\townhall10.bmp"
-
-Global $Tolerance1 = 80
-
 Func checkTownhall()
-	_CaptureRegion()
-	For $i = 0 To 4
-		$THLocation = _ImageSearch($atkTH[$i], 1, $THx, $THy, $Tolerance1) ; Getting TH Location
-		If $THLocation = 1 Then
-			Return $THText[$i]
-		EndIf
-	Next
-	If $THLocation = 0 Then Return "-"
+	$bumpTolerance = 70
+	If _Sleep(500) Then Return
+	Do
+		_CaptureRegion()
+		For $i = 1 To 50
+			If FileExists(@ScriptDir & "\images\TH\townhall" & String($i) & ".bmp") Then
+				$THLocation = _ImageSearch(@ScriptDir & "\images\TH\townhall" & String($i) & ".bmp", 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
+				If $THLocation = 1 Then
+					If ((((65 - 280) / (367 - 78)) * ($THx - 78)) + 280 > $THy) Or ((((277 - 62) / (780 - 481)) * ($THx - 481)) + 62 > $THy) Or ((((540 - 343) / (338 - 78)) * ($THx - 78)) + 343 < $THy) Or ((((345 - 538) / (780 - 524)) * ($THx - 524)) + 538 < $THy) Then
+						$THLocation = 0
+						$THx = 0
+						$THy = 0
+					EndIf
+				EndIf
+				If $THLocation = 1 Then
+					Return $THText[Floor(($i - 1) / 10)]
+				EndIf
+			EndIf
+		Next
+		$bumpTolerance += 5
+	Until $bumpTolerance > 80
+	If $THLocation = 0 Then
+		Return "-"
+	EndIf
 EndFunc   ;==>checkTownhall

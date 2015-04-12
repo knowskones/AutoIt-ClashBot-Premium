@@ -67,6 +67,7 @@ Global $MinDeadGold, $MinDeadElixir, $MinDeadDark, $MinDeadTrophy, $MaxDeadTH, $
 Global $chkConditions[10] ;Conditions (meet gold...)
 Global $icmbTH, $icmbDeadTH, $icmbAny, $icmbDead
 Global $THLocation
+Global $Tolerance1 = 80
 Global $THx = 0, $THy = 0
 Global $THText[5] ; Text of each Townhall level
 $THText[0] = "4-6"
