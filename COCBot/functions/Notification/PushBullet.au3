@@ -8,18 +8,39 @@ Func _RemoteControl()
 	$oHTTP.SetCredentials($access_token, "", 0)
 	$oHTTP.SetRequestHeader("Content-Type", "application/json")
 	$oHTTP.Send()
-	$Result = StringLower($oHTTP.ResponseText)
+	$Result = $oHTTP.ResponseText
 
 	If $Result = "" Then Return
 
 	Local $title = _StringBetween($Result, '"title":"', '"', "", False)
 	Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
-	Local $findstr = StringRegExp($Result, '"title":"bot')
+	Local $findstr = StringRegExp($Result, '"title":"BOT')
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"bot')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"Bot')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"bOt')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"boT')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"BOt')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"bOT')
+	EndIf
+	If $findstr = 0 Then
+		$findstr = StringRegExp($Result, '"title":"BoT')
+	EndIf
 
 	If $findstr = 1 Then
 		For $x = 0 To UBound($title) - 1
 			If $title <> "" Or $iden <> "" Then
-				$title[$x] = StringStripWS($title[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
+				$title[$x] = StringLower(StringStripWS($title[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES))
 				$iden[$x] = StringStripWS($iden[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
 
 				If $title[$x] = "bot help" Then
