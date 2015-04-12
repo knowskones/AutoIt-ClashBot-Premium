@@ -12,35 +12,14 @@ Func _RemoteControl()
 
 	If $Result = "" Then Return
 
-	Local $title = _StringBetween($Result, '"title":"', '"', "", False)
+	Local $title = StringLower(_StringBetween($Result, '"title":"', '"', "", False))
 	Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
-	Local $findstr = StringRegExp($Result, '"title":"BOT')
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"bot')
-	EndIf
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"Bot')
-	EndIf
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"bOt')
-	EndIf
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"boT')
-	EndIf
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"BOt')
-	EndIf
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"bOT')
-	EndIf
-	If $findstr = 0 Then
-		$findstr = StringRegExp($Result, '"title":"BoT')
-	EndIf
+	Local $findstr = StringRegExp(StringLower($Result), '"title":"bot')
 
 	If $findstr = 1 Then
 		For $x = 0 To UBound($title) - 1
 			If $title <> "" Or $iden <> "" Then
-				$title[$x] = StringLower(StringStripWS($title[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES))
+				$title[$x] = StringStripWS($title[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
 				$iden[$x] = StringStripWS($iden[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
 
 				If $title[$x] = "bot help" Then
