@@ -64,6 +64,9 @@ Func CheckArmyCamp()
 				ElseIf _ColorCheck($TroopKind, Hex(0x48A8E8, 6), 20) Then
 					$CurWB -= $TroopQ
 					$TroopName = "Wallbreakers"
+				ElseIf _ColorCheck($TroopKind, Hex(0x7B1C10, 6), 20) Then
+					$CurBalloon -= $TroopQ
+					$TroopName = "Balloons"
 				ElseIf _ColorCheck($TroopKind, Hex(0xB8786E, 6), 20) Then
 					$CurWizard -= $TroopQ
 					$TroopName = "Wizards"

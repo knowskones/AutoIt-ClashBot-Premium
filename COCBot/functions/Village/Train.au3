@@ -14,7 +14,9 @@ Func GetTrainPos($troopKind)
 			Return $TrainGoblin
 		Case $eWallbreaker ; 688, 366, 0x3AD8E0
 			Return $TrainWallbreaker
-		Case $eWizard ; 688, 366, 0x3AD8E0
+		Case $eBalloon
+			Return $TrainBalloon
+		Case $eWizard
 			Return $TrainWizard
 		Case $eMinion
 			Return $TrainMinion
@@ -27,6 +29,18 @@ Func GetTrainPos($troopKind)
 			Return 0
 	EndSwitch
 EndFunc   ;==>GetTrainPos
+
+Func TrainCt($troopKind, $howMuch = 1, $iSleep = 100)
+	_CaptureRegion()
+	Local $pos = GetTrainPos($troopKind)
+	If IsArray($pos) Then
+		If CheckPixel($pos) Then
+			ClickP($pos, $howMuch, 20)
+			If _Sleep($iSleep) Then Return False
+			Return True
+		EndIf
+	EndIf
+EndFunc   ;==>TrainCt
 
 Func TrainIt($troopKind, $howMuch = 1, $iSleep = 100)
 	_CaptureRegion()

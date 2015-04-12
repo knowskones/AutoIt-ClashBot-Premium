@@ -475,6 +475,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 
 	$Barb = -1
 	$Arch = -1
+	$Balloon = -1
     $Wizard = -1
 	$CC = -1
 	$King = -1
@@ -484,6 +485,8 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			$Barb = $i
 		ElseIf $atkTroops[$i][0] = $eArcher Then
 			$Arch = $i
+		ElseIf $atkTroops[$i][0] = $eBalloon Then
+			$Balloon = $i
 		ElseIf $atkTroops[$i][0] = $eWizard Then
 			$Wizard = $i
 		ElseIf $atkTroops[$i][0] = $eCastle Then
@@ -623,15 +626,18 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eValkyrie, True, $nbSides, 1, 1, 1,($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
+	If LaunchTroop($eBalloon, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1), False) Then Return
+	EndIf
+	If LaunchTroop($eMinion, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1), False) Then Return
+	EndIf
 	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
-	EndIf
-	If LaunchTroop($eMinion, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1), False) Then Return
-	EndIf
+		EndIf
 
 	; ================================================================================?
 
