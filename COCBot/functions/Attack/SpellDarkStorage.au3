@@ -31,10 +31,10 @@ Func SpellDarkStorage()
 		If _Sleep(3000) Then Return
 		If CheckDarkStorage2() = True And $ichkMultiLight = 1 Then SpellDarkStorage()
 		$CreateSpell = True
-	ElseIf $LSpell = -1 Then
-		SetLog("You have used up all your Lightning Spell, skipping Lightning Attack...", $COLOR_RED)
 	ElseIf ($SDark - $itxtSpellDarkStorage <= -1) Then
 		SetLog("Dark Elixir do not meet min requirement, skipping Lightning Attack...", $COLOR_RED)
+	ElseIf $LSpell = -1 Then
+		SetLog("You have used up all your Lightning Spell, skipping Lightning Attack...", $COLOR_RED)
 	ElseIf $DELocation = 0 Then
 		SetLog("Unable to locate Dark Storage or Dark Storage is empty, skipping Lightning Attack...", $COLOR_RED)
 			If $TakeDarkStorageSS = 1 Then
