@@ -50,7 +50,7 @@ While 1
 					"Version: " & $sBotVersion & @CRLF & _
 					"Copyright 2015 Application Automation LLC.", 0, $frmBot)
 		Case $tiExit
-			ExitLoop
+			Exit
 	EndSwitch
 WEnd
 
