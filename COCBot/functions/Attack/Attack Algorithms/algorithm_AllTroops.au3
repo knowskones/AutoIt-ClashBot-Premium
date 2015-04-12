@@ -431,7 +431,7 @@ Func DropOnEdges($troop, $nbSides, $number, $slotsPerEdge = 0, $miniEdge = False
 	EndIf
 EndFunc   ;==>DropOnEdges
 
-Func LauchTroop($troopKind, $nbSides, $waveNb, $maxWaveNb, $slotsPerEdge = 0, $miniEdge = False)
+Func LaunchTroop($troopKind, $SlowDeploy, $nbSides, $waveNb, $maxWaveNb, $slotsPerEdge = 0, $miniEdge = False)
 	Local $troop = -1
 	Local $troopNb = 0
 	Local $name = ""
@@ -545,32 +545,24 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	; ========= Here is coded the main attack strategy ===============================
 	; ========= Feel free to experiment something else ===============================
 	; ================================================================================?
-		If LauchTroop($eGiant, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+		If LaunchTroop($eGiant, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
 			If _Sleep(SetSleep(1)) Then Return
 		EndIf
-
-		If LauchTroop($eBarbarian, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If LaunchTroop($eBarbarian, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 			If _Sleep(SetSleep(1)) Then Return
 		EndIf
-		If LauchTroop($eWallbreaker, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+		If LaunchTroop($eWallbreaker, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
 			If _Sleep(SetSleep(1)) Then Return
 		EndIf
-		If LauchTroop($eArcher, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If LaunchTroop($eArcher, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 			If _Sleep(SetSleep(1)) Then Return
 		EndIf
-		If LauchTroop($eBarbarian, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH >= 1)) Then
+		If LaunchTroop($eBarbarian, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH >= 1)) Then
 			If _Sleep(SetSleep(1)) Then Return
 		EndIf
-		If LauchTroop($eGoblin, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If LaunchTroop($eGoblin, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 			If _Sleep(SetSleep(1)) Then Return
 		EndIf
-		If LauchTroop($eArcher, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH >= 1)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-		If LauchTroop($eGoblin, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-			If _Sleep(SetSleep(1)) Then Return
-		EndIf
-
 
 	; Deploy CC behind troops
 		If ($OuterQuad And $attackTH = 2) Then
@@ -625,19 +617,19 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 		dropCC($TopLeft[3][0], $TopLeft[3][1], $CC)
 	EndIf
 		EndIf
-	If LauchTroop($eHog, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eHog, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LauchTroop($eValkyrie, False, $nbSides, 1, 1, 1,($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eValkyrie, True, $nbSides, 1, 1, 1,($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LauchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LauchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
-	If LauchTroop($eMinion, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eMinion, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1), False) Then Return
 	EndIf
 
