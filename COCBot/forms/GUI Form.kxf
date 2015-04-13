@@ -4446,6 +4446,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Skill will activate when hero's health is low</property>
 										<property name="Caption" vt="String">Auto activate Heroes Skill on low health</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">22</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
