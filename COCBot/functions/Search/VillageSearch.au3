@@ -63,21 +63,9 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			If CompareResources() Then
 				ExitLoop
 			Else
-				Local $i = 0
-				If _WaitForPixel(703, 520, Hex(0xD84400, 6), 30000, 500) Then ; Wait Next Button for 30 seconds
-					Click(750, 500) ;Click Next
-					GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
-					GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
-				Else
-					SetLog("Cannot locate Next button & Surrender button, Restarting Bot...", $COLOR_RED)
-					If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
-						_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
-					EndIf
-					checkMainScreen()
-					$Restart = True
-					$DCattack = True
-					ExitLoop (2)
-				EndIf
+				Click(750, 500) ;Click Next
+				GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
+				GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
 			EndIf
 		WEnd
 
