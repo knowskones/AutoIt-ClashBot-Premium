@@ -38,7 +38,11 @@ Func GetResources() ;Reads resources
 		If _Sleep(300) Then Return
 
 		$searchDead = checkDeadBase()
-		$searchTH = checkTownhall()
+		If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Then
+			$searchTH = checkTownhall()
+		Else
+			$searchTH = "-"
+		EndIf
 		$searchGold = getGold(51, 66)
 		$searchElixir = getElixir(51, 66 + 29)
 		$searchTrophy = getTrophy(51, 66 + 90)
