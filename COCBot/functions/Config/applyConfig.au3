@@ -4,7 +4,6 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	;Locate settings
 
 	If $TownHallPos[0] < 1 Then GUICtrlSetStyle($btnLocateTownHall, 0, $WS_EX_STATICEDGE)
-;	If $TownHallPos[0] < 1 Then GUICtrlSetColor($btnLocateTownHall, $COLOR_RED)
 	If $CCPos[0] < 1 Then GUICtrlSetStyle($btnLocateClanCastle2, 0, $WS_EX_STATICEDGE)
 	If $ArmyPos[0] < 1 Then GUICtrlSetStyle($btnLocateCamp, 0, $WS_EX_STATICEDGE)
 	If $barrackPos[0][0] < 1 Then GUICtrlSetStyle($btnLocateBarracks, 0, $WS_EX_STATICEDGE)
@@ -12,6 +11,16 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	If $KingPos[0] < 1 Then GUICtrlSetStyle($btnLocateKingAltar, 0, $WS_EX_STATICEDGE)
 	If $QueenPos[0] < 1 Then GUICtrlSetStyle($btnLocateQueenAltar, 0, $WS_EX_STATICEDGE)
 	If $SFactoryPos[0] < 1 Then GUICtrlSetStyle($btnLocateSFactory, 0, $WS_EX_STATICEDGE)
+	If $RunState = True Then
+		GUICtrlSetState($btnLocateTownHall, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateClanCastle2, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateCamp, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateBarracks, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateDarkBarracks, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateKingAltar, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateQueenAltar, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateSFactory, $GUI_DISABLE)
+	EndIf
 
 	;Search Settings------------------------------------------------------------------------
 	GUICtrlSetData($txtDeadMinGold, $MinDeadGold)
