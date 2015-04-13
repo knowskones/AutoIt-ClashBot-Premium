@@ -21,20 +21,20 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 	While 1
 		If $AtkDeadEnabled Then SetLog("~Dead - " & _
 				((GUICtrlRead($chkDeadGE) = $GUI_CHECKED) ? "Gold: " & $MinDeadGold & "; Elixir: " & $MinDeadElixir & "; " : "") & _
-				((GUICtrlRead($chkDeadMeetDE) = $GUI_CHECKED) ? "Dark: " & $MinDeadDark & "; " : "" ) & _
-				((GUICtrlRead($chkDeadMeetTrophy) = $GUI_CHECKED) ? "Trophy: " & $MinDeadTrophy & "; " : "" ) & _
-				((GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED) ? "Townhall: " & $MaxDeadTH & "; " : "" ) & _
-				((GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED) ? "TH Outside" : "") , $COLOR_GREEN)
+				((GUICtrlRead($chkDeadMeetDE) = $GUI_CHECKED) ? "Dark: " & $MinDeadDark & "; " : "") & _
+				((GUICtrlRead($chkDeadMeetTrophy) = $GUI_CHECKED) ? "Trophy: " & $MinDeadTrophy & "; " : "") & _
+				((GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED) ? "Townhall: " & $MaxDeadTH & "; " : "") & _
+				((GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED) ? "TH Outside" : ""), $COLOR_GREEN)
 		If $AtkAnyEnabled Then SetLog("~Any  - " & _
 				((GUICtrlRead($chkMeetGE) = $GUI_CHECKED) ? "Gold: " & $MinGold & "; Elixir: " & $MinElixir & "; " : "") & _
-				((GUICtrlRead($chkMeetDE) = $GUI_CHECKED) ? "Dark: " & $MinDark & "; " : "" ) & _
-				((GUICtrlRead($chkMeetTrophy) = $GUI_CHECKED) ? "Trophy: " & $MinTrophy & "; " : "" ) & _
-				((GUICtrlRead($chkMeetTH) = $GUI_CHECKED) ? "Townhall: " & $MaxTH & "; " : "" ) & _
-				((GUICtrlRead($chkMeetTHO) = $GUI_CHECKED) ? "TH Outside" : "") , $COLOR_GREEN)
+				((GUICtrlRead($chkMeetDE) = $GUI_CHECKED) ? "Dark: " & $MinDark & "; " : "") & _
+				((GUICtrlRead($chkMeetTrophy) = $GUI_CHECKED) ? "Trophy: " & $MinTrophy & "; " : "") & _
+				((GUICtrlRead($chkMeetTH) = $GUI_CHECKED) ? "Townhall: " & $MaxTH & "; " : "") & _
+				((GUICtrlRead($chkMeetTHO) = $GUI_CHECKED) ? "TH Outside" : ""), $COLOR_GREEN)
 		If $TakeAllTownSnapShot = 1 Then SetLog("Will save all of the towns when searching", $COLOR_GREEN)
 		$SearchCount = 0
 		_BlockInputEx(3, "", "", $HWnD)
-		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
+		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
 		While 1
 			If _Sleep(1000) Then ExitLoop (2)
 			GUICtrlSetState($btnAtkNow, $GUI_ENABLE)
@@ -63,35 +63,30 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			If CompareResources() Then
 				ExitLoop
 			Else
-				    Local $i = 0
-					While 1
-						If _Sleep(1000) Then ExitLoop
-						$i += 1
-						If $i >= 15 Or _WaitForPixel(703, 520, Hex(0xD84400, 6)) Then ExitLoop ; Wait Next Button for 30 seconds
-					WEnd
-					 If $i >= 15 Then
-						SetLog("Cannot locate Next button & Surrender button, Restarting Bot...", $COLOR_RED)
-						if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushError) = $GUI_CHECKED Then
-							  _Push("Disconnected","Your bot got disconnected while searching for enemy..")
-						EndIf
-						checkMainScreen()
-						$Restart = True
-						$DCattack = True
-						ExitLoop (2)
-					 Else
-						Click(750, 500) ;Click Next
-						GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
-						GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
-				 EndIf
+				Local $i = 0
+				If _WaitForPixel(703, 520, Hex(0xD84400, 6), 30000, 500) Then ; Wait Next Button for 30 seconds
+					Click(750, 500) ;Click Next
+					GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
+					GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
+				Else
+					SetLog("Cannot locate Next button & Surrender button, Restarting Bot...", $COLOR_RED)
+					If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+						_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
+					EndIf
+					checkMainScreen()
+					$Restart = True
+					$DCattack = True
+					ExitLoop (2)
+				EndIf
 			EndIf
 		WEnd
 
-		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost)+ $SearchCost)
+		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
 		If GUICtrlRead($chkAlertSearch) = $GUI_CHECKED Then
 			TrayTip("Match Found!", "Gold: " & $searchGold & "; Elixir: " & $searchElixir & "; Dark: " & $searchDark & "; Trophy: " & $searchTrophy & "; Townhall: " & $searchTH & ", " & $THLoc, 0)
-			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushMatchFound) = $GUI_CHECKED Then
-			   _Push("Match Found!", "[G]: " & _NumberFormat($searchGold) & "; [E]: " & _NumberFormat($searchElixir) & "; [D]: " & _NumberFormat($searchDark) & "; [T]: " & $searchTrophy  & "; [TH Lvl]: " & $searchTH & ", Loc: " & $THLoc )
-			   SetLog("Push: Match Found",$COLOR_GREEN)
+			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushMatchFound) = $GUI_CHECKED Then
+				_Push("Match Found!", "[G]: " & _NumberFormat($searchGold) & "; [E]: " & _NumberFormat($searchElixir) & "; [D]: " & _NumberFormat($searchDark) & "; [T]: " & $searchTrophy & "; [TH Lvl]: " & $searchTH & ", Loc: " & $THLoc)
+				SetLog("Push: Match Found", $COLOR_GREEN)
 			EndIf
 			If FileExists(@WindowsDir & "\media\Windows Exclamation.wav") Then
 				SoundPlay(@WindowsDir & "\media\Windows Exclamation.wav", 1)
