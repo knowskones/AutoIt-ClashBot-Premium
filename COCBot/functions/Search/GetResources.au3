@@ -38,7 +38,7 @@ Func GetResources() ;Reads resources
 		If _Sleep(300) Then Return
 
 		$searchDead = checkDeadBase()
-		If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Then
+		If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or $icmbAttackTH > 0 Or $icmbDeadAttackTH > 0 Then
 			$searchTH = checkTownhall()
 		Else
 			$searchTH = "-"
