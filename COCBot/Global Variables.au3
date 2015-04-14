@@ -183,7 +183,7 @@ Global $GetTHLoc
 ;Misc Settings
 Global $itxtReconnect
 Global $itxtReturnh
-Global $icmbSearchsp
+Global $itxtSearchsp
 Global $ichkTrap
 Global $ichkRaxRestart
 Global $itxtKingSkill ;Delay before activating King Skill

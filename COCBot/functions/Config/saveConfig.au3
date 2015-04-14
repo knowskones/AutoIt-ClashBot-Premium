@@ -410,7 +410,7 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "misc", "kingskilldelay", GUICtrlRead($txtKingSkill))
 	IniWrite($config, "misc", "queenskilldelay", GUICtrlRead($txtQueenSkill))
 	IniWrite($config, "misc", "SpellDark", GUICtrlRead($txtSpellDarkStorage))
-	IniWrite($config, "misc", "searchspd", _GUICtrlComboBox_GetCurSel($cmbSearchsp))
+	IniWrite($config, "misc", "searchspd", GUICtrlRead($txtSearchsp))
 	IniWrite($config, "misc", "xTownHall", $TownHallPos[0])
 	IniWrite($config, "misc", "yTownHall", $TownHallPos[1])
 	IniWrite($config, "misc", "xArmy", $ArmyPos[0])

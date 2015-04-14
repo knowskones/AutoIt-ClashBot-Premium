@@ -50,7 +50,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			EndIf
 
 			; read setting directly to allow speed change while searching to use attack now
-			If _Sleep(_GUICtrlComboBox_GetCurSel($cmbSearchsp) * 1500) Then ExitLoop (2)
+			If _Sleep($itxtSearchsp * 1000) Then ExitLoop (2)
 
 			; Attack instantly if Attack Now button pressed
 			GUICtrlSetState($btnAtkNow, $GUI_DISABLE)

@@ -142,12 +142,12 @@ Func runBot() ;Bot that runs everything in order
 				checkMainScreen(False)
 			EndIf
 		Else
-			SetLog("Resume from abnormal status, Army Camp checking...", $COLOR_RED)
+			SetLog("Resume From Abnormal Status, Army Camp Checking...", $COLOR_RED)
 			CheckArmyCamp()
 			If _Sleep(1000) Then Return
 			checkMainScreen(False)
 			If $fullArmy Then
-				SetLog("Army Camp full, skip village activity and proceed for raiding...", $COLOR_RED)
+				SetLog("Army Camp Full, Skip Village Activity And Proceed For Raiding...", $COLOR_RED)
 				AttackMain()
 				If _Sleep(1000) Then Return
 				checkMainScreen(False)

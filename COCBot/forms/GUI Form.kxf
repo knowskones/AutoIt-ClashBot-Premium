@@ -4162,41 +4162,15 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbSearchsp">
-									<properties>
-										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">47</property>
-										<property name="Width" vt="Int8">45</property>
-										<property name="Height" vt="Int8">25</property>
-										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">1</property>
-										<property name="Items.Strings" vt="List">
-											<list>
-												<li vt="String">0</li>
-												<li vt="String">1</li>
-												<li vt="String">2</li>
-												<li vt="String">3</li>
-												<li vt="String">4</li>
-												<li vt="String">5</li>
-											</list>
-										</property>
-										<property name="CtrlStyle" vt="Int32">1344471619</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
 								<object type="TALabel" name="lblSearchspd">
 									<properties>
-										<property name="Left" vt="Int16">162</property>
+										<property name="Left" vt="Int16">145</property>
 										<property name="Top" vt="Int8">52</property>
 										<property name="Width" vt="Int8">120</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Tips: 0 = Fast, 5 = Slow</property>
-										<property name="TabOrder" vt="Int8">6</property>
+										<property name="Caption" vt="String">Tips: 0 = Fast, 9 = Slow</property>
+										<property name="TabOrder" vt="Int8">5</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4213,7 +4187,7 @@
 										<property name="Hint" vt="String">Set delay timing for King skill</property>
 										<property name="Caption" vt="String">King Skill Delay:</property>
 										<property name="Checked" vt="True">True</property>
-										<property name="TabOrder" vt="Int8">7</property>
+										<property name="TabOrder" vt="Int8">6</property>
 										<property name="TabStop" vt="True">True</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4228,7 +4202,7 @@
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">8</property>
+										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4244,7 +4218,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">seconds   /</property>
-										<property name="TabOrder" vt="Int8">9</property>
+										<property name="TabOrder" vt="Int8">8</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4261,7 +4235,7 @@
 										<property name="Hint" vt="String">Set delay timing for Queen skill</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Queen Skill Delay:</property>
-										<property name="TabOrder" vt="Int8">10</property>
+										<property name="TabOrder" vt="Int8">9</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4276,7 +4250,7 @@
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">11</property>
+										<property name="TabOrder" vt="Int8">10</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4292,7 +4266,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">seconds</property>
-										<property name="TabOrder" vt="Int8">12</property>
+										<property name="TabOrder" vt="Int8">11</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4309,7 +4283,7 @@
 										<property name="Hint" vt="String">Set delay timing for return home during raid</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Return Home Delay:</property>
-										<property name="TabOrder" vt="Int8">13</property>
+										<property name="TabOrder" vt="Int8">12</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4324,7 +4298,7 @@
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">14</property>
+										<property name="TabOrder" vt="Int8">13</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4340,7 +4314,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">seconds after no income detected</property>
-										<property name="TabOrder" vt="Int8">15</property>
+										<property name="TabOrder" vt="Int8">14</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4356,7 +4330,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set Min Dark Elixir to Lightning Dark Storage</property>
 										<property name="Caption" vt="String">Cast Lightning when left:</property>
-										<property name="TabOrder" vt="Int8">16</property>
+										<property name="TabOrder" vt="Int8">15</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4370,7 +4344,7 @@
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">4</property>
-										<property name="TabOrder" vt="Int8">17</property>
+										<property name="TabOrder" vt="Int8">16</property>
 										<property name="Text" vt="String">500</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4386,7 +4360,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Dark Elixir</property>
-										<property name="TabOrder" vt="Int8">18</property>
+										<property name="TabOrder" vt="Int8">17</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4401,7 +4375,7 @@
 										<property name="Width" vt="Int16">141</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Take All Towns Snapshot</property>
-										<property name="TabOrder" vt="Int8">19</property>
+										<property name="TabOrder" vt="Int8">18</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4417,7 +4391,7 @@
 										<property name="Caption" vt="String">Take Loots Snapshot</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
-										<property name="TabOrder" vt="Int8">20</property>
+										<property name="TabOrder" vt="Int8">19</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4431,7 +4405,7 @@
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Base Found Alert</property>
-										<property name="TabOrder" vt="Int8">21</property>
+										<property name="TabOrder" vt="Int8">20</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4447,7 +4421,7 @@
 										<property name="Hint" vt="String">Skill will activate when hero's health is low</property>
 										<property name="Caption" vt="String">Auto activate Heroes Skill on low health</property>
 										<property name="Enabled" vt="False">False</property>
-										<property name="TabOrder" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">21</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4462,7 +4436,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Restart bluestack if fail to detect all 4 barracks</property>
 										<property name="Caption" vt="String">Restart Bluestack if fail to locate all 4 Barracks</property>
-										<property name="TabOrder" vt="Int8">23</property>
+										<property name="TabOrder" vt="Int8">22</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4477,7 +4451,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Cast Lightning as long as Elixir more than Min requirement</property>
 										<property name="Caption" vt="String">Cast more than 1 Lightning</property>
-										<property name="TabOrder" vt="Int8">24</property>
+										<property name="TabOrder" vt="Int8">23</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4492,7 +4466,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set number of logs you want to keep</property>
 										<property name="Caption" vt="String">Keep Logs:</property>
-										<property name="TabOrder" vt="Int8">25</property>
+										<property name="TabOrder" vt="Int8">24</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4506,7 +4480,7 @@
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">3</property>
-										<property name="TabOrder" vt="Int8">26</property>
+										<property name="TabOrder" vt="Int8">25</property>
 										<property name="Text" vt="String">20</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4522,7 +4496,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Consider townhalls slightly inside to still be outside</property>
 										<property name="Caption" vt="String">Look deeper for inside town hall</property>
-										<property name="TabOrder" vt="Int8">27</property>
+										<property name="TabOrder" vt="Int8">26</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -4537,9 +4511,24 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Look for red line and deploy troops near them</property>
 										<property name="Caption" vt="String">Attack near red line</property>
-										<property name="TabOrder" vt="Int8">28</property>
+										<property name="TabOrder" vt="Int8">27</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtSearchsp">
+									<properties>
+										<property name="Left" vt="Int8">110</property>
+										<property name="Top" vt="Int8">47</property>
+										<property name="Width" vt="Int8">31</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">28</property>
+										<property name="Text" vt="String">3</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
 									<components/>
