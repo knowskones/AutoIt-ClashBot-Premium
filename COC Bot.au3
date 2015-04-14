@@ -240,7 +240,7 @@ Func TrainTroop()
 EndFunc   ;==>TrainTroop
 
 Func log_cleanup($no_rotator)
-	Local $dir_list[3] = ["Loots", "logs", "AllTowns"]
+	Local $dir_list[4] = ["Loots", "logs", "AllTowns", "DarkStorages"]
 	For $l = 0 To UBound($dir_list) - 1
 		Local $dir = @ScriptDir & "\" & $dir_list[$l]
 		If FileExists($dir) == 0 Then
