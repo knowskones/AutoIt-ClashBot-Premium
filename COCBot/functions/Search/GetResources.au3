@@ -35,8 +35,6 @@ Func GetResources() ;Reads resources
 			Return
 		 EndIf
 
-		If _Sleep(300) Then Return
-
 		$searchDead = checkDeadBase()
 		If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or $icmbAttackTH > 0 Or $icmbDeadAttackTH > 0 Then
 			$searchTH = checkTownhall()
@@ -104,7 +102,6 @@ Func DuplicateCheck()
 $CheckDupGold1 = Number(getGold(51, 66))
 $CheckDupElixir1 = Number(getElixir(51, 66 + 29))
 If $CheckDupGold1 <> $CheckDupGold2 And $CheckDupElixir1 <> $CheckDupElixir2 Then
-   If _Sleep(300) Then Return
    $CheckDupGold2 = $CheckDupGold1
    $CheckDupElixir2 = $CheckDupElixir1
    Return False
