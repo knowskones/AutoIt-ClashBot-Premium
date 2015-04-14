@@ -22,7 +22,7 @@ Func CheckCostPerSearch()
 		Click($Info[0], $Info[1]) ;Click Info Button
 
 		If _Sleep(800) Then Return
-		Local $THLevel = getOther(495, 136, "Townhall")
+		$THLevel = getOther(495, 136, "Townhall")
 
 		If $THLevel = "1" Then
 			$SearchCost = 10
