@@ -217,6 +217,20 @@ Func getChar(ByRef $x, $y)
 	Next
 	$x -= 3
 
+	;search for low resolution 'g'
+	$width = 5
+	Local $c1 = Hex(0x6A6D6A, 6), $c2 = Hex(0xE7E8E7, 6), $c3 = Hex(0xE7E7E7, 6)
+	For $i = 1 To 3
+		Local $pixel1[3] = [$x + 1, $y + 9, $c1], $pixel2[3] = [$x + 4, $y + 9, $c2], $pixel3[3] = [$x + 4, $y + 4, $c3]
+		If boolPixelSearch($pixel1, $pixel2, $pixel3, 1) Then
+			$x += $width
+			Return "g"
+		Else
+			$x += 1
+		EndIf
+	Next
+	$x -= 3
+
 	;search for 'H'
 	$width = 8
 	Local $c1 = Hex(0x5F635F, 6), $c2 = Hex(0x464A46, 6), $c3 = Hex(0xFAFAFA, 6)
