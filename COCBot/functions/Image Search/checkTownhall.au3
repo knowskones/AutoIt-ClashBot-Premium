@@ -6,6 +6,8 @@ Func checkTownhall()
 	Local $i, $j, $k
 	If $searchTrophy <> "" Then
 		$nocheck = 6
+	Else
+		$t = 6
 	EndIf
 	$THLocation = 0
 	If ($t >= 6) And ($t <= 10) And ($t <> $nocheck) Then
