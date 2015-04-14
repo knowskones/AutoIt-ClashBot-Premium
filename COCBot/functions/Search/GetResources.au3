@@ -22,8 +22,6 @@ Func GetResources() ;Reads resources
 			EndIf
 		WEnd
 
-		If _Sleep(300) Then Return
-
 	    If DuplicateCheck() = True Then
 			SetLog("Identical resource found between previous and current search, Restarting Bot...", $COLOR_RED)
 			if GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushError) = $GUI_CHECKED Then
@@ -36,14 +34,14 @@ Func GetResources() ;Reads resources
 		 EndIf
 
 		$searchDead = checkDeadBase()
+		$searchGold = getGold(51, 66)
+		$searchElixir = getElixir(51, 66 + 29)
+		$searchTrophy = getTrophy(51, 66 + 90)
 		If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or $icmbAttackTH > 0 Or $icmbDeadAttackTH > 0 Then
 			$searchTH = checkTownhall()
 		Else
 			$searchTH = "-"
 		EndIf
-		$searchGold = getGold(51, 66)
-		$searchElixir = getElixir(51, 66 + 29)
-		$searchTrophy = getTrophy(51, 66 + 90)
 
 		If $searchDead Then $txtDead = "Dead"
 
