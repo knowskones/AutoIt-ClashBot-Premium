@@ -35,8 +35,11 @@ Func GetResources() ;Reads resources
 		$DCattack = True
 		Return
 	EndIf
-
-	$searchDead = checkDeadBase()
+	If $AtkDeadEnabled Then
+		$searchDead = checkDeadBase()
+	Else
+		$searchDead = False
+	EndIf
 	If $searchDead Then $txtDead = "Dead"
 
 	If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or $icmbAttackTH > 0 Or $icmbDeadAttackTH > 0 Then
