@@ -50,12 +50,7 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 						GUICtrlSetState($chkSpellDarkStorage, $GUI_ENABLE)
 					EndIf
 				Case $chkSpellDarkStorage
-					If GUICtrlRead($chkSpellDarkStorage) = $GUI_UNCHECKED Then
-						GUICtrlSetState($chkMultiLight, $GUI_UNCHECKED)
-						GUICtrlSetState($chkMultiLight, $GUI_DISABLE)
-					ElseIf GUICtrlRead($chkSpellDarkStorage) = $GUI_CHECKED Then
-						GUICtrlSetState($chkMultiLight, $GUI_ENABLE)
-					EndIf
+					chkSpellDarkStorage()
 				Case $chkKeepLogs
 					chkKeepLogs()
 			EndSwitch
@@ -983,6 +978,15 @@ Func chkKeepLogs()
 		GUICtrlSetState($txtKeepLogs, $GUI_DISABLE)
 	EndIf
 EndFunc   ;==>chkKeepLogs
+
+Func chkSpellDarkStorage()
+	If GUICtrlRead($chkSpellDarkStorage) = $GUI_UNCHECKED Then
+		GUICtrlSetState($chkMultiLight, $GUI_UNCHECKED)
+		GUICtrlSetState($chkMultiLight, $GUI_DISABLE)
+	ElseIf GUICtrlRead($chkSpellDarkStorage) = $GUI_CHECKED Then
+		GUICtrlSetState($chkMultiLight, $GUI_ENABLE)
+	EndIf
+EndFunc
 
 Func tabMain()
 	If _GUICtrlTab_GetCurSel($tabMain) = 0 Then

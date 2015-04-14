@@ -431,6 +431,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Else
 		GUICtrlSetState($chkMultiLight, $GUI_UNCHECKED)
 	EndIf
+	chkSpellDarkStorage()
 
 	If $ichkBackground = 1 Then
 		GUICtrlSetState($chkBackground, $GUI_CHECKED)
