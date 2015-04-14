@@ -7,9 +7,9 @@ Func GetResources() ;Reads resources
 	Local $txtDead = "-"
 
 	While getGold(51, 66) = "" ; Loops until gold is readable
-		If _Sleep(200) Then Return
+		If _Sleep(1000) Then Return
 		$i += 1
-		If $i >= 50 Then ; If gold cannot be read by 10 seconds
+		If $i >= 10 Then ; If gold cannot be read by 10 seconds
 			SetLog("Cannot locate gold value, Restarting Bot...", $COLOR_RED)
 			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
 				_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
@@ -20,6 +20,8 @@ Func GetResources() ;Reads resources
 			Return
 		EndIf
 	WEnd
+
+    If _Sleep(300) Then Return
 
 	$searchGold = getGold(51, 66)
 	$searchElixir = getElixir(51, 66 + 29)
