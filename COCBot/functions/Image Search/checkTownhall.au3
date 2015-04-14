@@ -4,7 +4,7 @@ Func checkTownhall()
 	Local $t = Number($THLevel)
 	Local $nocheck = 0
 	Local $i, $j, $k
-	If $searchTrophy <> "" Then
+	If getTrophy(51, 66 + 90) <> "" Then
 		$nocheck = 6
 	Else
 		$t = 6
