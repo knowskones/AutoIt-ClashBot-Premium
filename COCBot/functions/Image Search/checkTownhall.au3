@@ -93,5 +93,8 @@ Func checkTownhall()
 		WEnd
 		$bumpTolerance += 5
 	Until $bumpTolerance > 80
+	Local $Date = @MDAY & "." & @MON & "." & @YEAR
+	Local $Time = @HOUR & "." & @MIN & "." & @SEC
+	_GDIPlus_ImageSaveToFile($hBitmap, @ScriptDir & "\Debug\" & "UnknowTH(" & $DATE & "_at_" & $TIME & ").png")
 	Return "-"
 EndFunc   ;==>checkTownhall
