@@ -52,12 +52,12 @@ Func TrainDark()
 						$LeftRax1 = ($itxtDarkBarrack1 - 20)
 						$ClickRax1 = $LeftRax1
 						SetLog("Dark Barrack 1 Minion Remaining : " & $LeftRax1, $COLOR_BLUE)
-					ElseIf $LeftRax1 > 1 And ($troopMinion < 20) And $LeftRax1 > ($troopMinion < 20) Then
+					ElseIf $LeftRax1 > 1 And ($troopMinion < 20) And $LeftRax1 > (20 - $troopMinion) Then
 						TrainCt($eMinion, (20 - $troopMinion))
 						$LeftRax1 = ($ClickRax1 - (20 - $troopMinion))
 						$ClickRax1 = $LeftRax1
 						SetLog("Dark Barrack 1 Minion Remaining : " & $LeftRax1, $COLOR_BLUE)
-					ElseIf $LeftRax1 > 1 And ($troopMinion < 20) And $LeftRax1 <= ($troopMinion < 20) Then
+					ElseIf $LeftRax1 > 1 And ($troopMinion < 20) And $LeftRax1 <= (20 - $troopMinion) Then
 						TrainCt($eMinion, $LeftRax1)
 						$TrainDrax1 = False
 						SetLog("Dark Barrack 1 Train Minion Completed...", $COLOR_BLUE)
@@ -81,12 +81,12 @@ Func TrainDark()
 						$LeftRax1 = ($itxtDarkBarrack1 - 10)
 						$ClickRax1 = $LeftRax1
 						SetLog("Dark Barrack 1 Hog Remaining : " & $LeftRax1, $COLOR_BLUE)
-					ElseIf $LeftRax1 > 1 And ($troopHog < 10) And $LeftRax1 > ($troopHog < 10) Then
+					ElseIf $LeftRax1 > 1 And ($troopHog < 10) And $LeftRax1 > (10 - $troopHog2) Then
 						TrainCt($eHog, (10 - $troopHog))
 						$LeftRax1 = ($ClickRax1 - (10 - $troopHog))
 						$ClickRax1 = $LeftRax1
 						SetLog("Dark Barrack 1 Hog Remaining : " & $LeftRax1, $COLOR_BLUE)
-					ElseIf $LeftRax1 > 1 And ($troopHog < 10) And $LeftRax1 <= ($troopHog < 10) Then
+					ElseIf $LeftRax1 > 1 And ($troopHog < 10) And $LeftRax1 <= (10 - $troopHog2) Then
 						TrainCt($eHog, $LeftRax1)
 						$TrainDrax1 = False
 						SetLog("Dark Barrack 1 Train Hog Completed...", $COLOR_BLUE)
@@ -110,12 +110,12 @@ Func TrainDark()
 						$LeftRax1 = ($itxtDarkBarrack1 - 7)
 						$ClickRax1 = $LeftRax1
 						SetLog("Dark Barrack 1 Valkyrie Remaining : " & $LeftRax1, $COLOR_BLUE)
-					ElseIf $LeftRax1 > 1 And ($troopValkyrie < 7) And $LeftRax1 > ($troopValkyrie < 7) Then
+					ElseIf $LeftRax1 > 1 And ($troopValkyrie < 7) And $LeftRax1 > (7 - $troopValkyrie) Then
 						TrainCt($eValkyrie, (7 - $troopValkyrie))
 						$LeftRax1 = ($ClickRax1 - (7 - $troopValkyrie))
 						$ClickRax1 = $LeftRax1
 						SetLog("Dark Barrack 1 Valkyrie Remaining : " & $LeftRax1, $COLOR_BLUE)
-					ElseIf $LeftRax1 > 1 And ($troopValkyrie < 7) And $LeftRax1 <= ($troopValkyrie < 7) Then
+					ElseIf $LeftRax1 > 1 And ($troopValkyrie < 7) And $LeftRax1 <= (7 - $troopValkyrie) Then
 						TrainCt($eValkyrie, $LeftRax1)
 						$TrainDrax1 = False
 						SetLog("Dark Barrack 1 Train Valkyrie Completed...", $COLOR_BLUE)
@@ -142,12 +142,12 @@ Func TrainDark()
 						$LeftRax2 = ($itxtDarkBarrack2 - 20)
 						$ClickRax2 = $LeftRax2
 						SetLog("Dark Barrack 2 Minion Remaining : " & $LeftRax2, $COLOR_BLUE)
-					ElseIf $LeftRax2 > 1 And ($troopMinion2 < 20) And $LeftRax2 > ($troopMinion2 < 20) Then
+					ElseIf $LeftRax2 > 1 And ($troopMinion2 < 20) And $LeftRax2 > (20 - $troopMinion2) Then
 						TrainCt($eMinion, (20 - $troopMinion2))
 						$LeftRax2 = ($ClickRax2 - (20 - $troopMinion2))
 						$ClickRax2 = $LeftRax2
 						SetLog("Dark Barrack 2 Minion Remaining : " & $LeftRax2, $COLOR_BLUE)
-					ElseIf $LeftRax2 > 1 And ($troopMinion2 < 20) And $LeftRax2 <= ($troopMinion2 < 20) Then
+					ElseIf $LeftRax2 > 1 And ($troopMinion2 < 20) And $LeftRax2 <= (20 - $troopMinion2) Then
 						TrainCt($eMinion, $LeftRax2)
 						$TrainDrax2 = False
 						SetLog("Dark Barrack 2 Train Minion Completed...", $COLOR_BLUE)
@@ -171,12 +171,12 @@ Func TrainDark()
 						$LeftRax2 = ($itxtDarkBarrack2 - 10)
 						$ClickRax2 = $LeftRax2
 						SetLog("Dark Barrack 2 Hog Remaining : " & $LeftRax2, $COLOR_BLUE)
-					ElseIf $LeftRax2 > 1 And ($troopHog2 < 10) And $LeftRax2 > ($troopHog2 < 10) Then
+					ElseIf $LeftRax2 > 1 And ($troopHog2 < 10) And $LeftRax2 > (10 - $troopHog2) Then
 						TrainCt($eHog, (10 - $troopHog2))
 						$LeftRax2 = ($ClickRax2 - (10 - $troopHog2))
 						$ClickRax2 = $LeftRax2
 						SetLog("Dark Barrack 2 Hog Remaining : " & $LeftRax2, $COLOR_BLUE)
-					ElseIf $LeftRax2 > 1 And ($troopHog2 < 10) And $LeftRax2 <= ($troopHog2 < 10) Then
+					ElseIf $LeftRax2 > 1 And ($troopHog2 < 10) And $LeftRax2 <= (10 - $troopHog2) Then
 						TrainCt($eHog, $LeftRax2)
 						$TrainDrax2 = False
 						SetLog("Dark Barrack 2 Train Hog Completed...", $COLOR_BLUE)
@@ -200,12 +200,12 @@ Func TrainDark()
 						$LeftRax2 = ($itxtDarkBarrack2 - 7)
 						$ClickRax2 = $LeftRax2
 						SetLog("Dark Barrack 2 Valkyrie Remaining : " & $LeftRax2, $COLOR_BLUE)
-					ElseIf $LeftRax2 > 1 And ($troopValkyrie2 < 7) And $LeftRax2 > ($troopValkyrie2 < 7) Then
+					ElseIf $LeftRax2 > 1 And ($troopValkyrie2 < 7) And $LeftRax2 > (7 - $troopValkyrie2) Then
 						TrainCt($eValkyrie, (7 - $troopValkyrie2))
 						$LeftRax2 = ($ClickRax2 - (7 - $troopValkyrie2))
 						$ClickRax2 = $LeftRax2
 						SetLog("Dark Barrack 2 Valkyrie Remaining : " & $LeftRax2, $COLOR_BLUE)
-					ElseIf $LeftRax2 > 1 And ($troopValkyrie2 < 7) And $LeftRax2 <= ($troopValkyrie2 < 7) Then
+					ElseIf $LeftRax2 > 1 And ($troopValkyrie2 < 7) And $LeftRax2 <= (7 - $troopValkyrie2) Then
 						TrainCt($eValkyrie, $LeftRax2)
 						$TrainDrax2 = False
 						SetLog("Dark Barrack 2 Train Valkyrie Completed...", $COLOR_BLUE)
