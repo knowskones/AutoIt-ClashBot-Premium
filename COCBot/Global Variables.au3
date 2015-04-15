@@ -89,14 +89,16 @@ Global $ichkredAny, $itxtGoldRedAny, $itxtElixRedAny, $itxtDERedAny, $itxtTroRed
 Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eBalloon, $eWizard, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
 
 ;Attack Settings
-Global $TopLeft[5][2] = [[79, 281], [170, 205], [234, 162], [296, 115], [368, 66]]
-Global $TopRight[5][2] = [[480, 63], [540, 104], [589, 146], [655, 190], [779, 278]]
-Global $BottomLeft[5][2] = [[79, 342], [142, 389], [210, 446], [276, 492], [339, 539]]
-Global $BottomRight[5][2] = [[523, 537], [595, 484], [654, 440], [715, 393], [779, 344]]
+; Shift outer corners 1 pixel for more random drop space
+Global $TopLeft[5][2] = [[78, 280], [169, 204], [233, 161], [295, 114], [367, 65]]
+Global $TopRight[5][2] = [[481, 62], [541, 103], [590, 145], [656, 189], [780, 277]]
+Global $BottomLeft[5][2] = [[78, 343], [141, 390], [209, 447], [275, 493], [338, 540]]
+Global $BottomRight[5][2] = [[524, 538], [596, 485], [655, 441], [716, 394], [780, 345]]
 Global $FurthestTopLeft[5][2] = [[28, 314], [0, 0], [0, 0], [0, 0], [430, 9]]
 Global $FurthestTopRight[5][2] = [[430, 9], [0, 0], [0, 0], [0, 0], [820, 313]]
 Global $FurthestBottomLeft[5][2] = [[28, 314], [0, 0], [0, 0], [0, 0], [440, 612]]
 Global $FurthestBottomRight[5][2] = [[440, 612], [0, 0], [0, 0], [0, 0], [820, 313]]
+Global $Edges[4] = [$BottomRight, $TopLeft, $BottomLeft, $TopRight]
 
 ;Red border finding
 Global $numEdges = 81
@@ -145,7 +147,6 @@ $EdgeLevel = 1
 $AimCenter = 1
 $AimTH = 2
 
-Global $Edges[4] = [$BottomRight, $TopLeft, $BottomLeft, $TopRight]
 Global $Unitdrop
 Global $SlowDeploy, $DeploySpeed
 Global $THquadrant

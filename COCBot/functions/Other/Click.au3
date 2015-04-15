@@ -10,7 +10,7 @@ Func Click($x, $y, $times = 1, $speed = 0, $CenteredOn = 0)
 				ControlClick($Title, "", "", "primary", "1", $x, $y)
 			EndIf
 		Else
-			If $ichkAvoidEdge = 1 Then
+			If $ichkRedLine = 1 Then
 				If $CenteredOn = $AimCenter Then
 					$AimX = Round((($Grid[42][42][0] - $Grid[0][0][0]) / 2) + $Grid[0][0][0])
 					$AimY = Round((($Grid[42][42][1] - $Grid[0][0][1]) / 2) + $Grid[0][0][1])
