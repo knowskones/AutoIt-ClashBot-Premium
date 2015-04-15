@@ -735,7 +735,7 @@ TraySetIcon(@ScriptDir & "\Icons\cocbot.ico")
 $txtLog = _GUICtrlRichEdit_Create($frmBot, "", 8, 68, 480, 185, BitOR($ES_MULTILINE, $ES_READONLY, $WS_VSCROLL, 8912))
 
 ; Add Banner
-$hPic_background = GUICtrlCreatePic(@ScriptDir & "\images\GUI\banner.bmp", 0, 0, 0, 35)
+$hPic_background = GUICtrlCreatePic(@ScriptDir & "\images\GUI\bannerfix.bmp", 0, 0, 640, 30)
 GUICtrlSetState($hPic_background, $GUI_DISABLE)
 
 ; Display Form
@@ -750,4 +750,5 @@ Func DisplayGUI()
 	$tiAbout = TrayCreateItem("About")
 	TrayCreateItem("")
 	$tiExit = TrayCreateItem("Exit")
+
 EndFunc

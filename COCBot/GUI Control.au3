@@ -1056,10 +1056,6 @@ Func ApplyTheme($path)
 		_USkin_RemoveSkin()
 	EndIf
 
-	; Fix Banner
-	GUICtrlDelete($hPic_background)
-	$hPic_background = GUICtrlCreatePic(@ScriptDir & "\images\GUI\banner.bmp", 0, 0, 0, 35)
-	GUICtrlSetState($hPic_background, $GUI_DISABLE)
 EndFunc   ;==>ApplyTheme
 
 Func DisableBS($HWnD, $iButton)
