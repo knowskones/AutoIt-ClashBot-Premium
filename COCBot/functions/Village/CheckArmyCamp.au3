@@ -20,13 +20,25 @@ Func CheckArmyCamp()
 		Click($BArmyPos[0], $BArmyPos[1]) ;Click Info button
 		Local $Campbar = 0
 		Switch $icmbRaidcap
-			Case 0 ; 70%
+			Case 0 ; 10%
+				$Campbar = _WaitForPixelSearch(454, 210, 456, 213, Hex(0x37A800, 6))
+			Case 1 ; 20%
+				$Campbar = _WaitForPixelSearch(482, 210, 484, 213, Hex(0x37A800, 6))
+			Case 2 ; 30%
+				$Campbar = _WaitForPixelSearch(510, 210, 512, 213, Hex(0x37A800, 6))
+			Case 3 ; 40%
+				$Campbar = _WaitForPixelSearch(538, 210, 540, 213, Hex(0x37A800, 6))
+			Case 4 ; 50%
+				$Campbar = _WaitForPixelSearch(566, 210, 568, 213, Hex(0x37A800, 6))
+			Case 5 ; 60%
+				$Campbar = _WaitForPixelSearch(595, 210, 597, 213, Hex(0x37A800, 6))
+			Case 6 ; 70%
 				$Campbar = _WaitForPixelSearch(620, 210, 622, 213, Hex(0x37A800, 6))
-			Case 1 ; 80%
+			Case 7 ; 80%
 				$Campbar = _WaitForPixelSearch(649, 210, 651, 213, Hex(0x37A800, 6))
-			Case 2 ; 90%
+			Case 8 ; 90%
 				$Campbar = _WaitForPixelSearch(677, 210, 679, 213, Hex(0x37A800, 6))
-			Case 3 ; 100%
+			Case 9 ; 100%
 				$Campbar = _WaitForPixelSearch(707, 210, 709, 213, Hex(0x37A800, 6))
 		EndSwitch
 		$CurCamp = Number(getOther(586, 193, "Camp"))
