@@ -48,8 +48,8 @@ Func UseKingSkill()
 			SetLog("Activate King's power", $COLOR_BLUE)
 			SelectDropTroupe($King)
 			AdlibUnRegister("UseKingSkill")
-		ElseIf TimerDiff($KingTimer) > 60000 Then
-			; If still in battle activate skill after 60s regardless
+		ElseIf TimerDiff($KingTimer) > 90000 Then
+			; If still in battle activate skill after 90s regardless
 			If getGold(51, 66) <> "" Then
 				SetLog("Activate King's power", $COLOR_BLUE)
 				SelectDropTroupe($King)
@@ -73,8 +73,8 @@ Func UseQueenSkill()
 			SetLog("Activate Queen's power", $COLOR_BLUE)
 			SelectDropTroupe($Queen)
 			AdlibUnRegister("UseQueenSkill")
-		ElseIf TimerDiff($QueenTimer) > 60000 Then
-			; If still in battle activate skill after 60s regardless
+		ElseIf TimerDiff($QueenTimer) > 90000 Then
+			; If still in battle activate skill after 90s regardless
 			If getGold(51, 66) <> "" Then
 				SetLog("Activate Queen's power", $COLOR_BLUE)
 				SelectDropTroupe($Queen)
