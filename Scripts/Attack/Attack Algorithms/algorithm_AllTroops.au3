@@ -560,6 +560,61 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eArcher, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
+
+	; Deploy King behind troops
+	If ($OuterQuad And $attackTH = 2) Then
+		Switch $THquadrant
+			Case 1
+				$DropX = $FurthestTopLeft[0][0]
+				$DropY = $FurthestTopLeft[0][1]
+			Case 2
+				$m = (537 - 238) / (535 - 128)
+				$m2 = (9 - 314) / (430 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 314 - ($m2 * 28)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 3
+				$DropX = $FurthestTopLeft[4][0]
+				$DropY = $FurthestTopLeft[4][1]
+			Case 4
+				$m = (85 - 388) / (527 - 130)
+				$m2 = (612 - 314) / (440 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 314 - ($m2 * 28)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 6
+				$m = (85 - 388) / (527 - 130)
+				$m2 = (612 - 314) / (440 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 9 - ($m2 * 430)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 7
+				$DropX = Round(($FurthestBottomRight[4][0] - $FurthestBottomRight[0][0]) / 4) + $FurthestBottomRight[0][0]
+				$DropY = Round(($FurthestBottomRight[4][1] - $FurthestBottomRight[0][1]) / 4) + $FurthestBottomRight[0][1]
+			Case 8
+				$m = (537 - 238) / (535 - 128)
+				$m2 = (9 - 314) / (430 - 28)
+				$b = $THy - ($m * $THx)
+				$b2 = 612 - ($m2 * 440)
+				$DropX = ($b - $b2) / ($m2 - $m)
+				$DropY = Round($m2 * $DropX + $b2)
+			Case 9
+				$DropX = $FurthestBottomRight[4][0]
+				$DropY = $FurthestBottomRight[4][1]
+		EndSwitch
+		dropHeroes($DropX, $DropY, $King, $AimTH)
+		If _Sleep(100) Then Return
+	Else
+		If $nbSides = 1 Then
+			dropHeroes($BottomRight[3][0], $BottomRight[3][1], $King)
+		Else
+			dropHeroes($TopLeft[3][0], $TopLeft[3][1], $King)
+		EndIf
+	EndIf
+
 	If LaunchTroop($eWizard, False, $nbSides, 1, 1, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
@@ -623,6 +678,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			dropCC($TopLeft[3][0], $TopLeft[3][1], $CC)
 		EndIf
 	EndIf
+
 	If LaunchTroop($eHog, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
@@ -632,21 +688,11 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eBalloon, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
-	If LaunchTroop($eMinion, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1)) Then Return
-	EndIf
-	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1)) Then Return
-	EndIf
-	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eMinion, False, $nbSides, 1, 1, 2, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 
-	; ================================================================================?
-
-
-	; Deploy Heroes behind troops
-
+	; Deploy Queen behind troops
 	If ($OuterQuad And $attackTH = 2) Then
 		Switch $THquadrant
 			Case 1
@@ -690,14 +736,21 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 				$DropX = $FurthestBottomRight[4][0]
 				$DropY = $FurthestBottomRight[4][1]
 		EndSwitch
-		dropHeroes($DropX, $DropY, $King, $Queen, $AimTH)
+		dropHeroes($DropX, $DropY, $Queen, $AimTH)
 		If _Sleep(100) Then Return
 	Else
 		If $nbSides = 1 Then
-			dropHeroes($BottomRight[3][0], $BottomRight[3][1], $King, $Queen)
+			dropHeroes($BottomRight[3][0], $BottomRight[3][1], $Queen)
 		Else
-			dropHeroes($TopLeft[3][0], $TopLeft[3][1], $King, $Queen)
+			dropHeroes($TopLeft[3][0], $TopLeft[3][1], $Queen)
 		EndIf
+	EndIf
+
+	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 
 	If _Sleep(SetSleep(1)) Then Return

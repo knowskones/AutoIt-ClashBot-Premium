@@ -26,6 +26,7 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 		$Raid = 1
 		_GDIPlus_ImageSaveToFile($hBitmap, $dirLoots & $Date & "_at_" & $Time & ".jpg")
 		$FileName = $Date & "_at_" & $Time & ".jpg"
+	EndIf
 
 		;Get Last Raid Resources
 		$LastRaidGold = getOther(330, 289, "LastRaidGold")
@@ -37,7 +38,6 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 		Else
 			$LastRaidTrophy = getOther(330, 365, "LastRaidTrophy")
 		EndIf
-	EndIf
 
 	If _Sleep(2000) Then Return
 	Click(428, 544) ;Click Return Home Button
