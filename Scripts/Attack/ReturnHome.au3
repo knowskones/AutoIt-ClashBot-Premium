@@ -35,8 +35,10 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 		If IsArray($trophyicon) = True Then
 			$LastRaidDarkElixir = getOther(330, 365, "LastRaidDarkElixir")
 			$LastRaidTrophy = getOther(330, 402, "LastRaidTrophy")
+			SetLog("Last Raid Loot: [G]: " & $LastRaidGold & " [E]: " & $LastRaidElixir & " [D]: " & $LastRaidDarkElixir & " [T]: " & $LastRaidTrophy, $COLOR_GREEN)
 		Else
 			$LastRaidTrophy = getOther(330, 365, "LastRaidTrophy")
+			SetLog("Last Raid Loot: [G]: " & $LastRaidGold & " [E]: " & $LastRaidElixir & " [T]: " & $LastRaidTrophy, $COLOR_GREEN)
 		EndIf
 
 	If _Sleep(2000) Then Return

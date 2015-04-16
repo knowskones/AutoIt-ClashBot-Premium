@@ -5040,7 +5040,7 @@
 								<property name="Height" vt="Int8">110</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Last Raid</property>
+								<property name="Caption" vt="String">Last Raid Loot</property>
 								<property name="TabOrder" vt="Int8">2</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>
@@ -5052,7 +5052,7 @@
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Gold :</property>
+										<property name="Caption" vt="String">Gold Loot:</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -5097,7 +5097,7 @@
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Elixir :</property>
+										<property name="Caption" vt="String">Elixir Loot:</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -5142,7 +5142,7 @@
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">DE :</property>
+										<property name="Caption" vt="String">DE Loot:</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -5184,10 +5184,10 @@
 									<properties>
 										<property name="Left" vt="Int8">30</property>
 										<property name="Top" vt="Int8">85</property>
-										<property name="Width" vt="Int8">60</property>
+										<property name="Width" vt="Int8">75</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Trophies :</property>
+										<property name="Caption" vt="String">Trophies Won :</property>
 										<property name="TabOrder" vt="Int8">9</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -5430,7 +5430,7 @@
 								<property name="Height" vt="Int8">110</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Total Raid</property>
+								<property name="Caption" vt="String">Total Loot</property>
 								<property name="TabOrder" vt="Int8">4</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>

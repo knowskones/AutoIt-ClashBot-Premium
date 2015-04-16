@@ -685,10 +685,16 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eValkyrie, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
-	If LaunchTroop($eBalloon, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eBalloon, False, $nbSides, 1, 1, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eMinion, False, $nbSides, 1, 1, 2, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+		If _Sleep(SetSleep(1)) Then Return
+	EndIf
+	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 
@@ -744,13 +750,6 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 		Else
 			dropHeroes($TopLeft[3][0], $TopLeft[3][1], $Queen)
 		EndIf
-	EndIf
-
-	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1)) Then Return
-	EndIf
-	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
-		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 
 	If _Sleep(SetSleep(1)) Then Return

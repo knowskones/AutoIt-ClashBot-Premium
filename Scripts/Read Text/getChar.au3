@@ -91,7 +91,7 @@ Func getChar(ByRef $x, $y)
 	Next
 	$x -= 3
 
-	;search for low resolution 'c'
+	;search for version 2 'c'
 	$width = 5
 	Local $c1 = Hex(0x818481, 6), $c2 = Hex(0x939693, 6), $c3 = Hex(0xEEEEEE, 6)
 	For $i = 1 To 3
@@ -217,7 +217,7 @@ Func getChar(ByRef $x, $y)
 	Next
 	$x -= 3
 
-	;search for low resolution 'g'
+	;search for version 2 'g'
 	$width = 5
 	Local $c1 = Hex(0x6A6D6A, 6), $c2 = Hex(0xE7E8E7, 6), $c3 = Hex(0xE7E7E7, 6)
 	For $i = 1 To 3
@@ -360,6 +360,20 @@ Func getChar(ByRef $x, $y)
 	;search for 'l'
 	$width = 2
 	Local $c1 = Hex(0xFEFEFE, 6), $c2 = Hex(0x909290, 6), $c3 = Hex(0xFEFEFE, 6)
+	For $i = 1 To 3
+		Local $pixel1[3] = [$x + 1, $y + 2, $c1], $pixel2[3] = [$x + 0, $y + 2, $c2], $pixel3[3] = [$x + 1, $y + 7, $c3]
+		If boolPixelSearch($pixel1, $pixel2, $pixel3, 1) Then
+			$x += $width
+			Return "l"
+		Else
+			$x += 1
+		EndIf
+	Next
+	$x -= 3
+
+	;search for version 2 'l'
+	$width = 2
+	Local $c1 = Hex(0xFEFEFE, 6), $c2 = Hex(0x8F928F, 6), $c3 = Hex(0xFEFEFE, 6)
 	For $i = 1 To 3
 		Local $pixel1[3] = [$x + 1, $y + 2, $c1], $pixel2[3] = [$x + 0, $y + 2, $c2], $pixel3[3] = [$x + 1, $y + 7, $c3]
 		If boolPixelSearch($pixel1, $pixel2, $pixel3, 1) Then
