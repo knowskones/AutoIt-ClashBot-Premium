@@ -40,7 +40,7 @@ Global $HWnD = WinGetHandle($Title) ;Handle for Bluestacks window
 Global $statLog, $tiAbout, $tiExit
 
 Global $config = @ScriptDir & "\Profile\Config.ini"
-Global $dirLogs = @ScriptDir & "\Logs\"
+Global $dirLogs = @ScriptDir & "\Profile\Logs\"
 Global $dirLoots = @ScriptDir & "\Profile\Loots\"
 Global $dirAllTowns = @ScriptDir & "\Profile\AllTowns\"
 Global $dirDarkStorages = @ScriptDir & "\Profile\DarkStorages\"
