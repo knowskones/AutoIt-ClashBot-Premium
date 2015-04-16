@@ -11,6 +11,7 @@ Func GetResources() ;Reads resources
 		$i += 1
 		If $i >= 20 Then ; If gold cannot be read by 10 seconds
 			SetLog("Cannot locate gold value, Restarting Bot...", $COLOR_RED)
+			GUICtrlSetData($lblresultoos, GUICtrlRead($lblresultoos) + 1)
 			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
 				_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
 			EndIf

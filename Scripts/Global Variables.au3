@@ -352,3 +352,9 @@ Global $LastRaidGold = 0
 Global $LastRaidElixir = 0
 Global $LastRaidDarkElixir = 0
 Global $LastRaidTrophy = 0
+
+;Waitforpixel Control
+Global $DonateTimeout = 1000
+Global $DonateDelay = 100
+Global $TrainTimeout = 800
+Global $TrainDelay = 50

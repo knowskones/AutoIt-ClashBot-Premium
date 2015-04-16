@@ -4426,7 +4426,6 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Skill will activate when hero's health is low</property>
 										<property name="Caption" vt="String">Auto Activate Heroes Skill on Low Health</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">21</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4921,7 +4920,7 @@
 								<object type="TALabel" name="lblbuilder">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">128</property>
+										<property name="Top" vt="Int16">148</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4937,12 +4936,44 @@
 								<object type="TALabel" name="lblresultruntime">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int16">128</property>
+										<property name="Top" vt="Int16">148</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">00:00:00</property>
 										<property name="TabOrder" vt="Int8">11</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308610</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lbloos">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">128</property>
+										<property name="Width" vt="Int8">80</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Disconnect :</property>
+										<property name="TabOrder" vt="Int8">12</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblresultoos">
+									<properties>
+										<property name="Left" vt="Int8">110</property>
+										<property name="Top" vt="Int16">128</property>
+										<property name="Width" vt="Int8">60</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">0</property>
+										<property name="TabOrder" vt="Int8">13</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308610</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>

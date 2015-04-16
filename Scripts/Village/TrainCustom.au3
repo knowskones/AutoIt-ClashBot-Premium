@@ -643,27 +643,27 @@
 			_CaptureRegion()
 			Switch $CustomTroopS[0]
 			Case 0
-			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, 800, 50)
+			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(220, 320, 20) ;Barbarian
 			   WEnd
 			Case 1
-			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(325, 320, 20) ;Archer
 			   WEnd
 			Case 2
-			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, 800, 50)
+			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(430, 320, 5) ;Giant
 			   WEnd
 			Case 3
-			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 50)
+			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, $TrainTimeout, $TrainDelay)
 					Click(261, 425, 5) ;Balloon
 				WEnd
 			Case 5
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, $TrainTimeout, $TrainDelay)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
@@ -676,27 +676,27 @@
 			_CaptureRegion()
 			Switch $CustomTroopS[1]
 			Case 0
-			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, 800, 50)
+			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(220, 320, 20) ;Barbarian
 			   WEnd
 			Case 1
-			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(325, 320, 20) ;Archer
 			   WEnd
 			Case 2
-			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, 800, 50)
+			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(430, 320, 5) ;Giant
 			   WEnd
 			Case 3
-			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 50)
+			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, $TrainTimeout, $TrainDelay)
 					Click(261, 425, 5) ;Balloon
 				WEnd
 			Case 5
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, $TrainTimeout, $TrainDelay)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
@@ -709,27 +709,27 @@
 			_CaptureRegion()
 			Switch $CustomTroopS[2]
 			Case 0
-			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, 800, 50)
+			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(220, 320, 20) ;Barbarian
 			   WEnd
 			Case 1
-			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(325, 320, 20) ;Archer
 			   WEnd
 			Case 2
-			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, 800, 50)
+			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(430, 320, 5) ;Giant
 			   WEnd
 			Case 3
-			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 50)
+			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, $TrainTimeout, $TrainDelay)
 					Click(261, 425, 5) ;Balloon
 				WEnd
 			Case 5
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, $TrainTimeout, $TrainDelay)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else
@@ -742,27 +742,27 @@
 			_CaptureRegion()
 			Switch $CustomTroopS[3]
 			Case 0
-			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, 800, 50)
+			   While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(220, 320, 20) ;Barbarian
 			   WEnd
 			Case 1
-			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(325, 320, 20) ;Archer
 			   WEnd
 			Case 2
-			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, 800, 50)
+			   While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(430, 320, 5) ;Giant
 			   WEnd
 			Case 3
-			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, 800, 50)
+			   While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, $TrainTimeout, $TrainDelay)
 					 Click(535, 320, 20) ;Goblin
 				  WEnd
 			Case 4
-				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, 800, 50)
+				While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, $TrainTimeout, $TrainDelay)
 					Click(261, 425, 5) ;Balloon
 				WEnd
 			Case 5
-			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, 800, 50)
+			   While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, $TrainTimeout, $TrainDelay)
 				     Click(325, 425, 5) ;Wizard
 				  WEnd
 			Case Else

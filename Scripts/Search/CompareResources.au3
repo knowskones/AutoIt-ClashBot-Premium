@@ -2,6 +2,7 @@
 ;Every 20 searches, it will decrease minimum by certain amounts.
 
 Func CompareResources() ;Compares resources and returns true if conditions meet, otherwise returns false
+	If Mod($SearchCount, 20) = 0 Then _WinAPI_EmptyWorkingSet(WinGetProcess($Title)) ; Reduce BlueStacks Memory Usage
 	If $SearchCount <> 0 And Mod($SearchCount, $itxtRedSearchDead) = 0 And $ichkredDead = 1 Then
 		If $MinDeadGold - $itxtGoldRedDead >= 0 Then $MinDeadGold -= $itxtGoldRedDead
 		If $MinDeadElixir - $itxtElixRedDead >= 0 Then $MinDeadElixir -= $itxtElixRedDead
