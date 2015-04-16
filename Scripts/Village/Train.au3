@@ -347,8 +347,6 @@ Func Train()
 					If GUICtrlRead($txtGoblins) <> "0" And $CurGoblin > 0 Then
 						TrainIt($eGoblin, $GoblinEBarrack[$i])
 					EndIf
-
-					$TroopCount = 0
 				EndIf
 
 				If _Sleep(900) Then ExitLoop
