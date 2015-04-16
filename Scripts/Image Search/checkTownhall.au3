@@ -13,7 +13,7 @@ Func checkTownhall()
 	If ($t >= 6) And ($t <= 10) And ($t <> $nocheck) Then
 		Do
 			_CaptureRegion()
-			For $i = 1 to 11
+			For $i = 1 to 13
 				$path = @ScriptDir & "\images\TH\TH" & String($t) & "\townhall" & String($i) & ".bmp"
 				If FileExists($path) Then
 					$THLocation = _ImageSearch($path, 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
@@ -53,7 +53,7 @@ Func checkTownhall()
 		_CaptureRegion()
 		While ($i >= 6) Or ($j <= 10)
 			If ($i <> $t) And ($i <> $nocheck)  Then
-				For $k = 1 To 11
+				For $k = 1 To 13
 					$path = @ScriptDir & "\images\TH\TH" & String($i) & "\townhall" & String($k) & ".bmp"
 					If FileExists($path) Then
 						$THLocation = _ImageSearch($path, 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
@@ -71,7 +71,7 @@ Func checkTownhall()
 				Next
 			EndIf
 			If ($j <> $t) And ($j <> $nocheck) Then
-				For $k = 1 To 11
+				For $k = 1 To 13
 					$path = @ScriptDir & "\images\TH\TH" & String($j) & "\townhall" & String($k) & ".bmp"
 					If FileExists($path) Then
 						$THLocation = _ImageSearch($path, 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
@@ -95,6 +95,5 @@ Func checkTownhall()
 	Until $bumpTolerance > 80
 	Local $Date = @MDAY & "." & @MON & "." & @YEAR
 	Local $Time = @HOUR & "." & @MIN & "." & @SEC
-	_GDIPlus_ImageSaveToFile($hBitmap, @ScriptDir & "\Debug\" & "UnknowTH(" & $DATE & "_at_" & $TIME & ").png")
 	Return "-"
 EndFunc   ;==>checkTownhall
