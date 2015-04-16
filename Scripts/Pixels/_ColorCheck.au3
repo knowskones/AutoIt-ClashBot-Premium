@@ -26,4 +26,21 @@ EndFunc   ;==>_ColorCheck
 Func CheckPixel($tab)
 	If _ColorCheck(_GetPixelColor($tab[0], $tab[1]), Hex($tab[2], 6), $tab[3]) Then Return True
 	Return False;
-EndFunc   ;==>CheckPixel
+ EndFunc   ;==>CheckPixel
+
+ Func _ColorCheckHeroHealth($nColor1, $nColor2, $sVari = 5)
+	Local $Red1, $Red2, $Blue1, $Blue2, $Green1, $Green2
+
+	$Red1 = Dec(StringMid(String($nColor1), 1, 2))
+	$Blue1 = Dec(StringMid(String($nColor1), 3, 2))
+	$Green1 = Dec(StringMid(String($nColor1), 5, 2))
+
+	$Red2 = Dec(StringMid(String($nColor2), 1, 2))
+	$Blue2 = Dec(StringMid(String($nColor2), 3, 2))
+	$Green2 = Dec(StringMid(String($nColor2), 5, 2))
+
+	If Abs($Blue1 - $Blue2) > $sVari Then Return False
+	If Abs($Green1 - $Green2) > $sVari Then Return False
+	If Abs($Red1 - $Red2) > $sVari Then Return True
+	Return True
+EndFunc   ;==>_ColorCheck

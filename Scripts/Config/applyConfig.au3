@@ -408,6 +408,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	GUICtrlSetData($txtQueenSkill, $itxtQueenSkill)
 	GUICtrlSetData($txtSpellDarkStorage, $itxtSpellDarkStorage)
 	GUICtrlSetData($txtSearchsp, $itxtSearchsp)
+	GUICtrlSetData($txtwhitecloud, $itxtwhitecloud)
 	If $ichkTrap = 1 Then
 		GUICtrlSetState($chkTrap, $GUI_CHECKED)
 	Else

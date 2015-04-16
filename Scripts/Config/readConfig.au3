@@ -142,6 +142,7 @@ Func readConfig() ;Reads config and sets it to the variables
 		$SpellDarkStorage = IniRead($config, "misc", "SpellDarkStorage", "0")
 		$ichkMultiLight = IniRead($config, "misc", "MultiLightning", "0")
 		$itxtSearchsp = IniRead($config, "misc", "searchspd", "3")
+		$itxtwhitecloud = IniRead($config, "misc", "cloudtimeout", "10")
 		$ichkTrap = IniRead($config, "misc", "chkTrap", "1")
 		$ichkRaxRestart = IniRead($config, "misc", "chkRaxRestart", "0")
 		$TownHallPos[0] = IniRead($config, "misc", "xTownHall", "-1")

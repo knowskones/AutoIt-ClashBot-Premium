@@ -43,9 +43,8 @@ Func UseKingSkill()
 			AdlibUnRegister("UseKingSkill")
 		EndIf
 	Else ; Activate by hero health
-		Local $PositionKing = 47 + (72 * $King)
-		Local $Pos = _PixelSearch($PositionKing, 555, $PositionKing + 20, 555, Hex(0xDD8208, 6), 5)
-		If $Pos <> 0 Then
+		_CaptureRegion(0, 550, 800, 560)
+		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $King), 555 - 550), Hex(0xDD8208, 6), 10) Then
 			SetLog("Activate King's power", $COLOR_BLUE)
 			SelectDropTroupe($King)
 			AdlibUnRegister("UseKingSkill")
@@ -69,9 +68,8 @@ Func UseQueenSkill()
 			AdlibUnRegister("UseQueenSkill")
 		EndIf
 	Else ; Activate by hero health
-		Local $PositionQueen = 47 + (72 * $Queen)
-		Local $Pos = _PixelSearch($PositionQueen, 555, $PositionQueen + 20, 555, Hex(0xDD8208, 6), 5)
-		If $Pos <> 0 Then
+		_CaptureRegion(0, 550, 800, 560)
+		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $Queen), 555 - 550), Hex(0xDD8208, 6), 10) Then
 			SetLog("Activate Queen's power", $COLOR_BLUE)
 			SelectDropTroupe($Queen)
 			AdlibUnRegister("UseQueenSkill")

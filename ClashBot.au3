@@ -143,7 +143,7 @@ Func runBot() ;Bot that runs everything in order
 			EndIf
 		Else
 			SetLog("Resume From Abnormal Status, Army Camp Checking...", $COLOR_RED)
-			CheckArmyCamp()
+			CheckArmyCamp(False)
 			If _Sleep(1000) Then Return
 			checkMainScreen(False)
 			If $fullArmy Then

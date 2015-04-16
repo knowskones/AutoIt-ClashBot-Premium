@@ -185,6 +185,7 @@ Global $GetTHLoc
 Global $itxtReconnect
 Global $itxtReturnh
 Global $itxtSearchsp
+Global $itxtwhitecloud
 Global $ichkTrap
 Global $ichkRaxRestart
 Global $itxtKingSkill ;Delay before activating King Skill

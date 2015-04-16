@@ -2,14 +2,9 @@
 ## Remove files not part of ClashBot base code ##
 #################################################
 
-AllTowns/
-logs/
-Loots/
-COC Bot.exe
-config.ini
-License.txt
+Profile/
+ClashBot.exe
 Backup/
-DarkStorages/
 
 ######################
 ## Windows detritus ##

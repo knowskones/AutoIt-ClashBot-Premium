@@ -9,7 +9,7 @@ Func GetResources() ;Reads resources
 	While getGold(51, 66) = "" ; Loops until gold is readable
 		If _Sleep(500) Then Return
 		$i += 1
-		If $i >= 20 Then ; If gold cannot be read by 10 seconds
+		If $i >= $itxtwhitecloud * 2 Then ; If gold cannot be read by 30 seconds
 			SetLog("Cannot locate gold value, Restarting Bot...", $COLOR_RED)
 			GUICtrlSetData($lblresultoos, GUICtrlRead($lblresultoos) + 1)
 			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then

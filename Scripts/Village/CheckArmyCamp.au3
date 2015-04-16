@@ -1,4 +1,4 @@
-Func CheckArmyCamp()
+Func CheckArmyCamp($SetLog = True)
 	SetLog("Checking Army Camp...", $COLOR_BLUE)
 
 	If _Sleep(100) Then Return
@@ -95,7 +95,7 @@ Func CheckArmyCamp()
 				If $TroopQ <> 0 Then SetLog("- " & $TroopName & " " & $TroopQ, $COLOR_GREEN)
 			Next
 		EndIf
-		If $fullArmy Then
+		If $fullArmy And $SetLog <> False Then
 			SetLog("Army Camp Full : " & $fullArmy, $COLOR_RED)
 		EndIf
 		ClickP($TopLeftClient) ;Click Away
