@@ -45,6 +45,7 @@
 				<property name="Font.Style" vt="Set"/>
 				<property name="ParentFont" vt="False">False</property>
 				<property name="TabOrder" vt="Int8">0</property>
+				<property name="Visible" vt="False">False</property>
 				<property name="CtrlStyle" vt="Int32">1409482752</property>
 				<property name="CtrlExStyle" vt="Int8">0</property>
 				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
@@ -4538,23 +4539,6 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TALabel" name="lblwhitecloud">
-									<properties>
-										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int8">52</property>
-										<property name="Width" vt="Int8">125</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Hint" vt="String">Set waiting time for next base</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">White Cloud Waiting Time:</property>
-										<property name="TabOrder" vt="Int8">29</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
 								<object type="TAInput" name="txtwhitecloud">
 									<properties>
 										<property name="Left" vt="Int16">430</property>
@@ -4562,7 +4546,7 @@
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">30</property>
+										<property name="TabOrder" vt="Int8">29</property>
 										<property name="Text" vt="String">30</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4578,6 +4562,23 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">seconds</property>
+										<property name="TabOrder" vt="Int8">30</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblwhitecloud">
+									<properties>
+										<property name="Left" vt="Int16">300</property>
+										<property name="Top" vt="Int8">52</property>
+										<property name="Width" vt="Int16">128</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Set waiting time for next base when searching</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">White Cloud Waiting Time:</property>
 										<property name="TabOrder" vt="Int8">31</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
