@@ -14,7 +14,7 @@ Func checkTownhall()
 		Do
 			_CaptureRegion()
 			For $i = 1 to 13
-				$path = @ScriptDir & "\images\TH\TH" & String($t) & "\townhall" & String($i) & ".bmp"
+				$path = @ScriptDir & "\Images\TH\TH" & String($t) & "\townhall" & String($i) & ".bmp"
 				If FileExists($path) Then
 					$THLocation = _ImageSearch($path, 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
 					If $THLocation = 1 Then
@@ -54,7 +54,7 @@ Func checkTownhall()
 		While ($i >= 6) Or ($j <= 10)
 			If ($i <> $t) And ($i <> $nocheck)  Then
 				For $k = 1 To 13
-					$path = @ScriptDir & "\images\TH\TH" & String($i) & "\townhall" & String($k) & ".bmp"
+					$path = @ScriptDir & "\Images\TH\TH" & String($i) & "\townhall" & String($k) & ".bmp"
 					If FileExists($path) Then
 						$THLocation = _ImageSearch($path, 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
 						If $THLocation = 1 Then
@@ -72,7 +72,7 @@ Func checkTownhall()
 			EndIf
 			If ($j <> $t) And ($j <> $nocheck) Then
 				For $k = 1 To 13
-					$path = @ScriptDir & "\images\TH\TH" & String($j) & "\townhall" & String($k) & ".bmp"
+					$path = @ScriptDir & "\Images\TH\TH" & String($j) & "\townhall" & String($k) & ".bmp"
 					If FileExists($path) Then
 						$THLocation = _ImageSearch($path, 1, $THx, $THy, $bumpTolerance) ; Getting TH Location
 						If $THLocation = 1 Then
