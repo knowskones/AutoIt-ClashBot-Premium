@@ -30,18 +30,18 @@ Func DonateCC()
 						$String = getString($DonatePixel[1] - 17)
 					Else
 						$String = $String & @CRLF & getString($DonatePixel[1] - 17)
-					EndIf
+					 EndIf
+
+					 SetLog("Chat Text: " & $String, $COLOR_GREEN)
 
 					 Local $BlacklistCheck = 0
 					 Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
 					 For $i = 0 To UBound($Blacklist) - 1
 						If CheckDonate($Blacklist[$i], $String) Then
 						   $BlacklistCheck = 1
-						   SetLog("Donation Request inside Blacklist, skip donating...", $COLOR_RED)
+						   SetLog("Donation Request found in Blacklist, skip donating...", $COLOR_RED)
 						EndIf
 					 Next
-
-					If $BlacklistCheck = 0 Then SetLog("Chat Text: " & $String, $COLOR_GREEN)
 
 					If $ichkDonateBarbarians = 1 And $BlacklistCheck = 0 Then
 						Local $Barbs = StringSplit($itxtDonateBarbarians, @CRLF)
