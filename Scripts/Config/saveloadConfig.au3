@@ -1,11 +1,11 @@
 Func btnLoadConfig($configfile)
-	Local $sFileOpenDialog = FileOpenDialog("Open config", @ScriptDir & "\", "Config (*.ini;)", $FD_FILEMUSTEXIST)
+	Local $sFileOpenDialog = FileOpenDialog("Open config", @ScriptDir & "\Profile\", "Config (*.ini;)", $FD_FILEMUSTEXIST)
 
 	If @error Then
 		MsgBox($MB_SYSTEMMODAL, "", "Error opening file!")
-		FileChangeDir(@ScriptDir)
+		FileChangeDir(@ScriptDir & "\Profile\")
 	Else
-		FileChangeDir(@ScriptDir)
+		FileChangeDir(@ScriptDir & "\Profile\")
 		$sFileOpenDialog = StringReplace($sFileOpenDialog, "|", @CRLF)
 		$config = $sFileOpenDialog
 		readConfig()
@@ -18,7 +18,7 @@ EndFunc   ;==>btnLoadConfig
 
 
 Func btnSaveConfig($configfile)
-	Local $sFileSaveDialog = FileSaveDialog("Save current config as..", @ScriptDir & "\", "Config (*.ini)", $FD_PATHMUSTEXIST)
+	Local $sFileSaveDialog = FileSaveDialog("Save current config as..", @ScriptDir & "\Profile\", "Config (*.ini)", $FD_PATHMUSTEXIST)
 
 	If @error Then
 		MsgBox($MB_SYSTEMMODAL, "", "Config save failed!")
