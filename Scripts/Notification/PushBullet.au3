@@ -67,9 +67,11 @@ Func _RemoteControl()
 						GUICtrlSetState($chkBoostRax2, $GUI_UNCHECKED)
 						GUICtrlSetState($chkBoostRax3, $GUI_UNCHECKED)
 						GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
-						_Push("Barrack Boost", "Barrack 1 will be boosted on return to village")
+						SetLog("Your request has been received. Barrack 1 will be boosted on return to village.")
+						_Push("Barrack Boost", "Barrack 1 will be boosted on return to village.")
 					Else
-						_Push("Barrack Boost", "You have already reached maximum barracks boost setting")
+						SetLog("You have already reached maximum barracks boost setting.")
+						_Push("Barrack Boost", "You have already reached maximum barracks boost setting.")
 					EndIf
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boost2" Then
@@ -79,9 +81,11 @@ Func _RemoteControl()
 						GUICtrlSetState($chkBoostRax2, $GUI_CHECKED)
 						GUICtrlSetState($chkBoostRax3, $GUI_UNCHECKED)
 						GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
-						_Push("Barrack Boost", "Barracks 1 and 2 will be boosted on return to village")
+						SetLog("Your request has been received. Barrack 1 and 2 will be boosted on return to village.")
+						_Push("Barrack Boost", "Barracks 1 and 2 will be boosted on return to village.")
 					Else
-						_Push("Barrack Boost", "You have already reached maximum barracks boost setting")
+						SetLog("You have already reached maximum barracks boost setting.")
+						_Push("Barrack Boost", "You have already reached maximum barracks boost setting.")
 					EndIf
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boost3" Then
@@ -91,9 +95,11 @@ Func _RemoteControl()
 						GUICtrlSetState($chkBoostRax2, $GUI_CHECKED)
 						GUICtrlSetState($chkBoostRax3, $GUI_CHECKED)
 						GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
-						_Push("Barrack Boost", "Barracks 1, 2 and 3 will be boosted on return to village")
+						SetLog("Your request has been received. Barracks 1, 2 and 3 will be boosted on return to village.")
+						_Push("Barrack Boost", "Barracks 1, 2 and 3 will be boosted on return to village.")
 					Else
-						_Push("Barrack Boost", "You have already reached maximum barracks boost setting")
+						SetLog("You have already reached maximum barracks boost setting.")
+						_Push("Barrack Boost", "You have already reached maximum barracks boost setting.")
 					EndIf
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boostall" Then
@@ -103,10 +109,42 @@ Func _RemoteControl()
 						GUICtrlSetState($chkBoostRax2, $GUI_CHECKED)
 						GUICtrlSetState($chkBoostRax3, $GUI_CHECKED)
 						GUICtrlSetState($chkBoostRax4, $GUI_CHECKED)
-						_Push("Barrack Boost", "All barracks will be boosted on return to village")
+						SetLog("All barracks will be boosted on return to village.")
+						_Push("Barrack Boost", "All barracks will be boosted on return to village.")
 					Else
+						SetLog("You have already reached maximum barracks boost setting.")
 						_Push("Barrack Boost", "You have already reached maximum barracks boost setting")
 					EndIf
+					_DeleteMessage($iden[$x])
+				ElseIf $title[$x] = "bot shutdownpc" Then
+					SetLog("Your request has been received. Force shutdown your PC.", $COLOR_BLUE)
+					_Push("Request to ShutdownPC", "Your request has been received. Force shutdown your PC.")
+					_DeleteMessage($iden[$x])
+					If _Sleep(500) Then Return
+					btnStop()
+					Shutdown(5) ; Force Shutdown
+				ElseIf $title[$x] = "bot sleeppc" Then
+					SetLog("Your request has been received. Sleep your PC.", $COLOR_BLUE)
+					_Push("Request to SleepPC", "Your request has been received. Sleep your PC.")
+					_DeleteMessage($iden[$x])
+					If _Sleep(500) Then Return
+					btnStop()
+					Shutdown(32) ; Sleep / Stand by
+				ElseIf $title[$x] = "bot restartpc" Then
+					SetLog("Your request has been received. Restart your PC.", $COLOR_BLUE)
+					_Push("Request to RestartPC", "Your request has been received. Restart your PC.")
+					_DeleteMessage($iden[$x])
+					If _Sleep(500) Then Return
+					btnStop()
+					Shutdown(6) ; Force Restart
+				ElseIf $title[$x] = "bot screencapture" Then
+					SetLog("Your request has been received. Take a screenshot on your computer.", $COLOR_BLUE)
+					Local $screenfilename
+					Local $Date = @MDAY & "." & @MON & "." & @YEAR
+					Local $Time = @HOUR & "." & @MIN
+					$screenfilename = "ScreenCapture(" & $Date & "_at_" & $Time & ")" & ".jpg"
+					_ScreenCapture_Capture(@ScriptDir & "\Profile\ScreenCapture\" & $screenfilename)
+					_PushFile($screenfilename, "ScreenCapture", "image/jpeg", "Screen Capture", $screenfilename)
 					_DeleteMessage($iden[$x])
 				EndIf
 			EndIf
