@@ -44,7 +44,6 @@ Global $dirLogs = @ScriptDir & "\Profile\Logs\"
 Global $dirLoots = @ScriptDir & "\Profile\Loots\"
 Global $dirAllTowns = @ScriptDir & "\Profile\AllTowns\"
 Global $dirDarkStorages = @ScriptDir & "\Profile\DarkStorages\"
-Global $dirScreenCapture = @ScriptDir & "\Profile\ScreenCapture\"
 Global $sLogPath ; `Will create a new log file every time the start button is pressed
 Global $hLogFileHandle
 Global $Restart = False
