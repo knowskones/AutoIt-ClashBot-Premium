@@ -86,7 +86,7 @@ Func VillageReport()
 	    if $PushBulletEnabled = 1 and $PushBulletlastraid = 1 and $Raid = 1 Then
 			if $PushBullettype = 0 and $TakeLootSnapShot = 1 Then
 				If _Sleep(2000) Then Return
-				_PushFile($FileName, "loots", "image/jpeg", "Last Raid", $FileName)
+				_PushFile($FileName, "Profile\Loots", "image/jpeg", "Last Raid", $FileName)
 				$Raid = 0
 			Elseif $PushBullettype = 1 Then
 				_Push("Last Raid", "[G]: " & _NumberFormat($LastRaidGold) & " [E]: " & _NumberFormat($LastRaidElixir) & " [D]: " & _NumberFormat($LastRaidDarkElixir) & " [T]: " & $LastRaidTrophy)

@@ -58,7 +58,7 @@ Func _RemoteControl()
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot logs" Then
 					SetLog("Your request has been received. Log is now sent")
-					_PushFile($sLogFileName, "logs", "text/plain; charset=utf-8", "Current Logs", $sLogFileName)
+					_PushFile($sLogFileName, "Profile\Logs", "text/plain; charset=utf-8", "Current Logs", $sLogFileName)
 					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boost1" Then
 					If GUICtrlRead($cmbBoostBarracks) < 5 Then
@@ -167,7 +167,7 @@ Func _PushFile($File, $Folder, $FileType, $title, $body)
 		SetLog("Something went wrong during upload authorization")
 		Return
 	Else
-		$Result = RunWait(@ScriptDir & "\Others\curl\curl.exe -i -X POST " & $upload_url[0] & ' -F awsaccesskeyid="' & $awsaccesskeyid[0] & '" -F acl="' & $acl[0] & '" -F key="' & $key[0] & '" -F signature="' & $signature[0] & '" -F policy="' & $policy[0] & '" -F content-type="' & $FileType & '" -F file=@"' & @ScriptDir & '\' & $Folder & '\' & $File & '" -o "' & @ScriptDir & '\logs\curl.log"', "", @SW_HIDE)
+		$Result = RunWait(@ScriptDir & "\Others\curl\curl.exe -i -X POST " & $upload_url[0] & ' -F awsaccesskeyid="' & $awsaccesskeyid[0] & '" -F acl="' & $acl[0] & '" -F key="' & $key[0] & '" -F signature="' & $signature[0] & '" -F policy="' & $policy[0] & '" -F content-type="' & $FileType & '" -F file=@"' & @ScriptDir & '\' & $Folder & '\' & $File & '" -o "' & @ScriptDir & '\Profile\Logs\curl.log"', "", @SW_HIDE)
 	EndIf
 
 	If GUICtrlRead($chkPushBulletDebug) = $GUI_CHECKED Then
@@ -181,10 +181,10 @@ Func _PushFile($File, $Folder, $FileType, $title, $body)
 		SetLog($awsaccesskeyid[0])
 		SetLog($file_url[0])
 		SetLog($Result1)
-		SetLog(@ScriptDir & "\Others\curl\curl.exe -i -X POST " & $upload_url[0] & ' -F awsaccesskeyid="' & $awsaccesskeyid[0] & '" -F acl="' & $acl[0] & '" -F key="' & $key[0] & '" -F signature="' & $signature[0] & '" -F policy="' & $policy[0] & '" -F content-type="' & $FileType & '" -F file=@"' & @ScriptDir & '\' & $Folder & '\' & $File & '" -o "' & @ScriptDir & '\logs\curl.log"')
+		SetLog(@ScriptDir & "\Others\curl\curl.exe -i -X POST " & $upload_url[0] & ' -F awsaccesskeyid="' & $awsaccesskeyid[0] & '" -F acl="' & $acl[0] & '" -F key="' & $key[0] & '" -F signature="' & $signature[0] & '" -F policy="' & $policy[0] & '" -F content-type="' & $FileType & '" -F file=@"' & @ScriptDir & '\' & $Folder & '\' & $File & '" -o "' & @ScriptDir & '\Profile\Logs\curl.log"')
 	EndIf
-	If _FileCountLines(@ScriptDir & '\Others\curl\logs\curl.log') > 8 Then
-		Local $hFileOpen = FileOpen(@ScriptDir & '\Others\curl\logs\curl.log')
+	If _FileCountLines(@ScriptDir & '\Profile\Logs\curl.log') > 8 Then
+		Local $hFileOpen = FileOpen(@ScriptDir & '\Profile\Logs\curl.log')
 		Local $sFileRead = FileReadLine($hFileOpen, 8)
 		Local $sFileRead1 = StringSplit($sFileRead, " ")
 		Local $sLink = $sFileRead1[2]
