@@ -109,14 +109,12 @@ Func _RemoteControl()
 					EndIf
 					_DeleteMessage($iden[$x])
 				EndIf
-				$title[$x] = ""
-				$iden[$x] = ""
 			EndIf
 		Next
 	EndIf
 
 	If UBound($iden) > $PushBulletmessages And $PushBulletmessages <> 0 Then
-		For $x = $PushBulletmessages To UBound($title) - 1
+		For $x = $PushBulletmessages To UBound($iden) - 1
 			$oHTTP.Open("Delete", "https://api.pushbullet.com/v2/pushes/" & $iden[$x], False)
 			$oHTTP.SetCredentials($access_token, "", 0)
 			$oHTTP.SetRequestHeader("Content-Type", "application/json")
