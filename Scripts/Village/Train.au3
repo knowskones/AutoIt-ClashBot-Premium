@@ -130,8 +130,8 @@ Func Train()
 
 	For $i = 0 To 3 ;iterate through barracks
 		If _Sleep(500) Then ExitLoop
-
 		ClickP($TopLeftClient) ;Click Away
+
 		If _Sleep(500) Then ExitLoop
 		Click($barrackPos[$i][0], $barrackPos[$i][1]) ;Click Barrack
 
@@ -143,7 +143,6 @@ Func Train()
 		Else
 			Click($TrainPos[0], $TrainPos[1]) ;Click Train Troops button
 			If $i = 0 And not $fullArmy then CheckFullArmy()
-			If _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 8 Then SetLog("Barrack " & $i + 1 & " Training...", $COLOR_GREEN)
 			If _Sleep(1000) Then ExitLoop
 
 			If _GUICtrlComboBox_GetCurSel($cmbTroopComp) = 8 Then ; Use Barracks
@@ -155,42 +154,52 @@ Func Train()
 
 				Switch $barrackTroop[$i]
 					Case 0
+						SetLog("Barrack " & $i + 1 & " Training Barbarians", $COLOR_GREEN)
 						While _WaitForPixel(220, 320, Hex(0xF89683, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(220, 320, 20) ;Barbarian
 						WEnd
 					Case 1
+						SetLog("Barrack " & $i + 1 & " Training Archers", $COLOR_GREEN)
 						While _WaitForPixel(325, 330, Hex(0xF8C3B0, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(325, 320, 20) ;Archer
 						WEnd
 					Case 2
+						SetLog("Barrack " & $i + 1 & " Training Giants", $COLOR_GREEN)
 						While _WaitForPixel(430, 320, Hex(0xE68358, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(430, 320, 5) ;Giant
 						WEnd
 					Case 3
+						SetLog("Barrack " & $i + 1 & " Training Goblins", $COLOR_GREEN)
 						While _WaitForPixel(535, 310, Hex(0x7AA440, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(535, 320, 20) ;Goblin
 						WEnd
 					Case 4
+						SetLog("Barrack " & $i + 1 & " Training Wall Breaker", $COLOR_GREEN)
 						While _WaitForPixel(640, 290, Hex(0x5FC6D6, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(640, 320, 10) ;Wall Breaker
 						WEnd
 					Case 5
+						SetLog("Barrack " & $i + 1 & " Training Balloons", $COLOR_GREEN)
 						While _WaitForPixel(220, 410, Hex(0x58C0D8, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(220, 425, 5) ;Balloon
 						WEnd
 					Case 6
+						SetLog("Barrack " & $i + 1 & " Training Wizards", $COLOR_GREEN)
 						While _WaitForPixel(325, 425, Hex(0xA46052, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(325, 425, 5) ;Wizard
 						WEnd
 					Case 7
+						SetLog("Barrack " & $i + 1 & " Training Healers", $COLOR_GREEN)
 						While _WaitForPixel(430, 425, Hex(0xEFBB96, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(430, 425, 5) ;Healer
 						WEnd
 					Case 8
+						SetLog("Barrack " & $i + 1 & " Training Dragons", $COLOR_GREEN)
 						While _WaitForPixel(535, 410, Hex(0x8B7CA8, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(535, 425, 5) ;Dragon
 						WEnd
 					Case 9
+						SetLog("Barrack " & $i + 1 & " Training P.E.K.K.A", $COLOR_GREEN)
 						While _WaitForPixel(640, 410, Hex(0x7092AC, 6), 20, $TrainTimeout, $TrainDelay)
 							Click(640, 425, 5) ;PEKKA
 						WEnd

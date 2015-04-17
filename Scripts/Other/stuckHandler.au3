@@ -1,19 +1,12 @@
-#include <Constants.au3>
-Global $error[4]
-$error[0] = False
-$error[1] = False
-$error[2] = False
-$error[3] = False
-
 Func handleBarracksError($i) ;Sets the text for the log
+
 If $ichkRaxRestart = 0 then Return
+If $i = 0 then $barracksError[0] = True
+If $i = 1 then $barracksError[1] = True
+If $i = 2 then $barracksError[2] = True
+If $i = 3 then $barracksError[3] = True
 
-If $i = 0 then $error[0] = True
-If $i = 1 then $error[1] = True
-If $i = 2 then $error[2] = True
-If $i = 3 then $error[3] = True
-
-If $error[0]= True And $error[1]= True And $error[2]= True And $error[3]= True Then
+If $barracksError[0]= True And $barracksError[1]= True And $barracksError[2]= True And $barracksError[3]= True Then
 	SetLog("Restarting BlueStack to fix stuck error!", $COLOR_RED)
 	Local $RestartApp = StringReplace(_WinAPI_GetProcessFileName(WinGetProcess($Title)), "Frontend", "Restart")
 	Run($RestartApp & " Android")
@@ -26,9 +19,8 @@ EndFunc   ;==>_AllWordsExist
 
 Func resetBarracksError()
 If $ichkRaxRestart = 0 then Return
-
-	$error[0] = False
-	$error[1] = False
-	$error[2] = False
-	$error[3] = False
+	$barracksError[0] = False
+	$barracksError[1] = False
+	$barracksError[2] = False
+	$barracksError[3] = False
 EndFunc

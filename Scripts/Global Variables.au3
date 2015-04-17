@@ -79,6 +79,11 @@ $THText[1] = "7"
 $THText[2] = "8"
 $THText[3] = "9"
 $THText[4] = "10"
+Global $barracksError[4]
+$barracksError[0] = False
+$barracksError[1] = False
+$barracksError[2] = False
+$barracksError[3] = False
 Global $SearchCount = 0 ;Number of searches
 Global $THaddtiles, $THside, $THi
 
