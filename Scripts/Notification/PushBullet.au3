@@ -112,15 +112,32 @@ Func _RemoteControl()
 			EndIf
 		Next
 	EndIf
+EndFunc   ;==>_RemoteControl
 
-	If UBound($iden) > $PushBulletmessages And $PushBulletmessages <> 0 Then
-		For $x = $PushBulletmessages To UBound($iden) - 1
-			$oHTTP.Open("Delete", "https://api.pushbullet.com/v2/pushes/" & $iden[$x], False)
-			$oHTTP.SetCredentials($access_token, "", 0)
-			$oHTTP.SetRequestHeader("Content-Type", "application/json")
-			$oHTTP.Send()
-		Next
-	EndIf
+;Keep Messages
+Func KeepMessages($int)
+   if $PushBulletEnabled = 1 and $PushBullettoken <> "" Then
+	   $oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
+	   $access_token = $PushBullettoken
+	   $oHTTP.Open("Get", "https://api.pushbullet.com/v2/pushes?active=true", False)
+	   $oHTTP.SetCredentials($access_token, "", 0)
+	   $oHTTP.SetRequestHeader("Content-Type", "application/json")
+	   $oHTTP.Send()
+	   $Result = $oHTTP.ResponseText
+
+	   If $Result = "" Then Return
+	   Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
+
+	   If UBound($iden) > $int And $int <> 0 Then
+		   For $x = $PushBulletmessages To UBound($iden) - 1
+			  SetLog($iden[$x])
+			   $oHTTP.Open("Delete", "https://api.pushbullet.com/v2/pushes/" & $iden[$x], False)
+			   $oHTTP.SetCredentials($access_token, "", 0)
+			   $oHTTP.SetRequestHeader("Content-Type", "application/json")
+			   $oHTTP.Send()
+		   Next
+		EndIf
+    EndIf
 EndFunc   ;==>_RemoteControl
 
 Func _PushBullet($pTitle = "", $pMessage = "")
