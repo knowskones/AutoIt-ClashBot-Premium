@@ -130,7 +130,6 @@ Func KeepMessages($int)
 
 	   If UBound($iden) > $int And $int <> 0 Then
 		   For $x = $PushBulletmessages To UBound($iden) - 1
-			  SetLog($iden[$x])
 			   $oHTTP.Open("Delete", "https://api.pushbullet.com/v2/pushes/" & $iden[$x], False)
 			   $oHTTP.SetCredentials($access_token, "", 0)
 			   $oHTTP.SetRequestHeader("Content-Type", "application/json")
