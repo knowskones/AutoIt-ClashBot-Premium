@@ -23,10 +23,11 @@ Func _RemoteControl()
 				$iden[$x] = StringStripWS($iden[$x], $STR_STRIPLEADING + $STR_STRIPTRAILING + $STR_STRIPSPACES)
 
 				If $title[$x] = "bot help" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Help has been sent")
 					_Push("Request for Help", "You can remotely control your bot using the following command format\n\nBot <command> where <command> is:\n\nPause - pause the bot\nResume - resume the bot\nStats - send bot current statistics\nLogs - send the current log file\nBoost1 - Boost 1 barrack\nBoost2 - Boost 2 barracks\nBoost3 - Boost 3 barracks\nBoostAll - Boost all barracks\nHelp - send this help message\n\nEnter the command in the title of the message")
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot pause" Then
+					_DeleteMessage($iden[$x])
 					If $AllowPause Then
 						If $PauseBot = False Then
 							SetLog("Your request has been received. Bot is now paused")
@@ -40,8 +41,8 @@ Func _RemoteControl()
 					Else
 						_Push("Request to Pause", "Sorry, pause function is disabled during attack, try again later")
 					EndIf
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot resume" Then
+					_DeleteMessage($iden[$x])
 					If $PauseBot = True Then
 						SetLog("Your request has been received. Bot is now resumed")
 						_Push("Request to Resume", "Your request has been received. Bot is now resumed")
@@ -51,16 +52,16 @@ Func _RemoteControl()
 						SetLog("Your bot is currently running, no action was taken")
 						_Push("Request to Resume", "Your bot is currently running, no action was taken")
 					EndIf
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot stats" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Statistics sent")
 					_Push("Request for Stats", "Resources at Start\n-Gold:  " & GUICtrlRead($lblresultgoldtstart) & "\n-Elixir:  " & GUICtrlRead($lblresultelixirstart) & "\n-DE:  " & GUICtrlRead($lblresultdestart) & "\n-Trophies:  " & GUICtrlRead($lblresulttrophystart) & "\n\nCurrent Resources \n-Gold:  " & GUICtrlRead($lblresultgoldnow) & "\n-Elixir:  " & GUICtrlRead($lblresultelixirnow) & "\n-DE:  " & GUICtrlRead($lblresultdenow) & "\n-Trophies:  " & GUICtrlRead($lblresulttrophynow) & "\n\nLast Raid\n-Gold:  " & GUICtrlRead($lblresultgoldlast) & "\n-Elixir:  " & GUICtrlRead($lblresultelixirlast) & "\n-DE:  " & GUICtrlRead($lblresultdelast) & "\n-Trophies:  " & GUICtrlRead($lblresulttrophylast) & "\n\nTotal Raid\n-Gold:  " & GUICtrlRead($lblresultgoldgain) & "\n-Elixir:  " & GUICtrlRead($lblresultelixirgain) & "\n-DE:  " & GUICtrlRead($lblresultdegain) & "\n-Trophies Won:  " & GUICtrlRead($lblresulttrophiesdropped) & "\n\nOther Stats\n-Attacked:  " & GUICtrlRead($lblresultvillagesattacked) & "\n-Skipped:  " & GUICtrlRead($lblresultvillagesskipped) & "\n-Wall Upgrade:  " & GUICtrlRead($lblwallupgradecount) & "\n-Search Cost:  " & GUICtrlRead($lblresultsearchcost) & "\n-Bot Run Time:  " & StringFormat("%02i:%02i:%02i", $hour, $min, $sec))
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot logs" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Log is now sent")
 					_PushFile($sLogFileName, "Profile\Logs", "text/plain; charset=utf-8", "Current Logs", $sLogFileName)
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boost1" Then
+					_DeleteMessage($iden[$x])
 					If GUICtrlRead($cmbBoostBarracks) < 5 Then
 						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
 						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
@@ -73,8 +74,8 @@ Func _RemoteControl()
 						SetLog("You have already reached maximum barracks boost setting.")
 						_Push("Barrack Boost", "You have already reached maximum barracks boost setting.")
 					EndIf
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boost2" Then
+					_DeleteMessage($iden[$x])
 					If GUICtrlRead($cmbBoostBarracks) < 5 Then
 						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
 						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
@@ -87,8 +88,8 @@ Func _RemoteControl()
 						SetLog("You have already reached maximum barracks boost setting.")
 						_Push("Barrack Boost", "You have already reached maximum barracks boost setting.")
 					EndIf
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boost3" Then
+					_DeleteMessage($iden[$x])
 					If GUICtrlRead($cmbBoostBarracks) < 5 Then
 						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
 						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
@@ -101,8 +102,8 @@ Func _RemoteControl()
 						SetLog("You have already reached maximum barracks boost setting.")
 						_Push("Barrack Boost", "You have already reached maximum barracks boost setting.")
 					EndIf
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot boostall" Then
+					_DeleteMessage($iden[$x])
 					If GUICtrlRead($cmbBoostBarracks) < 5 Then
 						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
 						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
@@ -115,29 +116,29 @@ Func _RemoteControl()
 						SetLog("You have already reached maximum barracks boost setting.")
 						_Push("Barrack Boost", "You have already reached maximum barracks boost setting")
 					EndIf
-					_DeleteMessage($iden[$x])
 				ElseIf $title[$x] = "bot shutdownpc" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Force shutdown your PC.", $COLOR_BLUE)
 					_Push("Request to ShutdownPC", "Your request has been received. Force shutdown your PC.")
-					_DeleteMessage($iden[$x])
 					If _Sleep(500) Then Return
 					btnStop()
 					Shutdown(5) ; Force Shutdown
 				ElseIf $title[$x] = "bot sleeppc" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Sleep your PC.", $COLOR_BLUE)
 					_Push("Request to SleepPC", "Your request has been received. Sleep your PC.")
-					_DeleteMessage($iden[$x])
 					If _Sleep(500) Then Return
 					btnStop()
 					Shutdown(32) ; Sleep / Stand by
 				ElseIf $title[$x] = "bot restartpc" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Restart your PC.", $COLOR_BLUE)
 					_Push("Request to RestartPC", "Your request has been received. Restart your PC.")
-					_DeleteMessage($iden[$x])
 					If _Sleep(500) Then Return
 					btnStop()
 					Shutdown(6) ; Force Restart
 				ElseIf $title[$x] = "bot screencapture" Then
+					_DeleteMessage($iden[$x])
 					SetLog("Your request has been received. Take a screenshot on your computer.", $COLOR_BLUE)
 					Local $screenfilename
 					Local $Date = @MDAY & "." & @MON & "." & @YEAR
@@ -145,12 +146,10 @@ Func _RemoteControl()
 					$screenfilename = "ScreenCapture(" & $Date & "_at_" & $Time & ")" & ".jpg"
 					_ScreenCapture_Capture($dirScreenCapture & $screenfilename)
 					_PushFile($screenfilename, "Profile\ScreenCapture", "image/jpeg", "Screen Capture", $screenfilename)
-					_DeleteMessage($iden[$x])
 				EndIf
 			EndIf
 		Next
 	EndIf
-	KeepMessages($PushBulletmessages)
 EndFunc   ;==>_RemoteControl
 
 ;Keep Messages
@@ -197,6 +196,7 @@ Func _Push($pTitle, $pMessage)
 	$oHTTP.SetRequestHeader("Content-Type", "application/json")
 	Local $pPush = '{"type": "note", "title": "' & $pTitle & '", "body": "' & $pMessage & '"}'
 	$oHTTP.Send($pPush)
+	KeepMessages($PushBulletmessages)
 EndFunc   ;==>_Push
 
 Func _PushFile($File, $Folder, $FileType, $title, $body)
@@ -268,6 +268,7 @@ Func _PushFile($File, $Folder, $FileType, $title, $body)
 		SetLog("You can paste this in the forum so we can check whether it is PushBullet problem or mine")
 		SetLog('=========================================================================')
 	EndIf
+	KeepMessages($PushBulletmessages)
 EndFunc   ;==>_PushFile
 
 Func _DeletePush()

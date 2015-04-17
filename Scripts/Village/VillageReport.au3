@@ -103,6 +103,7 @@ Func VillageReport()
 	GUICtrlSetData($lblresultgoldnowM, $GoldCount)
 	GUICtrlSetData($lblresultelixirnowM, $ElixirCount)
 	GUICtrlSetData($lblresultdenowM, $DarkCount)
+
 	;Reset Values
 	$LastRaidGold = 0
 	$LastRaidElixir = 0
