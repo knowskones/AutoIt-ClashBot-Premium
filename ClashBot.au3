@@ -42,6 +42,7 @@ DirCreate($dirLogs)
 DirCreate($dirLoots)
 DirCreate($dirAllTowns)
 DirCreate($dirDarkStorages)
+DirCreate($dirScreenCapture)
 
 While 1
 	Switch TrayGetMsg()
