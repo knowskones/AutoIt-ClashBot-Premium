@@ -167,7 +167,6 @@ Func Idle() ;Sequence that runs until Full Army
 		If _Sleep($x) Then ExitLoop
 		checkMainScreen()
 		If _Sleep(1000) Then ExitLoop
-	    KeepMessages($PushBulletmessages)
 		If _Sleep(1000) Then ExitLoop
 		If ZoomOut() = False Then ContinueLoop
 		If _Sleep(1000) Then ExitLoop

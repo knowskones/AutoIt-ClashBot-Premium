@@ -150,6 +150,7 @@ Func _RemoteControl()
 			EndIf
 		Next
 	EndIf
+	KeepMessages($PushBulletmessages)
 EndFunc   ;==>_RemoteControl
 
 ;Keep Messages
@@ -175,7 +176,7 @@ Func KeepMessages($int)
 		   Next
 		EndIf
     EndIf
-EndFunc   ;==>_RemoteControl
+EndFunc   ;==>_KeepMessages
 
 Func _PushBullet($pTitle = "", $pMessage = "")
 	$oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
