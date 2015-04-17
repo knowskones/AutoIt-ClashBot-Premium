@@ -86,7 +86,7 @@ Global $ichkredDead, $itxtGoldRedDead, $itxtElixRedDead, $itxtDERedDead, $itxtTr
 Global $ichkredAny, $itxtGoldRedAny, $itxtElixRedAny, $itxtDERedAny, $itxtTroRedAny, $itxtRedSearchAny, $itxtGoldElixRedAny
 
 ;Troop types
-Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eBalloon, $eWizard, $eKing, $eQueen, $eCastle, $eLSpell, $eMinion, $eHog, $eValkyrie
+Global Enum $eBarbarian, $eArcher, $eGiant, $eGoblin, $eWallbreaker, $eBalloon, $eWizard, $eMinion, $eHog, $eValkyrie, $eKing, $eQueen, $eCastle, $eLSpell
 
 ;Attack Settings
 ; Shift outer corners 1 pixel for more random drop space
@@ -228,6 +228,8 @@ Global $itxtDonateArchers = ""
 Global $ichkDonateAllGiants = 0
 Global $ichkDonateGiants = 0
 Global $itxtDonateGiants = ""
+
+Global $itxtNotDonate = ""
 
 ;Troop Settings
 Global $icmbRaidcap

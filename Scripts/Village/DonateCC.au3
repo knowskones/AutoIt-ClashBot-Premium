@@ -32,9 +32,18 @@ Func DonateCC()
 						$String = $String & @CRLF & getString($DonatePixel[1] - 17)
 					EndIf
 
-					SetLog("Chat Text: " & $String, $COLOR_GREEN)
+					 Local $BlacklistCheck = 0
+					 Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
+					 For $i = 0 To UBound($Blacklist) - 1
+						If CheckDonate($Blacklist[$i], $String) Then
+						   $BlacklistCheck = 1
+						   SetLog("Donation Request inside Blacklist, skip donating...", $COLOR_RED)
+						EndIf
+					 Next
 
-					If $ichkDonateBarbarians = 1 Then
+					If $BlacklistCheck = 0 Then SetLog("Chat Text: " & $String, $COLOR_GREEN)
+
+					If $ichkDonateBarbarians = 1 And $BlacklistCheck = 0 Then
 						Local $Barbs = StringSplit($itxtDonateBarbarians, @CRLF)
 						For $i = 0 To UBound($Barbs) - 1
 							If CheckDonate($Barbs[$i], $String) Then
@@ -48,7 +57,7 @@ Func DonateCC()
 							ExitLoop
 						EndIf
 					EndIf
-					If $ichkDonateArchers = 1 Then
+					If $ichkDonateArchers = 1 And $BlacklistCheck = 0 Then
 						Local $Archers = StringSplit($itxtDonateArchers, @CRLF)
 						For $i = 0 To UBound($Archers) - 1
 							If CheckDonate($Archers[$i], $String) Then
@@ -62,7 +71,7 @@ Func DonateCC()
 							ExitLoop
 						EndIf
 					EndIf
-					If $ichkDonateGiants = 1 Then
+					If $ichkDonateGiants = 1 And $BlacklistCheck = 0 Then
 						Local $Giants = StringSplit($itxtDonateGiants, @CRLF)
 						For $i = 0 To UBound($Giants) - 1
 							If CheckDonate($Giants[$i], $String) Then
@@ -78,11 +87,11 @@ Func DonateCC()
 					EndIf
 				Else
 					Select
-						Case $ichkDonateAllBarbarians = 1
+						Case $ichkDonateAllBarbarians = 1 And $BlacklistCheck = 0
 							DonateBarbs()
-						Case $ichkDonateAllArchers = 1
+						Case $ichkDonateAllArchers = 1 And $BlacklistCheck = 0
 							DonateArchers()
-						Case $ichkDonateAllGiants = 1
+						Case $ichkDonateAllGiants = 1 And $BlacklistCheck = 0
 							DonateGiants()
 					EndSelect
 				EndIf
@@ -209,4 +218,7 @@ Func DonateGiants()
 		If _Sleep(500) Then Return
 		ClickP($TopLeftClient) ;Click Away
 	EndIf
-EndFunc   ;==>DonateGiants
+ EndFunc   ;==>DonateGiants
+
+Func DonateBlacklist()
+EndFunc  ;==>DonateBlacklist

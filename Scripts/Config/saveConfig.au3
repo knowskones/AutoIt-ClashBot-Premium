@@ -230,6 +230,7 @@ Func saveConfig() ;Saves the controls settings to the config
 
 	IniWrite($config, "donate", "txtRequest", GUICtrlRead($txtRequest))
 
+	IniWrite($config, "donate", "blacklist", StringReplace(GUICtrlRead($txtNotDonate), @CRLF, "|"))
 	IniWrite($config, "donate", "txtDonateBarbarians", StringReplace(GUICtrlRead($txtDonateBarbarians), @CRLF, "|"))
 	IniWrite($config, "donate", "txtDonateArchers", StringReplace(GUICtrlRead($txtDonateArchers), @CRLF, "|"))
 	IniWrite($config, "donate", "txtDonateGiants", StringReplace(GUICtrlRead($txtDonateGiants), @CRLF, "|"))

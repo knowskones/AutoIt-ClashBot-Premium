@@ -260,6 +260,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	GUICtrlSetData($txtDonateGiants, $itxtDonateGiants)
 
 	GUICtrlSetData($txtRequest, $itxtRequest)
+	GUICtrlSetData($txtNotDonate, $itxtNotDonate)
 	chkRequest()
 	;Troop Settings--------------------------------------------------------------------------
 	_GUICtrlComboBox_SetCurSel($cmbTroopComp, $icmbTroopComp)
