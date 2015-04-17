@@ -49,7 +49,7 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 		If _Sleep(2000) Then Return
 		_CaptureRegion()
 		If _ColorCheck(_GetPixelColor(284, 28), Hex(0x41B1CD, 6), 20) Then
-			_GUICtrlEdit_SetText($txtLog, "")
+			If $GoldChangeCheck = True Then _GUICtrlEdit_SetText($txtLog, "")
 			Return
 		EndIf
 
