@@ -143,7 +143,7 @@ Func _RemoteControl()
 					Local $Date = @MDAY & "." & @MON & "." & @YEAR
 					Local $Time = @HOUR & "." & @MIN
 					$screenfilename = "ScreenCapture(" & $Date & "_at_" & $Time & ")" & ".jpg"
-					_ScreenCapture_Capture(@ScriptDir & "\Profile\ScreenCapture\" & $screenfilename)
+					_GDIPlus_ImageSaveToFile(_GDIPlus_BitmapCreateFromHBITMAP(_ScreenCapture_Capture()), $dirScreenCapture & $screenfilename)
 					_PushFile($screenfilename, "Profile\ScreenCapture", "image/jpeg", "Screen Capture", $screenfilename)
 					_DeleteMessage($iden[$x])
 				EndIf
