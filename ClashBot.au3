@@ -216,7 +216,6 @@ Func AttackMain() ;Main control for attack functions
 	If _Sleep(1000) Then Return
 	ReturnHome($TakeLootSnapShot)
 	If _Sleep(1000) Then Return
-	$FirstStart = True ;Ensure camps get recalculated after battle
 	$AllowPause = True
 	GUICtrlSetState($btnPause, $GUI_ENABLE)
 EndFunc   ;==>AttackMain

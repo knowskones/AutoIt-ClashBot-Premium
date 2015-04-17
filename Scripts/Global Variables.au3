@@ -256,6 +256,7 @@ Global $itxtDarkBarrack1, $itxtDarkBarrack2
 Global $CustomTroopF[4]
 Global $CustomTroopS[4]
 Global $itxtFirstTroop[4]
+Global $FixTrain = False
 
 Global $ArmyPos[2]
 Global $KingPos[2]
@@ -322,7 +323,6 @@ Global $DCattack = False
 Global $Checkrearm = True
 Global $lblgoldnowM, $lblresultgoldnowM, $imggoldnowM, $lblelixirnowM, $lblresultelixirnowM, $imgelixirnowM, $lbldenowM, $lblresultdenowM, $imgdenowM
 Global $CheckDupGold1 = 0, $CheckDupElixir1 = 0, $CheckDupGold2 = 0, $CheckDupElixir2 = 0
-Global $FixTrain = False
 
 ;PushBullet
 Global $GoldGained = 0, $ElixirGained = 0, $DarkGained = 0, $TrophyGained = 0

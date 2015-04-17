@@ -91,12 +91,30 @@ Func Train()
 		SetLog("Troop Train : [BB]: " & $CurBarb & ", [AR]: " & $CurArch & ", [GB]: " & $CurGoblin & ", [GI]: " & $CurGiant & ", [WB]: " & $CurWB, $COLOR_GREEN)
 	EndIf
 
+	;Determine working barracks
+	If ($WorkingBarracks = 0 And (_GUICtrlComboBox_GetCurSel($cmbTroopComp) <> 8)) Then
+		For $i = 0 To 3 ;iterate through barracks
+			ClickP($TopLeftClient) ;Click Away
+			If _Sleep(200) Then ExitLoop
+			Click($barrackPos[$i][0], $barrackPos[$i][1]) ;Click Barrack
+
+			Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
+			If IsArray($TrainPos) = False Then
+				SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
+				$BarAvailable[$i] = False
+			Else
+				$BarAvailable[$i] = True
+				$WorkingBarracks += 1
+			EndIf
+		Next
+	EndIf
+
 	Local $GiantEBarrack ,$WallEBarrack ,$ArchEBarrack ,$BarbEBarrack ,$GoblinEBarrack
-	$GiantEBarrack = Floor($CurGiant/4)
-	$WallEBarrack = Floor($CurWB/4)
-	$ArchEBarrack = Floor($CurArch/4)
-	$BarbEBarrack = Floor($CurBarb/4)
-	$GoblinEBarrack = Floor($CurGoblin/4)
+	$GiantEBarrack = Floor($CurGiant/$WorkingBarracks)
+	$WallEBarrack = Floor($CurWB/$WorkingBarracks)
+	$ArchEBarrack = Floor($CurArch/$WorkingBarracks)
+	$BarbEBarrack = Floor($CurBarb/$WorkingBarracks)
+	$GoblinEBarrack = Floor($CurGoblin/$WorkingBarracks)
 
 	Local $troopFirstGiant,$troopSecondGiant,$troopFirstWall,$troopSecondWall,$troopFirstGoblin,$troopSecondGoblin,$troopFirstBarba,$troopSecondBarba,$troopFirstArch,$troopSecondArch
 	$troopFirstGiant = 0
@@ -322,6 +340,7 @@ Func Train()
 					$troopSecondArch = Number(getOther(171 + 107 * 1, 278, "Barrack"))
 					If $troopSecondArch = 0 Then
 						$troopSecondArch = Number(getOther(171 + 107 * 1, 278, "Barrack"))
+						If $troopSecondArch = 0 Then $CurArch += 40
 					EndIf
 				EndIf
 
