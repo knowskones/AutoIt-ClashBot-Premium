@@ -28,7 +28,8 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 		$FileName = $Date & "_at_" & $Time & ".jpg"
 	EndIf
 
-		;Get Last Raid Resources
+   ;Get Last Raid Resources
+   If $GoldChangeCheck = True Then
 		$LastRaidGold = getOther(330, 289, "LastRaidGold")
 		$LastRaidElixir = getOther(330, 328, "LastRaidElixir")
 		Local $trophyicon = _PixelSearch(457, 403, 467, 418, Hex(0xE8C528, 6), 5) ;Finds Trophy icon in the bottom, if it finds it then Dark Elixir is available
@@ -40,6 +41,7 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 			$LastRaidTrophy = getOther(330, 365, "LastRaidTrophy")
 			SetLog("Last Raid Loot: [G]: " & $LastRaidGold & " [E]: " & $LastRaidElixir & " [T]: " & $LastRaidTrophy, $COLOR_GREEN)
 		EndIf
+   EndIf
 
 	If _Sleep(2000) Then Return
 	Click(428, 544) ;Click Return Home Button
