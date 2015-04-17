@@ -49,25 +49,25 @@
 					Case 0
 					Local $troopBarbarian = Number(getOther(171 + 107 * 0, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, $itxtFirstTroop[$i])
+						TrainIt($eBarbarian, $itxtFirstTroop[$i])
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, 20)
+						TrainIt($eBarbarian, 20)
 						$LeftTrain0 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopBarbarian < 20) And $LeftTrain0 > (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, (20 - $troopBarbarian))
+						TrainIt($eBarbarian, (20 - $troopBarbarian))
 						$LeftTrain0 = ($ClickTrain0 - (20 - $troopBarbarian))
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopBarbarian < 20) And $LeftTrain0 <= (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, $LeftTrain0)
+						TrainIt($eBarbarian, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain0 <= 1 And ($troopBarbarian < 20) Then
-						TrainCt($eBarbarian, $LeftTrain0)
+						TrainIt($eBarbarian, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
@@ -77,25 +77,25 @@
 					Case 1
 					Local $troopArcher = Number(getOther(171 + 107 * 1, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, $itxtFirstTroop[$i])
+						TrainIt($eArcher, $itxtFirstTroop[$i])
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, 20)
+						TrainIt($eArcher, 20)
 						$LeftTrain0 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopArcher < 20) And $LeftTrain0 > (20 - $troopArcher) Then
-						TrainCt($eArcher, (20 - $troopArcher))
+						TrainIt($eArcher, (20 - $troopArcher))
 						$LeftTrain0 = ($ClickTrain0 - (20 - $troopArcher))
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopArcher < 20) And $LeftTrain0 <= (20 - $troopArcher) Then
-						TrainCt($eArcher, $LeftTrain0)
+						TrainIt($eArcher, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain0 <= 1 And ($troopArcher < 20) Then
-						TrainCt($eArcher, $LeftTrain0)
+						TrainIt($eArcher, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					Else
@@ -105,25 +105,25 @@
 					Case 2
 					Local $troopGiant = Number(getOther(171 + 107 * 2, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, $itxtFirstTroop[$i])
+						TrainIt($eGiant, $itxtFirstTroop[$i])
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, 6)
+						TrainIt($eGiant, 6)
 						$LeftTrain0 = ($itxtFirstTroop[$i] - 6)
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopGiant < 6) And $LeftTrain0 > (6 - $troopGiant) Then
-						TrainCt($eGiant, (6 - $troopGiant))
+						TrainIt($eGiant, (6 - $troopGiant))
 						$LeftTrain0 = ($ClickTrain0 - (6 - $troopGiant))
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopGiant < 6) And $LeftTrain0 <= (6 - $troopGiant) Then
-						TrainCt($eGiant, $LeftTrain0)
+						TrainIt($eGiant, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain0 <= 1 And ($troopGiant < 6) Then
-						TrainCt($eGiant, $LeftTrain0)
+						TrainIt($eGiant, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					Else
@@ -133,25 +133,25 @@
 					Case 3
 					Local $troopGoblin = Number(getOther(171 + 107 * 3, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, $itxtFirstTroop[$i])
+						TrainIt($eGoblin, $itxtFirstTroop[$i])
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, 20)
+						TrainIt($eGoblin, 20)
 						$LeftTrain0 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopGoblin < 20) And $LeftTrain0 > (20 - $troopGoblin) Then
-						TrainCt($eGoblin, (20 - $troopGoblin))
+						TrainIt($eGoblin, (20 - $troopGoblin))
 						$LeftTrain0 = ($ClickTrain0 - (20 - $troopGoblin))
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopGoblin < 20) And $LeftTrain0 <= (20 - $troopGoblin) Then
-						TrainCt($eGoblin, $LeftTrain0)
+						TrainIt($eGoblin, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain0 <= 1 And ($troopGoblin < 20) Then
-						TrainCt($eGoblin, $LeftTrain0)
+						TrainIt($eGoblin, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					Else
@@ -161,25 +161,25 @@
 					Case 4
 					Local $troopWallbreaker = Number(getOther(171 + 107 * 4, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, $itxtFirstTroop[$i])
+						TrainIt($eWallbreaker, $itxtFirstTroop[$i])
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, 10)
+						TrainIt($eWallbreaker, 10)
 						$LeftTrain0 = ($itxtFirstTroop[$i] - 10)
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopWallbreaker < 10) And $LeftTrain0 > (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, (10 - $troopWallbreaker))
+						TrainIt($eWallbreaker, (10 - $troopWallbreaker))
 						$LeftTrain0 = ($ClickTrain0 - (10 - $troopWallbreaker))
 						$ClickTrain0 = $LeftTrain0
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain0, $COLOR_BLUE)
 					ElseIf $LeftTrain0 > 1 And ($troopWallbreaker < 10) And $LeftTrain0 <= (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, $LeftTrain0)
+						TrainIt($eWallbreaker, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain0 <= 1 And ($troopWallbreaker < 10) Then
-						TrainCt($eWallbreaker, $LeftTrain0)
+						TrainIt($eWallbreaker, $LeftTrain0)
 						$Trainrax0 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					Else
@@ -198,25 +198,25 @@
 					Case 0
 					Local $troopBarbarian = Number(getOther(171 + 107 * 0, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, $itxtFirstTroop[$i])
+						TrainIt($eBarbarian, $itxtFirstTroop[$i])
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, 20)
+						TrainIt($eBarbarian, 20)
 						$LeftTrain1 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopBarbarian < 20) And $LeftTrain1 > (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, (20 - $troopBarbarian))
+						TrainIt($eBarbarian, (20 - $troopBarbarian))
 						$LeftTrain1 = ($ClickTrain1 - (20 - $troopBarbarian))
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopBarbarian < 20) And $LeftTrain1 <= (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, $LeftTrain1)
+						TrainIt($eBarbarian, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain1 <= 1 And ($troopBarbarian < 20) Then
-						TrainCt($eBarbarian, $LeftTrain1)
+						TrainIt($eBarbarian, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
@@ -226,25 +226,25 @@
 					Case 1
 					Local $troopArcher = Number(getOther(171 + 107 * 1, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, $itxtFirstTroop[$i])
+						TrainIt($eArcher, $itxtFirstTroop[$i])
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, 20)
+						TrainIt($eArcher, 20)
 						$LeftTrain1 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopArcher < 20) And $LeftTrain1 > (20 - $troopArcher) Then
-						TrainCt($eArcher, (20 - $troopArcher))
+						TrainIt($eArcher, (20 - $troopArcher))
 						$LeftTrain1 = ($ClickTrain1 - (20 - $troopArcher))
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopArcher < 20) And $LeftTrain1 <= (20 - $troopArcher) Then
-						TrainCt($eArcher, $LeftTrain1)
+						TrainIt($eArcher, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain1 <= 1 And ($troopArcher < 20) Then
-						TrainCt($eArcher, $LeftTrain1)
+						TrainIt($eArcher, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					Else
@@ -254,25 +254,25 @@
 					Case 2
 					Local $troopGiant = Number(getOther(171 + 107 * 2, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, $itxtFirstTroop[$i])
+						TrainIt($eGiant, $itxtFirstTroop[$i])
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, 6)
+						TrainIt($eGiant, 6)
 						$LeftTrain1 = ($itxtFirstTroop[$i] - 6)
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopGiant < 6) And $LeftTrain1 > (6 - $troopGiant) Then
-						TrainCt($eGiant, (6 - $troopGiant))
+						TrainIt($eGiant, (6 - $troopGiant))
 						$LeftTrain1 = ($ClickTrain1 - (6 - $troopGiant))
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopGiant < 6) And $LeftTrain1 <= (6 - $troopGiant) Then
-						TrainCt($eGiant, $LeftTrain1)
+						TrainIt($eGiant, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain1 <= 1 And ($troopGiant < 6) Then
-						TrainCt($eGiant, $LeftTrain1)
+						TrainIt($eGiant, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					Else
@@ -282,25 +282,25 @@
 					Case 3
 					Local $troopGoblin = Number(getOther(171 + 107 * 3, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, $itxtFirstTroop[$i])
+						TrainIt($eGoblin, $itxtFirstTroop[$i])
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, 20)
+						TrainIt($eGoblin, 20)
 						$LeftTrain1 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopGoblin < 20) And $LeftTrain1 > (20 - $troopGoblin) Then
-						TrainCt($eGoblin, (20 - $troopGoblin))
+						TrainIt($eGoblin, (20 - $troopGoblin))
 						$LeftTrain1 = ($ClickTrain1 - (20 - $troopGoblin))
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopGoblin < 20) And $LeftTrain1 <= (20 - $troopGoblin) Then
-						TrainCt($eGoblin, $LeftTrain1)
+						TrainIt($eGoblin, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain1 <= 1 And ($troopGoblin < 20) Then
-						TrainCt($eGoblin, $LeftTrain1)
+						TrainIt($eGoblin, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					Else
@@ -310,25 +310,25 @@
 					Case 4
 					Local $troopWallbreaker = Number(getOther(171 + 107 * 4, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, $itxtFirstTroop[$i])
+						TrainIt($eWallbreaker, $itxtFirstTroop[$i])
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, 10)
+						TrainIt($eWallbreaker, 10)
 						$LeftTrain1 = ($itxtFirstTroop[$i] - 10)
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopWallbreaker < 10) And $LeftTrain1 > (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, (10 - $troopWallbreaker))
+						TrainIt($eWallbreaker, (10 - $troopWallbreaker))
 						$LeftTrain1 = ($ClickTrain1 - (10 - $troopWallbreaker))
 						$ClickTrain1 = $LeftTrain1
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain1, $COLOR_BLUE)
 					ElseIf $LeftTrain1 > 1 And ($troopWallbreaker < 10) And $LeftTrain1 <= (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, $LeftTrain1)
+						TrainIt($eWallbreaker, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain1 <= 1 And ($troopWallbreaker < 10) Then
-						TrainCt($eWallbreaker, $LeftTrain1)
+						TrainIt($eWallbreaker, $LeftTrain1)
 						$Trainrax1 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					Else
@@ -347,25 +347,25 @@
 					Case 0
 					Local $troopBarbarian = Number(getOther(171 + 107 * 0, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, $itxtFirstTroop[$i])
+						TrainIt($eBarbarian, $itxtFirstTroop[$i])
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, 20)
+						TrainIt($eBarbarian, 20)
 						$LeftTrain2 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopBarbarian < 20) And $LeftTrain2 > (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, (20 - $troopBarbarian))
+						TrainIt($eBarbarian, (20 - $troopBarbarian))
 						$LeftTrain2 = ($ClickTrain2 - (20 - $troopBarbarian))
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopBarbarian < 20) And $LeftTrain2 <= (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, $LeftTrain2)
+						TrainIt($eBarbarian, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain2 <= 1 And ($troopBarbarian < 20) Then
-						TrainCt($eBarbarian, $LeftTrain2)
+						TrainIt($eBarbarian, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
@@ -375,25 +375,25 @@
 					Case 1
 					Local $troopArcher = Number(getOther(171 + 107 * 1, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, $itxtFirstTroop[$i])
+						TrainIt($eArcher, $itxtFirstTroop[$i])
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, 20)
+						TrainIt($eArcher, 20)
 						$LeftTrain2 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopArcher < 20) And $LeftTrain2 > (20 - $troopArcher) Then
-						TrainCt($eArcher, (20 - $troopArcher))
+						TrainIt($eArcher, (20 - $troopArcher))
 						$LeftTrain2 = ($ClickTrain2 - (20 - $troopArcher))
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopArcher < 20) And $LeftTrain2 <= (20 - $troopArcher) Then
-						TrainCt($eArcher, $LeftTrain2)
+						TrainIt($eArcher, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain2 <= 1 And ($troopArcher < 20) Then
-						TrainCt($eArcher, $LeftTrain2)
+						TrainIt($eArcher, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					Else
@@ -403,25 +403,25 @@
 					Case 2
 					Local $troopGiant = Number(getOther(171 + 107 * 2, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, $itxtFirstTroop[$i])
+						TrainIt($eGiant, $itxtFirstTroop[$i])
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, 6)
+						TrainIt($eGiant, 6)
 						$LeftTrain2 = ($itxtFirstTroop[$i] - 6)
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopGiant < 6) And $LeftTrain2 > (6 - $troopGiant) Then
-						TrainCt($eGiant, (6 - $troopGiant))
+						TrainIt($eGiant, (6 - $troopGiant))
 						$LeftTrain2 = ($ClickTrain2 - (6 - $troopGiant))
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopGiant < 6) And $LeftTrain2 <= (6 - $troopGiant) Then
-						TrainCt($eGiant, $LeftTrain2)
+						TrainIt($eGiant, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain2 <= 1 And ($troopGiant < 6) Then
-						TrainCt($eGiant, $LeftTrain2)
+						TrainIt($eGiant, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					Else
@@ -431,25 +431,25 @@
 					Case 3
 					Local $troopGoblin = Number(getOther(171 + 107 * 3, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, $itxtFirstTroop[$i])
+						TrainIt($eGoblin, $itxtFirstTroop[$i])
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, 20)
+						TrainIt($eGoblin, 20)
 						$LeftTrain2 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopGoblin < 20) And $LeftTrain2 > (20 - $troopGoblin) Then
-						TrainCt($eGoblin, (20 - $troopGoblin))
+						TrainIt($eGoblin, (20 - $troopGoblin))
 						$LeftTrain2 = ($ClickTrain2 - (20 - $troopGoblin))
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopGoblin < 20) And $LeftTrain2 <= (20 - $troopGoblin) Then
-						TrainCt($eGoblin, $LeftTrain2)
+						TrainIt($eGoblin, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain2 <= 1 And ($troopGoblin < 20) Then
-						TrainCt($eGoblin, $LeftTrain2)
+						TrainIt($eGoblin, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					Else
@@ -459,25 +459,25 @@
 					Case 4
 					Local $troopWallbreaker = Number(getOther(171 + 107 * 4, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, $itxtFirstTroop[$i])
+						TrainIt($eWallbreaker, $itxtFirstTroop[$i])
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, 10)
+						TrainIt($eWallbreaker, 10)
 						$LeftTrain2 = ($itxtFirstTroop[$i] - 10)
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopWallbreaker < 10) And $LeftTrain2 > (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, (10 - $troopWallbreaker))
+						TrainIt($eWallbreaker, (10 - $troopWallbreaker))
 						$LeftTrain2 = ($ClickTrain2 - (10 - $troopWallbreaker))
 						$ClickTrain2 = $LeftTrain2
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain2, $COLOR_BLUE)
 					ElseIf $LeftTrain2 > 1 And ($troopWallbreaker < 10) And $LeftTrain2 <= (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, $LeftTrain2)
+						TrainIt($eWallbreaker, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain2 <= 1 And ($troopWallbreaker < 10) Then
-						TrainCt($eWallbreaker, $LeftTrain2)
+						TrainIt($eWallbreaker, $LeftTrain2)
 						$Trainrax2 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					Else
@@ -496,25 +496,25 @@
 					Case 0
 					Local $troopBarbarian = Number(getOther(171 + 107 * 0, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, $itxtFirstTroop[$i])
+						TrainIt($eBarbarian, $itxtFirstTroop[$i])
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eBarbarian, 20)
+						TrainIt($eBarbarian, 20)
 						$LeftTrain3 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopBarbarian < 20) And $LeftTrain3 > (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, (20 - $troopBarbarian))
+						TrainIt($eBarbarian, (20 - $troopBarbarian))
 						$LeftTrain3 = ($ClickTrain3 - (20 - $troopBarbarian))
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Barbarian Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopBarbarian < 20) And $LeftTrain3 <= (20 - $troopBarbarian) Then
-						TrainCt($eBarbarian, $LeftTrain3)
+						TrainIt($eBarbarian, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain3 <= 1 And ($troopBarbarian < 20) Then
-						TrainCt($eBarbarian, $LeftTrain3)
+						TrainIt($eBarbarian, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Barbarian Completed...", $COLOR_BLUE)
 					Else
@@ -524,25 +524,25 @@
 					Case 1
 					Local $troopArcher = Number(getOther(171 + 107 * 1, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, $itxtFirstTroop[$i])
+						TrainIt($eArcher, $itxtFirstTroop[$i])
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eArcher, 20)
+						TrainIt($eArcher, 20)
 						$LeftTrain3 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopArcher < 20) And $LeftTrain3 > (20 - $troopArcher) Then
-						TrainCt($eArcher, (20 - $troopArcher))
+						TrainIt($eArcher, (20 - $troopArcher))
 						$LeftTrain3 = ($ClickTrain3 - (20 - $troopArcher))
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Archer Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopArcher < 20) And $LeftTrain3 <= (20 - $troopArcher) Then
-						TrainCt($eArcher, $LeftTrain3)
+						TrainIt($eArcher, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain3 <= 1 And ($troopArcher < 20) Then
-						TrainCt($eArcher, $LeftTrain3)
+						TrainIt($eArcher, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Archer Completed...", $COLOR_BLUE)
 					Else
@@ -552,25 +552,25 @@
 					Case 2
 					Local $troopGiant = Number(getOther(171 + 107 * 2, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, $itxtFirstTroop[$i])
+						TrainIt($eGiant, $itxtFirstTroop[$i])
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 6 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGiant, 6)
+						TrainIt($eGiant, 6)
 						$LeftTrain3 = ($itxtFirstTroop[$i] - 6)
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopGiant < 6) And $LeftTrain3 > (6 - $troopGiant) Then
-						TrainCt($eGiant, (6 - $troopGiant))
+						TrainIt($eGiant, (6 - $troopGiant))
 						$LeftTrain3 = ($ClickTrain3 - (6 - $troopGiant))
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Giant Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopGiant < 6) And $LeftTrain3 <= (6 - $troopGiant) Then
-						TrainCt($eGiant, $LeftTrain3)
+						TrainIt($eGiant, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain3 <= 1 And ($troopGiant < 6) Then
-						TrainCt($eGiant, $LeftTrain3)
+						TrainIt($eGiant, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Giant Completed...", $COLOR_BLUE)
 					Else
@@ -580,25 +580,25 @@
 					Case 3
 					Local $troopGoblin = Number(getOther(171 + 107 * 3, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, $itxtFirstTroop[$i])
+						TrainIt($eGoblin, $itxtFirstTroop[$i])
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 20 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eGoblin, 20)
+						TrainIt($eGoblin, 20)
 						$LeftTrain3 = ($itxtFirstTroop[$i] - 20)
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopGoblin < 20) And $LeftTrain3 > (20 - $troopGoblin) Then
-						TrainCt($eGoblin, (20 - $troopGoblin))
+						TrainIt($eGoblin, (20 - $troopGoblin))
 						$LeftTrain3 = ($ClickTrain3 - (20 - $troopGoblin))
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Goblin Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopGoblin < 20) And $LeftTrain3 <= (20 - $troopGoblin) Then
-						TrainCt($eGoblin, $LeftTrain3)
+						TrainIt($eGoblin, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain3 <= 1 And ($troopGoblin < 20) Then
-						TrainCt($eGoblin, $LeftTrain3)
+						TrainIt($eGoblin, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Goblin Completed...", $COLOR_BLUE)
 					Else
@@ -608,25 +608,25 @@
 					Case 4
 					Local $troopWallbreaker = Number(getOther(171 + 107 * 4, 278, "Barrack"))
 					If $itxtFirstTroop[$i] <= 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, $itxtFirstTroop[$i])
+						TrainIt($eWallbreaker, $itxtFirstTroop[$i])
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $itxtFirstTroop[$i] > 10 And ($fullArmy Or $FirstTrain) Then
-						TrainCt($eWallbreaker, 10)
+						TrainIt($eWallbreaker, 10)
 						$LeftTrain3 = ($itxtFirstTroop[$i] - 10)
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopWallbreaker < 10) And $LeftTrain3 > (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, (10 - $troopWallbreaker))
+						TrainIt($eWallbreaker, (10 - $troopWallbreaker))
 						$LeftTrain3 = ($ClickTrain3 - (10 - $troopWallbreaker))
 						$ClickTrain3 = $LeftTrain3
 						SetLog("Barrack " & $i+1 & " Wallbreaker Remaining : " & $LeftTrain3, $COLOR_BLUE)
 					ElseIf $LeftTrain3 > 1 And ($troopWallbreaker < 10) And $LeftTrain3 <= (10 - $troopWallbreaker) Then
-						TrainCt($eWallbreaker, $LeftTrain3)
+						TrainIt($eWallbreaker, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					ElseIf $LeftTrain3 <= 1 And ($troopWallbreaker < 10) Then
-						TrainCt($eWallbreaker, $LeftTrain3)
+						TrainIt($eWallbreaker, $LeftTrain3)
 						$Trainrax3 = False
 						SetLog("Barrack " & $i+1 & " Train Wallbreaker Completed...", $COLOR_BLUE)
 					Else
