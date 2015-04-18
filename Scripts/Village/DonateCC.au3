@@ -38,7 +38,7 @@ Func DonateCC()
 						If CheckDonate($Blacklist[$i], $String) Then
 						   $BlacklistCheck = 1
 						   SetLog("Chat Text: " & $String, $COLOR_RED)
-						   SetLog("Donation Request found in Blacklist, skip donating...", $COLOR_RED)
+						   SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
 						EndIf
 					Next
 
@@ -149,8 +149,10 @@ Func DonateBarbs()
 			While _WaitForPixelCapture(0, 0, 517, $DonatePixel[1] + 50, 237, $DonatePixel[1] - 5, Hex(0x507C00, 6), 10, $DonateTimeout, $DonateDelay)
 				Click(237, $DonatePixel[1] - 5)
 				$CurBarb += 1
+			    $ArmyComp -= 1
 			WEnd
 			$CurBarb -= 1 ;_WaitForPixel tends to allow one extra click due to delay in picture going grey
+		    $ArmyComp += 1
 			$Donate = True
 		ElseIf $ichkDonateAllArchers = 1 Then
 			DonateArchers()
@@ -177,8 +179,10 @@ Func DonateArchers()
 			While _WaitForPixelCapture(0, 0, 517, $DonatePixel[1] + 50, 315, $DonatePixel[1] - 5, Hex(0x507C00, 6), 10, $DonateTimeout, $DonateDelay)
 				Click(315, $DonatePixel[1] - 5)
 				$CurArch += 1
+			    $ArmyComp -= 1
 			WEnd
 			$CurArch -= 1 ;_WaitForPixel tends to allow one extra click due to delay in picture going grey
+			$ArmyComp += 1
 			$Donate = True
 		ElseIf $ichkDonateAllGiants = 1 Then
 			DonateGiants()
@@ -206,8 +210,10 @@ Func DonateGiants()
 			While _WaitForPixelCapture(0, 0, 517, $DonatePixel[1] + 50, 400, $DonatePixel[1] - 5, Hex(0x507C00, 6), 10, $DonateTimeout, $DonateDelay)
 				Click(400, $DonatePixel[1] - 5)
 				$CurGiant += 1
+			    $ArmyComp -= 1
 			WEnd
 			$CurGiant -= 1 ;_WaitForPixel tends to allow one extra click due to delay in picture going grey
+			$ArmyComp += 1
 			$Donate = True
 		Else
 			SetLog("No troops available for donation, donating later...", $COLOR_ORANGE)
