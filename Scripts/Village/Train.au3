@@ -107,6 +107,7 @@ Func Train()
 				$WorkingBarracks += 1
 			EndIf
 		Next
+		SetLog("Total Working Barrack : " & $WorkingBarracks", $COLOR_GREEN)
 	EndIf
 
 	Local $GiantEBarrack ,$WallEBarrack ,$ArchEBarrack ,$BarbEBarrack ,$GoblinEBarrack
