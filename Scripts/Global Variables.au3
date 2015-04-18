@@ -349,6 +349,7 @@ Global $Raid = 0
 Global $PushBulletinterval = 10
 Global $PushBulletmessages = 100
 Global $PBdevice
+Global $PushBulletDevice
 
 ;GoldCostPerSearch
 Global $SearchCost = 0

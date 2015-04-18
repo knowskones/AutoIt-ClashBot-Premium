@@ -184,6 +184,7 @@ Func readConfig() ;Reads config and sets it to the variables
 		$PushBulleterror = IniRead($config, "notification", "error", "0")
 		$PushBulletinterval = IniRead($config, "notification", "interval", "10")
 		$PushBulletmessages = IniRead($config, "notification", "messages", "100")
+		$PushBulletDevice = IniRead($config, "notification", "device", "All")
 
 		For $i = 0 To 3 ;Covers all 4 Barracks
 			$barrackPos[$i][0] = IniRead($config, "troop", "xBarrack" & $i + 1, "0")

@@ -558,4 +558,5 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 
 	GUICtrlSetData($txtPushBulletInterval, $PushBulletinterval)
 	GUICtrlSetData($txtPushBulletMessages, $PushBulletmessages)
+	GUICtrlSetData($cmbDevice, $PushBulletDevice)
 EndFunc   ;==>applyConfig

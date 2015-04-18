@@ -404,6 +404,7 @@ Func saveConfig() ;Saves the controls settings to the config
 
 	IniWrite($config, "notification", "interval", GUICtrlRead($txtPushBulletInterval))
 	IniWrite($config, "notification", "messages", GUICtrlRead($txtPushBulletMessages))
+	IniWrite($config, "notification", "device", GUICtrlRead($cmbDevice))
 
 	;Misc Settings--------------------------------------------------------------------------
 	IniWrite($config, "misc", "reconnectdelay", GUICtrlRead($txtReconnect))
