@@ -193,6 +193,7 @@ Func btnStart()
 		SetLog("Please set PushBullet account token")
 		Return
 	EndIf
+	FindDevice()
 
 	GUICtrlSetState($btnStart, $GUI_HIDE)
 	GUICtrlSetState($btnStop, $GUI_SHOW)
@@ -1082,3 +1083,6 @@ EndIf
 GUIRegisterMsg($WM_COMMAND, "GUIControl")
 GUIRegisterMsg($WM_SYSCOMMAND, "GUIControl")
 ;---------------------------------------------------
+
+;Push Bullet Devices
+GetDevices()

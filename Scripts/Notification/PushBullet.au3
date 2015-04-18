@@ -177,16 +177,49 @@ Func KeepMessages($int)
     EndIf
 EndFunc   ;==>_KeepMessages
 
-Func _PushBullet($pTitle = "", $pMessage = "")
-	$oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
-	$access_token = $PushBullettoken
-	$oHTTP.Open("Get", "https://api.pushbullet.com/v2/devices", False)
-	$oHTTP.SetCredentials($access_token, "", 0)
-	$oHTTP.Send()
-	$Result = $oHTTP.ResponseText
-	Local $device_iden = _StringBetween($Result, 'iden":"', '"')
-	Local $device_name = _StringBetween($Result, 'nickname":"', '"')
-EndFunc   ;==>_PushBullet
+;GetDevices
+Func GetDevices()
+   if $PushBullettoken <> "" Then
+	   $oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
+	   $access_token = $PushBullettoken
+	   $oHTTP.Open("Get", "https://api.pushbullet.com/v2/devices?active=true", False)
+	   $oHTTP.SetCredentials($access_token, "", 0)
+	   $oHTTP.SetRequestHeader("Content-Type", "application/json")
+	   $oHTTP.Send()
+	   $Result = $oHTTP.ResponseText
+	   If $Result = "" Then Return
+	   Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
+	   Local $nickname = _StringBetween($Result, '"nickname":"', '"', "", False)
+	   If IsArray($iden) = False Then Return
+
+	   For $x = 0 to Ubound($iden) - 1
+			GUIctrlsetData($cmbDevice, $nickname[$x], "All")
+	   Next
+   EndIf
+EndFunc   ;==>_GetDevices
+
+;FindDevice
+Func FindDevice()
+   if $PushBullettoken <> "" and $cmbDevice <> "" and $cmbDevice <> "All" Then
+	   $oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
+	   $access_token = $PushBullettoken
+	   $oHTTP.Open("Get", "https://api.pushbullet.com/v2/devices?active=true", False)
+	   $oHTTP.SetCredentials($access_token, "", 0)
+	   $oHTTP.SetRequestHeader("Content-Type", "application/json")
+	   $oHTTP.Send()
+	   $Result = $oHTTP.ResponseText
+	   If $Result = "" Then Return
+	   Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
+	   Local $nickname = _StringBetween($Result, '"nickname":"', '"', "", False)
+	   If IsArray($iden) = False Then Return
+
+	   For $x = 0 to Ubound($iden) - 1
+			if $nickname[$x] = GUICtrlRead($cmbDevice) Then
+				$PBdevice = $iden[$x]
+			EndIf
+	   Next
+   EndIf
+EndFunc   ;==>_FindDevice
 
 Func _Push($pTitle, $pMessage)
 	$oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
@@ -194,7 +227,7 @@ Func _Push($pTitle, $pMessage)
 	$oHTTP.Open("Post", "https://api.pushbullet.com/v2/pushes", False)
 	$oHTTP.SetCredentials($access_token, "", 0)
 	$oHTTP.SetRequestHeader("Content-Type", "application/json")
-	Local $pPush = '{"type": "note", "title": "' & $pTitle & '", "body": "' & $pMessage & '"}'
+	Local $pPush = '{"type": "note", "title": "' & $pTitle & '", "body": "' & $pMessage & '", "device_iden": "' & $PBdevice & '"}'
 	$oHTTP.Send($pPush)
 	KeepMessages($PushBulletmessages)
 EndFunc   ;==>_Push
@@ -254,7 +287,7 @@ Func _PushFile($File, $Folder, $FileType, $title, $body)
 		$oHTTP.SetCredentials($access_token, "", 0)
 		$oHTTP.SetRequestHeader("Content-Type", "application/json")
 		;Local $pPush = '{"type": "file", "file_name": "' & $FileName & '", "file_type": "' & $FileType & '", "file_url": "' & $file_url[0] & '", "title": "' & $title & '", "body": "' & $body & '"}'
-		Local $pPush = '{"type": "file", "file_name": "' & $File & '", "file_type": "' & $FileType & '", "file_url": "' & $sLink & '", "title": "' & $title & '", "body": "' & $body & '"}'
+		Local $pPush = '{"type": "file", "file_name": "' & $File & '", "file_type": "' & $FileType & '", "file_url": "' & $sLink & '", "title": "' & $title & '", "body": "' & $body & '", "device_iden": "' & $PBdevice & '"}'
 		$oHTTP.Send($pPush)
 		$Result = $oHTTP.ResponseText
 	Else

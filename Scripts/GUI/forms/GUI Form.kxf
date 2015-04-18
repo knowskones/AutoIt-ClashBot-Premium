@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <object type="TAForm" name="frmBot">
 	<properties>
-		<property name="Left" vt="Int16">218</property>
-		<property name="Top" vt="Int16">155</property>
+		<property name="Left" vt="Int16">734</property>
+		<property name="Top" vt="Int16">379</property>
 		<property name="Width" vt="Int16">661</property>
 		<property name="Height" vt="Int16">468</property>
 		<property name="Caption" vt="String">sBotTitle</property>
@@ -37,7 +37,7 @@
 				<property name="Top" vt="Int8">30</property>
 				<property name="Width" vt="Int16">645</property>
 				<property name="Height" vt="Int16">355</property>
-				<property name="ActivePage" vt="Ident">pageGeneral</property>
+				<property name="ActivePage" vt="Ident">pageNotificationSetting</property>
 				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
 				<property name="Font.Color" vt="Ident">clWindowText</property>
 				<property name="Font.Height" vt="Int8">-11</property>
@@ -5922,13 +5922,13 @@
 								</object>
 								<object type="TAGroup" name="groupRemoteConfig">
 									<properties>
-										<property name="Left" vt="Int8">8</property>
+										<property name="Left" vt="Int16">200</property>
 										<property name="Top" vt="Int16">144</property>
-										<property name="Width" vt="Int16">185</property>
+										<property name="Width" vt="Int16">161</property>
 										<property name="Height" vt="Int8">75</property>
 										<property name="CtrlStyle" vt="Int32">1342308359</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Caption" vt="String">Remote Configuration</property>
+										<property name="Caption" vt="String">Misc.</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="Resizing" vt="Set"/>
 									</properties>
@@ -5964,14 +5964,14 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TALabel" name="lblPushBulletMessages">
+										<object type="TALabel" name="lblPushBulletIntervalMin">
 											<properties>
-												<property name="Left" vt="Int8">10</property>
-												<property name="Top" vt="Int8">50</property>
-												<property name="Width" vt="Int8">82</property>
+												<property name="Left" vt="Int16">130</property>
+												<property name="Top" vt="Int8">25</property>
+												<property name="Width" vt="Int8">29</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="AutoSize" vt="False">False</property>
-												<property name="Caption" vt="String">Keep Messages:</property>
+												<property name="Caption" vt="String">mins</property>
 												<property name="TabOrder" vt="Int8">2</property>
 												<property name="HaveVariable" vt="False">False</property>
 												<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -5995,19 +5995,65 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TALabel" name="lblPushBulletIntervalMin">
+										<object type="TALabel" name="lblPushBulletMessages">
 											<properties>
-												<property name="Left" vt="Int16">130</property>
-												<property name="Top" vt="Int8">25</property>
-												<property name="Width" vt="Int8">45</property>
+												<property name="Left" vt="Int8">10</property>
+												<property name="Top" vt="Int8">50</property>
+												<property name="Width" vt="Int8">82</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="AutoSize" vt="False">False</property>
-												<property name="Caption" vt="String">minutes</property>
+												<property name="Caption" vt="String">Keep Messages:</property>
 												<property name="TabOrder" vt="Int8">4</property>
 												<property name="HaveVariable" vt="False">False</property>
 												<property name="CtrlStyle" vt="Int32">1342308608</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
 												<property name="Resizing" vt="Set"/>
+											</properties>
+											<components/>
+										</object>
+									</components>
+								</object>
+								<object type="TAGroup" name="Group2">
+									<properties>
+										<property name="Left" vt="Int8">8</property>
+										<property name="Top" vt="Int16">144</property>
+										<property name="Width" vt="Int16">185</property>
+										<property name="Height" vt="Int8">75</property>
+										<property name="CtrlStyle" vt="Int32">1342308359</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Caption" vt="String">PushBullet Settings</property>
+										<property name="TabOrder" vt="Int8">9</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components>
+										<object type="TALabel" name="Label31">
+											<properties>
+												<property name="Left" vt="Int8">8</property>
+												<property name="Top" vt="Int8">34</property>
+												<property name="Width" vt="Int8">40</property>
+												<property name="Height" vt="Int8">18</property>
+												<property name="Caption" vt="String">Device:</property>
+												<property name="TabOrder" vt="Int8">0</property>
+												<property name="HaveVariable" vt="False">False</property>
+												<property name="CtrlStyle" vt="Int32">1342308608</property>
+												<property name="CtrlExStyle" vt="Int8">0</property>
+												<property name="Resizing" vt="Set"/>
+											</properties>
+											<components/>
+										</object>
+										<object type="TACombo" name="cmbDevice">
+											<properties>
+												<property name="Left" vt="Int8">54</property>
+												<property name="Top" vt="Int8">31</property>
+												<property name="Width" vt="Int8">121</property>
+												<property name="Height" vt="Int8">25</property>
+												<property name="ItemHeight" vt="Int8">14</property>
+												<property name="TabOrder" vt="Int8">1</property>
+												<property name="Text" vt="String">All</property>
+												<property name="OnChange" vt="String">cmbDeviceChange</property>
+												<property name="CtrlStyle" vt="Int32">1342374466</property>
+												<property name="CtrlExStyle" vt="Int8">0</property>
+												<property name="Resizing" vt="Set">DockHeight</property>
 											</properties>
 											<components/>
 										</object>
