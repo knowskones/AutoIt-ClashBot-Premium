@@ -689,7 +689,6 @@ $btnAtkNow = GUICtrlCreateButton("Attack Now", 190, 320, 75, 30)
 $btnPause = GUICtrlCreateButton("Pause", 15, 320, 75, 23)
 GUICtrlSetState(-1, $GUI_HIDE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
-GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
 
