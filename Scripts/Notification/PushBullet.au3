@@ -10,11 +10,11 @@ Func _RemoteControl()
 	$oHTTP.Send()
 	$Result = $oHTTP.ResponseText
 
-	If $Result = "" Then Return
-
 	Local $title = _StringBetween($Result, '"title":"', '"', "", False)
 	Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
 	Local $findstr = StringRegExp(StringLower($Result), '"title":"bot')
+
+	If IsArray($iden) = False Then Return
 
 	If $findstr = 1 Then
 		For $x = 0 To UBound($title) - 1
@@ -163,8 +163,8 @@ Func KeepMessages($int)
 	   $oHTTP.Send()
 	   $Result = $oHTTP.ResponseText
 
-	   If $Result = "" Then Return
 	   Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
+	   If IsArray($iden) = False Then Return
 
 	   If UBound($iden) > $int And $int <> 0 Then
 		   For $x = $int To UBound($iden) - 1
@@ -187,7 +187,6 @@ Func GetDevices()
 	   $oHTTP.SetRequestHeader("Content-Type", "application/json")
 	   $oHTTP.Send()
 	   $Result = $oHTTP.ResponseText
-	   If $Result = "" Then Return
 	   Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
 	   Local $nickname = _StringBetween($Result, '"nickname":"', '"', "", False)
 	   If IsArray($iden) = False Then Return
@@ -208,7 +207,6 @@ Func FindDevice()
 	   $oHTTP.SetRequestHeader("Content-Type", "application/json")
 	   $oHTTP.Send()
 	   $Result = $oHTTP.ResponseText
-	   If $Result = "" Then Return
 	   Local $iden = _StringBetween($Result, '"iden":"', '"', "", False)
 	   Local $nickname = _StringBetween($Result, '"nickname":"', '"', "", False)
 	   If IsArray($iden) = False Then Return
