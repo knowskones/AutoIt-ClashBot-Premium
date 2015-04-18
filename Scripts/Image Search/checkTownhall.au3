@@ -93,7 +93,5 @@ Func checkTownhall()
 		WEnd
 		$bumpTolerance += 5
 	Until $bumpTolerance > 80
-	Local $Date = @MDAY & "." & @MON & "." & @YEAR
-	Local $Time = @HOUR & "." & @MIN & "." & @SEC
 	Return "-"
 EndFunc   ;==>checkTownhall
