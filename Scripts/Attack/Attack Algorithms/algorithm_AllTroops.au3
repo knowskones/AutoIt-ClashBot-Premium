@@ -626,7 +626,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	EndIf
 
 	; Deploy CC behind troops
-	If ($OuterQuad And $attackTH = 2) Then
+	If ($OuterQuad And $attackTH >= 1) Then
 		Switch $THquadrant
 			Case 1
 				$DropX = $FurthestTopLeft[0][0]
@@ -691,7 +691,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	If LaunchTroop($eMinion, False, $nbSides, 1, 1, 2, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
-	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then
+	If LaunchTroop($eArcher, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH >= 1)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eGoblin, False, $nbSides, 2, 2, 0, ($OuterQuad And $attackTH = 2)) Then

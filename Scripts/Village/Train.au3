@@ -60,9 +60,8 @@ Func Train()
 		$CurGoblin = 0
 	EndIf
 
-	If (($ArmyComp = 0) And (_GUICtrlComboBox_GetCurSel($cmbTroopComp) <> 8)) Or $FixTrain Then
-		;If $FixTrain or $FirstStart and Not $fullArmy Then $ArmyComp = $CurCamp
-		$FixTrain = False
+	If (($ArmyComp = 0) And (_GUICtrlComboBox_GetCurSel($cmbTroopComp) <> 8)) Then
+		If $FirstStart and Not $fullArmy Then $ArmyComp = $CurCamp
 		$CurGiant += GUICtrlRead($txtNumGiants)
 		$CurWB += GUICtrlRead($txtNumWallbreakers)
 		$CurArch += Floor((($itxtcampCap * GUICtrlRead($cmbRaidcap) / 100) - (GUICtrlRead($txtNumGiants) * 5) - (GUICtrlRead($txtNumWallbreakers) * 2)) * (GUICtrlRead($txtArchers) / 100))

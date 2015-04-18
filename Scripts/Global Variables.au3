@@ -261,7 +261,6 @@ Global $itxtDarkBarrack1, $itxtDarkBarrack2
 Global $CustomTroopF[4]
 Global $CustomTroopS[4]
 Global $itxtFirstTroop[4]
-Global $FixTrain = False
 
 Global $ArmyPos[2]
 Global $KingPos[2]
