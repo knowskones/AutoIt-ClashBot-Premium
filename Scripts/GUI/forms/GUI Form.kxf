@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <object type="TAForm" name="frmBot">
 	<properties>
-		<property name="Left" vt="Int16">197</property>
-		<property name="Top" vt="Int8">125</property>
+		<property name="Left" vt="Int16">195</property>
+		<property name="Top" vt="Int16">128</property>
 		<property name="Width" vt="Int16">661</property>
 		<property name="Height" vt="Int16">468</property>
 		<property name="Caption" vt="String">sBotTitle</property>
@@ -15,6 +15,7 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
+		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -5007,7 +5008,7 @@
 								<object type="TALabel" name="lblruntime">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">144</property>
+										<property name="Top" vt="Int16">204</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5023,7 +5024,7 @@
 								<object type="TALabel" name="lblresultruntime">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int16">144</property>
+										<property name="Top" vt="Int16">204</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5071,7 +5072,7 @@
 								<object type="TALabel" name="lblgoldperhour">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">164</property>
+										<property name="Top" vt="Int16">144</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">18</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5087,7 +5088,7 @@
 								<object type="TALabel" name="lblelixirperhour">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">184</property>
+										<property name="Top" vt="Int16">164</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">18</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5103,7 +5104,7 @@
 								<object type="TALabel" name="lblresultgph">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int16">164</property>
+										<property name="Top" vt="Int16">144</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">18</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5119,7 +5120,7 @@
 								<object type="TALabel" name="lblresulteph">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int16">184</property>
+										<property name="Top" vt="Int16">164</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">18</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5135,7 +5136,7 @@
 								<object type="TALabel" name="lbldeperhour">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">204</property>
+										<property name="Top" vt="Int16">184</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">18</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -5151,7 +5152,7 @@
 								<object type="TALabel" name="lblresultdeph">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int16">204</property>
+										<property name="Top" vt="Int16">184</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">18</property>
 										<property name="AutoSize" vt="False">False</property>
