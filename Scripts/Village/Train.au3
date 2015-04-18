@@ -61,7 +61,7 @@ Func Train()
 	EndIf
 
 	If (($ArmyComp = 0) And (_GUICtrlComboBox_GetCurSel($cmbTroopComp) <> 8)) Or $FixTrain Then
-		If $FixTrain or $FirstStart and Not $fullArmy Then $ArmyComp = $CurCamp
+		;If $FixTrain or $FirstStart and Not $fullArmy Then $ArmyComp = $CurCamp
 		$FixTrain = False
 		$CurGiant += GUICtrlRead($txtNumGiants)
 		$CurWB += GUICtrlRead($txtNumWallbreakers)
@@ -107,7 +107,7 @@ Func Train()
 				$WorkingBarracks += 1
 			EndIf
 		Next
-		SetLog("Total Working Barrack : " & $WorkingBarracks", $COLOR_GREEN)
+		SetLog("Total Working Barrack : " & $WorkingBarracks, $COLOR_GREEN)
 	EndIf
 
 	Local $GiantEBarrack ,$WallEBarrack ,$ArchEBarrack ,$BarbEBarrack ,$GoblinEBarrack
