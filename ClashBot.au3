@@ -6,11 +6,11 @@
 #pragma compile(Icon, "Images\Icons\cocbot.ico")
 #pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
 #pragma compile(ProductName, ClashBot)
-#pragma compile(ProductVersion, 6.1)
-#pragma compile(FileVersion, 6.1)
+#pragma compile(ProductVersion, 6.2)
+#pragma compile(FileVersion, 6.2)
 #pragma compile(LegalCopyright, 2015 © Application Automation LLC)
 
-$sBotVersion = "6.1 Premium" ;Edit version in compile option above aswell
+$sBotVersion = "6.2 Premium" ;Edit version in compile option above aswell
 $sBotTitle = "AutoIt ClashBot v" & $sBotVersion
 
 If _Singleton($sBotTitle, 1) = 0 Then
