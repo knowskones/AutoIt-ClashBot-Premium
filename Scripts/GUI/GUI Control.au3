@@ -444,6 +444,27 @@ Func btnFindWall()
 	$RunState = False
 EndFunc   ;==>btnFindWall
 
+Func btnCheckDefense()
+	$RunState = True
+	While 1
+		SaveConfig()
+		readConfig()
+		applyConfig()
+		ZoomOut()
+
+		If checkDefense() Then
+			WinActivate($HWnD)
+			Click($Defensex, $Defensey)
+			SetLog("Found Tower at PosX: " & $Defensex & ", PosY: " & $Defensey & "...", $COLOR_GREEN)
+		Else
+			SetLog("Cannot find Defense", $COLOR_RED)
+		EndIf
+
+		ExitLoop
+	WEnd
+	$RunState = False
+EndFunc   ;==>btnCheckDefense
+
 Func btnLocateCamp()
 	$RunState = True
 	While 1

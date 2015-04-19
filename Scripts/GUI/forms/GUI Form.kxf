@@ -1456,6 +1456,22 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TAButton" name="btnCheckDefense">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">48</property>
+										<property name="Width" vt="Int8">75</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="Caption" vt="String">Button 1</property>
+										<property name="TabOrder" vt="Int8">1</property>
+										<property name="Visible" vt="False">False</property>
+										<property name="Color" vt="Ident">clBtnFace</property>
+										<property name="CtrlStyle" vt="Int32">1342373888</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
 					</components>

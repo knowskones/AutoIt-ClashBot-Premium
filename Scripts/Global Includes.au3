@@ -20,6 +20,7 @@
 #include "Image Search\checkTownhall.au3"
 #include "Image Search\checkWall.au3"
 #include "Image Search\checkDarkElix.au3"
+#include "Image Search\checkDefense.au3"
 
 #include "Main Screen\checkMainScreen.au3"
 #include "Main Screen\checkObstacles.au3"

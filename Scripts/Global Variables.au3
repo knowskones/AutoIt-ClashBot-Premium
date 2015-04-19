@@ -368,3 +368,6 @@ Global $DonateTimeout = 1000
 Global $DonateDelay = 100
 Global $TrainTimeout = 800
 Global $TrainDelay = 50
+
+;Defense
+Global $DefenseLoc, $Defensex = 0, $Defensey = 0
