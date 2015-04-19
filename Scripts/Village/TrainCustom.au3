@@ -15,7 +15,7 @@
 		$Trainrax1 = True
 		$Trainrax2 = True
 		$Trainrax3 = True
-	 EndIf
+	EndIf
 
 	SetLog("Training Troops...", $COLOR_BLUE)
 

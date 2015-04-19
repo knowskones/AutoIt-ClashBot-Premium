@@ -12,10 +12,10 @@ Func DonateCC()
 	SetLog("Donating Troops", $COLOR_BLUE)
 
 	_CaptureRegion()
-	If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 And $CommandStop <> 0 Then
-		SetLog("No new chats, skip donating", $COLOR_ORANGE)
-		Return
-	EndIf
+	;If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 And $CommandStop <> 0 Then
+		;SetLog("No new chats, skip donating", $COLOR_ORANGE)
+		;Return
+	;EndIf
 
 	ClickP($TopLeftClient) ;Click Away
 	If _ColorCheck(_GetPixelColor(331, 330), Hex(0xF0A03B, 6), 20) = False Then Click(19, 349) ;Clicks chat thing
@@ -286,7 +286,7 @@ Func DonateTroops($Troop, $number)
 			  $ArmyComp -= 1*$number
 	   EndSelect
 	Else
-	  SetLog("No " & $Troop & " available for donation.", $COLOR_ORANGE)
+	  SetLog("No " & $Troop & " available for donation or Clan Castle don't have enough space.", $COLOR_ORANGE)
 	  Return
    EndIf
    If _Sleep(500) Then Return

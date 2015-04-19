@@ -90,7 +90,6 @@ Func runBot() ;Bot that runs everything in order
 				checkMainScreen(False)
 				$Checkrearm = False
 			EndIf
-			DonateCC()
 			If _Sleep(1000) Then Return
 			checkMainScreen(False)
 			If $CommandStop <> 0 And $CommandStop <> 3 Then
@@ -160,7 +159,7 @@ EndFunc   ;==>runBot
 
 Func Idle() ;Sequence that runs until Full Army
 	Local $TimeIdle = 0 ;In Seconds
-	While $fullArmy = False Or $CommandStop = 0 Or $CommandStop = 3
+	While $fullArmy = False
 		If $CommandStop = -1 Then
 			SetLog("~~~Waiting for full army~~~", $COLOR_PURPLE)
 		ElseIf $CommandStop = 3 Then
@@ -168,7 +167,7 @@ Func Idle() ;Sequence that runs until Full Army
 		Else
 			SetLog("~~~Waiting for training & donating~~~", $COLOR_PURPLE)
 		EndIf
-		Local $hTimer = TimerInit(), $x = 30000
+		Local $hTimer = TimerInit(), $x = 20000
 		If $CommandStop = 3 Then $x = 15000
 		If _Sleep($x) Then ExitLoop
 		checkMainScreen()
@@ -182,8 +181,41 @@ Func Idle() ;Sequence that runs until Full Army
 			$iCollectCounter = 0
 		EndIf
 		$iCollectCounter = $iCollectCounter + 1
+		If GUICtrlRead($chkDonateOnly) = $GUI_UNCHECKED Then
+			If $CommandStop = -1 Then
+				CheckArmyCamp()
+			Else
+				$FirstStart = False
+				CheckArmyCamp()
+			EndIf
+		EndIf
+		If $CommandStop = 3 And $CurCamp < $itxtcampCap And GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
+			$CommandStop = 0
+		EndIf
+		If $CommandStop = 0 And $fullArmy Then
+			SetLog("Army Camp is Full, Stop Training", $COLOR_ORANGE)
+			For $i = 0 to 3
+				If _Sleep(500) Then ExitLoop
+				ClickP($TopLeftClient) ;Click Away
+				If _Sleep(500) Then ExitLoop
+				Click($barrackPos[$i][0], $barrackPos[$i][1]) ;Click Barrack
+				Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
+				If IsArray($TrainPos) = False Then
+					SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
+					handleBarracksError($i)
+					If _Sleep(500) Then ExitLoop
+				Else
+					Click($TrainPos[0], $TrainPos[1]) ;Click Train Troops button
+					SetLog("Barrack " & $i + 1 & " Stopping...", $COLOR_GREEN)
+					If _Sleep(1000) Then ExitLoop
+					If Not _ColorCheck(_GetPixelColor(497, 195), Hex(0xE0E4D0, 6), 20) Then Click(496, 190, 80, 2)
+				EndIf
+				ClickP($TopLeftClient)
+			Next
+			$CommandStop = 3
+		EndIf
+		If $CommandStop = 0 Or $CommandStop = 3 Then $fullArmy = False
 		If $CommandStop <> 3 Then
-			CheckArmyCamp()
 			If _Sleep(1000) Then ExitLoop
 			TrainTroop()
 			If _Sleep(1000) Then Return
