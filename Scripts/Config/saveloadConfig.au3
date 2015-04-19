@@ -10,7 +10,7 @@ Func btnLoadConfig($configfile)
 		$config = $sFileOpenDialog
 		readConfig()
 		applyConfig()
-		$config = @ScriptDir & "Profile\Config.ini"
+		$config = @ScriptDir & "\Profile\Config.ini"
 		saveConfig()
 		MsgBox($MB_SYSTEMMODAL, "", "Config loaded successfully!" & @CRLF & $sFileOpenDialog)
 	EndIf
@@ -38,7 +38,7 @@ Func btnSaveConfig($configfile)
 		saveConfig()
 		IniWrite($config, "login", "saveUsername", $configSaveUsername)
 		IniWrite($config, "login", "username", $configUsername)
-		$config = @ScriptDir & "Profile\Config.ini"
+		$config = @ScriptDir & "\Profile\Config.ini"
 		MsgBox($MB_SYSTEMMODAL, "", "Successfully saved the current configuration!" & @CRLF & $sFileSaveDialog)
 	EndIf
 EndFunc   ;==>btnSaveConfig

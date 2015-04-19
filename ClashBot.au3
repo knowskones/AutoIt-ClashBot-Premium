@@ -58,8 +58,8 @@ WEnd
 Func runBot() ;Bot that runs everything in order
 	While 1
 		SaveConfig()
-		readConfig()
-		applyConfig()
+		ReadConfig()
+		ApplyConfig()
 		If $ichkKeepLogs = 1 Then
 			log_cleanup(GUICtrlRead($txtKeepLogs))
 		EndIf
@@ -160,8 +160,14 @@ EndFunc   ;==>runBot
 
 Func Idle() ;Sequence that runs until Full Army
 	Local $TimeIdle = 0 ;In Seconds
-	While $fullArmy = False
-		If $CommandStop = -1 Then SetLog("~~~Waiting for full army~~~", $COLOR_PURPLE)
+	While $fullArmy = False Or $CommandStop = 0 Or $CommandStop = 3
+		If $CommandStop = -1 Then
+			SetLog("~~~Waiting for full army~~~", $COLOR_PURPLE)
+		ElseIf $CommandStop = 3 Then
+			SetLog("~~~Waiting for donating~~~", $COLOR_PURPLE)
+		Else
+			SetLog("~~~Waiting for training & donating~~~", $COLOR_PURPLE)
+		EndIf
 		Local $hTimer = TimerInit(), $x = 30000
 		If $CommandStop = 3 Then $x = 15000
 		If _Sleep($x) Then ExitLoop
@@ -183,11 +189,6 @@ Func Idle() ;Sequence that runs until Full Army
 			If _Sleep(1000) Then Return
 			TrainDark()
 			If _Sleep(1000) Then ExitLoop
-		EndIf
-		If $CommandStop = 0 And $fullArmy Then
-			SetLog("Army Camp is Full, Stop Training...", $COLOR_ORANGE)
-			$CommandStop = 3
-			$fullArmy = False
 		EndIf
 		If $CommandStop = -1 Then
 			If $fullArmy Then ExitLoop

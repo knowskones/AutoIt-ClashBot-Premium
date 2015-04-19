@@ -1965,13 +1965,13 @@
 					<components>
 						<object type="TAGroup" name="groupBarbarians">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int8">35</property>
-								<property name="Width" vt="Int16">150</property>
-								<property name="Height" vt="Int16">207</property>
+								<property name="Left" vt="Int8">5</property>
+								<property name="Top" vt="Int8">3</property>
+								<property name="Width" vt="Int16">166</property>
+								<property name="Height" vt="Int16">239</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Barbarians</property>
+								<property name="Caption" vt="String">Option 1</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
 								<property name="Description" vt="String">groupBarbarians</property>
@@ -1995,9 +1995,9 @@
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">40</property>
-										<property name="Width" vt="Int16">130</property>
-										<property name="Height" vt="Int16">140</property>
-										<property name="Hint" vt="String">Keywords for donating Barbarians</property>
+										<property name="Width" vt="Int16">146</property>
+										<property name="Height" vt="Int8">92</property>
+										<property name="Hint" vt="String">Keywords for option 1</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
 												<li vt="String">any</li>
@@ -2012,17 +2012,188 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACombo" name="cmbDonateBarbarians1">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">142</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">2</property>
+										<property name="Text" vt="String">Barbarian</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACombo" name="cmbDonateBarbarians2">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">166</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">3</property>
+										<property name="Text" vt="String">None</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">None</li>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACombo" name="cmbDonateBarbarians3">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">190</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">4</property>
+										<property name="Text" vt="String">None</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">None</li>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfBarbarians1">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">142</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">5</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfBarbarians2">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">166</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">6</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfBarbarians3">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">190</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">7</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkDonateBarbarians">
+									<properties>
+										<property name="Left" vt="Int8">40</property>
+										<property name="Top" vt="Int16">218</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Donate Troop</property>
+										<property name="Checked" vt="True">True</property>
+										<property name="State" vt="Ident">cbChecked</property>
+										<property name="TabOrder" vt="Int8">8</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
 						<object type="TAGroup" name="groupArchers">
 							<properties>
 								<property name="Left" vt="Int16">173</property>
-								<property name="Top" vt="Int8">35</property>
-								<property name="Width" vt="Int16">150</property>
-								<property name="Height" vt="Int16">207</property>
+								<property name="Top" vt="Int8">3</property>
+								<property name="Width" vt="Int16">166</property>
+								<property name="Height" vt="Int16">239</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Archers</property>
+								<property name="Caption" vt="String">Option 2</property>
 								<property name="TabOrder" vt="Int8">1</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>
@@ -2045,9 +2216,9 @@
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">40</property>
-										<property name="Width" vt="Int16">130</property>
-										<property name="Height" vt="Int16">140</property>
-										<property name="Hint" vt="String">Keywords for donating Archers</property>
+										<property name="Width" vt="Int16">146</property>
+										<property name="Height" vt="Int8">92</property>
+										<property name="Hint" vt="String">Keywords for option 2</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
 												<li vt="String">any</li>
@@ -2062,17 +2233,188 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACombo" name="cmbDonateArchers1">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">142</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">2</property>
+										<property name="TabOrder" vt="Int8">2</property>
+										<property name="Text" vt="String">Archer</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACombo" name="cmbDonateArchers2">
+									<properties>
+										<property name="Left" vt="Int8">11</property>
+										<property name="Top" vt="Int16">166</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">3</property>
+										<property name="Text" vt="String">None</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">None</li>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACombo" name="cmbDonateArchers3">
+									<properties>
+										<property name="Left" vt="Int8">11</property>
+										<property name="Top" vt="Int16">190</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">4</property>
+										<property name="Text" vt="String">None</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">None</li>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfArchers1">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">142</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">5</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfArchers2">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">166</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">6</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfArchers3">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">190</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">7</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkDonateArchers">
+									<properties>
+										<property name="Left" vt="Int8">40</property>
+										<property name="Top" vt="Int16">218</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Donate Troop</property>
+										<property name="Checked" vt="True">True</property>
+										<property name="State" vt="Ident">cbChecked</property>
+										<property name="TabOrder" vt="Int8">8</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
 						<object type="TAGroup" name="groupGiants">
 							<properties>
-								<property name="Left" vt="Int16">333</property>
-								<property name="Top" vt="Int8">35</property>
-								<property name="Width" vt="Int16">150</property>
-								<property name="Height" vt="Int16">207</property>
+								<property name="Left" vt="Int16">341</property>
+								<property name="Top" vt="Int8">3</property>
+								<property name="Width" vt="Int16">166</property>
+								<property name="Height" vt="Int16">239</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Giants</property>
+								<property name="Caption" vt="String">Option 3</property>
 								<property name="TabOrder" vt="Int8">2</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>
@@ -2095,9 +2437,9 @@
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">40</property>
-										<property name="Width" vt="Int16">130</property>
-										<property name="Height" vt="Int16">140</property>
-										<property name="Hint" vt="String">Keywords for donating Giants</property>
+										<property name="Width" vt="Int16">146</property>
+										<property name="Height" vt="Int8">92</property>
+										<property name="Hint" vt="String">Keywords for option 3</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
 												<li vt="String">any</li>
@@ -2112,15 +2454,186 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACombo" name="cmbDonateGiants1">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">142</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">3</property>
+										<property name="TabOrder" vt="Int8">2</property>
+										<property name="Text" vt="String">Giant</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACombo" name="cmbDonateGiants2">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">166</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">3</property>
+										<property name="Text" vt="String">None</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">None</li>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACombo" name="cmbDonateGiants3">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">190</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="ItemIndex" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">4</property>
+										<property name="Text" vt="String">None</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">None</li>
+												<li vt="String">Barbarian</li>
+												<li vt="String">Archer</li>
+												<li vt="String">Giant</li>
+												<li vt="String">Goblin</li>
+												<li vt="String">WallBreaker</li>
+												<li vt="String">Ballon</li>
+												<li vt="String">Wizard</li>
+												<li vt="String">Healer</li>
+												<li vt="String">Dragon</li>
+												<li vt="String">Pekka</li>
+												<li vt="String">Minion</li>
+												<li vt="String">Hog</li>
+												<li vt="String">Valkyrie</li>
+												<li vt="String">Golem</li>
+												<li vt="String">Witch</li>
+												<li vt="String">Lava</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfGiants1">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">142</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">5</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfGiants2">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">166</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">6</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="NoOfGiants3">
+									<properties>
+										<property name="Left" vt="Int8">122</property>
+										<property name="Top" vt="Int16">190</property>
+										<property name="Width" vt="Int8">33</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="MaxLength" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">7</property>
+										<property name="Text" vt="String">1</property>
+										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkDonateGiants">
+									<properties>
+										<property name="Left" vt="Int8">40</property>
+										<property name="Top" vt="Int16">218</property>
+										<property name="Width" vt="Int8">89</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Donate Troop</property>
+										<property name="Checked" vt="True">True</property>
+										<property name="State" vt="Ident">cbChecked</property>
+										<property name="TabOrder" vt="Int8">8</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
-						<object type="TACheckbox" name="chkDonateGiants">
+						<object type="TACheckbox" name="chkRequest">
 							<properties>
-								<property name="Left" vt="Int16">368</property>
-								<property name="Top" vt="Int16">220</property>
-								<property name="Width" vt="Int8">97</property>
+								<property name="Left" vt="Int16">295</property>
+								<property name="Top" vt="Int16">258</property>
+								<property name="Width" vt="Int8">82</property>
 								<property name="Height" vt="Int8">17</property>
-								<property name="Caption" vt="String">Donate Giants</property>
+								<property name="Caption" vt="String">Request for :</property>
 								<property name="Checked" vt="True">True</property>
 								<property name="State" vt="Ident">cbChecked</property>
 								<property name="TabOrder" vt="Int8">3</property>
@@ -2130,59 +2643,11 @@
 							</properties>
 							<components/>
 						</object>
-						<object type="TACheckbox" name="chkDonateArchers">
-							<properties>
-								<property name="Left" vt="Int16">198</property>
-								<property name="Top" vt="Int16">220</property>
-								<property name="Width" vt="Int8">97</property>
-								<property name="Height" vt="Int8">17</property>
-								<property name="Caption" vt="String">Donate Archers</property>
-								<property name="Checked" vt="True">True</property>
-								<property name="State" vt="Ident">cbChecked</property>
-								<property name="TabOrder" vt="Int8">4</property>
-								<property name="CtrlStyle" vt="Int32">1342242819</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Resizing" vt="Set">DockHeight</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TACheckbox" name="chkDonateBarbarians">
-							<properties>
-								<property name="Left" vt="Int8">28</property>
-								<property name="Top" vt="Int16">220</property>
-								<property name="Width" vt="Int8">112</property>
-								<property name="Height" vt="Int8">17</property>
-								<property name="Caption" vt="String">Donate Barbarians</property>
-								<property name="Checked" vt="True">True</property>
-								<property name="State" vt="Ident">cbChecked</property>
-								<property name="TabOrder" vt="Int8">5</property>
-								<property name="CtrlStyle" vt="Int32">1342242819</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Resizing" vt="Set">DockHeight</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TACheckbox" name="chkRequest">
-							<properties>
-								<property name="Left" vt="Int8">23</property>
-								<property name="Top" vt="Int8">10</property>
-								<property name="Width" vt="Int8">82</property>
-								<property name="Height" vt="Int8">17</property>
-								<property name="Caption" vt="String">Request for :</property>
-								<property name="Checked" vt="True">True</property>
-								<property name="State" vt="Ident">cbChecked</property>
-								<property name="TabOrder" vt="Int8">6</property>
-								<property name="CtrlStyle" vt="Int32">1342242819</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Resizing" vt="Set">DockHeight</property>
-							</properties>
-							<components/>
-						</object>
 						<object type="TAInput" name="txtRequest">
 							<properties>
-								<property name="Left" vt="Int8">108</property>
-								<property name="Top" vt="Int8">10</property>
-								<property name="Width" vt="Int16">375</property>
+								<property name="Left" vt="Int16">292</property>
+								<property name="Top" vt="Int16">282</property>
+								<property name="Width" vt="Int16">335</property>
 								<property name="Height" vt="Int8">23</property>
 								<property name="Hint" vt="String">Request for input.</property>
 								<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
@@ -2192,7 +2657,7 @@
 								<property name="Font.Style" vt="Set"/>
 								<property name="MaxLength" vt="Int8">20</property>
 								<property name="ParentFont" vt="False">False</property>
-								<property name="TabOrder" vt="Int8">7</property>
+								<property name="TabOrder" vt="Int8">4</property>
 								<property name="Text" vt="String">Any</property>
 								<property name="CtrlStyle" vt="Int32">1342374016</property>
 								<property name="CtrlExStyle" vt="Int16">512</property>
@@ -2202,14 +2667,14 @@
 						</object>
 						<object type="TAGroup" name="groupNotDonate">
 							<properties>
-								<property name="Left" vt="Int16">493</property>
+								<property name="Left" vt="Int16">517</property>
 								<property name="Top" vt="Int8">3</property>
-								<property name="Width" vt="Int16">130</property>
+								<property name="Width" vt="Int8">114</property>
 								<property name="Height" vt="Int16">239</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Blacklist</property>
-								<property name="TabOrder" vt="Int8">8</property>
+								<property name="TabOrder" vt="Int8">5</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>
 							<components>
@@ -2217,8 +2682,8 @@
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">20</property>
-										<property name="Width" vt="Int8">110</property>
-										<property name="Height" vt="Int16">178</property>
+										<property name="Width" vt="Int8">94</property>
+										<property name="Height" vt="Int16">190</property>
 										<property name="Hint" vt="String">Blacklist Keywords</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2238,8 +2703,8 @@
 								</object>
 								<object type="TACheckbox" name="chkBlacklist">
 									<properties>
-										<property name="Left" vt="Int8">35</property>
-										<property name="Top" vt="Int16">213</property>
+										<property name="Left" vt="Int8">27</property>
+										<property name="Top" vt="Int16">218</property>
 										<property name="Width" vt="Int8">57</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Enable</property>

@@ -231,6 +231,25 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "donate", "chkDonateGiants", 0)
 	EndIf
 
+	IniWrite($config, "donate", "donate11", GUICtrlRead($cmbDonateBarbarians1))
+	IniWrite($config, "donate", "donate12", GUICtrlRead($cmbDonateBarbarians2))
+	IniWrite($config, "donate", "donate13", GUICtrlRead($cmbDonateBarbarians3))
+	IniWrite($config, "donate", "amount11", Number(GUICtrlRead($NoOfBarbarians1)))
+	IniWrite($config, "donate", "amount12", Number(GUICtrlRead($NoOfBarbarians2)))
+	IniWrite($config, "donate", "amount13", Number(GUICtrlRead($NoOfBarbarians3)))
+	IniWrite($config, "donate", "donate21", GUICtrlRead($cmbDonateArchers1))
+	IniWrite($config, "donate", "donate22", GUICtrlRead($cmbDonateArchers2))
+	IniWrite($config, "donate", "donate23", GUICtrlRead($cmbDonateArchers3))
+	IniWrite($config, "donate", "amount21", Number(GUICtrlRead($NoOfArchers1)))
+	IniWrite($config, "donate", "amount22", Number(GUICtrlRead($NoOfArchers2)))
+	IniWrite($config, "donate", "amount23", Number(GUICtrlRead($NoOfArchers3)))
+	IniWrite($config, "donate", "donate31", GUICtrlRead($cmbDonateGiants1))
+	IniWrite($config, "donate", "donate32", GUICtrlRead($cmbDonateGiants2))
+	IniWrite($config, "donate", "donate33", GUICtrlRead($cmbDonateGiants3))
+	IniWrite($config, "donate", "amount31", Number(GUICtrlRead($NoOfGiants1)))
+	IniWrite($config, "donate", "amount32", Number(GUICtrlRead($NoOfGiants2)))
+	IniWrite($config, "donate", "amount33", Number(GUICtrlRead($NoOfGiants3)))
+
 	IniWrite($config, "donate", "xCCPos", $CCPos[0])
 	IniWrite($config, "donate", "yCCPos", $CCPos[1])
 
