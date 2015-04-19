@@ -1,6 +1,8 @@
 ;Clickes the collector locations
 
 Func Collect()
+ 	If $ichkCollect = 0 Then Return
+
 	Local $collectx, $collecty, $i = 0
 
 	SetLog("Collecting Resources", $COLOR_BLUE)

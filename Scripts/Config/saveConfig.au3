@@ -287,6 +287,8 @@ Func saveConfig() ;Saves the controls settings to the config
 
 	IniWrite($config, "other", "minwallgold", GUICtrlRead($txtWallMinGold))
 	IniWrite($config, "other", "minwallelixir", GUICtrlRead($txtWallMinElixir))
+	IniWrite($config, "other", "minbldggold", GUICtrlRead($txtBldgMinGold))
+	IniWrite($config, "other", "minbldgelixir", GUICtrlRead($txtBldgMinElixir))
 	If GUICtrlRead($chkUpgrade1) = $GUI_CHECKED Then
 		IniWrite($config, "other", "BuildUpgrade1", 1)
 	Else
@@ -457,6 +459,12 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "misc", "chkTrap", 1)
 	Else
 		IniWrite($config, "misc", "chkTrap", 0)
+	EndIf
+
+	If GUICtrlRead($chkCollect) = $GUI_CHECKED Then
+		IniWrite($config, "misc", "chkCollect", 1)
+	Else
+		IniWrite($config, "misc", "chkCollect", 0)
 	EndIf
 
 	If GUICtrlRead($chkRaxRestart) = $GUI_CHECKED Then

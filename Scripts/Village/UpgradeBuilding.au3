@@ -16,8 +16,8 @@ Func UpgradeBuilding()
 	Local $ElixirUpgrade1 = False
 	Local $ElixirUpgrade2 = False
 	Local $ElixirUpgrade3 = False
-	Local $iMinGold = Number(GUICtrlRead($txtWallMinGold))
-	Local $iMinElixir = Number(GUICtrlRead($txtWallMinElixir))
+	Local $iMinGold = Number(GUICtrlRead($txtBldgMinGold))
+	Local $iMinElixir = Number(GUICtrlRead($txtBldgMinElixir))
 	Local $iGoldStorage = Number($GoldCount)
 	Local $iElixirStorage = Number($ElixirCount)
 

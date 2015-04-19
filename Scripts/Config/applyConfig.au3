@@ -329,6 +329,8 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 
 	GUICtrlSetData($txtWallMinGold, $itxtWallMinGold)
 	GUICtrlSetData($txtWallMinElixir, $itxtWallMinElixir)
+	GUICtrlSetData($txtBldgMinGold, $itxtBldgMinGold)
+	GUICtrlSetData($txtBldgMinElixir, $itxtBldgMinElixir)
 
 	If $ichkUpgrade1 = 1 Then
 		GUICtrlSetState($chkUpgrade1, $GUI_CHECKED)
@@ -414,6 +416,12 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 		GUICtrlSetState($chkTrap, $GUI_CHECKED)
 	Else
 		GUICtrlSetState($chkTrap, $GUI_UNCHECKED)
+	EndIf
+
+	If $ichkCollect = 1 Then
+		GUICtrlSetState($chkCollect, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkCollect, $GUI_UNCHECKED)
 	EndIf
 
 	If $ichkRaxRestart = 1 Then

@@ -193,6 +193,7 @@ Global $itxtReturnh
 Global $itxtSearchsp
 Global $itxtwhitecloud
 Global $ichkTrap
+Global $ichkCollect
 Global $ichkRaxRestart
 Global $itxtKingSkill ;Delay before activating King Skill
 Global $itxtQueenSkill ;Delay before activating Queen Skill
@@ -205,6 +206,7 @@ Global $CreateSpell = True
 Global $ichkBoostRax1, $ichkBoostRax2, $ichkBoostRax3, $ichkBoostRax4, $ichkBoostDark1, $ichkBoostDark2, $ichkBoostKing, $ichkBoostQueen, $ichkBoostSpell
 Global $DeBattleEnd
 Global $ichkKeepLogs, $itxtKeepLogs
+Global $iSkillActivateCond
 
 ;Boosts Settings
 Global $BoostAll
@@ -274,8 +276,8 @@ Global $BuildPos3[2]
 Global $ichkWalls
 Global $icmbWalls
 Global $iUseStorage
-Global $itxtWallMinGold
-Global $itxtWallMinElixir
+Global $itxtWallMinGold, $itxtWallMinElixir
+Global $itxtBldgMinGold, $itxtBldgMinElixir
 Global $icmbTolerance
 Global $itxtReconnect
 Global $ichkUpgrade1, $ichkUpgrade2, $ichkUpgrade3
@@ -286,9 +288,6 @@ Global $iTimeWall = 120
 Global $iTimeArch = 25
 Global $iTimeGoblin = 35
 Global $iTimeBarba = 20
-
-;Misc Settings
-Global $iSkillActivateCond
 
 ;General Settings
 Global $botPos[2] ; Position of bot used for Hide function

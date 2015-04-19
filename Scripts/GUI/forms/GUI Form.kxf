@@ -15,7 +15,6 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
-		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -3362,7 +3361,7 @@
 							<properties>
 								<property name="Left" vt="Int8">13</property>
 								<property name="Top" vt="Int8">10</property>
-								<property name="Width" vt="Int16">375</property>
+								<property name="Width" vt="Int16">470</property>
 								<property name="Height" vt="Int8">125</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
@@ -3403,7 +3402,7 @@
 								</object>
 								<object type="TALabel" name="lblWallMinGold">
 									<properties>
-										<property name="Left" vt="Int16">200</property>
+										<property name="Left" vt="Int16">270</property>
 										<property name="Top" vt="Int8">77</property>
 										<property name="Width" vt="Int8">76</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3420,7 +3419,7 @@
 								</object>
 								<object type="TAInput" name="txtWallMinGold">
 									<properties>
-										<property name="Left" vt="Int16">305</property>
+										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">72</property>
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
@@ -3450,7 +3449,7 @@
 								</object>
 								<object type="TALabel" name="lblWallMinElixir">
 									<properties>
-										<property name="Left" vt="Int16">200</property>
+										<property name="Left" vt="Int16">270</property>
 										<property name="Top" vt="Int8">102</property>
 										<property name="Width" vt="Int8">72</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3467,7 +3466,7 @@
 								</object>
 								<object type="TAInput" name="txtWallMinElixir">
 									<properties>
-										<property name="Left" vt="Int16">305</property>
+										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">97</property>
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
@@ -3497,7 +3496,7 @@
 								</object>
 								<object type="TALabel" name="lblWalls">
 									<properties>
-										<property name="Left" vt="Int16">200</property>
+										<property name="Left" vt="Int16">270</property>
 										<property name="Top" vt="Int8">24</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3513,7 +3512,7 @@
 								</object>
 								<object type="TACombo" name="cmbWalls">
 									<properties>
-										<property name="Left" vt="Int16">305</property>
+										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">40</property>
 										<property name="Height" vt="Int8">25</property>
@@ -3540,7 +3539,7 @@
 								</object>
 								<object type="TALabel" name="lblTolerance">
 									<properties>
-										<property name="Left" vt="Int16">200</property>
+										<property name="Left" vt="Int16">270</property>
 										<property name="Top" vt="Int8">52</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
@@ -3556,7 +3555,7 @@
 								</object>
 								<object type="TACombo" name="cmbTolerance">
 									<properties>
-										<property name="Left" vt="Int16">305</property>
+										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
@@ -3598,7 +3597,7 @@
 							<properties>
 								<property name="Left" vt="Int8">13</property>
 								<property name="Top" vt="Int16">135</property>
-								<property name="Width" vt="Int16">375</property>
+								<property name="Width" vt="Int16">470</property>
 								<property name="Height" vt="Int8">105</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
@@ -3868,14 +3867,80 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TALabel" name="lblBldgMinGold">
+									<properties>
+										<property name="Left" vt="Int16">380</property>
+										<property name="Top" vt="Int8">14</property>
+										<property name="Width" vt="Int8">76</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Minimum level of Gold storage to perform building upgrade</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Minimum Gold:</property>
+										<property name="TabOrder" vt="Int8">18</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblBldgMinElixir">
+									<properties>
+										<property name="Left" vt="Int16">380</property>
+										<property name="Top" vt="Int8">58</property>
+										<property name="Width" vt="Int8">72</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Minimum level of Elixir storage to perform building upgrade</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Minimum Elixir:</property>
+										<property name="TabOrder" vt="Int8">19</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtBldgMinGold">
+									<properties>
+										<property name="Left" vt="Int16">385</property>
+										<property name="Top" vt="Int8">32</property>
+										<property name="Width" vt="Int8">61</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="Hint" vt="String">Minimum level of Gold storage to perform Building upgrade</property>
+										<property name="MaxLength" vt="Int8">7</property>
+										<property name="TabOrder" vt="Int8">20</property>
+										<property name="Text" vt="String">1300000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtBldgMinElixir">
+									<properties>
+										<property name="Left" vt="Int16">385</property>
+										<property name="Top" vt="Int8">76</property>
+										<property name="Width" vt="Int8">61</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="Hint" vt="String">Minimum level of Elixir storage to perform Building upgrade</property>
+										<property name="MaxLength" vt="Int8">7</property>
+										<property name="TabOrder" vt="Int8">21</property>
+										<property name="Text" vt="String">1300000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
 						<object type="TAGroup" name="groupBoosts">
 							<properties>
-								<property name="Left" vt="Int16">393</property>
+								<property name="Left" vt="Int16">490</property>
 								<property name="Top" vt="Int8">10</property>
-								<property name="Width" vt="Int16">215</property>
-								<property name="Height" vt="Int16">175</property>
+								<property name="Width" vt="Int16">130</property>
+								<property name="Height" vt="Int16">310</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Boosts</property>
@@ -3946,8 +4011,8 @@
 								</object>
 								<object type="TACheckbox" name="chkBoostQueen">
 									<properties>
-										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">50</property>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">75</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Queen Altar</property>
@@ -3961,7 +4026,7 @@
 								<object type="TACheckbox" name="chkBoostRax1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">75</property>
+										<property name="Top" vt="Int8">100</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 1</property>
@@ -3975,7 +4040,7 @@
 								<object type="TACheckbox" name="chkBoostRax2">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">100</property>
+										<property name="Top" vt="Int8">125</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 2</property>
@@ -3988,8 +4053,8 @@
 								</object>
 								<object type="TACheckbox" name="chkBoostRax3">
 									<properties>
-										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">75</property>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">150</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 3</property>
@@ -4002,8 +4067,8 @@
 								</object>
 								<object type="TACheckbox" name="chkBoostRax4">
 									<properties>
-										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">100</property>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">175</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 4</property>
@@ -4017,7 +4082,7 @@
 								<object type="TACheckbox" name="chkBoostSpell">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">150</property>
+										<property name="Top" vt="Int16">250</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Spell Factory</property>
@@ -4031,7 +4096,7 @@
 								<object type="TACheckbox" name="chkBoostDark1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">125</property>
+										<property name="Top" vt="Int16">200</property>
 										<property name="Width" vt="Int8">90</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Dark Barrack 1</property>
@@ -4044,8 +4109,8 @@
 								</object>
 								<object type="TACheckbox" name="chkBoostDark2">
 									<properties>
-										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">125</property>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">225</property>
 										<property name="Width" vt="Int8">90</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Dark Barrack 2</property>
@@ -4057,54 +4122,6 @@
 									<components/>
 								</object>
 							</components>
-						</object>
-						<object type="TALabel" name="lblBuildingTip1">
-							<properties>
-								<property name="Left" vt="Int16">400</property>
-								<property name="Top" vt="Int16">190</property>
-								<property name="Width" vt="Int16">200</property>
-								<property name="Height" vt="Int8">17</property>
-								<property name="AutoSize" vt="False">False</property>
-								<property name="Caption" vt="String">Buildings / Walls Upgrade Only Proceed </property>
-								<property name="TabOrder" vt="Int8">3</property>
-								<property name="HaveVariable" vt="False">False</property>
-								<property name="CtrlStyle" vt="Int32">1342308609</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Resizing" vt="Set"/>
-							</properties>
-							<components/>
-						</object>
-						<object type="TALabel" name="lblBuildingTip2">
-							<properties>
-								<property name="Left" vt="Int16">400</property>
-								<property name="Top" vt="Int16">210</property>
-								<property name="Width" vt="Int16">200</property>
-								<property name="Height" vt="Int8">17</property>
-								<property name="AutoSize" vt="False">False</property>
-								<property name="Caption" vt="String">if Current Gold and Elixir higher than</property>
-								<property name="TabOrder" vt="Int8">4</property>
-								<property name="HaveVariable" vt="False">False</property>
-								<property name="CtrlStyle" vt="Int32">1342308609</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Resizing" vt="Set"/>
-							</properties>
-							<components/>
-						</object>
-						<object type="TALabel" name="lblBuildingTip3">
-							<properties>
-								<property name="Left" vt="Int16">399</property>
-								<property name="Top" vt="Int16">230</property>
-								<property name="Width" vt="Int16">200</property>
-								<property name="Height" vt="Int8">17</property>
-								<property name="AutoSize" vt="False">False</property>
-								<property name="Caption" vt="String">Minimum Gold and Elixir</property>
-								<property name="TabOrder" vt="Int8">5</property>
-								<property name="HaveVariable" vt="False">False</property>
-								<property name="CtrlStyle" vt="Int32">1342308609</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Resizing" vt="Set"/>
-							</properties>
-							<components/>
 						</object>
 					</components>
 				</object>
@@ -4129,7 +4146,7 @@
 								<object type="TALabel" name="lblReconnect">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">25</property>
+										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">98</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set reconnect interval when other devices connected - COC English version Only</property>
@@ -4146,7 +4163,7 @@
 								<object type="TAInput" name="txtReconnect">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">20</property>
+										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -4161,7 +4178,7 @@
 								<object type="TALabel" name="lblReconnectmin">
 									<properties>
 										<property name="Left" vt="Int16">145</property>
-										<property name="Top" vt="Int8">25</property>
+										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">42</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4176,8 +4193,8 @@
 								</object>
 								<object type="TACheckbox" name="chkTrap">
 									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">215</property>
+										<property name="Left" vt="Int16">155</property>
+										<property name="Top" vt="Int16">182</property>
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Auto rearm for Traps, Crossbows  Inferno Towers</property>
@@ -4194,7 +4211,7 @@
 								<object type="TALabel" name="lblSearchsp">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">52</property>
+										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">98</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set search base speed to higher number if having frequent server sync issue</property>
@@ -4211,7 +4228,7 @@
 								<object type="TALabel" name="lblSearchspd">
 									<properties>
 										<property name="Left" vt="Int16">145</property>
-										<property name="Top" vt="Int8">52</property>
+										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">120</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4227,7 +4244,7 @@
 								<object type="TARadio" name="UseSkillTimed">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">79</property>
+										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set delay timing for King skill</property>
@@ -4244,7 +4261,7 @@
 								<object type="TAInput" name="txtKingSkill">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">75</property>
+										<property name="Top" vt="Int8">71</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -4259,7 +4276,7 @@
 								<object type="TALabel" name="lblKingsSkill">
 									<properties>
 										<property name="Left" vt="Int16">145</property>
-										<property name="Top" vt="Int8">80</property>
+										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4275,7 +4292,7 @@
 								<object type="TALabel" name="lblQueenSkill">
 									<properties>
 										<property name="Left" vt="Int16">210</property>
-										<property name="Top" vt="Int8">80</property>
+										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">88</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set delay timing for Queen skill</property>
@@ -4292,7 +4309,7 @@
 								<object type="TAInput" name="txtQueenSkill">
 									<properties>
 										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int8">75</property>
+										<property name="Top" vt="Int8">71</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -4307,7 +4324,7 @@
 								<object type="TALabel" name="lblQueensSkill">
 									<properties>
 										<property name="Left" vt="Int16">335</property>
-										<property name="Top" vt="Int8">80</property>
+										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">45</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4323,7 +4340,7 @@
 								<object type="TALabel" name="lblReturnh">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">133</property>
+										<property name="Top" vt="Int16">128</property>
 										<property name="Width" vt="Int8">98</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set delay timing for return home during raid</property>
@@ -4340,7 +4357,7 @@
 								<object type="TAInput" name="txtReturnh">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int16">128</property>
+										<property name="Top" vt="Int8">124</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -4355,7 +4372,7 @@
 								<object type="TALabel" name="lblReturndelay">
 									<properties>
 										<property name="Left" vt="Int16">145</property>
-										<property name="Top" vt="Int16">133</property>
+										<property name="Top" vt="Int16">128</property>
 										<property name="Width" vt="Int8">125</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4371,7 +4388,7 @@
 								<object type="TACheckbox" name="chkSpellDarkStorage">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">159</property>
+										<property name="Top" vt="Int16">154</property>
 										<property name="Width" vt="Int16">137</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set Min Dark Elixir to Lightning Dark Storage</property>
@@ -4386,7 +4403,7 @@
 								<object type="TAInput" name="txtSpellDarkStorage">
 									<properties>
 										<property name="Left" vt="Int16">150</property>
-										<property name="Top" vt="Int16">155</property>
+										<property name="Top" vt="Int16">150</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">4</property>
@@ -4401,7 +4418,7 @@
 								<object type="TALabel" name="lblSpellDarkStorage">
 									<properties>
 										<property name="Left" vt="Int16">185</property>
-										<property name="Top" vt="Int16">160</property>
+										<property name="Top" vt="Int16">155</property>
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4417,7 +4434,7 @@
 								<object type="TACheckbox" name="chkTakeTownSS">
 									<properties>
 										<property name="Left" vt="Int16">450</property>
-										<property name="Top" vt="Int16">215</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int16">141</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Take All Towns Snapshot</property>
@@ -4431,7 +4448,7 @@
 								<object type="TACheckbox" name="chkTakeLootSS">
 									<properties>
 										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int16">215</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">118</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Take Loots Snapshot</property>
@@ -4447,7 +4464,7 @@
 								<object type="TACheckbox" name="chkAlertSearch">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int16">215</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Base Found Alert</property>
@@ -4461,7 +4478,7 @@
 								<object type="TARadio" name="UseSkillAuto">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">106</property>
+										<property name="Top" vt="Int8">101</property>
 										<property name="Width" vt="Int16">215</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Skill will activate when hero's health is low</property>
@@ -4476,7 +4493,7 @@
 								<object type="TACheckbox" name="chkRaxRestart">
 									<properties>
 										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int8">24</property>
+										<property name="Top" vt="Int8">19</property>
 										<property name="Width" vt="Int16">250</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Restart bluestack if fail to detect all 4 barracks</property>
@@ -4491,7 +4508,7 @@
 								<object type="TACheckbox" name="chkMultiLight">
 									<properties>
 										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int16">159</property>
+										<property name="Top" vt="Int16">154</property>
 										<property name="Width" vt="Int8">120</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Cast Lightning as long as Dark Elixir more than Min requirement</property>
@@ -4506,7 +4523,7 @@
 								<object type="TACheckbox" name="chkkeeplogs">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">187</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">70</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set number of logs you want to keep</property>
@@ -4520,8 +4537,8 @@
 								</object>
 								<object type="TAInput" name="txtkeeplogs">
 									<properties>
-										<property name="Left" vt="Int8">86</property>
-										<property name="Top" vt="Int16">183</property>
+										<property name="Left" vt="Int8">85</property>
+										<property name="Top" vt="Int16">206</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">3</property>
@@ -4535,8 +4552,8 @@
 								</object>
 								<object type="TACheckbox" name="chkWideEdge">
 									<properties>
-										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int16">187</property>
+										<property name="Left" vt="Int16">300</property>
+										<property name="Top" vt="Int16">182</property>
 										<property name="Width" vt="Int16">136</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Increase the range for Townhall to be considering as Outside</property>
@@ -4550,8 +4567,8 @@
 								</object>
 								<object type="TACheckbox" name="chkRedLine">
 									<properties>
-										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int16">187</property>
+										<property name="Left" vt="Int16">450</property>
+										<property name="Top" vt="Int16">182</property>
 										<property name="Width" vt="Int8">120</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Look for red line and deploy troops near them</property>
@@ -4566,7 +4583,7 @@
 								<object type="TAInput" name="txtSearchsp">
 									<properties>
 										<property name="Left" vt="Int8">110</property>
-										<property name="Top" vt="Int8">47</property>
+										<property name="Top" vt="Int8">43</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -4581,7 +4598,7 @@
 								<object type="TAInput" name="txtwhitecloud">
 									<properties>
 										<property name="Left" vt="Int16">430</property>
-										<property name="Top" vt="Int8">47</property>
+										<property name="Top" vt="Int8">43</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -4596,7 +4613,7 @@
 								<object type="TALabel" name="Label22">
 									<properties>
 										<property name="Left" vt="Int16">465</property>
-										<property name="Top" vt="Int8">52</property>
+										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">45</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -4612,7 +4629,7 @@
 								<object type="TALabel" name="lblwhitecloud">
 									<properties>
 										<property name="Left" vt="Int16">300</property>
-										<property name="Top" vt="Int8">52</property>
+										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int16">128</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set waiting time for next base when searching</property>
@@ -4623,6 +4640,23 @@
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkCollect">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">182</property>
+										<property name="Width" vt="Int8">125</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Hint" vt="String">Auto Collect All Available Resource</property>
+										<property name="Caption" vt="String">Auto Collect Resource</property>
+										<property name="Checked" vt="True">True</property>
+										<property name="State" vt="Ident">cbChecked</property>
+										<property name="TabOrder" vt="Int8">32</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
 									<components/>
 								</object>
