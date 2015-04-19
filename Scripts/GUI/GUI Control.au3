@@ -28,7 +28,7 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					cmbTroopComp()
 				Case $chkRequest
 					chkRequest()
-				Case $chkRequest
+				Case $chkBlacklist
 					chkBlacklist()
 				Case $tabMain
 					tabMain()

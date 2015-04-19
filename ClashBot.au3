@@ -60,7 +60,7 @@ Func runBot() ;Bot that runs everything in order
 		SaveConfig()
 		readConfig()
 		applyConfig()
-		If GUICtrlRead($chkKeepLogs) = $GUI_CHECKED Then
+		If $ichkKeepLogs = 1 Then
 			log_cleanup(GUICtrlRead($txtKeepLogs))
 		EndIf
 		chkNoAttack()
