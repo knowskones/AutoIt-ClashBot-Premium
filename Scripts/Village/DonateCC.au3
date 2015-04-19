@@ -87,6 +87,23 @@ Func DonateCC()
 						EndIf
 					EndIf
 				Else
+					_CaptureRegion(0, 0, 435, $DonatePixel[1] + 50)
+					Local $String = getString($DonatePixel[1] - 28)
+					If $String = "" Then
+						$String = getString($DonatePixel[1] - 17)
+					Else
+						$String = $String & @CRLF & getString($DonatePixel[1] - 17)
+					 EndIf
+
+					Local $BlacklistCheck = 0
+					Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
+					For $i = 0 To UBound($Blacklist) - 1
+						If CheckDonate($Blacklist[$i], $String) Then
+						   $BlacklistCheck = 1
+						   SetLog("Chat Text: " & $String, $COLOR_RED)
+						   SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
+						EndIf
+					Next
 					Select
 						Case $ichkDonateAllBarbarians = 1 And $BlacklistCheck = 0
 							DonateBarbs()
