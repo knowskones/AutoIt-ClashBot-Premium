@@ -199,7 +199,7 @@ EndFunc   ;==>_GetDevices
 
 ;FindDevice
 Func FindDevice()
-   if $PushBullettoken <> "" and $cmbDevice <> "" and $cmbDevice <> "All" Then
+   if $PushBulletEnabled = 1 and $PushBullettoken <> "" and $cmbDevice <> "" and $cmbDevice <> "All" Then
 	   $oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
 	   $access_token = $PushBullettoken
 	   $oHTTP.Open("Get", "https://api.pushbullet.com/v2/devices?active=true", False)
