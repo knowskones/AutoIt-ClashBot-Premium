@@ -183,12 +183,18 @@ Func saveConfig() ;Saves the controls settings to the config
 	EndIf
 
 	;Donate Settings-------------------------------------------------------------------------
+	If GUICtrlRead($chkBlacklist) = $GUI_CHECKED Then
+		IniWrite($config, "donate", "chkBlacklist", 1)
+	Else
+		IniWrite($config, "donate", "chkBlacklist", 0)
+	EndIf
+	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If GUICtrlRead($chkRequest) = $GUI_CHECKED Then
 		IniWrite($config, "donate", "chkRequest", 1)
 	Else
 		IniWrite($config, "donate", "chkRequest", 0)
 	EndIf
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If GUICtrlRead($chkDonateAllBarbarians) = $GUI_CHECKED Then
 		IniWrite($config, "donate", "chkDonateAllBarbarians", 1)
 	Else

@@ -33,14 +33,16 @@ Func DonateCC()
 					 EndIf
 
 					Local $BlacklistCheck = 0
-					Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
-					For $i = 0 To UBound($Blacklist) - 1
-						If CheckDonate($Blacklist[$i], $String) Then
-						   $BlacklistCheck = 1
-						   SetLog("Chat Text: " & $String, $COLOR_RED)
-						   SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
-						EndIf
-					Next
+					If $ichkBlacklist = 1 Then
+						Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
+						For $i = 0 To UBound($Blacklist) - 1
+							If CheckDonate($Blacklist[$i], $String) Then
+								$BlacklistCheck = 1
+								SetLog("Chat Text: " & $String, $COLOR_RED)
+								SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
+							EndIf
+						Next
+					EndIf
 
 					If $BlacklistCheck = 0 Then SetLog("Chat Text: " & $String, $COLOR_GREEN)
 
@@ -96,14 +98,16 @@ Func DonateCC()
 					 EndIf
 
 					Local $BlacklistCheck = 0
-					Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
-					For $i = 0 To UBound($Blacklist) - 1
-						If CheckDonate($Blacklist[$i], $String) Then
-						   $BlacklistCheck = 1
-						   SetLog("Chat Text: " & $String, $COLOR_RED)
-						   SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
-						EndIf
-					Next
+					If $ichkBlacklist = 1 Then
+						Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
+						For $i = 0 To UBound($Blacklist) - 1
+							If CheckDonate($Blacklist[$i], $String) Then
+								$BlacklistCheck = 1
+								SetLog("Chat Text: " & $String, $COLOR_RED)
+								SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
+							EndIf
+						Next
+					EndIf
 					Select
 						Case $ichkDonateAllBarbarians = 1 And $BlacklistCheck = 0
 							DonateBarbs()

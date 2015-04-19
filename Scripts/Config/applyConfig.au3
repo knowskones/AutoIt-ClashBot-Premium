@@ -215,13 +215,18 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Randomspeedatk()
 
 	;Donate Settings-------------------------------------------------------------------------
+	If $ichkBlacklist = 1 Then
+		GUICtrlSetState($chkBlacklist, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkBlacklist, $GUI_UNCHECKED)
+	EndIf
+	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If $ichkRequest = 1 Then
 		GUICtrlSetState($chkRequest, $GUI_CHECKED)
 	Else
 		GUICtrlSetState($chkRequest, $GUI_UNCHECKED)
 	EndIf
-
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If $ichkDonateBarbarians = 1 Then
 		GUICtrlSetState($chkDonateBarbarians, $GUI_CHECKED)
 	Else
@@ -232,7 +237,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Else
 		GUICtrlSetState($chkDonateAllBarbarians, $GUI_UNCHECKED)
 	EndIf
-	;````````````````````````````````````````````````
+	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If $ichkDonateArchers = 1 Then
 		GUICtrlSetState($chkDonateArchers, $GUI_CHECKED)
 	Else
@@ -243,7 +248,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Else
 		GUICtrlSetState($chkDonateAllArchers, $GUI_UNCHECKED)
 	EndIf
-;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If $ichkDonateGiants = 1 Then
 		GUICtrlSetState($chkDonateGiants, $GUI_CHECKED)
 	Else
@@ -260,8 +265,10 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	GUICtrlSetData($txtDonateGiants, $itxtDonateGiants)
 
 	GUICtrlSetData($txtRequest, $itxtRequest)
-	GUICtrlSetData($txtNotDonate, $itxtNotDonate)
 	chkRequest()
+
+	GUICtrlSetData($txtNotDonate, $itxtNotDonate)
+	chkBlacklist()
 	;Troop Settings--------------------------------------------------------------------------
 	_GUICtrlComboBox_SetCurSel($cmbTroopComp, $icmbTroopComp)
 	_GUICtrlComboBox_SetCurSel($cmbRaidcap, $icmbRaidcap)

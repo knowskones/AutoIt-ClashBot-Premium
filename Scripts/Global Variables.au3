@@ -238,6 +238,7 @@ Global $ichkDonateGiants = 0
 Global $itxtDonateGiants = ""
 
 Global $itxtNotDonate = ""
+Global $ichkBlacklist
 
 ;Troop Settings
 Global $icmbRaidcap

@@ -28,6 +28,8 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					cmbTroopComp()
 				Case $chkRequest
 					chkRequest()
+				Case $chkRequest
+					chkBlacklist()
 				Case $tabMain
 					tabMain()
 				Case $chkRandomSpeedAtk
@@ -995,6 +997,16 @@ Func chkRequest()
 	EndIf
 EndFunc   ;==>chkRequest
 
+Func chkBlacklist()
+	If GUICtrlRead($chkBlacklist) = $GUI_CHECKED Then
+		$ichkBlacklist = 1
+		GUICtrlSetState($txtNotDonate, $GUI_ENABLE)
+	Else
+		$ichkBlacklist = 0
+		GUICtrlSetState($txtNotDonate, $GUI_DISABLE)
+	EndIf
+EndFunc   ;==>chkBlacklist
+
 Func Randomspeedatk()
 	If GUICtrlRead($chkRandomSpeedAtk) = $GUI_CHECKED Then
 		$iRandomspeedatk = 1
@@ -1009,17 +1021,21 @@ EndFunc   ;==>Randomspeedatk
 
 Func chkKeepLogs()
 	If GUICtrlRead($chkKeepLogs) = $GUI_CHECKED Then
+		$ichkKeepLogs = 1
 		GUICtrlSetState($txtKeepLogs, $GUI_ENABLE)
 	Else
+		$ichkKeepLogs = 0
 		GUICtrlSetState($txtKeepLogs, $GUI_DISABLE)
 	EndIf
 EndFunc   ;==>chkKeepLogs
 
 Func chkSpellDarkStorage()
 	If GUICtrlRead($chkSpellDarkStorage) = $GUI_UNCHECKED Then
+		$SpellDarkStorage = 0
 		GUICtrlSetState($chkMultiLight, $GUI_UNCHECKED)
 		GUICtrlSetState($chkMultiLight, $GUI_DISABLE)
 	ElseIf GUICtrlRead($chkSpellDarkStorage) = $GUI_CHECKED Then
+		$SpellDarkStorage = 1
 		GUICtrlSetState($chkMultiLight, $GUI_ENABLE)
 	EndIf
 EndFunc
