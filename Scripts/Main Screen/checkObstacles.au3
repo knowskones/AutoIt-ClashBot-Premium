@@ -20,6 +20,7 @@ Func checkObstacles() ;Checks if something is in the way for mainscreen
 		If _Sleep(120000) Then Return ; 2 Minutes
 		Click(416, 399);Check for "Take a break" message
 		$Checkrearm = True
+		$DCattack = True
 		Return True
 	EndIf
 

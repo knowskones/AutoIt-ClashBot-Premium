@@ -15,7 +15,6 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
-		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -2641,11 +2640,17 @@
 						<object type="TACheckbox" name="chkRequest">
 							<properties>
 								<property name="Left" vt="Int16">295</property>
-								<property name="Top" vt="Int16">258</property>
-								<property name="Width" vt="Int8">82</property>
+								<property name="Top" vt="Int16">257</property>
+								<property name="Width" vt="Int8">90</property>
 								<property name="Height" vt="Int8">17</property>
 								<property name="Caption" vt="String">Request for :</property>
 								<property name="Checked" vt="True">True</property>
+								<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+								<property name="Font.Color" vt="Ident">clWindowText</property>
+								<property name="Font.Height" vt="Int8">-12</property>
+								<property name="Font.Name" vt="String">Arial</property>
+								<property name="Font.Style" vt="Set"/>
+								<property name="ParentFont" vt="False">False</property>
 								<property name="State" vt="Ident">cbChecked</property>
 								<property name="TabOrder" vt="Int8">3</property>
 								<property name="CtrlStyle" vt="Int32">1342242819</property>
@@ -2656,9 +2661,9 @@
 						</object>
 						<object type="TAInput" name="txtRequest">
 							<properties>
-								<property name="Left" vt="Int16">380</property>
+								<property name="Left" vt="Int16">388</property>
 								<property name="Top" vt="Int16">255</property>
-								<property name="Width" vt="Int16">250</property>
+								<property name="Width" vt="Int16">242</property>
 								<property name="Height" vt="Int8">23</property>
 								<property name="Hint" vt="String">Request for input.</property>
 								<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
@@ -7351,109 +7356,6 @@
 						<property name="Caption" vt="String">&amp;Config</property>
 					</properties>
 					<components>
-						<object type="TAMenuItem" name="menuItemTheme">
-							<properties>
-								<property name="Caption" vt="String">Theme</property>
-							</properties>
-							<components>
-								<object type="TAMenuItem" name="menuItemNone">
-									<properties>
-										<property name="Caption" vt="String">None</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemDefault">
-									<properties>
-										<property name="Caption" vt="String">Default</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemIron">
-									<properties>
-										<property name="Caption" vt="String">Iron</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemSteel">
-									<properties>
-										<property name="Caption" vt="String">Steel</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemGray">
-									<properties>
-										<property name="Caption" vt="String">Gray</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemDark">
-									<properties>
-										<property name="Caption" vt="String">Dark</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemBlack">
-									<properties>
-										<property name="Caption" vt="String">Black</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemAlloy">
-									<properties>
-										<property name="Caption" vt="String">Alloy</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemHex">
-									<properties>
-										<property name="Caption" vt="String">Hex</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemCore">
-									<properties>
-										<property name="Caption" vt="String">Core</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemFresco">
-									<properties>
-										<property name="Caption" vt="String">Fresco</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemSoft">
-									<properties>
-										<property name="Caption" vt="String">Soft</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemGreen">
-									<properties>
-										<property name="Caption" vt="String">Green</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemTeal">
-									<properties>
-										<property name="Caption" vt="String">Teal</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemOrange">
-									<properties>
-										<property name="Caption" vt="String">Orange</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemRed">
-									<properties>
-										<property name="Caption" vt="String">Red</property>
-									</properties>
-									<components/>
-								</object>
-							</components>
-						</object>
 						<object type="TAMenuItem" name="menuItemLoad">
 							<properties>
 								<property name="Caption" vt="String">&amp;Load</property>
@@ -7463,6 +7365,170 @@
 						<object type="TAMenuItem" name="menuItemSave">
 							<properties>
 								<property name="Caption" vt="String">&amp;Save</property>
+							</properties>
+							<components/>
+						</object>
+					</components>
+				</object>
+				<object type="TAMenuItem" name="menuItemTheme">
+					<properties>
+						<property name="Caption" vt="String">&amp;Theme</property>
+					</properties>
+					<components>
+						<object type="TAMenuItem" name="menuItemNone">
+							<properties>
+								<property name="Caption" vt="String">None</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemDefault">
+							<properties>
+								<property name="Caption" vt="String">Default</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemIron">
+							<properties>
+								<property name="Caption" vt="String">Iron</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemSteel">
+							<properties>
+								<property name="Caption" vt="String">Steel</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemGray">
+							<properties>
+								<property name="Caption" vt="String">Gray</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemDark">
+							<properties>
+								<property name="Caption" vt="String">Dark</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemBlack">
+							<properties>
+								<property name="Caption" vt="String">Black</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemAlloy">
+							<properties>
+								<property name="Caption" vt="String">Alloy</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemHex">
+							<properties>
+								<property name="Caption" vt="String">Hex</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemCore">
+							<properties>
+								<property name="Caption" vt="String">Core</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemFresco">
+							<properties>
+								<property name="Caption" vt="String">Fresco</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemSoft">
+							<properties>
+								<property name="Caption" vt="String">Soft</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemGreen">
+							<properties>
+								<property name="Caption" vt="String">Green</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemTeal">
+							<properties>
+								<property name="Caption" vt="String">Teal</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemOrange">
+							<properties>
+								<property name="Caption" vt="String">Orange</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="menuItemRed">
+							<properties>
+								<property name="Caption" vt="String">Red</property>
+							</properties>
+							<components/>
+						</object>
+					</components>
+				</object>
+				<object type="TAMenuItem" name="MenuItem1">
+					<properties>
+						<property name="Caption" vt="String">&amp;Language</property>
+					</properties>
+					<components>
+						<object type="TAMenuItem" name="MenuItem10">
+							<properties>
+								<property name="Caption" vt="String">Arabic</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem9">
+							<properties>
+								<property name="Caption" vt="String">Deutsch</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem8">
+							<properties>
+								<property name="Caption" vt="String">English</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem7">
+							<properties>
+								<property name="Caption" vt="String">Filipino</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem6">
+							<properties>
+								<property name="Caption" vt="String">French</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem5">
+							<properties>
+								<property name="Caption" vt="String">Portuguese</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem4">
+							<properties>
+								<property name="Caption" vt="String">Spanish</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem3">
+							<properties>
+								<property name="Caption" vt="String">Turkish</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="MenuItem2">
+							<properties>
+								<property name="Caption" vt="String">Vietnamese</property>
 							</properties>
 							<components/>
 						</object>
