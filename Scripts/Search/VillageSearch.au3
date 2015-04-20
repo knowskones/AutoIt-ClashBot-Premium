@@ -36,11 +36,11 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 		_BlockInputEx(3, "", "", $HWnD)
 		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
 		While 1
-			If _Sleep(1000) Then ExitLoop (2)
+			If _Sleep(1000) Then Return
 			GUICtrlSetState($btnAtkNow, $GUI_ENABLE)
 			GetResources() ;Reads Resource Values
 
-			If $Restart = True Then ExitLoop (2)
+			If $Restart = True Then Return
 
 			If $TakeAllTownSnapShot = 1 Then
 				Local $Date = @MDAY & "." & @MON & "." & @YEAR
@@ -50,7 +50,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			EndIf
 
 			; read setting directly to allow speed change while searching to use attack now
-			If _Sleep($itxtSearchsp * 500) Then ExitLoop (2)
+			If _Sleep($itxtSearchsp * 500) Then Return
 
 			; Attack instantly if Attack Now button pressed
 			GUICtrlSetState($btnAtkNow, $GUI_DISABLE)
