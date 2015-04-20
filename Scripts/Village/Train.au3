@@ -109,12 +109,12 @@ Func Train()
 		SetLog("Total Working Barrack : " & $WorkingBarracks, $COLOR_GREEN)
 	EndIf
 
-	Local $GiantEBarrack ,$WallEBarrack ,$ArchEBarrack ,$BarbEBarrack ,$GoblinEBarrack
-	$GiantEBarrack = Floor($CurGiant/$WorkingBarracks)
-	$WallEBarrack = Floor($CurWB/$WorkingBarracks)
-	$ArchEBarrack = Floor($CurArch/$WorkingBarracks)
-	$BarbEBarrack = Floor($CurBarb/$WorkingBarracks)
-	$GoblinEBarrack = Floor($CurGoblin/$WorkingBarracks)
+	Local $GiantEBarrack[4]=[0,0,0,0], $WallEBarrack[4]=[0,0,0,0], $ArchEBarrack[4]=[0,0,0,0], $BarbEBarrack[4]=[0,0,0,0], $GoblinEBarrack[4]=[0,0,0,0]
+	$GiantEBarrack = DivideValue($CurGiant, $WorkingBarracks)
+	$WallEBarrack = DivideValue($CurWB, $WorkingBarracks)
+	$ArchEBarrack = DivideValue($CurArch, $WorkingBarracks)
+	$BarbEBarrack = DivideValue($CurBarb, $WorkingBarracks)
+	$GoblinEBarrack = DivideValue($CurGoblin, $WorkingBarracks)
 
 	Local $troopFirstGiant,$troopSecondGiant,$troopFirstWall,$troopSecondWall,$troopFirstGoblin,$troopSecondGoblin,$troopFirstBarba,$troopSecondBarba,$troopFirstArch,$troopSecondArch
 	$troopFirstGiant = 0
@@ -252,65 +252,42 @@ Func Train()
 				EndIf
 
 			If GUICtrlRead($txtArchers) <> "0" And $CurArch > 0 Then
-				If $CurArch > 0  Then
-					If $ArchEBarrack = 0 Then
-						TrainIt($eArcher, 1)
-					ElseIf $ArchEBarrack >= $CurArch Then
-						TrainIt($eArcher, $CurArch)
-					Else
-						TrainIt($eArcher, $ArchEBarrack)
-					EndIf
+				If $ArchEBarrack[$i] >= $CurArch Then
+					TrainIt($eArcher, $CurArch)
+				Else
+					TrainIt($eArcher, $ArchEBarrack[$i])
 				EndIf
 			EndIf
 
 			If GUICtrlRead($txtNumGiants) <> "0" And $CurGiant > 0 Then
-				If $CurGiant > 0 Then
-					If $GiantEBarrack = 0 Then
-						TrainIt($eGiant, 1)
-					ElseIf $GiantEBarrack >= $CurGiant Or $GiantEBarrack = 0  Then
-						TrainIt($eGiant, $CurGiant)
-					Else
-						TrainIt($eGiant, $GiantEBarrack)
-					EndIf
+				If $GiantEBarrack[$i] >= $CurGiant Or $GiantEBarrack[$i] = 0  Then
+					TrainIt($eGiant, $CurGiant)
+				Else
+					TrainIt($eGiant, $GiantEBarrack[$i])
 				EndIf
 			EndIf
-
 
 			If GUICtrlRead($txtNumWallbreakers) <> "0" And $CurWB > 0 Then
-				If $CurWB > 0  Then
-					If $WallEBarrack = 0 Then
-						TrainIt($eWallbreaker, 1)
-					ElseIf $WallEBarrack >= $CurWB Or $WallEBarrack = 0  Then
-						TrainIt($eWallbreaker, $CurWB)
-					Else
-						TrainIt($eWallbreaker, $WallEBarrack)
-					EndIf
+				If $WallEBarrack[$i] >= $CurWB Or $WallEBarrack[$i] = 0  Then
+					TrainIt($eWallbreaker, $CurWB)
+				Else
+					TrainIt($eWallbreaker, $WallEBarrack[$i])
 				EndIf
 			EndIf
-
 
 			If GUICtrlRead($txtBarbarians) <> "0" And $CurBarb > 0 Then
-				If $CurBarb > 0  Then
-					If $BarbEBarrack = 0 Then
-						TrainIt($eBarbarian, 1)
-					ElseIf $BarbEBarrack >= $CurBarb Or $BarbEBarrack = 0  Then
-						TrainIt($eBarbarian, $CurBarb)
-					Else
-						TrainIt($eBarbarian, $BarbEBarrack)
-					EndIf
+				If $BarbEBarrack[$i] >= $CurBarb Or $BarbEBarrack[$i] = 0  Then
+					TrainIt($eBarbarian, $CurBarb)
+				Else
+					TrainIt($eBarbarian, $BarbEBarrack[$i])
 				EndIf
 			EndIf
 
-
 			If GUICtrlRead($txtGoblins) <> "0" And $CurGoblin > 0 Then
-				If $CurGoblin > 0  Then
-					If $GoblinEBarrack = 0 Then
-						TrainIt($eGoblin, 1)
-					ElseIf $GoblinEBarrack >= $CurGoblin or $GoblinEBarrack = 0  Then
-						TrainIt($eGoblin, $CurGoblin)
-					Else
-						TrainIt($eGoblin, $GoblinEBarrack)
-					EndIf
+				If $GoblinEBarrack[$i] >= $CurGoblin or $GoblinEBarrack[$i] = 0  Then
+					TrainIt($eGoblin, $CurGoblin)
+				Else
+					TrainIt($eGoblin, $GoblinEBarrack[$i])
 				EndIf
 			EndIf
 
