@@ -206,7 +206,7 @@ Func Idle() ;Sequence that runs until Full Army
 				Local $TrainPos = _WaitForPixelSearch(440, 603, 694, 605, Hex(0x603818, 6)) ;Finds Train Troops button
 				If IsArray($TrainPos) = False Then
 					SetLog("Barrack " & $i + 1 & " is not available", $COLOR_RED)
-					handleBarracksError($i)
+;					handleBarracksError($i) No necessary and no function to reset it back, check train() last 5 row for reset function
 					If _Sleep(500) Then ExitLoop
 				Else
 					Click($TrainPos[0], $TrainPos[1]) ;Click Train Troops button
