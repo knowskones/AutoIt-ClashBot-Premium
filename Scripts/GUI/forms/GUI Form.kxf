@@ -1965,9 +1965,9 @@
 						<object type="TAGroup" name="groupBarbarians">
 							<properties>
 								<property name="Left" vt="Int8">5</property>
-								<property name="Top" vt="Int8">3</property>
+								<property name="Top" vt="Int8">2</property>
 								<property name="Width" vt="Int16">166</property>
-								<property name="Height" vt="Int16">239</property>
+								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Option 1</property>
@@ -1996,7 +1996,7 @@
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">146</property>
-										<property name="Height" vt="Int8">108</property>
+										<property name="Height" vt="Int8">111</property>
 										<property name="Hint" vt="String">Keywords for option 1</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2015,7 +2015,7 @@
 								<object type="TACombo" name="cmbDonateBarbarians1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">162</property>
+										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2051,7 +2051,7 @@
 								<object type="TACombo" name="cmbDonateBarbarians2">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2088,7 +2088,7 @@
 								<object type="TACombo" name="cmbDonateBarbarians3">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">210</property>
+										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2125,7 +2125,7 @@
 								<object type="TAInput" name="NoOfBarbarians1">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">162</property>
+										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2140,7 +2140,7 @@
 								<object type="TAInput" name="NoOfBarbarians2">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2155,7 +2155,7 @@
 								<object type="TAInput" name="NoOfBarbarians3">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">210</property>
+										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2189,9 +2189,9 @@
 						<object type="TAGroup" name="groupArchers">
 							<properties>
 								<property name="Left" vt="Int16">173</property>
-								<property name="Top" vt="Int8">3</property>
+								<property name="Top" vt="Int8">2</property>
 								<property name="Width" vt="Int16">166</property>
-								<property name="Height" vt="Int16">239</property>
+								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Option 2</property>
@@ -2219,7 +2219,7 @@
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">146</property>
-										<property name="Height" vt="Int8">108</property>
+										<property name="Height" vt="Int8">111</property>
 										<property name="Hint" vt="String">Keywords for option 2</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2238,7 +2238,7 @@
 								<object type="TACombo" name="cmbDonateArchers1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">162</property>
+										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2274,7 +2274,7 @@
 								<object type="TACombo" name="cmbDonateArchers2">
 									<properties>
 										<property name="Left" vt="Int8">11</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2311,7 +2311,7 @@
 								<object type="TACombo" name="cmbDonateArchers3">
 									<properties>
 										<property name="Left" vt="Int8">11</property>
-										<property name="Top" vt="Int16">210</property>
+										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2348,7 +2348,7 @@
 								<object type="TAInput" name="NoOfArchers1">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">162</property>
+										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2363,7 +2363,7 @@
 								<object type="TAInput" name="NoOfArchers2">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2378,7 +2378,7 @@
 								<object type="TAInput" name="NoOfArchers3">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">210</property>
+										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2412,9 +2412,9 @@
 						<object type="TAGroup" name="groupGiants">
 							<properties>
 								<property name="Left" vt="Int16">341</property>
-								<property name="Top" vt="Int8">3</property>
+								<property name="Top" vt="Int8">2</property>
 								<property name="Width" vt="Int16">166</property>
-								<property name="Height" vt="Int16">239</property>
+								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Option 3</property>
@@ -2442,7 +2442,7 @@
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">146</property>
-										<property name="Height" vt="Int8">108</property>
+										<property name="Height" vt="Int8">111</property>
 										<property name="Hint" vt="String">Keywords for option 3</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2461,7 +2461,7 @@
 								<object type="TACombo" name="cmbDonateGiants1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">162</property>
+										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2497,7 +2497,7 @@
 								<object type="TACombo" name="cmbDonateGiants2">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2534,7 +2534,7 @@
 								<object type="TACombo" name="cmbDonateGiants3">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">210</property>
+										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2571,7 +2571,7 @@
 								<object type="TAInput" name="NoOfGiants1">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">162</property>
+										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2586,7 +2586,7 @@
 								<object type="TAInput" name="NoOfGiants2">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">186</property>
+										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2601,7 +2601,7 @@
 								<object type="TAInput" name="NoOfGiants3">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">210</property>
+										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2673,9 +2673,9 @@
 						<object type="TAGroup" name="groupNotDonate">
 							<properties>
 								<property name="Left" vt="Int16">515</property>
-								<property name="Top" vt="Int8">3</property>
+								<property name="Top" vt="Int8">2</property>
 								<property name="Width" vt="Int8">114</property>
-								<property name="Height" vt="Int16">239</property>
+								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Donation Blacklist</property>
