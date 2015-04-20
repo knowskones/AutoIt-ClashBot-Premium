@@ -90,8 +90,6 @@ Func runBot() ;Bot that runs everything in order
 				checkMainScreen(False)
 				$Checkrearm = False
 			EndIf
-			If _Sleep(1000) Then Return
-			checkMainScreen(False)
 			If $CommandStop <> 0 And $CommandStop <> 3 Then
 				If ZoomOut() = False Then ContinueLoop
 				CheckArmyCamp()
@@ -216,7 +214,6 @@ Func Idle() ;Sequence that runs until Full Army
 		EndIf
 		If $CommandStop = 0 Or $CommandStop = 3 Then $fullArmy = False
 		If $CommandStop <> 3 Then
-			If _Sleep(1000) Then ExitLoop
 			TrainTroop()
 			If _Sleep(1000) Then Return
 			TrainDark()
