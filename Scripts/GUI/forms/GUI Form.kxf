@@ -15,7 +15,6 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
-		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -1980,10 +1979,11 @@
 								<object type="TACheckbox" name="chkDonateAllBarbarians">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">20</property>
-										<property name="Width" vt="Int8">97</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Donate to All</property>
+										<property name="Top" vt="Int8">18</property>
+										<property name="Width" vt="Int8">120</property>
+										<property name="Height" vt="Int8">14</property>
+										<property name="Hint" vt="String">Donate to all request regardless Donation Text</property>
+										<property name="Caption" vt="String">Donate to All Request</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1994,9 +1994,9 @@
 								<object type="TAEdit" name="txtDonateBarbarians">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">40</property>
+										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">146</property>
-										<property name="Height" vt="Int8">92</property>
+										<property name="Height" vt="Int8">108</property>
 										<property name="Hint" vt="String">Keywords for option 1</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2015,7 +2015,7 @@
 								<object type="TACombo" name="cmbDonateBarbarians1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">162</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2051,7 +2051,7 @@
 								<object type="TACombo" name="cmbDonateBarbarians2">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">166</property>
+										<property name="Top" vt="Int16">186</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2088,7 +2088,7 @@
 								<object type="TACombo" name="cmbDonateBarbarians3">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">190</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2125,12 +2125,12 @@
 								<object type="TAInput" name="NoOfBarbarians1">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">162</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">1</property>
+										<property name="Text" vt="String">5</property>
 										<property name="CtrlStyle" vt="Int32">1342382081</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -2140,7 +2140,7 @@
 								<object type="TAInput" name="NoOfBarbarians2">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">166</property>
+										<property name="Top" vt="Int16">186</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2155,7 +2155,7 @@
 								<object type="TAInput" name="NoOfBarbarians3">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">190</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2169,11 +2169,12 @@
 								</object>
 								<object type="TACheckbox" name="chkDonateBarbarians">
 									<properties>
-										<property name="Left" vt="Int8">40</property>
-										<property name="Top" vt="Int16">218</property>
-										<property name="Width" vt="Int8">89</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Donate Troop</property>
+										<property name="Left" vt="Int8">15</property>
+										<property name="Top" vt="Int8">35</property>
+										<property name="Width" vt="Int8">82</property>
+										<property name="Height" vt="Int8">14</property>
+										<property name="Hint" vt="String">Donate Troop base on Setting and Donation Text</property>
+										<property name="Caption" vt="String">Smart Donate</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
 										<property name="TabOrder" vt="Int8">8</property>
@@ -2201,10 +2202,11 @@
 								<object type="TACheckbox" name="chkDonateAllArchers">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">20</property>
-										<property name="Width" vt="Int8">97</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Donate to All</property>
+										<property name="Top" vt="Int8">18</property>
+										<property name="Width" vt="Int8">120</property>
+										<property name="Height" vt="Int8">14</property>
+										<property name="Hint" vt="String">Donate to all request regardless Donation Text</property>
+										<property name="Caption" vt="String">Donate to All Request</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -2215,9 +2217,9 @@
 								<object type="TAEdit" name="txtDonateArchers">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">40</property>
+										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">146</property>
-										<property name="Height" vt="Int8">92</property>
+										<property name="Height" vt="Int8">108</property>
 										<property name="Hint" vt="String">Keywords for option 2</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2236,7 +2238,7 @@
 								<object type="TACombo" name="cmbDonateArchers1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">162</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2272,7 +2274,7 @@
 								<object type="TACombo" name="cmbDonateArchers2">
 									<properties>
 										<property name="Left" vt="Int8">11</property>
-										<property name="Top" vt="Int16">166</property>
+										<property name="Top" vt="Int16">186</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2309,7 +2311,7 @@
 								<object type="TACombo" name="cmbDonateArchers3">
 									<properties>
 										<property name="Left" vt="Int8">11</property>
-										<property name="Top" vt="Int16">190</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2346,12 +2348,12 @@
 								<object type="TAInput" name="NoOfArchers1">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">162</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">1</property>
+										<property name="Text" vt="String">5</property>
 										<property name="CtrlStyle" vt="Int32">1342382081</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -2361,7 +2363,7 @@
 								<object type="TAInput" name="NoOfArchers2">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">166</property>
+										<property name="Top" vt="Int16">186</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2376,7 +2378,7 @@
 								<object type="TAInput" name="NoOfArchers3">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">190</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2390,11 +2392,12 @@
 								</object>
 								<object type="TACheckbox" name="chkDonateArchers">
 									<properties>
-										<property name="Left" vt="Int8">40</property>
-										<property name="Top" vt="Int16">218</property>
-										<property name="Width" vt="Int8">89</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Donate Troop</property>
+										<property name="Left" vt="Int8">15</property>
+										<property name="Top" vt="Int8">35</property>
+										<property name="Width" vt="Int8">82</property>
+										<property name="Height" vt="Int8">14</property>
+										<property name="Hint" vt="String">Donate Troop base on Setting and Donation Text</property>
+										<property name="Caption" vt="String">Smart Donate</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
 										<property name="TabOrder" vt="Int8">8</property>
@@ -2422,10 +2425,11 @@
 								<object type="TACheckbox" name="chkDonateAllGiants">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">20</property>
-										<property name="Width" vt="Int8">97</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Donate to All</property>
+										<property name="Top" vt="Int8">18</property>
+										<property name="Width" vt="Int8">120</property>
+										<property name="Height" vt="Int8">14</property>
+										<property name="Hint" vt="String">Donate to all request regardless Donation Text</property>
+										<property name="Caption" vt="String">Donate to All Request</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -2436,9 +2440,9 @@
 								<object type="TAEdit" name="txtDonateGiants">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">40</property>
+										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">146</property>
-										<property name="Height" vt="Int8">92</property>
+										<property name="Height" vt="Int8">108</property>
 										<property name="Hint" vt="String">Keywords for option 3</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
@@ -2457,7 +2461,7 @@
 								<object type="TACombo" name="cmbDonateGiants1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">162</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2493,7 +2497,7 @@
 								<object type="TACombo" name="cmbDonateGiants2">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">166</property>
+										<property name="Top" vt="Int16">186</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2530,7 +2534,7 @@
 								<object type="TACombo" name="cmbDonateGiants3">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">190</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -2567,12 +2571,12 @@
 								<object type="TAInput" name="NoOfGiants1">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">162</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">1</property>
+										<property name="Text" vt="String">5</property>
 										<property name="CtrlStyle" vt="Int32">1342382081</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -2582,7 +2586,7 @@
 								<object type="TAInput" name="NoOfGiants2">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">166</property>
+										<property name="Top" vt="Int16">186</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2597,7 +2601,7 @@
 								<object type="TAInput" name="NoOfGiants3">
 									<properties>
 										<property name="Left" vt="Int8">122</property>
-										<property name="Top" vt="Int16">190</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">1</property>
@@ -2611,11 +2615,12 @@
 								</object>
 								<object type="TACheckbox" name="chkDonateGiants">
 									<properties>
-										<property name="Left" vt="Int8">40</property>
-										<property name="Top" vt="Int16">218</property>
-										<property name="Width" vt="Int8">89</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Donate Troop</property>
+										<property name="Left" vt="Int8">15</property>
+										<property name="Top" vt="Int8">35</property>
+										<property name="Width" vt="Int8">82</property>
+										<property name="Height" vt="Int8">14</property>
+										<property name="Hint" vt="String">Donate Troop base on Setting and Donation Text</property>
+										<property name="Caption" vt="String">Smart Donate</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
 										<property name="TabOrder" vt="Int8">8</property>
@@ -2645,9 +2650,9 @@
 						</object>
 						<object type="TAInput" name="txtRequest">
 							<properties>
-								<property name="Left" vt="Int16">292</property>
-								<property name="Top" vt="Int16">282</property>
-								<property name="Width" vt="Int16">335</property>
+								<property name="Left" vt="Int16">380</property>
+								<property name="Top" vt="Int16">255</property>
+								<property name="Width" vt="Int16">250</property>
 								<property name="Height" vt="Int8">23</property>
 								<property name="Hint" vt="String">Request for input.</property>
 								<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
@@ -2667,13 +2672,13 @@
 						</object>
 						<object type="TAGroup" name="groupNotDonate">
 							<properties>
-								<property name="Left" vt="Int16">517</property>
+								<property name="Left" vt="Int16">515</property>
 								<property name="Top" vt="Int8">3</property>
 								<property name="Width" vt="Int8">114</property>
 								<property name="Height" vt="Int16">239</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Blacklist</property>
+								<property name="Caption" vt="String">Donation Blacklist</property>
 								<property name="TabOrder" vt="Int8">5</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>
@@ -2681,7 +2686,7 @@
 								<object type="TAEdit" name="txtNotDonate">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">20</property>
+										<property name="Top" vt="Int8">41</property>
 										<property name="Width" vt="Int8">94</property>
 										<property name="Height" vt="Int16">190</property>
 										<property name="Hint" vt="String">Blacklist Keywords</property>
@@ -2703,10 +2708,10 @@
 								</object>
 								<object type="TACheckbox" name="chkBlacklist">
 									<properties>
-										<property name="Left" vt="Int8">27</property>
-										<property name="Top" vt="Int16">218</property>
-										<property name="Width" vt="Int8">57</property>
-										<property name="Height" vt="Int8">17</property>
+										<property name="Left" vt="Int8">15</property>
+										<property name="Top" vt="Int8">18</property>
+										<property name="Width" vt="Int8">50</property>
+										<property name="Height" vt="Int8">14</property>
 										<property name="Caption" vt="String">Enable</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
