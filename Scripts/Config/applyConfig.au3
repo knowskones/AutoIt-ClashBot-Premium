@@ -299,7 +299,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	GUICtrlSetData($txtArchers, $ArchersComp)
 	GUICtrlSetData($txtNumGiants, $GiantsComp)
 	GUICtrlSetData($txtGoblins, $GoblinsComp)
-	GUICtrlSetData($txtNumWallbreakers, $GoblinsComp)
+	GUICtrlSetData($txtNumWallbreakers, $WBComp)
 	SetComboTroopComp()
 
 	_GUICtrlComboBox_SetCurSel($cmbBarrack1, $barrackTroop[0])
