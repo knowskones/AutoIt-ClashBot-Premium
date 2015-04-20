@@ -326,6 +326,7 @@ Func Train()
 					$troopSecondArch = Number(getOther(171 + 107 * 1, 278, "Barrack"))
 					If $troopSecondArch = 0 Then
 						$troopSecondArch = Number(getOther(171 + 107 * 1, 278, "Barrack"))
+						If $troopSecondArch = 0 Then $CurArch += 40
 					EndIf
 				EndIf
 
