@@ -181,13 +181,19 @@ Func Idle() ;Sequence that runs until Full Army
 		$iCollectCounter = $iCollectCounter + 1
 		If GUICtrlRead($chkDonateOnly) = $GUI_UNCHECKED Then
 			If $CommandStop = -1 Then
-				CheckArmyCamp()
+			   CheckArmyCamp()
 			Else
-				$FirstStart = False
-				CheckArmyCamp()
+			   If $FirstStart Then
+				  $FirstStart = False
+				  CheckArmyCamp()
+				  $ArmyComp = $CurCamp
+			   Else
+				  CheckArmyCamp()
+			   EndIf
 			EndIf
 		EndIf
-		If $CommandStop = 3 And $CurCamp < $itxtcampCap And GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
+		If $CommandStop = 3 And $CurCamp < round($itxtcampCap/2) And GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
+			SetLog("Army Camp is not Full, Continue Training", $COLOR_ORANGE)
 			$CommandStop = 0
 		EndIf
 		If $CommandStop = 0 And $fullArmy Then
