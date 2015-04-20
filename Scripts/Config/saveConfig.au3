@@ -99,7 +99,7 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "misc", "wideedge", 0)
 	EndIf
 
-	If GUICtrlRead($chkRedLine) = $GUI_CHECKED Then
+	If GUICtrlRead($chkRedLine_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "redline", 1)
 	Else
 		IniWrite($config, "misc", "redline", 0)
@@ -150,7 +150,7 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "attack", "use-cc-dead", 0)
 	EndIf
 
-	IniWrite($config, "attack", "townhall-dead", _GUICtrlComboBox_GetCurSel($cmbDeadAttackTH))
+	IniWrite($config, "attack", "townhall-dead", _GUICtrlComboBox_GetCurSel($cmbDeadAttackTH_vip))
 	IniWrite($config, "attack", "deploy", _GUICtrlComboBox_GetCurSel($cmbDeploy))
 	IniWrite($config, "attack", "algorithm", _GUICtrlComboBox_GetCurSel($cmbAlgorithm))
 
@@ -172,11 +172,11 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "attack", "use-cc", 0)
 	EndIf
 
-	IniWrite($config, "attack", "townhall", _GUICtrlComboBox_GetCurSel($cmbAttackTH))
+	IniWrite($config, "attack", "townhall", _GUICtrlComboBox_GetCurSel($cmbAttackTH_vip))
 
-	IniWrite($config, "attack", "UnitD", _GUICtrlComboBox_GetCurSel($cmbUnitDelay))
-	IniWrite($config, "attack", "WaveD", _GUICtrlComboBox_GetCurSel($cmbWaveDelay))
-	If GUICtrlRead($chkRandomSpeedAtk) = $GUI_CHECKED Then
+	IniWrite($config, "attack", "UnitD", _GUICtrlComboBox_GetCurSel($cmbUnitDelay_vip))
+	IniWrite($config, "attack", "WaveD", _GUICtrlComboBox_GetCurSel($cmbWaveDelay_vip))
+	If GUICtrlRead($chkRandomSpeedAtk_vip) = $GUI_CHECKED Then
 		IniWrite($config, "attack", "randomatk", 1)
 	Else
 		IniWrite($config, "attack", "randomatk", 0)
@@ -294,47 +294,47 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "troop", "CustomtroopS4", _GUICtrlComboBox_GetCurSel($cmbSecondTroop4))
 
 	;Other Settings--------------------------------------------------------------------------
-	If GUICtrlRead($chkWalls) = $GUI_CHECKED Then
+	If GUICtrlRead($chkWalls_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "auto-wall", 1)
 	Else
 		IniWrite($config, "other", "auto-wall", 0)
 	EndIf
-	IniWrite($config, "other", "walllvl", _GUICtrlComboBox_GetCurSel($cmbWalls))
-	IniWrite($config, "other", "walltolerance", _GUICtrlComboBox_GetCurSel($cmbTolerance))
+	IniWrite($config, "other", "walllvl", _GUICtrlComboBox_GetCurSel($cmbWalls_vip))
+	IniWrite($config, "other", "walltolerance", _GUICtrlComboBox_GetCurSel($cmbTolerance_vip))
 
-	If GUICtrlRead($UseGold) = $GUI_CHECKED Then
+	If GUICtrlRead($UseGold_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "use-storage", 0)
-	ElseIf GUICtrlRead($UseElixir) = $GUI_CHECKED Then
+	ElseIf GUICtrlRead($UseElixir_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "use-storage", 1)
-	ElseIf GUICtrlRead($UseGoldElix) = $GUI_CHECKED Then
+	ElseIf GUICtrlRead($UseGoldElix_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "use-storage", 2)
 	EndIf
 
-	IniWrite($config, "other", "minwallgold", GUICtrlRead($txtWallMinGold))
-	IniWrite($config, "other", "minwallelixir", GUICtrlRead($txtWallMinElixir))
-	IniWrite($config, "other", "minbldggold", GUICtrlRead($txtBldgMinGold))
-	IniWrite($config, "other", "minbldgelixir", GUICtrlRead($txtBldgMinElixir))
-	If GUICtrlRead($chkUpgrade1) = $GUI_CHECKED Then
+	IniWrite($config, "other", "minwallgold", GUICtrlRead($txtWallMinGold_vip))
+	IniWrite($config, "other", "minwallelixir", GUICtrlRead($txtWallMinElixir_vip))
+	IniWrite($config, "other", "minbldggold", GUICtrlRead($txtBldgMinGold_vip))
+	IniWrite($config, "other", "minbldgelixir", GUICtrlRead($txtBldgMinElixir_vip))
+	If GUICtrlRead($chkUpgrade1_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "BuildUpgrade1", 1)
 	Else
 		IniWrite($config, "other", "BuildUpgrade1", 0)
 	EndIf
-	If GUICtrlRead($chkUpgrade2) = $GUI_CHECKED Then
+	If GUICtrlRead($chkUpgrade2_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "BuildUpgrade2", 1)
 	Else
 		IniWrite($config, "other", "BuildUpgrade2", 0)
 	EndIf
-	If GUICtrlRead($chkUpgrade3) = $GUI_CHECKED Then
+	If GUICtrlRead($chkUpgrade3_vip) = $GUI_CHECKED Then
 		IniWrite($config, "other", "BuildUpgrade3", 1)
 	Else
 		IniWrite($config, "other", "BuildUpgrade3", 0)
 	EndIf
-	IniWrite($config, "other", "BuildUpgradeX1", GUICtrlRead($txtUpgradeX1))
-	IniWrite($config, "other", "BuildUpgradeY1", GUICtrlRead($txtUpgradeY1))
-	IniWrite($config, "other", "BuildUpgradeX2", GUICtrlRead($txtUpgradeX2))
-	IniWrite($config, "other", "BuildUpgradeY2", GUICtrlRead($txtUpgradeY2))
-	IniWrite($config, "other", "BuildUpgradeX3", GUICtrlRead($txtUpgradeX3))
-	IniWrite($config, "other", "BuildUpgradeY3", GUICtrlRead($txtUpgradeY3))
+	IniWrite($config, "other", "BuildUpgradeX1", GUICtrlRead($txtUpgradeX1_vip))
+	IniWrite($config, "other", "BuildUpgradeY1", GUICtrlRead($txtUpgradeY1_vip))
+	IniWrite($config, "other", "BuildUpgradeX2", GUICtrlRead($txtUpgradeX2_vip))
+	IniWrite($config, "other", "BuildUpgradeY2", GUICtrlRead($txtUpgradeY2_vip))
+	IniWrite($config, "other", "BuildUpgradeX3", GUICtrlRead($txtUpgradeX3_vip))
+	IniWrite($config, "other", "BuildUpgradeY3", GUICtrlRead($txtUpgradeY3_vip))
 
 	;Misc
 	If GUICtrlRead($UseSkillTimed) = $GUI_CHECKED Then
@@ -359,86 +359,86 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "general", "MaxTrophy", GUICtrlRead($txtMaxTrophy))
 
 	;Push Bullet--------------------------------------------------------------------------
-	If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushBulletEnabled_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "pushbullet", 1)
 	Else
 		IniWrite($config, "notification", "pushbullet", 0)
 	EndIf
 
-	If GUICtrlRead($chkPushVillageReport) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushVillageReport_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "villagereport", 1)
 	Else
 		IniWrite($config, "notification", "villagereport", 0)
 	 EndIf
 
-	If GUICtrlRead($chkPushMatchFound) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushMatchFound_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "matchfound", 1)
 	Else
 		IniWrite($config, "notification", "matchfound", 0)
    EndIf
 
-	If GUICtrlRead($chkPushLastRaid) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushLastRaid_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "lastraid", 1)
 	Else
 		IniWrite($config, "notification", "lastraid", 0)
 	 EndIf
 
-	If GUICtrlRead($chkPushTotalRaid) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushTotalRaid_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "totalraid", 1)
 	Else
 		IniWrite($config, "notification", "totalraid", 0)
     EndIf
 
-    If GUICtrlRead($chkPushBulletDebug) = $GUI_CHECKED Then
+    If GUICtrlRead($chkPushBulletDebug_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "debug", 1)
 	Else
 		IniWrite($config, "notification", "debug", 0)
 	 EndIf
 
-    If GUICtrlRead($chkPushBulletRemote) = $GUI_CHECKED Then
+    If GUICtrlRead($chkPushBulletRemote_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "remote", 1)
 	Else
 		IniWrite($config, "notification", "remote", 0)
    EndIf
 
-    If GUICtrlRead($chkPushBulletDelete) = $GUI_CHECKED Then
+    If GUICtrlRead($chkPushBulletDelete_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "delete", 1)
 	Else
 		IniWrite($config, "notification", "delete", 0)
 	 EndIf
 
-	If GUICtrlRead($chkPushFreeBuilder) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushFreeBuilder_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "builder", 1)
 	Else
 		IniWrite($config, "notification", "builder", 0)
    EndIf
 
-    If GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+    If GUICtrlRead($chkPushError_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "error", 1)
 	Else
 		IniWrite($config, "notification", "error", 0)
 	EndIf
 
-    IniWrite($config, "notification", "accounttoken", GUICtrlRead($txtPushBulletTokenValue))
+    IniWrite($config, "notification", "accounttoken", GUICtrlRead($txtPushBulletTokenValue_vip))
 
-    If GUICtrlRead($UseJPG) = $GUI_CHECKED Then
+	If GUICtrlRead($UsePushJPG_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "lastraidtype", 0)
-	ElseIf GUICtrlRead($UseText) = $GUI_CHECKED Then
+	ElseIf GUICtrlRead($UsePushText_vip) = $GUI_CHECKED Then
 		IniWrite($config, "notification", "lastraidtype", 1)
 	Else
 		IniWrite($config, "notification", "lastraidtype", 0)
 	EndIf
 
-	IniWrite($config, "notification", "interval", GUICtrlRead($txtPushBulletInterval))
-	IniWrite($config, "notification", "messages", GUICtrlRead($txtPushBulletMessages))
-	IniWrite($config, "notification", "device", GUICtrlRead($cmbDevice))
+	IniWrite($config, "notification", "interval", GUICtrlRead($txtPushBulletInterval_vip))
+	IniWrite($config, "notification", "messages", GUICtrlRead($txtPushBulletMessages_vip))
+	IniWrite($config, "notification", "device", GUICtrlRead($cmbPushDevice_vip))
 
 	;Misc Settings--------------------------------------------------------------------------
 	IniWrite($config, "misc", "reconnectdelay", GUICtrlRead($txtReconnect))
 	IniWrite($config, "misc", "returnhomedelay", GUICtrlRead($txtReturnh))
 	IniWrite($config, "misc", "kingskilldelay", GUICtrlRead($txtKingSkill))
 	IniWrite($config, "misc", "queenskilldelay", GUICtrlRead($txtQueenSkill))
-	IniWrite($config, "misc", "SpellDark", GUICtrlRead($txtSpellDarkStorage))
+	IniWrite($config, "misc", "SpellDark", GUICtrlRead($txtSpellDarkStorage_vip))
 	IniWrite($config, "misc", "searchspd", GUICtrlRead($txtSearchsp))
 	IniWrite($config, "misc", "cloudtimeout", GUICtrlRead($txtwhitecloud))
 	IniWrite($config, "misc", "xTownHall", $TownHallPos[0])
@@ -468,13 +468,13 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "troop", "chkDarkTroop", 0)
 	EndIf
 
-	If GUICtrlRead($chkSpellDarkStorage) = $GUI_CHECKED Then
+	If GUICtrlRead($chkSpellDarkStorage_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "SpellDarkStorage", 1)
 	Else
 		IniWrite($config, "misc", "SpellDarkStorage", 0)
 	EndIf
 
-	If GUICtrlRead($chkMultiLight) = $GUI_CHECKED Then
+	If GUICtrlRead($chkMultiLight_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "MultiLightning", 1)
 	Else
 		IniWrite($config, "misc", "MultiLightning", 0)
@@ -498,55 +498,55 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "misc", "chkRaxRestart", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostRax1) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostRax1_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostRax1", 1)
 	Else
 		IniWrite($config, "misc", "BoostRax1", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostRax2) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostRax2_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostRax2", 1)
 	Else
 		IniWrite($config, "misc", "BoostRax2", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostRax3) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostRax3_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostRax3", 1)
 	Else
 		IniWrite($config, "misc", "BoostRax3", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostRax4) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostRax4_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostRax4", 1)
 	Else
 		IniWrite($config, "misc", "BoostRax4", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostDark1) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostDark1_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostDark1", 1)
 	Else
 		IniWrite($config, "misc", "BoostDark1", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostDark2) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostDark2_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostDark2", 1)
 	Else
 		IniWrite($config, "misc", "BoostDark2", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostKing) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostKing_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostKing", 1)
 	Else
 		IniWrite($config, "misc", "BoostKing", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostQueen) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostQueen_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostQueen", 1)
 	Else
 		IniWrite($config, "misc", "BoostQueen", 0)
 	EndIf
 
-	If GUICtrlRead($chkBoostSpell) = $GUI_CHECKED Then
+	If GUICtrlRead($chkBoostSpell_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "BoostSpell", 1)
 	Else
 		IniWrite($config, "misc", "BoostSpell", 0)

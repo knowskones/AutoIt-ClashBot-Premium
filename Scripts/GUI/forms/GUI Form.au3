@@ -5,11 +5,12 @@
 #include <StaticConstants.au3>
 #include <TabConstants.au3>
 #include <WindowsConstants.au3>
+Opt("GUIOnEventMode", 1)
 Opt("MouseClickDelay", 10)
 Opt("MouseClickDownDelay", 10)
 Opt("TrayMenuMode", 3)
 #Region ### START Koda GUI section ### Form=GUI Form.kxf
-$frmBot = GUICreate("sBotTitle", 646, 431, -1, -1)
+$frmBot = GUICreate("sBotTitle", 646, 430, -1, -1)
 $menuFile = GUICtrlCreateMenu("&File")
 $menuItemExit = GUICtrlCreateMenuItem("E&xit", $menuFile)
 $menuConfig = GUICtrlCreateMenu("&Config")
@@ -199,8 +200,9 @@ GUICtrlSetData(-1, "Archers|Barbarians|Goblins|Barbarians + Archers|Barb + Arch 
 $chkDeadUseKing = GUICtrlCreateCheckbox("Attack with King", 341, 87, 102, 17)
 $chkDeadUseQueen = GUICtrlCreateCheckbox("Attack with Queen", 341, 122, 110, 17)
 $chkDeadUseClanCastle = GUICtrlCreateCheckbox("Attack with Clan Castle troops", 448, 87, 165, 17)
-$cmbDeadAttackTH = GUICtrlCreateCombo("", 456, 119, 145, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+$cmbDeadAttackTH_vip = GUICtrlCreateCombo("", 456, 119, 145, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
 GUICtrlSetData(-1, "Don"&Chr(39)&"t attack TH|Limited TH attack|Full TH attack", "Don't attack TH")
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall")
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $groupAnyDeploySettings = GUICtrlCreateGroup("Other Base Deploy Settings", 11, 160, 610, 90)
@@ -212,19 +214,23 @@ GUICtrlSetData(-1, "Archers|Barbarians|Goblins|Barbarians + Archers|Barb + Arch 
 $chkUseKing = GUICtrlCreateCheckbox("Attack with King", 341, 182, 102, 17)
 $chkUseQueen = GUICtrlCreateCheckbox("Attack with Queen", 341, 217, 110, 17)
 $chkUseClanCastle = GUICtrlCreateCheckbox("Attack with Clan Castle troops", 448, 182, 157, 17)
-$cmbAttackTH = GUICtrlCreateCombo("", 456, 214, 145, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+$cmbAttackTH_vip = GUICtrlCreateCombo("", 456, 214, 145, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
 GUICtrlSetData(-1, "Don"&Chr(39)&"t attack TH|Limited TH attack|Full TH attack", "Don't attack TH")
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall")
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $groupDeploySpeed = GUICtrlCreateGroup("Deploy Speed", 306, 262, 320, 110)
 GUICtrlSetFont(-1, 8, 400, 0, "Arial")
 $lblUnitDelay = GUICtrlCreateLabel("Unit Delay:", 316, 292, 65, 17)
-$cmbUnitDelay = GUICtrlCreateCombo("", 386, 287, 50, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
+$cmbUnitDelay_vip = GUICtrlCreateCombo("", 386, 287, 50, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
 GUICtrlSetData(-1, "1|2|3|4|5|6|7|8|9|10", "5")
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblWaveDelay = GUICtrlCreateLabel("Wave Delay:", 316, 322, 65, 17)
-$cmbWaveDelay = GUICtrlCreateCombo("", 386, 317, 50, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
+$cmbWaveDelay_vip = GUICtrlCreateCombo("", 386, 317, 50, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
 GUICtrlSetData(-1, "1|2|3|4|5|6|7|8|9|10", "5")
-$chkRandomSpeedAtk = GUICtrlCreateCheckbox("Random Speeds!!", 321, 345, 100, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkRandomSpeedAtk_vip = GUICtrlCreateCheckbox("Random Speeds!!", 321, 345, 100, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblAttackDelay1 = GUICtrlCreateLabel("Delays for troop deployment", 440, 276, 180, 18, $SS_CENTER)
 GUICtrlSetFont(-1, 9, 400, 4, "Arial")
 $lblAttackDelay2 = GUICtrlCreateLabel("- [1] Fast = Bot Like!", 464, 293, 99, 18)
@@ -434,74 +440,107 @@ GUICtrlCreateGroup("", -99, -99, 1, 1)
 $pageUpgradeSettings = GUICtrlCreateTabItem("Upgrades")
 $groupWalls = GUICtrlCreateGroup("Walls", 16, 65, 470, 125)
 GUICtrlSetFont(-1, 8, 400, 0, "Arial")
-$chkWalls = GUICtrlCreateCheckbox("Auto Wall Upgrade", 26, 87, 110, 17)
-$UseGold = GUICtrlCreateRadio("Use Only Gold", 36, 112, 115, 17)
+$chkWalls_vip = GUICtrlCreateCheckbox("Auto Wall Upgrade", 26, 87, 110, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$UseGold_vip = GUICtrlCreateRadio("Use Only Gold", 36, 112, 115, 17)
 GUICtrlSetState(-1, $GUI_CHECKED)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblWallMinGold = GUICtrlCreateLabel("Minimum Gold:", 286, 142, 76, 17)
 GUICtrlSetTip(-1, "Minimum level of Gold storage to perform the upgrade")
-$txtWallMinGold = GUICtrlCreateInput("1300000", 406, 137, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtWallMinGold_vip = GUICtrlCreateInput("1300000", 406, 137, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 7)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Minimum level of Gold storage to perform the upgrade")
-$UseElixir = GUICtrlCreateRadio("Use Only Elixir", 36, 137, 115, 17)
+$UseElixir_vip = GUICtrlCreateRadio("Use Only Elixir", 36, 137, 115, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblWallMinElixir = GUICtrlCreateLabel("Minimum Elixir:", 286, 167, 72, 17)
 GUICtrlSetTip(-1, "Minimum level of Elixir storage to perform the upgrade")
-$txtWallMinElixir = GUICtrlCreateInput("1300000", 406, 162, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtWallMinElixir_vip = GUICtrlCreateInput("1300000", 406, 162, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 7)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Minimum level of Elixir storage to perform the upgrade")
-$UseGoldElix = GUICtrlCreateRadio("Use Gold and then Elixir", 36, 162, 150, 17)
+$UseGoldElix_vip = GUICtrlCreateRadio("Use Gold and then Elixir", 36, 162, 150, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblWalls = GUICtrlCreateLabel("Current Wall Level:", 286, 89, 100, 17)
-$cmbWalls = GUICtrlCreateCombo("", 406, 85, 40, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
+$cmbWalls_vip = GUICtrlCreateCombo("", 406, 85, 60, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
 GUICtrlSetData(-1, "4|5|6|7|8|9|10", "4")
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblTolerance = GUICtrlCreateLabel("Tolerance Level:", 286, 117, 80, 17)
-$cmbTolerance = GUICtrlCreateCombo("", 406, 112, 60, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
+$cmbTolerance_vip = GUICtrlCreateCombo("", 406, 112, 60, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
 GUICtrlSetData(-1, "Default|Lower|Higher", "Default")
-$btnFindWall = GUICtrlCreateButton("Find Wall", 141, 85, 63, 21)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$btnFindWall_vip = GUICtrlCreateButton("Find Wall", 141, 85, 63, 21)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $groupUpgrade = GUICtrlCreateGroup("Buildings / Walls Upgrade", 16, 190, 470, 105)
 GUICtrlSetFont(-1, 8, 400, 0, "Arial")
-$chkUpgrade1 = GUICtrlCreateCheckbox("Upgrade 1 :", 26, 207, 80, 17)
+$chkUpgrade1_vip = GUICtrlCreateCheckbox("Upgrade 1 :", 26, 207, 80, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblUP1PosX = GUICtrlCreateLabel("Pos X :", 108, 209, 35, 17)
-$txtUpgradeX1 = GUICtrlCreateInput("", 148, 204, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+$txtUpgradeX1_vip = GUICtrlCreateInput("", 148, 204, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblUP1PosY = GUICtrlCreateLabel("Pos Y :", 191, 209, 35, 17)
-$txtUpgradeY1 = GUICtrlCreateInput("", 231, 204, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
-$btnLocateUp1 = GUICtrlCreateButton("Locate Building 1", 281, 204, 100, 21)
-$chkUpgrade2 = GUICtrlCreateCheckbox("Upgrade 2 :", 26, 237, 80, 17)
+$txtUpgradeY1_vip = GUICtrlCreateInput("", 231, 204, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+GUICtrlSetState(-1, $GUI_DISABLE)
+$btnLocateUp1_vip = GUICtrlCreateButton("Locate Building 1", 281, 204, 100, 21)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkUpgrade2_vip = GUICtrlCreateCheckbox("Upgrade 2 :", 26, 237, 80, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblUP2PosX = GUICtrlCreateLabel("Pos X :", 108, 239, 35, 17)
-$txtUpgradeX2 = GUICtrlCreateInput("", 148, 234, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+$txtUpgradeX2_vip = GUICtrlCreateInput("", 148, 234, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblUP2PosY = GUICtrlCreateLabel("Pos Y :", 191, 239, 35, 17)
-$txtUpgradeY2 = GUICtrlCreateInput("", 231, 234, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
-$btnLocateUp2 = GUICtrlCreateButton("Locate Building 2", 281, 234, 100, 21)
-$chkUpgrade3 = GUICtrlCreateCheckbox("Upgrade 3 :", 26, 267, 80, 17)
+$txtUpgradeY2_vip = GUICtrlCreateInput("", 231, 234, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+GUICtrlSetState(-1, $GUI_DISABLE)
+$btnLocateUp2_vip = GUICtrlCreateButton("Locate Building 2", 281, 234, 100, 21)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkUpgrade3_vip = GUICtrlCreateCheckbox("Upgrade 3 :", 26, 267, 80, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblUP3PosX = GUICtrlCreateLabel("Pos X :", 108, 269, 35, 17)
-$txtUpgradeX3 = GUICtrlCreateInput("", 148, 264, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+$txtUpgradeX3_vip = GUICtrlCreateInput("", 148, 264, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblUP3PosY = GUICtrlCreateLabel("Pos Y :", 191, 269, 35, 17)
-$txtUpgradeY3 = GUICtrlCreateInput("", 231, 264, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
-$btnLocateUp3 = GUICtrlCreateButton("Locate Building 3", 281, 264, 100, 21)
+$txtUpgradeY3_vip = GUICtrlCreateInput("", 231, 264, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_READONLY,$ES_NUMBER))
+GUICtrlSetState(-1, $GUI_DISABLE)
+$btnLocateUp3_vip = GUICtrlCreateButton("Locate Building 3", 281, 264, 100, 21)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblBldgMinGold = GUICtrlCreateLabel("Minimum Gold:", 396, 204, 76, 17)
 GUICtrlSetTip(-1, "Minimum level of Gold storage to perform building upgrade")
 $lblBldgMinElixir = GUICtrlCreateLabel("Minimum Elixir:", 396, 248, 72, 17)
 GUICtrlSetTip(-1, "Minimum level of Elixir storage to perform building upgrade")
-$txtBldgMinGold = GUICtrlCreateInput("1300000", 401, 222, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtBldgMinGold_vip = GUICtrlCreateInput("1300000", 401, 222, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 7)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Minimum level of Gold storage to perform Building upgrade")
-$txtBldgMinElixir = GUICtrlCreateInput("1300000", 401, 266, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtBldgMinElixir_vip = GUICtrlCreateInput("1300000", 401, 266, 61, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 7)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Minimum level of Elixir storage to perform Building upgrade")
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $groupBoosts = GUICtrlCreateGroup("Boosts", 493, 65, 130, 310)
 GUICtrlSetFont(-1, 8, 400, 0, "Arial")
 $lblBoostBarracks = GUICtrlCreateLabel("Boosts left :", 503, 89, 60, 17)
-$cmbBoostBarracks = GUICtrlCreateCombo("", 573, 85, 40, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
+$cmbBoostBarracks_vip = GUICtrlCreateCombo("", 573, 85, 40, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
 GUICtrlSetData(-1, "0|1|2|3|4|5|6|7|8|9|10", "0")
-$chkBoostKing = GUICtrlCreateCheckbox("King Altar", 503, 115, 65, 17)
-$chkBoostQueen = GUICtrlCreateCheckbox("Queen Altar", 503, 140, 75, 17)
-$chkBoostRax1 = GUICtrlCreateCheckbox("Barrack 1", 503, 165, 65, 17)
-$chkBoostRax2 = GUICtrlCreateCheckbox("Barrack 2", 503, 190, 65, 17)
-$chkBoostRax3 = GUICtrlCreateCheckbox("Barrack 3", 503, 215, 65, 17)
-$chkBoostRax4 = GUICtrlCreateCheckbox("Barrack 4", 503, 240, 65, 17)
-$chkBoostDark1 = GUICtrlCreateCheckbox("Dark Barrack 1", 503, 265, 90, 17)
-$chkBoostDark2 = GUICtrlCreateCheckbox("Dark Barrack 2", 503, 290, 90, 17)
-$chkBoostSpell = GUICtrlCreateCheckbox("Spell Factory", 503, 315, 80, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostKing_vip = GUICtrlCreateCheckbox("King Altar", 503, 115, 65, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostQueen_vip = GUICtrlCreateCheckbox("Queen Altar", 503, 140, 75, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostRax1_vip = GUICtrlCreateCheckbox("Barrack 1", 503, 165, 65, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostRax2_vip = GUICtrlCreateCheckbox("Barrack 2", 503, 190, 65, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostRax3_vip = GUICtrlCreateCheckbox("Barrack 3", 503, 215, 65, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostRax4_vip = GUICtrlCreateCheckbox("Barrack 4", 503, 240, 65, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostDark1_vip = GUICtrlCreateCheckbox("Dark Barrack 1", 503, 265, 90, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostDark2_vip = GUICtrlCreateCheckbox("Dark Barrack 2", 503, 290, 90, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkBoostSpell_vip = GUICtrlCreateCheckbox("Spell Factory", 503, 315, 80, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $pageMiscSettings = GUICtrlCreateTabItem("Misc")
 $groupMiscs = GUICtrlCreateGroup("Misc", 16, 65, 600, 235)
@@ -533,10 +572,12 @@ GUICtrlSetTip(-1, "Set delay timing for return home during raid")
 $txtReturnh = GUICtrlCreateInput("10", 126, 189, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 2)
 $lblReturndelay = GUICtrlCreateLabel("seconds after No Income", 161, 193, 125, 17)
-$chkSpellDarkStorage = GUICtrlCreateCheckbox("Cast Lightning when left:", 26, 219, 137, 17)
+$chkSpellDarkStorage_vip = GUICtrlCreateCheckbox("Cast Lightning when left:", 26, 219, 137, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Set Min Dark Elixir to Lightning Dark Storage")
-$txtSpellDarkStorage = GUICtrlCreateInput("500", 166, 215, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtSpellDarkStorage_vip = GUICtrlCreateInput("500", 166, 215, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 4)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblSpellDarkStorage = GUICtrlCreateLabel("Dark Elixir", 201, 220, 50, 17)
 $chkTakeTownSS = GUICtrlCreateCheckbox("Take All Towns Snapshot", 466, 275, 141, 17)
 $chkTakeLootSS = GUICtrlCreateCheckbox("Take Loots Snapshot", 316, 275, 118, 17)
@@ -546,7 +587,8 @@ $UseSkillAuto = GUICtrlCreateRadio("Auto Activate Heroes Skill on Low Health", 2
 GUICtrlSetTip(-1, "Skill will activate when hero's health is low")
 $chkRaxRestart = GUICtrlCreateCheckbox("Restart Bluestack if Fail to Locate All 4 Barracks", 316, 84, 250, 17)
 GUICtrlSetTip(-1, "Restart bluestack if fail to detect all 4 barracks")
-$chkMultiLight = GUICtrlCreateCheckbox("Smart Lightning Spell", 316, 219, 120, 17)
+$chkMultiLight_vip = GUICtrlCreateCheckbox("Smart Lightning Spell", 316, 219, 120, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Cast Lightning as long as Dark Elixir more than Min requirement")
 $chkkeeplogs = GUICtrlCreateCheckbox("Keep Logs:", 26, 275, 70, 17)
 GUICtrlSetTip(-1, "Set number of logs you want to keep")
@@ -554,7 +596,8 @@ $txtkeeplogs = GUICtrlCreateInput("20", 101, 271, 31, 22, BitOR($GUI_SS_DEFAULT_
 GUICtrlSetLimit(-1, 3)
 $chkWideEdge = GUICtrlCreateCheckbox("Search Deeper Townhall", 316, 247, 136, 17)
 GUICtrlSetTip(-1, "Increase the range for Townhall to be considering as Outside")
-$chkRedLine = GUICtrlCreateCheckbox("Attack Near Red Line", 466, 247, 120, 17)
+$chkRedLine_vip = GUICtrlCreateCheckbox("Attack Near Red Line", 466, 247, 120, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Look for red line and deploy troops near them")
 $txtSearchsp = GUICtrlCreateInput("3", 126, 108, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 1)
@@ -655,41 +698,57 @@ $pageNotificationSetting = GUICtrlCreateTabItem("Notification")
 $groupPushBullet = GUICtrlCreateGroup("PushBullet", 8, 65, 375, 231)
 GUICtrlSetFont(-1, 8, 400, 0, "Arial")
 $lblPushBulletToken = GUICtrlCreateLabel("Account Token:", 18, 115, 80, 17, $SS_CENTER)
-$txtPushBulletTokenValue = GUICtrlCreateInput("", 108, 115, 260, 22)
-$chkPushBulletEnabled = GUICtrlCreateCheckbox("Enable", 18, 90, 60, 17)
+$txtPushBulletTokenValue_vip = GUICtrlCreateInput("", 108, 115, 260, 22)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkPushBulletEnabled_vip = GUICtrlCreateCheckbox("Enable", 18, 90, 60, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Enable pushbullet notification")
-$chkPushBulletDebug = GUICtrlCreateCheckbox("Debug", 88, 90, 60, 17)
+$chkPushBulletDebug_vip = GUICtrlCreateCheckbox("Debug", 88, 90, 60, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "This will add verbosity on log while sending files via pushbullet")
-$chkPushBulletRemote = GUICtrlCreateCheckbox("Remote", 158, 90, 60, 17)
+$chkPushBulletRemote_vip = GUICtrlCreateCheckbox("Remote", 158, 90, 60, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Enables pushbullet remote function")
-$chkPushBulletDelete = GUICtrlCreateCheckbox("Delete All Msg on Start", 228, 90, 128, 17)
+$chkPushBulletDelete_vip = GUICtrlCreateCheckbox("Delete All Msg on Start", 228, 90, 128, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Will delete all messages when bot starts")
 $groupPushMessages = GUICtrlCreateGroup("Push Messages", 18, 140, 260, 67)
-$chkPushVillageReport = GUICtrlCreateCheckbox("Village Report", 28, 162, 90, 17)
-$chkPushMatchFound = GUICtrlCreateCheckbox("Match Found", 28, 179, 90, 17)
-$chkPushLastRaid = GUICtrlCreateCheckbox("Last Raid", 118, 162, 70, 17)
-$chkPushTotalRaid = GUICtrlCreateCheckbox("Total Raid", 118, 179, 70, 17)
-$chkPushFreeBuilder = GUICtrlCreateCheckbox("Free Builder", 191, 162, 75, 17)
-$chkPushError = GUICtrlCreateCheckbox("Errors", 192, 179, 70, 17)
+$chkPushVillageReport_vip = GUICtrlCreateCheckbox("Village Report", 28, 162, 90, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkPushMatchFound_vip = GUICtrlCreateCheckbox("Match Found", 28, 179, 90, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkPushLastRaid_vip = GUICtrlCreateCheckbox("Last Raid", 118, 162, 70, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkPushTotalRaid_vip = GUICtrlCreateCheckbox("Total Raid", 118, 179, 70, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkPushFreeBuilder_vip = GUICtrlCreateCheckbox("Free Builder", 191, 162, 75, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
+$chkPushError_vip = GUICtrlCreateCheckbox("Errors", 192, 179, 70, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $groupPushLastRaid = GUICtrlCreateGroup("Last Raid", 288, 140, 80, 67)
-$UseJPG = GUICtrlCreateRadio("as JPG", 298, 162, 60, 17)
+$UsePushJPG_vip = GUICtrlCreateRadio("as JPG", 298, 162, 60, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Attach the loot jpg file in push message")
-$UseText = GUICtrlCreateRadio("as TXT", 298, 179, 60, 17)
+$UsePushText_vip = GUICtrlCreateRadio("as TXT", 298, 179, 60, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Push only text message")
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $groupRemoteConfig = GUICtrlCreateGroup("Misc.", 208, 209, 161, 75)
 $lblPushBulletInterval = GUICtrlCreateLabel("Check Interval:", 218, 234, 82, 17)
-$txtPushBulletInterval = GUICtrlCreateInput("10", 303, 229, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtPushBulletInterval_vip = GUICtrlCreateInput("10", 303, 229, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 2)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblPushBulletIntervalMin = GUICtrlCreateLabel("mins", 338, 234, 29, 17)
-$txtPushBulletMessages = GUICtrlCreateInput("100", 303, 254, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
+$txtPushBulletMessages_vip = GUICtrlCreateInput("100", 303, 254, 31, 22, BitOR($GUI_SS_DEFAULT_INPUT,$ES_CENTER,$ES_NUMBER))
 GUICtrlSetLimit(-1, 3)
+GUICtrlSetState(-1, $GUI_DISABLE)
 $lblPushBulletMessages = GUICtrlCreateLabel("Keep Messages:", 218, 259, 82, 17)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $Group2 = GUICtrlCreateGroup("PushBullet Settings", 16, 209, 185, 75)
 $Label31 = GUICtrlCreateLabel("Device:", 24, 243, 40, 18)
-$cmbDevice = GUICtrlCreateCombo("All", 70, 240, 121, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+$cmbPushDevice_vip = GUICtrlCreateCombo("All", 70, 240, 121, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $Group1 = GUICtrlCreateGroup("Help", 400, 64, 233, 289)
@@ -739,6 +798,7 @@ $btnAtkNow = GUICtrlCreateButton("Attack Now", 190, 320, 75, 30)
 $btnPause = GUICtrlCreateButton("Pause", 15, 320, 75, 23)
 GUICtrlSetState(-1, $GUI_HIDE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
+GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 
 
@@ -800,13 +860,75 @@ GUICtrlSetOnEvent($btnLocateCamp, "btnLocateCamp")
 GUICtrlSetOnEvent($chkNoAttack, "chkNoAttack")
 GUICtrlSetOnEvent($chkDonateOnly, "chkNoAttack")
 GUICtrlSetOnEvent($btnSearchMode, "btnSearchMode")
-GUICtrlSetOnEvent($chkRandomSpeedAtk, "Randomspeedatk")
-GUICtrlSetOnEvent($btnFindWall, "btnFindWall")
-GUICtrlSetOnEvent($btnLocateUp1, "btnLocateUp1")
-GUICtrlSetOnEvent($btnLocateUp2, "btnLocateUp2")
-GUICtrlSetOnEvent($btnLocateUp3, "btnLocateUp3")
+GUICtrlSetOnEvent($chkRandomSpeedAtk_vip, "Randomspeedatk")
+GUICtrlSetOnEvent($btnFindWall_vip, "btnFindWall")
+GUICtrlSetOnEvent($btnLocateUp1_vip, "btnLocateUp1")
+GUICtrlSetOnEvent($btnLocateUp2_vip, "btnLocateUp2")
+GUICtrlSetOnEvent($btnLocateUp3_vip, "btnLocateUp3")
 GUICtrlSetOnEvent($btnCheckDefense, "btnCheckDefense")
-GUICtrlSetOnEvent($chkPushMatchFound, "MatchFound")
+GUICtrlSetOnEvent($chkPushMatchFound_vip, "MatchFound")
+
+; add vip features to array
+ReDim $vipControls[58] ; define number of elements for array
+$vipControls[0] = $cmbUnitDelay_vip
+$vipControls[1] = $cmbWaveDelay_vip
+$vipControls[2] = $chkRandomSpeedAtk_vip
+$vipControls[3] = $chkRedLine_vip
+$vipControls[4] = $chkWalls_vip
+$vipControls[5] = $btnFindWall_vip
+$vipControls[6] = $UseGold_vip
+$vipControls[7] = $UseElixir_vip
+$vipControls[8] = $UseGoldElix_vip
+$vipControls[9] = $cmbWalls_vip
+$vipControls[10] = $cmbTolerance_vip
+$vipControls[11] = $txtWallMinGold_vip
+$vipControls[12] = $txtWallMinElixir_vip
+$vipControls[13] = $chkUpgrade1_vip
+$vipControls[14] = $chkUpgrade2_vip
+$vipControls[15] = $chkUpgrade3_vip
+$vipControls[16] = $txtUpgradeX1_vip
+$vipControls[17] = $txtUpgradeX2_vip
+$vipControls[18] = $txtUpgradeX3_vip
+$vipControls[19] = $txtUpgradeY1_vip
+$vipControls[20] = $txtUpgradeY2_vip
+$vipControls[21] = $txtUpgradeY3_vip
+$vipControls[22] = $btnLocateUp1_vip
+$vipControls[23] = $btnLocateUp2_vip
+$vipControls[24] = $btnLocateUp3_vip
+$vipControls[25] = $txtBldgMinGold_vip
+$vipControls[26] = $txtBldgMinElixir_vip
+$vipControls[27] = $cmbBoostBarracks_vip
+$vipControls[28] = $chkBoostKing_vip
+$vipControls[29] = $chkBoostQueen_vip
+$vipControls[30] = $chkBoostRax1_vip
+$vipControls[31] = $chkBoostRax2_vip
+$vipControls[32] = $chkBoostRax3_vip
+$vipControls[33] = $chkBoostRax4_vip
+$vipControls[34] = $chkBoostDark1_vip
+$vipControls[35] = $chkBoostDark2_vip
+$vipControls[36] = $chkBoostSpell_vip
+$vipControls[37] = $cmbDeadAttackTH_vip
+$vipControls[38] = $cmbAttackTH_vip
+$vipControls[39] = $chkSpellDarkStorage_vip
+$vipControls[40] = $txtSpellDarkStorage_vip
+$vipControls[41] = $chkMultiLight_vip
+$vipControls[42] = $chkPushBulletEnabled_vip
+$vipControls[43] = $chkPushBulletDebug_vip
+$vipControls[44] = $chkPushBulletRemote_vip
+$vipControls[45] = $chkPushBulletDelete_vip
+$vipControls[46] = $txtPushBulletTokenValue_vip
+$vipControls[47] = $chkPushVillageReport_vip
+$vipControls[48] = $chkPushMatchFound_vip
+$vipControls[49] = $chkPushLastRaid_vip
+$vipControls[50] = $chkPushTotalRaid_vip
+$vipControls[51] = $chkPushFreeBuilder_vip
+$vipControls[52] = $chkPushError_vip
+$vipControls[53] = $UsePushJPG_vip
+$vipControls[54] = $UsePushText_vip
+$vipControls[55] = $cmbPushDevice_vip
+$vipControls[56] = $txtPushBulletInterval_vip
+$vipControls[57] = $txtPushBulletMessages_vip
+
 
 ; set title and icons
 WinSetTitle("sBotTitle", "", $sBotTitle)
@@ -820,15 +942,13 @@ $txtLog = _GUICtrlRichEdit_Create($frmBot, "", 8, 68, 480, 185, BitOR($ES_MULTIL
 $hPic_background = GUICtrlCreatePic(@ScriptDir & "\images\GUI\bannerfix.bmp", 0, 0, 640, 30)
 GUICtrlSetState($hPic_background, $GUI_DISABLE)
 
+;Bottom status bar
+$statLog = _GUICtrlStatusBar_Create($frmBot)
+_GUICtrlStatusBar_SetSimple($statLog)
+_GUICtrlStatusBar_SetText($statLog, "Status : Idle")
+$tiAbout = TrayCreateItem("About")
+TrayCreateItem("")
+$tiExit = TrayCreateItem("Exit")
+
 ; Display Form
-Func DisplayGUI()
-	Opt("GUIOnEventMode", 1)
-	GUISetState(@SW_SHOW, $frmBot)
-	;Bottom status bar
-	$statLog = _GUICtrlStatusBar_Create($frmBot)
-	_GUICtrlStatusBar_SetSimple($statLog)
-	_GUICtrlStatusBar_SetText($statLog, "Status : Idle")
-	$tiAbout = TrayCreateItem("About")
-	TrayCreateItem("")
-	$tiExit = TrayCreateItem("Exit")
-EndFunc
+GUISetState(@SW_SHOW, $frmBot)

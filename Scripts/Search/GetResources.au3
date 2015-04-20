@@ -12,7 +12,7 @@ Func GetResources() ;Reads resources
 		If $i >= $itxtwhitecloud * 2 Then ; If gold cannot be read by 30 seconds
 			SetLog("Cannot locate gold value, Restarting Bot...", $COLOR_RED)
 			GUICtrlSetData($lblresultoos, GUICtrlRead($lblresultoos) + 1)
-			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+			If PushBulletEnabled() And GUICtrlRead($chkPushError_vip) = $GUI_CHECKED Then
 				_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
 			EndIf
 			checkMainScreen()
@@ -28,7 +28,7 @@ Func GetResources() ;Reads resources
 	$searchElixir = getElixir(51, 66 + 29)
 	If DuplicateCheck() = True Then
 		SetLog("Identical resource found between previous and current search, Restarting Bot...", $COLOR_RED)
-		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+		If PushBulletEnabled() And GUICtrlRead($chkPushError_vip) = $GUI_CHECKED Then
 			_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
 		EndIf
 		checkMainScreen()

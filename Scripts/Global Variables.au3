@@ -38,6 +38,9 @@ Global $Buffer
 Global $Title = "BlueStacks App Player" ; Name of the Window
 Global $HWnD = WinGetHandle($Title) ;Handle for Bluestacks window
 Global $statLog, $tiAbout, $tiExit
+Global $LoggedIn = True
+Global $LoginType = 0 ; 0-unregistered, 1-registered, 2-vip
+Global $vipControls[1]
 
 Global $config = @ScriptDir & "\Profile\Config.ini"
 Global $dirLogs = @ScriptDir & "\Profile\Logs\"
@@ -54,11 +57,10 @@ Global $AllowPause = True
 Global $AlertBaseFound = 0
 Global $TakeLootSnapShot = 1
 Global $TakeAllTownSnapShot = 0
-Global $chkWideEdge, $ichkWideEdge
-Global $chkRedLine, $ichkRedLine
+Global $ichkWideEdge
+Global $ichkRedLine
 Global $ReqText
 
-Global $cmbTroopComp ;For Event change on ComboBox Troop Compositions
 Global $iCollectCounter = 0 ; Collect counter, when reaches $COLLECTATCOUNT, it will collect
 Global $COLLECTATCOUNT = 8 ; Run Collect() after this amount of times before actually collect
 ;---------------------------------------------------------------------------------------------------
@@ -165,7 +167,6 @@ Global $icmbDeadAlgorithm ;Algorithm to use when attacking
 Global $checkDeadUseKing ;King attack settings
 Global $checkDeadUseQueen ;Queen attack settings
 Global $checkDeadUseClanCastle ; Use Clan Castle settings
-Global $cmbDeadAttackTH ; Attack Outside Townhall settings
 Global $icmbDeadAttackTH ; Attack Outside Townhall settings
 Global $iSkillActivateCond ; Heroes ability timed or auto activated
 
@@ -174,7 +175,6 @@ Global $icmbAlgorithm ;Algorithm to use when attacking
 Global $checkUseKing ;King attack settings
 Global $checkUseQueen ;Queen attack settings
 Global $checkUseClanCastle ; Use Clan Castle settings
-Global $cmbAttackTH ; Attack Outside Townhall settings
 Global $icmbAttackTH ; Attack Outside Townhall settings
 Global $icmbUnitDelay, $icmbWaveDelay, $iRandomspeedatk
 
@@ -212,12 +212,6 @@ Global $iSkillActivateCond
 Global $BoostAll
 Global $remainingBoosts = 0 ;  remaining boost to active during session
 Global $boostsEnabled = 1 ; is this function enabled
-Global $chkBoostKing
-Global $chkBoostQueen
-Global $chkBoostRax1
-Global $chkBoostRax2
-Global $chkBoostRax3
-Global $chkBoostRax4
 
 ;Donate Settings
 Global $CCPos[2] = [-1, -1] ;Position of clan castle

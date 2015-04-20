@@ -1,10 +1,15 @@
-Global $LoggedIn = False
+Global $AuthTimer, $AuthConnected = True
 
-#include "forms\Login Form.au3"
+;#include "forms\Login Form.au3"
 
 Func LoginButton_Click()
 	GUICtrlSetState($btnLogin, $GUI_DISABLE)
 	GUICtrlSetData($btnLogin, "Authenticating...")
+
+	If GUICtrlRead($txtUsername) = "" Or GUICtrlRead($txtPassword) = "" Then
+		MsgBox(262160, "Error", "Please enter both your username and password.")
+		Return False
+	EndIf
 
 	$LoggedIn = Login(StringStripWS(GUICtrlRead($txtUsername), 3), StringStripWS(GUICtrlRead($txtPassword), 3))
 
@@ -13,12 +18,72 @@ Func LoginButton_Click()
 	GUICtrlSetState($txtUsername, $GUI_FOCUS)
 EndFunc   ;==>LoginButton_Click
 
-Func Login($Username, $Password)
+Func AuthCheck()
+	Local $Username = "" ; GUICtrlRead($txtUsername) ; edit source of username here
+	Local $Password = "" ; GUICtrlRead($txtPassword) ; edit source of password here
+
 	If $Username = "" Or $Password = "" Then
-		MsgBox(262160, "Error", "Please enter both your username and password.")
-		Return False
+		$LoginType = 0 ; Unregistered mode
+	Else
+		Local $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
+		Local $POSTData = "u=" & URLEncode($Username) & "&p=" & URLEncode($Password)
+
+		$oHTTP.Open("POST", "https://clashbot.org/bot/validate_vip_status.php", False)
+		$oHTTP.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+		$oHTTP.Send($POSTData)
+
+		If $oHTTP.Status <> 200 Then
+			If $AuthConnected Then
+				$AuthConnected = False
+				$AuthTimer = TimerInit()
+				AdlibRegister("AuthCheck", 10000)
+				SetLog("Unable to contact the login server. Trying again in 10s.", $COLOR_RED)
+				Return
+			Else
+				If TimerDiff($AuthTimer) < 60000 Then
+					SetLog("Unable to contact the login server. Trying again in 10s.", $COLOR_RED)
+					Return
+				Else
+					SetLog("Unable to contact the login server. Continuing in unregistered mode.", $COLOR_RED)
+					$LoginType = 0 ; Unregistered mode
+				EndIf
+			EndIf
+		ElseIf $oHTTP.ResponseText == "1" Then
+			$LoginType = 2 ; VIP mode
+		ElseIf $oHTTP.ResponseText == "#denied#" Then
+			SetLog("Invalid username and/or password specified. Unable to authorise account.", $COLOR_RED)
+			$LoginType = 0 ; Unregistered mode
+		Else
+			$LoginType = 1 ; Registered mode
+		EndIf
 	EndIf
 
+	AdlibRegister("AuthCheck", 3600000)
+	SetAuthMode()
+EndFunc   ;==>AuthCheck
+
+Func SetAuthMode()
+	If $LoginType = 2 Then ; VIP mode
+		; Enable vip controls
+		For $i = 0 To UBound($vipControls) - 1
+			GUICtrlSetState($vipControls[$i], $GUI_ENABLE)
+		Next
+
+		; Set controls for deploy speed options
+		Randomspeedatk()
+
+	Else ; Not VIP mode
+		; Disable vip controls
+		For $i = 0 To UBound($vipControls) - 1
+			GUICtrlSetState($vipControls[$i], $GUI_DISABLE)
+		Next
+
+	EndIf
+
+
+EndFunc   ;==>SetAuthMode
+
+Func Login($Username, $Password)
 	Local $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
 	Local $POSTData = "u=" & URLEncode($Username) & "&p=" & URLEncode($Password)
 

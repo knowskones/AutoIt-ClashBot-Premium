@@ -73,7 +73,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 		GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
 		If GUICtrlRead($chkAlertSearch) = $GUI_CHECKED Then
 			TrayTip("Match Found!", "Gold: " & $searchGold & "; Elixir: " & $searchElixir & "; Dark: " & $searchDark & "; Trophy: " & $searchTrophy & "; Townhall: " & $searchTH & ", " & $THLoc, 0)
-			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushMatchFound) = $GUI_CHECKED Then
+			If PushBulletEnabled() And GUICtrlRead($chkPushMatchFound_vip) = $GUI_CHECKED Then
 				_Push("Match Found!", "[G]: " & _NumberFormat($searchGold) & "; [E]: " & _NumberFormat($searchElixir) & "; [D]: " & _NumberFormat($searchDark) & "; [T]: " & $searchTrophy & "; [TH Lvl]: " & $searchTH & ", Loc: " & $THLoc)
 				SetLog("Push: Match Found", $COLOR_GREEN)
 			EndIf

@@ -67,7 +67,7 @@ Func VillageReport()
 		GUICtrlSetData($lblresulttrophystart, $TrophyCount)
 		$BuilderCountStart = $FreeBuilder
 	Else
-		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED and GUICtrlRead($chkPushFreeBuilder) = $GUI_CHECKED Then
+		If PushBulletEnabled() and GUICtrlRead($chkPushFreeBuilder_vip) = $GUI_CHECKED Then
 			If $FreeBuilder > $BuilderCountStart Then
 				_Push("Free Builder Available", "You have a free builder available")
 				SetLog("You have a free builder available")

@@ -1,6 +1,10 @@
 #include <Array.au3>
 #include <String.au3>
 
+Func PushBulletEnabled()
+	Return (GUICtrlRead($chkPushBulletEnabled_vip) = $GUI_CHECKED And $LoginType = 2)
+EndFunc   ;==>PushBulletEnabled
+
 Func _RemoteControl()
 	$oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
 	$access_token = $PushBullettoken
@@ -62,12 +66,12 @@ Func _RemoteControl()
 					_PushFile($sLogFileName, "Profile\Logs", "text/plain; charset=utf-8", "Current Logs", $sLogFileName)
 				ElseIf $title[$x] = "bot boost1" Then
 					_DeleteMessage($iden[$x])
-					If GUICtrlRead($cmbBoostBarracks) < 5 Then
-						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
-						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax2, $GUI_UNCHECKED)
-						GUICtrlSetState($chkBoostRax3, $GUI_UNCHECKED)
-						GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
+					If GUICtrlRead($cmbBoostBarracks_vip) < 5 Then
+						GUICtrlSetData($cmbBoostBarracks_vip, GUICtrlRead($cmbBoostBarracks_vip) + 1)
+						GUICtrlSetState($chkBoostRax1_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax2_vip, $GUI_UNCHECKED)
+						GUICtrlSetState($chkBoostRax3_vip, $GUI_UNCHECKED)
+						GUICtrlSetState($chkBoostRax4_vip, $GUI_UNCHECKED)
 						SetLog("Your request has been received. Barrack 1 will be boosted on return to village.")
 						_Push("Barrack Boost", "Barrack 1 will be boosted on return to village.")
 					Else
@@ -76,12 +80,12 @@ Func _RemoteControl()
 					EndIf
 				ElseIf $title[$x] = "bot boost2" Then
 					_DeleteMessage($iden[$x])
-					If GUICtrlRead($cmbBoostBarracks) < 5 Then
-						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
-						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax2, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax3, $GUI_UNCHECKED)
-						GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
+					If GUICtrlRead($cmbBoostBarracks_vip) < 5 Then
+						GUICtrlSetData($cmbBoostBarracks_vip, GUICtrlRead($cmbBoostBarracks_vip) + 1)
+						GUICtrlSetState($chkBoostRax1_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax2_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax3_vip, $GUI_UNCHECKED)
+						GUICtrlSetState($chkBoostRax4_vip, $GUI_UNCHECKED)
 						SetLog("Your request has been received. Barrack 1 and 2 will be boosted on return to village.")
 						_Push("Barrack Boost", "Barracks 1 and 2 will be boosted on return to village.")
 					Else
@@ -90,12 +94,12 @@ Func _RemoteControl()
 					EndIf
 				ElseIf $title[$x] = "bot boost3" Then
 					_DeleteMessage($iden[$x])
-					If GUICtrlRead($cmbBoostBarracks) < 5 Then
-						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
-						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax2, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax3, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax4, $GUI_UNCHECKED)
+					If GUICtrlRead($cmbBoostBarracks_vip) < 5 Then
+						GUICtrlSetData($cmbBoostBarracks_vip, GUICtrlRead($cmbBoostBarracks_vip) + 1)
+						GUICtrlSetState($chkBoostRax1_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax2_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax3_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax4_vip, $GUI_UNCHECKED)
 						SetLog("Your request has been received. Barracks 1, 2 and 3 will be boosted on return to village.")
 						_Push("Barrack Boost", "Barracks 1, 2 and 3 will be boosted on return to village.")
 					Else
@@ -104,12 +108,12 @@ Func _RemoteControl()
 					EndIf
 				ElseIf $title[$x] = "bot boostall" Then
 					_DeleteMessage($iden[$x])
-					If GUICtrlRead($cmbBoostBarracks) < 5 Then
-						GUICtrlSetData($cmbBoostBarracks, GUICtrlRead($cmbBoostBarracks) + 1)
-						GUICtrlSetState($chkBoostRax1, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax2, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax3, $GUI_CHECKED)
-						GUICtrlSetState($chkBoostRax4, $GUI_CHECKED)
+					If GUICtrlRead($cmbBoostBarracks_vip) < 5 Then
+						GUICtrlSetData($cmbBoostBarracks_vip, GUICtrlRead($cmbBoostBarracks_vip) + 1)
+						GUICtrlSetState($chkBoostRax1_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax2_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax3_vip, $GUI_CHECKED)
+						GUICtrlSetState($chkBoostRax4_vip, $GUI_CHECKED)
 						SetLog("All barracks will be boosted on return to village.")
 						_Push("Barrack Boost", "All barracks will be boosted on return to village.")
 					Else
@@ -192,14 +196,14 @@ Func GetDevices()
 	   If IsArray($iden) = False Then Return
 
 	   For $x = 0 to Ubound($iden) - 1
-			GUIctrlsetData($cmbDevice, $nickname[$x], "All")
+			GUIctrlsetData($cmbPushDevice_vip, $nickname[$x], "All")
 	   Next
    EndIf
 EndFunc   ;==>_GetDevices
 
 ;FindDevice
 Func FindDevice()
-   if $PushBulletEnabled = 1 and $PushBullettoken <> "" and $cmbDevice <> "" and $cmbDevice <> "All" Then
+   if $PushBulletEnabled = 1 and $PushBullettoken <> "" and $cmbPushDevice_vip <> "" and $cmbPushDevice_vip <> "All" Then
 	   $oHTTP = ObjCreate("WinHTTP.WinHTTPRequest.5.1")
 	   $access_token = $PushBullettoken
 	   $oHTTP.Open("Get", "https://api.pushbullet.com/v2/devices?active=true", False)
@@ -212,7 +216,7 @@ Func FindDevice()
 	   If IsArray($iden) = False Then Return
 
 	   For $x = 0 to Ubound($iden) - 1
-			if $nickname[$x] = GUICtrlRead($cmbDevice) Then
+			if $nickname[$x] = GUICtrlRead($cmbPushDevice_vip) Then
 				$PBdevice = $iden[$x]
 			EndIf
 	   Next
@@ -256,7 +260,7 @@ Func _PushFile($File, $Folder, $FileType, $title, $body)
 		$Result = RunWait(@ScriptDir & "\Others\curl\curl.exe -i -X POST " & $upload_url[0] & ' -F awsaccesskeyid="' & $awsaccesskeyid[0] & '" -F acl="' & $acl[0] & '" -F key="' & $key[0] & '" -F signature="' & $signature[0] & '" -F policy="' & $policy[0] & '" -F content-type="' & $FileType & '" -F file=@"' & @ScriptDir & '\' & $Folder & '\' & $File & '" -o "' & @ScriptDir & '\Profile\Logs\curl.log"', "", @SW_HIDE)
 	EndIf
 
-	If GUICtrlRead($chkPushBulletDebug) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushBulletDebug_vip) = $GUI_CHECKED Then
 		SetLog('=========================================================================')
 		SetLog($Result)
 		SetLog($upload_url[0])
@@ -289,12 +293,12 @@ Func _PushFile($File, $Folder, $FileType, $title, $body)
 		$oHTTP.Send($pPush)
 		$Result = $oHTTP.ResponseText
 	Else
-		If GUICtrlRead($chkPushBulletDebug) = $GUI_CHECKED Then
+		If GUICtrlRead($chkPushBulletDebug_vip) = $GUI_CHECKED Then
 			SetLog($hFileOpen)
 			SetLog("There is an error and file was not uploaded")
 		EndIf
 	EndIf
-	If GUICtrlRead($chkPushBulletDebug) = $GUI_CHECKED Then
+	If GUICtrlRead($chkPushBulletDebug_vip) = $GUI_CHECKED Then
 		SetLog($Result)
 		SetLog("You can paste this in the forum so we can check whether it is PushBullet problem or mine")
 		SetLog('=========================================================================')

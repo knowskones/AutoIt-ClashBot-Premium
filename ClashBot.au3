@@ -10,7 +10,7 @@
 #pragma compile(FileVersion, 6.2)
 #pragma compile(LegalCopyright, 2015 © Application Automation LLC)
 
-$sBotVersion = "6.2 Premium" ;Edit version in compile option above aswell
+$sBotVersion = "6.2" ;Edit version in compile option above aswell
 $sBotTitle = "AutoIt ClashBot v" & $sBotVersion
 
 If _Singleton($sBotTitle, 1) = 0 Then
@@ -33,8 +33,8 @@ _Uskin_LoadDLL()
 _USkin_Init(@ScriptDir & "\Images\Skins\orange.msstyles")
 #include "Scripts\Global Variables.au3"
 #include "Scripts\Global Includes.au3"
-#include "Scripts\GUI\forms\GUI Form.au3"
 #include "Scripts\GUI\Login.au3"
+#include "Scripts\GUI\forms\GUI Form.au3"
 #include "Scripts\GUI\GUI Control.au3"
 #include-once
 
@@ -43,6 +43,8 @@ DirCreate($dirLoots)
 DirCreate($dirAllTowns)
 DirCreate($dirDarkStorages)
 DirCreate($dirScreenCapture)
+
+AuthCheck()
 
 While 1
 	Switch TrayGetMsg()
