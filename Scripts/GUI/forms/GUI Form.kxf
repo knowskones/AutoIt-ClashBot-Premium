@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <object type="TAForm" name="frmBot">
 	<properties>
-		<property name="Left" vt="Int16">196</property>
-		<property name="Top" vt="Int16">128</property>
-		<property name="Width" vt="Int16">661</property>
-		<property name="Height" vt="Int16">468</property>
+		<property name="Left" vt="Int16">256</property>
+		<property name="Top" vt="Int16">324</property>
+		<property name="Width" vt="Int16">662</property>
+		<property name="Height" vt="Int16">469</property>
 		<property name="Caption" vt="String">sBotTitle</property>
 		<property name="Color" vt="Ident">clBtnFace</property>
 		<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
@@ -15,6 +15,7 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
+		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -28,9 +29,20 @@
 		<property name="FormOptVarScope" vt="Int8">0</property>
 		<property name="Resizing" vt="Set"/>
 		<property name="PixelsPerInch" vt="Int8">96</property>
-		<property name="TextHeight" vt="Int8">13</property>
+		<property name="TextHeight" vt="Int8">16</property>
 	</properties>
 	<components>
+		<object type="TAMenu" name="AMenu1">
+			<properties>
+				<property name="Left" vt="Int8">0</property>
+				<property name="Top" vt="Int8">0</property>
+				<property name="Width" vt="Int8">28</property>
+				<property name="Height" vt="Int8">28</property>
+				<property name="Associate" vt="Ident">Owner</property>
+				<property name="WrappedName" vt="String">MainMenu1</property>
+			</properties>
+			<components/>
+		</object>
 		<object type="TATab" name="tabMain">
 			<properties>
 				<property name="Left" vt="Int8">-1</property>
@@ -45,7 +57,6 @@
 				<property name="Font.Style" vt="Set"/>
 				<property name="ParentFont" vt="False">False</property>
 				<property name="TabOrder" vt="Int8">0</property>
-				<property name="Visible" vt="False">False</property>
 				<property name="CtrlStyle" vt="Int32">1409482752</property>
 				<property name="CtrlExStyle" vt="Int8">0</property>
 				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
@@ -58,8 +69,8 @@
 					<components>
 						<object type="TAGroup" name="groupLocationSettings">
 							<properties>
-								<property name="Left" vt="Int16">485</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int16">481</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">140</property>
 								<property name="Height" vt="Int16">248</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -193,8 +204,8 @@
 						</object>
 						<object type="TAGroup" name="groupBottomOptions">
 							<properties>
-								<property name="Left" vt="Int8">8</property>
-								<property name="Top" vt="Int16">200</property>
+								<property name="Left" vt="Int8">4</property>
+								<property name="Top" vt="Int16">197</property>
 								<property name="Width" vt="Int16">470</property>
 								<property name="Height" vt="Int8">43</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -224,9 +235,7 @@
 										<property name="Width" vt="Int16">180</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="Text" vt="String">Halt Attack Mode</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Halt Attack Mode</li>
@@ -263,9 +272,7 @@
 										<property name="Width" vt="Int16">180</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">3</property>
-										<property name="Text" vt="String">Gold and Elixir Full</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">G and E Full and Max.Trophy</li>
@@ -293,8 +300,8 @@
 						</object>
 						<object type="TAGroup" name="groupOtherOptions">
 							<properties>
-								<property name="Left" vt="Int16">401</property>
-								<property name="Top" vt="Int16">259</property>
+								<property name="Left" vt="Int16">397</property>
+								<property name="Top" vt="Int16">256</property>
 								<property name="Width" vt="Int16">224</property>
 								<property name="Height" vt="Int8">60</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -328,7 +335,6 @@
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">When max trophies is reached, trophies will be dropped until below minimum setting</property>
-										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">1</property>
 										<property name="Text" vt="String">1800</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -361,7 +367,6 @@
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">When max trophies is reached, trophies will be dropped until below minimum setting</property>
-										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">2000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -411,15 +416,14 @@
 					<components>
 						<object type="TAGroup" name="groupDeadConditions">
 							<properties>
-								<property name="Left" vt="Int8">25</property>
-								<property name="Top" vt="Int8">11</property>
+								<property name="Left" vt="Int8">21</property>
+								<property name="Top" vt="Int8">8</property>
 								<property name="Width" vt="Int16">250</property>
 								<property name="Height" vt="Int16">220</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Dead Base Conditions</property>
 								<property name="TabOrder" vt="Int8">0</property>
-								<property name="Visible" vt="False">False</property>
 								<property name="Resizing" vt="Set"/>
 							</properties>
 							<components>
@@ -475,7 +479,6 @@
 										<property name="Top" vt="Int8">65</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">6</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">50000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -491,9 +494,7 @@
 										<property name="Width" vt="Int8">45</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">And</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">And</li>
@@ -528,7 +529,6 @@
 										<property name="Top" vt="Int8">90</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">6</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">50000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -557,7 +557,6 @@
 										<property name="Top" vt="Int8">115</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="Text" vt="String">0</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -587,9 +586,7 @@
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">10</property>
-										<property name="Text" vt="String">4-6</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">4-6</li>
@@ -625,7 +622,6 @@
 										<property name="Top" vt="Int16">140</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="Text" vt="String">0</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -668,8 +664,8 @@
 						</object>
 						<object type="TAGroup" name="groupAnyConditions">
 							<properties>
-								<property name="Left" vt="Int16">310</property>
-								<property name="Top" vt="Int8">11</property>
+								<property name="Left" vt="Int16">306</property>
+								<property name="Top" vt="Int8">8</property>
 								<property name="Width" vt="Int16">250</property>
 								<property name="Height" vt="Int16">220</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -733,7 +729,6 @@
 										<property name="Top" vt="Int8">65</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">6</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">80000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -749,9 +744,7 @@
 										<property name="Width" vt="Int8">45</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">And</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">And</li>
@@ -786,7 +779,6 @@
 										<property name="Top" vt="Int8">90</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">6</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">80000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -815,7 +807,6 @@
 										<property name="Top" vt="Int8">115</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="Text" vt="String">0</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -845,9 +836,7 @@
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">10</property>
-										<property name="Text" vt="String">4-6</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">4-6</li>
@@ -883,7 +872,6 @@
 										<property name="Top" vt="Int16">140</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="Text" vt="String">0</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -926,8 +914,8 @@
 						</object>
 						<object type="TAGroup" name="groupSearchOnly">
 							<properties>
-								<property name="Left" vt="Int16">303</property>
-								<property name="Top" vt="Int16">244</property>
+								<property name="Left" vt="Int16">299</property>
+								<property name="Top" vt="Int16">241</property>
 								<property name="Width" vt="Int16">320</property>
 								<property name="Height" vt="Int8">75</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -959,6 +947,7 @@
 										<property name="Top" vt="Int8">18</property>
 										<property name="Width" vt="Int16">170</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Searching only! Disables attacking!</property>
 										<property name="TabOrder" vt="Int8">1</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -975,240 +964,12 @@
 				<object type="TTabSheet" name="pageAdvanceSetting">
 					<properties>
 						<property name="Caption" vt="String">Adv Search</property>
-						<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
-						<property name="Font.Color" vt="Ident">clWindowText</property>
-						<property name="Font.Height" vt="Int8">-11</property>
-						<property name="Font.Name" vt="String">MS Sans Serif</property>
-						<property name="Font.Style" vt="Set"/>
-						<property name="ParentFont" vt="False">False</property>
 					</properties>
 					<components>
-						<object type="TAGroup" name="GroupRedAny">
-							<properties>
-								<property name="Left" vt="Int16">220</property>
-								<property name="Top" vt="Int8">15</property>
-								<property name="Width" vt="Int16">200</property>
-								<property name="Height" vt="Int16">220</property>
-								<property name="CtrlStyle" vt="Int32">1342308359</property>
-								<property name="CtrlExStyle" vt="Int8">0</property>
-								<property name="Caption" vt="String">Any Base Search Reduction</property>
-								<property name="TabOrder" vt="Int8">1</property>
-								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
-							</properties>
-							<components>
-								<object type="TALabel" name="lblTroRedAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">150</property>
-										<property name="Width" vt="Int8">85</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Trophy Reduce:</property>
-										<property name="TabOrder" vt="Int8">3</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
-								<object type="TALabel" name="lblGoldRedAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">75</property>
-										<property name="Width" vt="Int8">70</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Gold Reduce:</property>
-										<property name="TabOrder" vt="Int8">0</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
-								<object type="TALabel" name="lblElixRedAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">100</property>
-										<property name="Width" vt="Int8">70</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Elixir Reduce:</property>
-										<property name="TabOrder" vt="Int8">1</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtTroRedAny">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int16">147</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">8</property>
-										<property name="Text" vt="String">2</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtGoldRedAny">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int8">72</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">5000</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtElixRedAny">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int8">97</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">6</property>
-										<property name="Text" vt="String">5000</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TALabel" name="lblDERedAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">125</property>
-										<property name="Width" vt="Int8">85</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">DE Reduce:</property>
-										<property name="TabOrder" vt="Int8">2</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtDERedAny">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int8">122</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="Hint" vt="String">Enter number of individual units to train</property>
-										<property name="MaxLength" vt="Int8">4</property>
-										<property name="TabOrder" vt="Int8">7</property>
-										<property name="Text" vt="String">100</property>
-										<property name="CtrlStyle" vt="Int32">1342374017</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TACheckbox" name="chkredAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">25</property>
-										<property name="Width" vt="Int8">75</property>
-										<property name="Height" vt="Int8">15</property>
-										<property name="Hint" vt="String">Enable Search Reduction for Any Base</property>
-										<property name="Caption" vt="String">Enable</property>
-										<property name="Checked" vt="True">True</property>
-										<property name="State" vt="Ident">cbChecked</property>
-										<property name="TabOrder" vt="Int8">9</property>
-										<property name="CtrlStyle" vt="Int32">1342242819</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TALabel" name="lblRedSearchAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">175</property>
-										<property name="Width" vt="Int8">80</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">After Search:</property>
-										<property name="TabOrder" vt="Int8">4</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtRedSearchAny">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int16">172</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">10</property>
-										<property name="Text" vt="String">20</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TALabel" name="lblGoldElixRedAny">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int8">50</property>
-										<property name="Width" vt="Int8">115</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Gold and Elixir Reduce:</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="TabOrder" vt="Int8">11</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtGoldElixRedAny">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int8">47</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">12</property>
-										<property name="Text" vt="String">5000</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-							</components>
-						</object>
 						<object type="TAGroup" name="groupRedDead">
 							<properties>
-								<property name="Left" vt="Int8">10</property>
-								<property name="Top" vt="Int8">15</property>
+								<property name="Left" vt="Int8">6</property>
+								<property name="Top" vt="Int8">12</property>
 								<property name="Width" vt="Int16">200</property>
 								<property name="Height" vt="Int16">220</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -1216,25 +977,8 @@
 								<property name="Caption" vt="String">Dead Base Search Reduction</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
-								<object type="TALabel" name="lblTroRedDead">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">150</property>
-										<property name="Width" vt="Int8">85</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">Trophy Reduce:</property>
-										<property name="TabOrder" vt="Int8">3</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
 								<object type="TALabel" name="lblGoldRedDead">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
@@ -1267,51 +1011,6 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtTroRedDead">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int16">147</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">8</property>
-										<property name="Text" vt="String">2</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtGoldRedDead">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int8">72</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">5000</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAInput" name="txtElixRedDead">
-									<properties>
-										<property name="Left" vt="Int16">130</property>
-										<property name="Top" vt="Int8">97</property>
-										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">6</property>
-										<property name="Text" vt="String">5000</property>
-										<property name="CtrlStyle" vt="Int32">1342382209</property>
-										<property name="CtrlExStyle" vt="Int16">512</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
 								<object type="TALabel" name="lblDERedDead">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
@@ -1328,17 +1027,90 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TALabel" name="lblTroRedDead">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">150</property>
+										<property name="Width" vt="Int8">85</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Trophy Reduce:</property>
+										<property name="TabOrder" vt="Int8">3</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblRedSearchDead">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">175</property>
+										<property name="Width" vt="Int8">80</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">After Search:</property>
+										<property name="TabOrder" vt="Int8">4</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtGoldRedDead">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int8">72</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">5</property>
+										<property name="Text" vt="String">5000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtElixRedDead">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int8">97</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">6</property>
+										<property name="Text" vt="String">5000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 								<object type="TAInput" name="txtDERedDead">
 									<properties>
 										<property name="Left" vt="Int16">130</property>
 										<property name="Top" vt="Int8">122</property>
 										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
+										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Enter number of individual units to train</property>
-										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">100</property>
 										<property name="CtrlStyle" vt="Int32">1342374017</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtTroRedDead">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int16">147</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">8</property>
+										<property name="Text" vt="String">2</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -1361,29 +1133,12 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TALabel" name="lblRedSearchDead">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">175</property>
-										<property name="Width" vt="Int8">80</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="AutoSize" vt="False">False</property>
-										<property name="Caption" vt="String">After Search:</property>
-										<property name="TabOrder" vt="Int8">4</property>
-										<property name="HaveVariable" vt="False">False</property>
-										<property name="CtrlStyle" vt="Int32">1342308608</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
-									</properties>
-									<components/>
-								</object>
 								<object type="TAInput" name="txtRedSearchDead">
 									<properties>
 										<property name="Left" vt="Int16">130</property>
 										<property name="Top" vt="Int16">172</property>
 										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="MaxLength" vt="Int8">2</property>
+										<property name="Height" vt="Int8">22</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="Text" vt="String">20</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -1400,7 +1155,6 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Gold and Elixir Reduce:</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">11</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
@@ -1414,9 +1168,220 @@
 										<property name="Left" vt="Int16">130</property>
 										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">56</property>
-										<property name="Height" vt="Int8">21</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">5</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">12</property>
+										<property name="Text" vt="String">5000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+							</components>
+						</object>
+						<object type="TAGroup" name="GroupRedAny">
+							<properties>
+								<property name="Left" vt="Int16">216</property>
+								<property name="Top" vt="Int8">12</property>
+								<property name="Width" vt="Int16">200</property>
+								<property name="Height" vt="Int16">220</property>
+								<property name="CtrlStyle" vt="Int32">1342308359</property>
+								<property name="CtrlExStyle" vt="Int8">0</property>
+								<property name="Caption" vt="String">Any Base Search Reduction</property>
+								<property name="TabOrder" vt="Int8">1</property>
+								<property name="Resizing" vt="Set"/>
+							</properties>
+							<components>
+								<object type="TALabel" name="lblGoldRedAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">75</property>
+										<property name="Width" vt="Int8">70</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Gold Reduce:</property>
+										<property name="TabOrder" vt="Int8">0</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblElixRedAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">100</property>
+										<property name="Width" vt="Int8">70</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Elixir Reduce:</property>
+										<property name="TabOrder" vt="Int8">1</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblDERedAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">125</property>
+										<property name="Width" vt="Int8">85</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">DE Reduce:</property>
+										<property name="TabOrder" vt="Int8">2</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblTroRedAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">150</property>
+										<property name="Width" vt="Int8">85</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Trophy Reduce:</property>
+										<property name="TabOrder" vt="Int8">3</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblRedSearchAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">175</property>
+										<property name="Width" vt="Int8">80</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">After Search:</property>
+										<property name="TabOrder" vt="Int8">4</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtGoldRedAny">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int8">72</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">5</property>
+										<property name="Text" vt="String">5000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtElixRedAny">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int8">97</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">6</property>
+										<property name="Text" vt="String">5000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtDERedAny">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int8">122</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="Hint" vt="String">Enter number of individual units to train</property>
+										<property name="TabOrder" vt="Int8">7</property>
+										<property name="Text" vt="String">100</property>
+										<property name="CtrlStyle" vt="Int32">1342374017</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtTroRedAny">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int16">147</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">8</property>
+										<property name="Text" vt="String">2</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkredAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">25</property>
+										<property name="Width" vt="Int8">75</property>
+										<property name="Height" vt="Int8">15</property>
+										<property name="Hint" vt="String">Enable Search Reduction for Any Base</property>
+										<property name="Caption" vt="String">Enable</property>
+										<property name="Checked" vt="True">True</property>
+										<property name="State" vt="Ident">cbChecked</property>
+										<property name="TabOrder" vt="Int8">9</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtRedSearchAny">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int16">172</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="TabOrder" vt="Int8">10</property>
+										<property name="Text" vt="String">20</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TALabel" name="lblGoldElixRedAny">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int8">50</property>
+										<property name="Width" vt="Int8">115</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="AutoSize" vt="False">False</property>
+										<property name="Caption" vt="String">Gold and Elixir Reduce:</property>
+										<property name="TabOrder" vt="Int8">11</property>
+										<property name="HaveVariable" vt="False">False</property>
+										<property name="CtrlStyle" vt="Int32">1342308608</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtGoldElixRedAny">
+									<properties>
+										<property name="Left" vt="Int16">130</property>
+										<property name="Top" vt="Int8">47</property>
+										<property name="Width" vt="Int8">56</property>
+										<property name="Height" vt="Int8">22</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -1429,8 +1394,8 @@
 						</object>
 						<object type="TAGroup" name="groupAvoidDef">
 							<properties>
-								<property name="Left" vt="Int16">430</property>
-								<property name="Top" vt="Int8">17</property>
+								<property name="Left" vt="Int16">426</property>
+								<property name="Top" vt="Int8">14</property>
 								<property name="Width" vt="Int16">200</property>
 								<property name="Height" vt="Int16">220</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -1438,7 +1403,6 @@
 								<property name="Caption" vt="String">Avoid Defend</property>
 								<property name="TabOrder" vt="Int8">2</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
 								<object type="TACheckbox" name="chkInfTow">
@@ -1448,7 +1412,6 @@
 										<property name="Width" vt="Int8">85</property>
 										<property name="Height" vt="Int8">15</property>
 										<property name="Caption" vt="String">Inferno Tower</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1483,8 +1446,8 @@
 					<components>
 						<object type="TAGroup" name="groupDeadDeploySettings">
 							<properties>
-								<property name="Left" vt="Int8">8</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int8">4</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">610</property>
 								<property name="Height" vt="Int8">90</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -1501,9 +1464,7 @@
 										<property name="Width" vt="Int16">290</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">0</property>
-										<property name="Text" vt="String">Attack on all sides equally, gets most of outer base</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Attack on a single side, penetrates through base</li>
@@ -1525,9 +1486,7 @@
 										<property name="Width" vt="Int16">290</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">9</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="Text" vt="String">Use Barracks</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Archers</li>
@@ -1598,17 +1557,15 @@
 										<property name="Height" vt="Int8">25</property>
 										<property name="Hint" vt="String">Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">Don't attack TH</property>
 										<property name="Items.Strings" vt="List">
 											<list>
-												<li vt="String">Don't attack TH</li>
+												<li vt="String">Dont attack TH</li>
 												<li vt="String">Limited TH attack</li>
 												<li vt="String">Full TH attack</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -1618,8 +1575,8 @@
 						</object>
 						<object type="TAGroup" name="groupAnyDeploySettings">
 							<properties>
-								<property name="Left" vt="Int8">8</property>
-								<property name="Top" vt="Int8">105</property>
+								<property name="Left" vt="Int8">4</property>
+								<property name="Top" vt="Int8">102</property>
 								<property name="Width" vt="Int16">610</property>
 								<property name="Height" vt="Int8">90</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -1636,9 +1593,7 @@
 										<property name="Width" vt="Int16">290</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">0</property>
-										<property name="Text" vt="String">Attack on all sides equally, gets most of outer base</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Attack on a single side, penetrates through base</li>
@@ -1660,9 +1615,7 @@
 										<property name="Width" vt="Int16">290</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">9</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="Text" vt="String">Use Barracks</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Archers</li>
@@ -1733,17 +1686,15 @@
 										<property name="Height" vt="Int8">25</property>
 										<property name="Hint" vt="String">Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">Don't attack TH</property>
 										<property name="Items.Strings" vt="List">
 											<list>
-												<li vt="String">Don't attack TH</li>
+												<li vt="String">Dont attack TH</li>
 												<li vt="String">Limited TH attack</li>
 												<li vt="String">Full TH attack</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -1753,8 +1704,8 @@
 						</object>
 						<object type="TAGroup" name="groupDeploySpeed">
 							<properties>
-								<property name="Left" vt="Int16">303</property>
-								<property name="Top" vt="Int16">207</property>
+								<property name="Left" vt="Int16">299</property>
+								<property name="Top" vt="Int16">204</property>
 								<property name="Width" vt="Int16">320</property>
 								<property name="Height" vt="Int8">110</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -1787,9 +1738,7 @@
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="Text" vt="String">5</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">1</li>
@@ -1833,9 +1782,7 @@
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">3</property>
-										<property name="Text" vt="String">5</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">1</li>
@@ -1867,7 +1814,6 @@
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
-										<property name="Description" vt="String">chkRandomSpeedAtk</property>
 									</properties>
 									<components/>
 								</object>
@@ -1899,6 +1845,7 @@
 										<property name="Top" vt="Int8">31</property>
 										<property name="Width" vt="Int8">99</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- [1] Fast = Bot Like!</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -1914,6 +1861,7 @@
 										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">126</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- [10] Slow = Human Like!</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -1929,6 +1877,7 @@
 										<property name="Top" vt="Int8">71</property>
 										<property name="Width" vt="Int16">171</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Random will make bot more variant</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -1944,6 +1893,7 @@
 										<property name="Top" vt="Int8">88</property>
 										<property name="Width" vt="Int8">104</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">and closer to human!</property>
 										<property name="TabOrder" vt="Int8">9</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -1964,8 +1914,8 @@
 					<components>
 						<object type="TAGroup" name="groupBarbarians">
 							<properties>
-								<property name="Left" vt="Int8">5</property>
-								<property name="Top" vt="Int8">2</property>
+								<property name="Left" vt="Int8">1</property>
+								<property name="Top" vt="Int8">-1</property>
 								<property name="Width" vt="Int16">166</property>
 								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -1973,7 +1923,6 @@
 								<property name="Caption" vt="String">Option 1</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupBarbarians</property>
 							</properties>
 							<components>
 								<object type="TACheckbox" name="chkDonateAllBarbarians">
@@ -2000,13 +1949,11 @@
 										<property name="Hint" vt="String">Keywords for option 1</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
-												<li vt="String">any</li>
-												<li vt="String">barbarians</li>
-												<li vt="String">reinforcement</li>
+												<li vt="String"/>
 											</list>
 										</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="CtrlStyle" vt="Int32">1344475204</property>
+										<property name="CtrlStyle" vt="Int32">1345523908</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set"/>
 									</properties>
@@ -2019,9 +1966,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">2</property>
-										<property name="Text" vt="String">Barbarian</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarian</li>
@@ -2042,7 +1987,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2055,9 +2000,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">3</property>
-										<property name="Text" vt="String">None</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">None</li>
@@ -2079,7 +2022,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2092,9 +2035,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">None</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">None</li>
@@ -2116,7 +2057,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2128,10 +2069,9 @@
 										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Text" vt="String">5</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2143,10 +2083,9 @@
 										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">1</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2158,10 +2097,9 @@
 										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">1</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2188,8 +2126,8 @@
 						</object>
 						<object type="TAGroup" name="groupArchers">
 							<properties>
-								<property name="Left" vt="Int16">173</property>
-								<property name="Top" vt="Int8">2</property>
+								<property name="Left" vt="Int16">169</property>
+								<property name="Top" vt="Int8">-1</property>
 								<property name="Width" vt="Int16">166</property>
 								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -2223,13 +2161,11 @@
 										<property name="Hint" vt="String">Keywords for option 2</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
-												<li vt="String">any</li>
-												<li vt="String">archers</li>
-												<li vt="String">reinforcement</li>
+												<li vt="String"/>
 											</list>
 										</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="CtrlStyle" vt="Int32">1344475204</property>
+										<property name="CtrlStyle" vt="Int32">1345523908</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set"/>
 									</properties>
@@ -2242,9 +2178,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">2</property>
-										<property name="Text" vt="String">Archer</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarian</li>
@@ -2265,7 +2199,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2278,9 +2212,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">3</property>
-										<property name="Text" vt="String">None</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">None</li>
@@ -2302,7 +2234,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2315,9 +2247,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">None</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">None</li>
@@ -2339,7 +2269,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2351,10 +2281,9 @@
 										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Text" vt="String">5</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2366,10 +2295,9 @@
 										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">1</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2381,10 +2309,9 @@
 										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">1</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2411,8 +2338,8 @@
 						</object>
 						<object type="TAGroup" name="groupGiants">
 							<properties>
-								<property name="Left" vt="Int16">341</property>
-								<property name="Top" vt="Int8">2</property>
+								<property name="Left" vt="Int16">337</property>
+								<property name="Top" vt="Int8">-1</property>
 								<property name="Width" vt="Int16">166</property>
 								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -2446,13 +2373,11 @@
 										<property name="Hint" vt="String">Keywords for option 3</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
-												<li vt="String">any</li>
-												<li vt="String">giants</li>
-												<li vt="String">reinforcement</li>
+												<li vt="String"/>
 											</list>
 										</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="CtrlStyle" vt="Int32">1344475204</property>
+										<property name="CtrlStyle" vt="Int32">1345523908</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set"/>
 									</properties>
@@ -2465,9 +2390,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">2</property>
-										<property name="Text" vt="String">Giant</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarian</li>
@@ -2488,7 +2411,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2501,9 +2424,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">3</property>
-										<property name="Text" vt="String">None</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">None</li>
@@ -2525,7 +2446,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2538,9 +2459,7 @@
 										<property name="Width" vt="Int8">89</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">None</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">None</li>
@@ -2562,7 +2481,7 @@
 												<li vt="String">Lava</li>
 											</list>
 										</property>
-										<property name="CtrlStyle" vt="Int32">1342374466</property>
+										<property name="CtrlStyle" vt="Int32">1344471618</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2574,10 +2493,9 @@
 										<property name="Top" vt="Int16">165</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Text" vt="String">5</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2589,10 +2507,9 @@
 										<property name="Top" vt="Int16">189</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">1</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2604,10 +2521,9 @@
 										<property name="Top" vt="Int16">213</property>
 										<property name="Width" vt="Int8">33</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">1</property>
-										<property name="CtrlStyle" vt="Int32">1342382081</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
@@ -2634,8 +2550,8 @@
 						</object>
 						<object type="TACheckbox" name="chkRequest">
 							<properties>
-								<property name="Left" vt="Int16">295</property>
-								<property name="Top" vt="Int16">258</property>
+								<property name="Left" vt="Int16">291</property>
+								<property name="Top" vt="Int16">255</property>
 								<property name="Width" vt="Int8">82</property>
 								<property name="Height" vt="Int8">17</property>
 								<property name="Caption" vt="String">Request for :</property>
@@ -2650,8 +2566,8 @@
 						</object>
 						<object type="TAInput" name="txtRequest">
 							<properties>
-								<property name="Left" vt="Int16">380</property>
-								<property name="Top" vt="Int16">255</property>
+								<property name="Left" vt="Int16">376</property>
+								<property name="Top" vt="Int16">252</property>
 								<property name="Width" vt="Int16">250</property>
 								<property name="Height" vt="Int8">23</property>
 								<property name="Hint" vt="String">Request for input.</property>
@@ -2660,7 +2576,6 @@
 								<property name="Font.Height" vt="Int8">-12</property>
 								<property name="Font.Name" vt="String">Arial</property>
 								<property name="Font.Style" vt="Set"/>
-								<property name="MaxLength" vt="Int8">20</property>
 								<property name="ParentFont" vt="False">False</property>
 								<property name="TabOrder" vt="Int8">4</property>
 								<property name="Text" vt="String">Any</property>
@@ -2672,8 +2587,8 @@
 						</object>
 						<object type="TAGroup" name="groupNotDonate">
 							<properties>
-								<property name="Left" vt="Int16">515</property>
-								<property name="Top" vt="Int8">2</property>
+								<property name="Left" vt="Int16">511</property>
+								<property name="Top" vt="Int8">-1</property>
 								<property name="Width" vt="Int8">114</property>
 								<property name="Height" vt="Int16">242</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -2692,15 +2607,11 @@
 										<property name="Hint" vt="String">Blacklist Keywords</property>
 										<property name="Lines.Strings" vt="List">
 											<list>
-												<li vt="String">cw</li>
-												<li vt="String">clan war</li>
-												<li vt="String">max</li>
-												<li vt="String">level</li>
-												<li vt="String">lvl</li>
+												<li vt="String"/>
 											</list>
 										</property>
 										<property name="TabOrder" vt="Int8">0</property>
-										<property name="CtrlStyle" vt="Int32">1344475204</property>
+										<property name="CtrlStyle" vt="Int32">1345523908</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
 										<property name="Resizing" vt="Set"/>
 									</properties>
@@ -2733,8 +2644,8 @@
 					<components>
 						<object type="TAGroup" name="groupTroops">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int8">5</property>
+								<property name="Left" vt="Int8">9</property>
+								<property name="Top" vt="Int8">2</property>
 								<property name="Width" vt="Int16">200</property>
 								<property name="Height" vt="Int16">240</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -2742,7 +2653,6 @@
 								<property name="Caption" vt="String">Troops</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblBarbarians">
@@ -2799,8 +2709,6 @@
 										<property name="Top" vt="Int8">22</property>
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">30</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -2815,8 +2723,6 @@
 										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="Text" vt="String">60</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -2831,8 +2737,6 @@
 										<property name="Top" vt="Int8">72</property>
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -2928,8 +2832,6 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Enter number of individual units to train</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">11</property>
 										<property name="Text" vt="String">4</property>
 										<property name="CtrlStyle" vt="Int32">1342374017</property>
@@ -2945,8 +2847,6 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Enter number of individual units to train</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="Text" vt="String">4</property>
 										<property name="CtrlStyle" vt="Int32">1342374017</property>
@@ -2977,7 +2877,6 @@
 										<property name="Top" vt="Int16">147</property>
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">14</property>
 										<property name="Text" vt="String">0</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3009,9 +2908,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">10</property>
 										<property name="TabOrder" vt="Int8">16</property>
-										<property name="Text" vt="String">100</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">10</li>
@@ -3055,9 +2952,7 @@
 										<property name="Width" vt="Int16">175</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">9</property>
 										<property name="TabOrder" vt="Int8">18</property>
-										<property name="Text" vt="String">Use Barracks</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Archers</li>
@@ -3083,8 +2978,8 @@
 						</object>
 						<object type="TAGroup" name="groupCustomTroops2">
 							<properties>
-								<property name="Left" vt="Int16">233</property>
-								<property name="Top" vt="Int8">5</property>
+								<property name="Left" vt="Int16">229</property>
+								<property name="Top" vt="Int8">2</property>
 								<property name="Width" vt="Int16">395</property>
 								<property name="Height" vt="Int8">121</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -3092,7 +2987,6 @@
 								<property name="Caption" vt="String">Custom Troops 2</property>
 								<property name="TabOrder" vt="Int8">1</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupCustomTroops2</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblBarrackJOE1">
@@ -3229,8 +3123,6 @@
 										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3245,8 +3137,6 @@
 										<property name="Top" vt="Int8">41</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">9</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3261,8 +3151,6 @@
 										<property name="Top" vt="Int8">66</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3277,8 +3165,6 @@
 										<property name="Top" vt="Int8">91</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">11</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3293,11 +3179,8 @@
 										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">12</property>
-										<property name="Text" vt="String">W.Breakers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3320,11 +3203,8 @@
 										<property name="Top" vt="Int8">41</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">13</property>
-										<property name="Text" vt="String">W.Breakers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3347,11 +3227,8 @@
 										<property name="Top" vt="Int8">66</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">14</property>
-										<property name="Text" vt="String">Giants</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3374,11 +3251,8 @@
 										<property name="Top" vt="Int8">91</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">15</property>
-										<property name="Text" vt="String">Giants</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3395,17 +3269,39 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACombo" name="cmbSecondTroop1">
+									<properties>
+										<property name="Left" vt="Int16">265</property>
+										<property name="Top" vt="Int8">16</property>
+										<property name="Width" vt="Int8">95</property>
+										<property name="Height" vt="Int8">25</property>
+										<property name="ItemHeight" vt="Int8">14</property>
+										<property name="TabOrder" vt="Int8">16</property>
+										<property name="Items.Strings" vt="List">
+											<list>
+												<li vt="String">Barbarians</li>
+												<li vt="String">Archers</li>
+												<li vt="String">Giants</li>
+												<li vt="String">Goblins</li>
+												<li vt="String">Balloons</li>
+												<li vt="String">Wizards</li>
+												<li vt="String">Nothing</li>
+											</list>
+										</property>
+										<property name="CtrlStyle" vt="Int32">1344471619</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 								<object type="TACombo" name="cmbSecondTroop2">
 									<properties>
 										<property name="Left" vt="Int16">265</property>
 										<property name="Top" vt="Int8">41</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">17</property>
-										<property name="Text" vt="String">Archers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3429,11 +3325,8 @@
 										<property name="Top" vt="Int8">66</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">18</property>
-										<property name="Text" vt="String">Barbarians</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3457,11 +3350,8 @@
 										<property name="Top" vt="Int8">91</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">19</property>
-										<property name="Text" vt="String">Archers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3479,40 +3369,12 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbSecondTroop1">
-									<properties>
-										<property name="Left" vt="Int16">265</property>
-										<property name="Top" vt="Int8">16</property>
-										<property name="Width" vt="Int8">95</property>
-										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
-										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
-										<property name="TabOrder" vt="Int8">16</property>
-										<property name="Text" vt="String">Barbarians</property>
-										<property name="Items.Strings" vt="List">
-											<list>
-												<li vt="String">Barbarians</li>
-												<li vt="String">Archers</li>
-												<li vt="String">Giants</li>
-												<li vt="String">Goblins</li>
-												<li vt="String">Balloons</li>
-												<li vt="String">Wizards</li>
-												<li vt="String">Nothing</li>
-											</list>
-										</property>
-										<property name="CtrlStyle" vt="Int32">1342374467</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
 							</components>
 						</object>
 						<object type="TAGroup" name="groupBarracks">
 							<properties>
-								<property name="Left" vt="Int16">233</property>
-								<property name="Top" vt="Int8">125</property>
+								<property name="Left" vt="Int16">229</property>
+								<property name="Top" vt="Int8">122</property>
 								<property name="Width" vt="Int16">185</property>
 								<property name="Height" vt="Int8">120</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -3520,7 +3382,6 @@
 								<property name="Caption" vt="String">Barracks</property>
 								<property name="TabOrder" vt="Int8">2</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupBarracks</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblBarrack1">
@@ -3594,9 +3455,7 @@
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">Barbarians</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3606,9 +3465,9 @@
 												<li vt="String">W.Breakers</li>
 												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
-												<li vt="String">Healer(Training Only)</li>
-												<li vt="String">Dragon(Training Only)</li>
-												<li vt="String">Pekka(Training Only)</li>
+												<li vt="String"/>
+												<li vt="String"/>
+												<li vt="String"/>
 												<li vt="String">Nothing</li>
 											</list>
 										</property>
@@ -3625,9 +3484,7 @@
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">5</property>
-										<property name="Text" vt="String">Archers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3637,9 +3494,9 @@
 												<li vt="String">W.Breakers</li>
 												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
-												<li vt="String">Healer(Training Only)</li>
-												<li vt="String">Dragon(Training Only)</li>
-												<li vt="String">Pekka(Training Only)</li>
+												<li vt="String"/>
+												<li vt="String"/>
+												<li vt="String"/>
 												<li vt="String">Nothing</li>
 											</list>
 										</property>
@@ -3656,9 +3513,7 @@
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">6</property>
-										<property name="Text" vt="String">Archers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3668,9 +3523,9 @@
 												<li vt="String">W.Breakers</li>
 												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
-												<li vt="String">Healer(Training Only)</li>
-												<li vt="String">Dragon(Training Only)</li>
-												<li vt="String">Pekka(Training Only)</li>
+												<li vt="String"/>
+												<li vt="String"/>
+												<li vt="String"/>
 												<li vt="String">Nothing</li>
 											</list>
 										</property>
@@ -3687,9 +3542,7 @@
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">7</property>
-										<property name="Text" vt="String">Archers</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Barbarians</li>
@@ -3699,9 +3552,9 @@
 												<li vt="String">W.Breakers</li>
 												<li vt="String">Balloon</li>
 												<li vt="String">Wizard</li>
-												<li vt="String">Healer(Training Only)</li>
-												<li vt="String">Dragon(Training Only)</li>
-												<li vt="String">Pekka(Training Only)</li>
+												<li vt="String"/>
+												<li vt="String"/>
+												<li vt="String"/>
 												<li vt="String">Nothing</li>
 											</list>
 										</property>
@@ -3715,8 +3568,8 @@
 						</object>
 						<object type="TAGroup" name="groupDarkTroops">
 							<properties>
-								<property name="Left" vt="Int16">423</property>
-								<property name="Top" vt="Int8">125</property>
+								<property name="Left" vt="Int16">419</property>
+								<property name="Top" vt="Int8">122</property>
 								<property name="Width" vt="Int16">204</property>
 								<property name="Height" vt="Int8">120</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -3724,7 +3577,6 @@
 								<property name="Caption" vt="String">Dark Troops</property>
 								<property name="TabOrder" vt="Int8">3</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupDarkTroops</property>
 							</properties>
 							<components>
 								<object type="TACheckbox" name="chkDarkTroop">
@@ -3780,9 +3632,7 @@
 										<property name="Width" vt="Int8">70</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">3</property>
-										<property name="Text" vt="String">Minions</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Minions</li>
@@ -3804,9 +3654,7 @@
 										<property name="Width" vt="Int8">70</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">4</property>
-										<property name="Text" vt="String">Minions</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Minions</li>
@@ -3827,7 +3675,6 @@
 										<property name="Top" vt="Int8">44</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Text" vt="String">5</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3842,7 +3689,6 @@
 										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">5</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3862,8 +3708,8 @@
 					<components>
 						<object type="TAGroup" name="groupWalls">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int8">9</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">470</property>
 								<property name="Height" vt="Int8">125</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -3927,7 +3773,6 @@
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Gold storage to perform the upgrade</property>
-										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">1300000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -3974,7 +3819,6 @@
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Elixir storage to perform the upgrade</property>
-										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">1300000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4020,9 +3864,7 @@
 										<property name="Width" vt="Int8">40</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">9</property>
-										<property name="Text" vt="String">4</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">4</li>
@@ -4063,9 +3905,7 @@
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">11</property>
-										<property name="Text" vt="String">Default</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">Default</li>
@@ -4098,8 +3938,8 @@
 						</object>
 						<object type="TAGroup" name="groupUpgrade">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int16">135</property>
+								<property name="Left" vt="Int8">9</property>
+								<property name="Top" vt="Int16">132</property>
 								<property name="Width" vt="Int16">470</property>
 								<property name="Height" vt="Int8">105</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -4411,7 +4251,6 @@
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Gold storage to perform Building upgrade</property>
-										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">20</property>
 										<property name="Text" vt="String">1300000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4427,7 +4266,6 @@
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Elixir storage to perform Building upgrade</property>
-										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">21</property>
 										<property name="Text" vt="String">1300000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4440,8 +4278,8 @@
 						</object>
 						<object type="TAGroup" name="groupBoosts">
 							<properties>
-								<property name="Left" vt="Int16">490</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int16">486</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">130</property>
 								<property name="Height" vt="Int16">310</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -4474,9 +4312,7 @@
 										<property name="Width" vt="Int8">40</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
-										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">1</property>
-										<property name="Text" vt="String">0</property>
 										<property name="Items.Strings" vt="List">
 											<list>
 												<li vt="String">0</li>
@@ -4582,20 +4418,6 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostSpell">
-									<properties>
-										<property name="Left" vt="Int8">10</property>
-										<property name="Top" vt="Int16">250</property>
-										<property name="Width" vt="Int8">80</property>
-										<property name="Height" vt="Int8">17</property>
-										<property name="Caption" vt="String">Spell Factory</property>
-										<property name="TabOrder" vt="Int8">10</property>
-										<property name="CtrlStyle" vt="Int32">1342242819</property>
-										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set">DockHeight</property>
-									</properties>
-									<components/>
-								</object>
 								<object type="TACheckbox" name="chkBoostDark1">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
@@ -4624,6 +4446,20 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACheckbox" name="chkBoostSpell">
+									<properties>
+										<property name="Left" vt="Int8">10</property>
+										<property name="Top" vt="Int16">250</property>
+										<property name="Width" vt="Int8">80</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Spell Factory</property>
+										<property name="TabOrder" vt="Int8">10</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
 					</components>
@@ -4635,8 +4471,8 @@
 					<components>
 						<object type="TAGroup" name="groupMiscs">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int8">9</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">600</property>
 								<property name="Height" vt="Int16">235</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -4669,7 +4505,6 @@
 										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">1</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4757,7 +4592,7 @@
 										<property name="TabStop" vt="True">True</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
-										<property name="Resizing" vt="Set"/>
+										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
 									<components/>
 								</object>
@@ -4767,7 +4602,6 @@
 										<property name="Top" vt="Int8">71</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4815,7 +4649,6 @@
 										<property name="Top" vt="Int8">71</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4863,7 +4696,6 @@
 										<property name="Top" vt="Int8">124</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">13</property>
 										<property name="Text" vt="String">10</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -4909,7 +4741,6 @@
 										<property name="Top" vt="Int16">150</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">16</property>
 										<property name="Text" vt="String">500</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -5044,7 +4875,6 @@
 										<property name="Top" vt="Int16">206</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">3</property>
 										<property name="TabOrder" vt="Int8">25</property>
 										<property name="Text" vt="String">20</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -5089,7 +4919,6 @@
 										<property name="Top" vt="Int8">43</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">28</property>
 										<property name="Text" vt="String">3</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -5104,7 +4933,6 @@
 										<property name="Top" vt="Int8">43</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
-										<property name="MaxLength" vt="Int8">2</property>
 										<property name="TabOrder" vt="Int8">29</property>
 										<property name="Text" vt="String">30</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -5174,8 +5002,8 @@
 					<components>
 						<object type="TAGroup" name="groupResourceAtStart">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int8">9</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">185</property>
 								<property name="Height" vt="Int8">120</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -5183,7 +5011,6 @@
 								<property name="Caption" vt="String">Resources at Start</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupResourceAtStart</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblgoldonstart">
@@ -5370,8 +5197,8 @@
 						</object>
 						<object type="TAGroup" name="groupOtherStats">
 							<properties>
-								<property name="Left" vt="Int16">430</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int16">426</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">185</property>
 								<property name="Height" vt="Int16">230</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -5379,7 +5206,6 @@
 								<property name="Caption" vt="String">Other Stats</property>
 								<property name="TabOrder" vt="Int8">1</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupOtherStats</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblvillagesattacked">
@@ -5706,8 +5532,8 @@
 						</object>
 						<object type="TAGroup" name="groupLastRaid">
 							<properties>
-								<property name="Left" vt="Int8">13</property>
-								<property name="Top" vt="Int16">130</property>
+								<property name="Left" vt="Int8">9</property>
+								<property name="Top" vt="Int8">127</property>
 								<property name="Width" vt="Int16">185</property>
 								<property name="Height" vt="Int8">110</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -5901,8 +5727,8 @@
 						</object>
 						<object type="TAGroup" name="groupCurrentResources">
 							<properties>
-								<property name="Left" vt="Int16">220</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int16">216</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">185</property>
 								<property name="Height" vt="Int8">120</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -6096,8 +5922,8 @@
 						</object>
 						<object type="TAGroup" name="groupTotalRaid">
 							<properties>
-								<property name="Left" vt="Int16">220</property>
-								<property name="Top" vt="Int16">130</property>
+								<property name="Left" vt="Int16">216</property>
+								<property name="Top" vt="Int8">127</property>
 								<property name="Width" vt="Int16">185</property>
 								<property name="Height" vt="Int8">110</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -6296,22 +6122,10 @@
 						<property name="Caption" vt="String">Notification</property>
 					</properties>
 					<components>
-						<object type="TAMenu" name="AMenu1">
-							<properties>
-								<property name="Left" vt="Int8">-7</property>
-								<property name="Top" vt="Int8">0</property>
-								<property name="Width" vt="Int8">28</property>
-								<property name="Height" vt="Int8">28</property>
-								<property name="Associate" vt="Ident">Owner</property>
-								<property name="WrappedName" vt="String">MainMenu1</property>
-								<property name="AutoHotkeys" vt="Ident">maManual</property>
-							</properties>
-							<components/>
-						</object>
 						<object type="TAGroup" name="groupPushBullet">
 							<properties>
-								<property name="Left" vt="Int8">5</property>
-								<property name="Top" vt="Int8">10</property>
+								<property name="Left" vt="Int8">1</property>
+								<property name="Top" vt="Int8">7</property>
 								<property name="Width" vt="Int16">375</property>
 								<property name="Height" vt="Int16">231</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -6423,20 +6237,6 @@
 										<property name="Resizing" vt="Set"/>
 									</properties>
 									<components>
-										<object type="TACheckbox" name="chkPushFreeBuilder">
-											<properties>
-												<property name="Left" vt="Int16">173</property>
-												<property name="Top" vt="Int8">22</property>
-												<property name="Width" vt="Int8">75</property>
-												<property name="Height" vt="Int8">17</property>
-												<property name="Caption" vt="String">Free Builder</property>
-												<property name="TabOrder" vt="Int8">4</property>
-												<property name="CtrlStyle" vt="Int32">1342242819</property>
-												<property name="CtrlExStyle" vt="Int8">0</property>
-												<property name="Resizing" vt="Set">DockHeight</property>
-											</properties>
-											<components/>
-										</object>
 										<object type="TACheckbox" name="chkPushVillageReport">
 											<properties>
 												<property name="Left" vt="Int8">10</property>
@@ -6465,6 +6265,20 @@
 											</properties>
 											<components/>
 										</object>
+										<object type="TACheckbox" name="chkPushLastRaid">
+											<properties>
+												<property name="Left" vt="Int8">100</property>
+												<property name="Top" vt="Int8">22</property>
+												<property name="Width" vt="Int8">70</property>
+												<property name="Height" vt="Int8">17</property>
+												<property name="Caption" vt="String">Last Raid</property>
+												<property name="TabOrder" vt="Int8">2</property>
+												<property name="CtrlStyle" vt="Int32">1342242819</property>
+												<property name="CtrlExStyle" vt="Int8">0</property>
+												<property name="Resizing" vt="Set">DockHeight</property>
+											</properties>
+											<components/>
+										</object>
 										<object type="TACheckbox" name="chkPushTotalRaid">
 											<properties>
 												<property name="Left" vt="Int8">100</property>
@@ -6479,6 +6293,20 @@
 											</properties>
 											<components/>
 										</object>
+										<object type="TACheckbox" name="chkPushFreeBuilder">
+											<properties>
+												<property name="Left" vt="Int16">173</property>
+												<property name="Top" vt="Int8">22</property>
+												<property name="Width" vt="Int8">75</property>
+												<property name="Height" vt="Int8">17</property>
+												<property name="Caption" vt="String">Free Builder</property>
+												<property name="TabOrder" vt="Int8">4</property>
+												<property name="CtrlStyle" vt="Int32">1342242819</property>
+												<property name="CtrlExStyle" vt="Int8">0</property>
+												<property name="Resizing" vt="Set">DockHeight</property>
+											</properties>
+											<components/>
+										</object>
 										<object type="TACheckbox" name="chkPushError">
 											<properties>
 												<property name="Left" vt="Int16">174</property>
@@ -6487,20 +6315,6 @@
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Errors</property>
 												<property name="TabOrder" vt="Int8">5</property>
-												<property name="CtrlStyle" vt="Int32">1342242819</property>
-												<property name="CtrlExStyle" vt="Int8">0</property>
-												<property name="Resizing" vt="Set">DockHeight</property>
-											</properties>
-											<components/>
-										</object>
-										<object type="TACheckbox" name="chkPushLastRaid">
-											<properties>
-												<property name="Left" vt="Int8">100</property>
-												<property name="Top" vt="Int8">22</property>
-												<property name="Width" vt="Int8">70</property>
-												<property name="Height" vt="Int8">17</property>
-												<property name="Caption" vt="String">Last Raid</property>
-												<property name="TabOrder" vt="Int8">2</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
 												<property name="Resizing" vt="Set">DockHeight</property>
@@ -6589,7 +6403,6 @@
 												<property name="Top" vt="Int8">20</property>
 												<property name="Width" vt="Int8">31</property>
 												<property name="Height" vt="Int8">22</property>
-												<property name="MaxLength" vt="Int8">2</property>
 												<property name="TabOrder" vt="Int8">1</property>
 												<property name="Text" vt="String">10</property>
 												<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -6620,7 +6433,6 @@
 												<property name="Top" vt="Int8">45</property>
 												<property name="Width" vt="Int8">31</property>
 												<property name="Height" vt="Int8">22</property>
-												<property name="MaxLength" vt="Int8">3</property>
 												<property name="TabOrder" vt="Int8">3</property>
 												<property name="Text" vt="String">100</property>
 												<property name="CtrlStyle" vt="Int32">1342382209</property>
@@ -6666,6 +6478,7 @@
 												<property name="Top" vt="Int8">34</property>
 												<property name="Width" vt="Int8">40</property>
 												<property name="Height" vt="Int8">18</property>
+												<property name="AutoSize" vt="False">False</property>
 												<property name="Caption" vt="String">Device:</property>
 												<property name="TabOrder" vt="Int8">0</property>
 												<property name="HaveVariable" vt="False">False</property>
@@ -6684,8 +6497,7 @@
 												<property name="ItemHeight" vt="Int8">14</property>
 												<property name="TabOrder" vt="Int8">1</property>
 												<property name="Text" vt="String">All</property>
-												<property name="OnChange" vt="String">cmbDeviceChange</property>
-												<property name="CtrlStyle" vt="Int32">1342374466</property>
+												<property name="CtrlStyle" vt="Int32">1344471618</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
 												<property name="Resizing" vt="Set">DockHeight</property>
 											</properties>
@@ -6697,8 +6509,8 @@
 						</object>
 						<object type="TAGroup" name="Group1">
 							<properties>
-								<property name="Left" vt="Int16">397</property>
-								<property name="Top" vt="Int8">9</property>
+								<property name="Left" vt="Int16">393</property>
+								<property name="Top" vt="Int8">6</property>
 								<property name="Width" vt="Int16">233</property>
 								<property name="Height" vt="Int16">289</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
@@ -6714,6 +6526,7 @@
 										<property name="Top" vt="Int8">21</property>
 										<property name="Width" vt="Int16">197</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">You can remotely control your bot using</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6729,6 +6542,7 @@
 										<property name="Top" vt="Int8">35</property>
 										<property name="Width" vt="Int16">149</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">the following command format</property>
 										<property name="TabOrder" vt="Int8">1</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6744,6 +6558,7 @@
 										<property name="Top" vt="Int8">58</property>
 										<property name="Width" vt="Int16">191</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Bot &lt;command&gt; where &lt;command&gt; is:</property>
 										<property name="TabOrder" vt="Int8">2</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6759,6 +6574,7 @@
 										<property name="Top" vt="Int8">82</property>
 										<property name="Width" vt="Int8">34</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Pause</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6774,6 +6590,7 @@
 										<property name="Top" vt="Int8">97</property>
 										<property name="Width" vt="Int8">43</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Resume</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6789,6 +6606,7 @@
 										<property name="Top" vt="Int8">112</property>
 										<property name="Width" vt="Int8">29</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Stats</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6804,6 +6622,7 @@
 										<property name="Top" vt="Int8">127</property>
 										<property name="Width" vt="Int8">28</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Logs</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6819,6 +6638,7 @@
 										<property name="Top" vt="Int16">142</property>
 										<property name="Width" vt="Int8">38</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Boost1</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6834,6 +6654,7 @@
 										<property name="Top" vt="Int16">157</property>
 										<property name="Width" vt="Int8">38</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Boost2</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6849,6 +6670,7 @@
 										<property name="Top" vt="Int16">173</property>
 										<property name="Width" vt="Int8">38</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Boost3</property>
 										<property name="TabOrder" vt="Int8">9</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6864,6 +6686,7 @@
 										<property name="Top" vt="Int16">187</property>
 										<property name="Width" vt="Int8">44</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">BoostAll</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6879,6 +6702,7 @@
 										<property name="Top" vt="Int16">201</property>
 										<property name="Width" vt="Int8">25</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Help</property>
 										<property name="TabOrder" vt="Int8">11</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6894,6 +6718,7 @@
 										<property name="Top" vt="Int8">82</property>
 										<property name="Width" vt="Int8">77</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- pause the bot</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6909,6 +6734,7 @@
 										<property name="Top" vt="Int16">201</property>
 										<property name="Width" vt="Int8">125</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- send this help message</property>
 										<property name="TabOrder" vt="Int8">13</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6924,6 +6750,7 @@
 										<property name="Top" vt="Int16">187</property>
 										<property name="Width" vt="Int8">98</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- Boost all barracks</property>
 										<property name="TabOrder" vt="Int8">14</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6939,6 +6766,7 @@
 										<property name="Top" vt="Int16">173</property>
 										<property name="Width" vt="Int8">94</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- Boost 3 barracks</property>
 										<property name="TabOrder" vt="Int8">15</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6954,6 +6782,7 @@
 										<property name="Top" vt="Int16">157</property>
 										<property name="Width" vt="Int8">94</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- Boost 2 barracks</property>
 										<property name="TabOrder" vt="Int8">16</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6969,6 +6798,7 @@
 										<property name="Top" vt="Int16">142</property>
 										<property name="Width" vt="Int8">88</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- Boost 1 barrack</property>
 										<property name="TabOrder" vt="Int8">17</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6984,6 +6814,7 @@
 										<property name="Top" vt="Int8">127</property>
 										<property name="Width" vt="Int8">125</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- send the current log file</property>
 										<property name="TabOrder" vt="Int8">18</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -6999,6 +6830,7 @@
 										<property name="Top" vt="Int8">112</property>
 										<property name="Width" vt="Int16">137</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- send bot current statistics</property>
 										<property name="TabOrder" vt="Int8">19</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7014,6 +6846,7 @@
 										<property name="Top" vt="Int8">97</property>
 										<property name="Width" vt="Int8">83</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- resume the bot</property>
 										<property name="TabOrder" vt="Int8">20</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7029,6 +6862,7 @@
 										<property name="Top" vt="Int16">215</property>
 										<property name="Width" vt="Int8">67</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">ShutdownPC</property>
 										<property name="TabOrder" vt="Int8">21</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7044,6 +6878,7 @@
 										<property name="Top" vt="Int16">215</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- shutdown your pc</property>
 										<property name="TabOrder" vt="Int8">22</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7059,6 +6894,7 @@
 										<property name="Top" vt="Int16">229</property>
 										<property name="Width" vt="Int8">44</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">SleepPC</property>
 										<property name="TabOrder" vt="Int8">23</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7074,6 +6910,7 @@
 										<property name="Top" vt="Int16">229</property>
 										<property name="Width" vt="Int8">77</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- sleep your pc</property>
 										<property name="TabOrder" vt="Int8">24</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7089,6 +6926,7 @@
 										<property name="Top" vt="Int16">243</property>
 										<property name="Width" vt="Int8">52</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">RestartPC</property>
 										<property name="TabOrder" vt="Int8">25</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7104,6 +6942,7 @@
 										<property name="Top" vt="Int16">243</property>
 										<property name="Width" vt="Int8">83</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- restart your pc</property>
 										<property name="TabOrder" vt="Int8">26</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7119,6 +6958,7 @@
 										<property name="Top" vt="Int16">257</property>
 										<property name="Width" vt="Int8">77</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">ScreenCapture</property>
 										<property name="TabOrder" vt="Int8">27</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7134,6 +6974,7 @@
 										<property name="Top" vt="Int16">257</property>
 										<property name="Width" vt="Int16">141</property>
 										<property name="Height" vt="Int8">18</property>
+										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">- capture computer's screen</property>
 										<property name="TabOrder" vt="Int8">28</property>
 										<property name="HaveVariable" vt="False">False</property>
@@ -7170,6 +7011,22 @@
 						<property name="Height" vt="Int8">50</property>
 						<property name="Caption" vt="String">Start Bot</property>
 						<property name="TabOrder" vt="Int8">0</property>
+						<property name="Color" vt="Ident">clBtnFace</property>
+						<property name="CtrlStyle" vt="Int32">1342373888</property>
+						<property name="CtrlExStyle" vt="Int8">0</property>
+						<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+					</properties>
+					<components/>
+				</object>
+				<object type="TAButton" name="btnStop">
+					<properties>
+						<property name="Left" vt="Int8">7</property>
+						<property name="Top" vt="Int8">47</property>
+						<property name="Width" vt="Int8">75</property>
+						<property name="Height" vt="Int8">23</property>
+						<property name="Caption" vt="String">Stop Bot</property>
+						<property name="TabOrder" vt="Int8">1</property>
+						<property name="Visible" vt="False">False</property>
 						<property name="Color" vt="Ident">clBtnFace</property>
 						<property name="CtrlStyle" vt="Int32">1342373888</property>
 						<property name="CtrlExStyle" vt="Int8">0</property>
@@ -7237,22 +7094,6 @@
 					</properties>
 					<components/>
 				</object>
-				<object type="TAButton" name="btnStop">
-					<properties>
-						<property name="Left" vt="Int8">7</property>
-						<property name="Top" vt="Int8">47</property>
-						<property name="Width" vt="Int8">75</property>
-						<property name="Height" vt="Int8">23</property>
-						<property name="Caption" vt="String">Stop Bot</property>
-						<property name="TabOrder" vt="Int8">1</property>
-						<property name="Visible" vt="False">False</property>
-						<property name="Color" vt="Ident">clBtnFace</property>
-						<property name="CtrlStyle" vt="Int32">1342373888</property>
-						<property name="CtrlExStyle" vt="Int8">0</property>
-						<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
-					</properties>
-					<components/>
-				</object>
 				<object type="TAButton" name="btnPause">
 					<properties>
 						<property name="Left" vt="Int8">7</property>
@@ -7271,6 +7112,20 @@
 				</object>
 			</components>
 		</object>
+		<object type="TAPic" name="hPic_background">
+			<properties>
+				<property name="Left" vt="Int8">0</property>
+				<property name="Top" vt="Int8">0</property>
+				<property name="Width" vt="Int16">640</property>
+				<property name="Height" vt="Int8">30</property>
+				<property name="CtrlStyle" vt="Int32">1342308622</property>
+				<property name="CtrlExStyle" vt="Int8">0</property>
+				<property name="PicturePath" vt="String">@ScriptDir\images\GUI\bannerfix.bmp</property>
+				<property name="TabOrder" vt="Int8">2</property>
+				<property name="Resizing" vt="Set">DockWidth, DockHeight</property>
+			</properties>
+			<components/>
+		</object>
 		<object type="TMainMenu" name="MainMenu1">
 			<properties/>
 			<components>
@@ -7279,9 +7134,9 @@
 						<property name="Caption" vt="String">&amp;File</property>
 					</properties>
 					<components>
-						<object type="TAMenuItem" name="menuItemExit">
+						<object type="TMenuItem" name="menuItemExit">
 							<properties>
-								<property name="Caption" vt="String">E&amp;xit</property>
+								<property name="Caption" vt="String">Exit</property>
 							</properties>
 							<components/>
 						</object>
@@ -7292,118 +7147,179 @@
 						<property name="Caption" vt="String">&amp;Config</property>
 					</properties>
 					<components>
-						<object type="TAMenuItem" name="menuItemTheme">
+						<object type="TMenuItem" name="menuItemLoad">
 							<properties>
-								<property name="Caption" vt="String">Theme</property>
-							</properties>
-							<components>
-								<object type="TAMenuItem" name="menuItemNone">
-									<properties>
-										<property name="Caption" vt="String">None</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemDefault">
-									<properties>
-										<property name="Caption" vt="String">Default</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemIron">
-									<properties>
-										<property name="Caption" vt="String">Iron</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemSteel">
-									<properties>
-										<property name="Caption" vt="String">Steel</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemGray">
-									<properties>
-										<property name="Caption" vt="String">Gray</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemDark">
-									<properties>
-										<property name="Caption" vt="String">Dark</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemBlack">
-									<properties>
-										<property name="Caption" vt="String">Black</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemAlloy">
-									<properties>
-										<property name="Caption" vt="String">Alloy</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemHex">
-									<properties>
-										<property name="Caption" vt="String">Hex</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemCore">
-									<properties>
-										<property name="Caption" vt="String">Core</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemFresco">
-									<properties>
-										<property name="Caption" vt="String">Fresco</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemSoft">
-									<properties>
-										<property name="Caption" vt="String">Soft</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemGreen">
-									<properties>
-										<property name="Caption" vt="String">Green</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemTeal">
-									<properties>
-										<property name="Caption" vt="String">Teal</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemOrange">
-									<properties>
-										<property name="Caption" vt="String">Orange</property>
-									</properties>
-									<components/>
-								</object>
-								<object type="TAMenuItem" name="menuItemRed">
-									<properties>
-										<property name="Caption" vt="String">Red</property>
-									</properties>
-									<components/>
-								</object>
-							</components>
-						</object>
-						<object type="TAMenuItem" name="menuItemLoad">
-							<properties>
-								<property name="Caption" vt="String">&amp;Load</property>
+								<property name="Caption" vt="String">Load</property>
 							</properties>
 							<components/>
 						</object>
-						<object type="TAMenuItem" name="menuItemSave">
+						<object type="TMenuItem" name="menuItemSave">
 							<properties>
-								<property name="Caption" vt="String">&amp;Save</property>
+								<property name="Caption" vt="String">Save</property>
+							</properties>
+							<components/>
+						</object>
+					</components>
+				</object>
+				<object type="TAMenuItem" name="menuItemTheme">
+					<properties>
+						<property name="Caption" vt="String">&amp;Themes</property>
+					</properties>
+					<components>
+						<object type="TMenuItem" name="menuItemNone">
+							<properties>
+								<property name="Caption" vt="String">None</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemDefault">
+							<properties>
+								<property name="Caption" vt="String">Default</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemIron">
+							<properties>
+								<property name="Caption" vt="String">Iron</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemSteel">
+							<properties>
+								<property name="Caption" vt="String">Steel</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemGray">
+							<properties>
+								<property name="Caption" vt="String">Gray</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemDark">
+							<properties>
+								<property name="Caption" vt="String">Dark</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemBlack">
+							<properties>
+								<property name="Caption" vt="String">Black</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemAlloy">
+							<properties>
+								<property name="Caption" vt="String">Alloy</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemHex">
+							<properties>
+								<property name="Caption" vt="String">Hex</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemCore">
+							<properties>
+								<property name="Caption" vt="String">Core</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemFresco">
+							<properties>
+								<property name="Caption" vt="String">Fresco</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemTeal">
+							<properties>
+								<property name="Caption" vt="String">Teal</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemSoft">
+							<properties>
+								<property name="Caption" vt="String">Soft</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemGreen">
+							<properties>
+								<property name="Caption" vt="String">Green</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemOrange">
+							<properties>
+								<property name="Caption" vt="String">Orange</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TMenuItem" name="menuItemRed">
+							<properties>
+								<property name="Caption" vt="String">Red</property>
+							</properties>
+							<components/>
+						</object>
+					</components>
+				</object>
+				<object type="TAMenuItem" name="menuLanguage">
+					<properties>
+						<property name="Caption" vt="String">&amp;Language</property>
+					</properties>
+					<components>
+						<object type="TAMenuItem" name="lngArabic">
+							<properties>
+								<property name="Caption" vt="String">&amp;Arabic</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngDeutsch">
+							<properties>
+								<property name="Caption" vt="String">&amp;Deutsch</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngEnglish">
+							<properties>
+								<property name="Caption" vt="String">&amp;English</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngFilipino">
+							<properties>
+								<property name="Caption" vt="String">&amp;Filipino</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngFrench">
+							<properties>
+								<property name="Caption" vt="String">&amp;French</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngPortuguese">
+							<properties>
+								<property name="Caption" vt="String">&amp;Portuguese</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngSpanish">
+							<properties>
+								<property name="Caption" vt="String">&amp;Spanish</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngTurkish">
+							<properties>
+								<property name="Caption" vt="String">&amp;Turkish</property>
+							</properties>
+							<components/>
+						</object>
+						<object type="TAMenuItem" name="lngVietnamese">
+							<properties>
+								<property name="Caption" vt="String">&amp;Vietnamese</property>
 							</properties>
 							<components/>
 						</object>
@@ -7414,9 +7330,9 @@
 						<property name="Caption" vt="String">&amp;Help</property>
 					</properties>
 					<components>
-						<object type="TAMenuItem" name="menuItemAbout">
+						<object type="TMenuItem" name="menuItemAbout">
 							<properties>
-								<property name="Caption" vt="String">&amp;About</property>
+								<property name="Caption" vt="String">About</property>
 							</properties>
 							<components/>
 						</object>
