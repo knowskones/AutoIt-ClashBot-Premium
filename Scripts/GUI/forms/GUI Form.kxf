@@ -7312,7 +7312,7 @@
 						</object>
 					</components>
 				</object>
-				<object type="TAMenuItem" name="menuItemTheme">
+				<object type="TAMenuItem" name="menuTheme">
 					<properties>
 						<property name="Caption" vt="String">&amp;Theme</property>
 					</properties>
@@ -7415,7 +7415,7 @@
 						</object>
 					</components>
 				</object>
-				<object type="TAMenuItem" name="MenuItem1">
+				<object type="TAMenuItem" name="menuLanguage">
 					<properties>
 						<property name="Caption" vt="String">&amp;Language</property>
 					</properties>
