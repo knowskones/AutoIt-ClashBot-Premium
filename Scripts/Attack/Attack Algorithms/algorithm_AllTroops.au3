@@ -3,12 +3,16 @@
 Func SetSleep($type)
 	Switch $type
 		Case 0
+			If $LoginType < 2 Then Return 10
+
 			If $iRandomspeedatk = 1 Then
 				Return Round(Random(1, 10)) * 10
 			Else
 				Return ($icmbUnitDelay + 1) * 10
 			EndIf
 		Case 1
+			If $LoginType < 2 Then Return 100
+
 			If $iRandomspeedatk = 1 Then
 				Return Round(Random(1, 10)) * 100
 			Else
@@ -471,7 +475,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	_CaptureRegion()
 	$hAttackBitmap = _GDIPlus_BitmapCloneArea($hBitmap, 0, 0, 860, 720, _GDIPlus_ImageGetPixelFormat($hBitmap))
 
-	If $ichkRedLine = 1 Then SeekEdges()
+	If $ichkRedLine = 1 And $LoginType = 2 Then SeekEdges()
 
 	$Barb = -1
 	$Arch = -1
@@ -500,6 +504,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 
 	If _Sleep(2000) Then Return
 	$attackTH = ($searchDead) ? $icmbDeadAttackTH : $icmbAttackTH
+	if $loginType < 2 Then $attackTH = 0
 	Local $OuterQuad
 	$OuterQuad = False
 	If $THquadrant >= 1 And $THquadrant <= 4 Then $OuterQuad = True

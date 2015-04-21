@@ -2,7 +2,7 @@ Global $wallbuild
 Global $walllowlevel
 
 Func UpgradeWall()
-	If GUICtrlRead($chkWalls_vip) <> $GUI_CHECKED Then
+	If GUICtrlRead($chkWalls_vip) <> $GUI_CHECKED Or $LoginType < 2 Then
 		SetLog("Upgrade Wall option disabled, skipping upgrading", $COLOR_RED)
 		ClickP($TopLeftClient) ; Click Away
 		Return

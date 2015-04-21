@@ -1,23 +1,5 @@
 Global $AuthTimer, $AuthConnected = True
 
-;#include "forms\Login Form.au3"
-
-Func LoginButton_Click()
-	GUICtrlSetState($btnLogin, $GUI_DISABLE)
-	GUICtrlSetData($btnLogin, "Authenticating...")
-
-	If GUICtrlRead($txtUsername) = "" Or GUICtrlRead($txtPassword) = "" Then
-		MsgBox(262160, "Error", "Please enter both your username and password.")
-		Return False
-	EndIf
-
-	$LoggedIn = Login(StringStripWS(GUICtrlRead($txtUsername), 3), StringStripWS(GUICtrlRead($txtPassword), 3))
-
-	GUICtrlSetState($btnLogin, $GUI_ENABLE)
-	GUICtrlSetData($btnLogin, "Login")
-	GUICtrlSetState($txtUsername, $GUI_FOCUS)
-EndFunc   ;==>LoginButton_Click
-
 Func AuthCheck()
 	Local $Username = "" ; GUICtrlRead($txtUsername) ; edit source of username here
 	Local $Password = "" ; GUICtrlRead($txtPassword) ; edit source of password here
@@ -72,41 +54,20 @@ Func SetAuthMode()
 		; Set controls for deploy speed options
 		Randomspeedatk()
 
+		SetLog("VIP Mode active.", $COLOR_GREEN)
 	Else ; Not VIP mode
 		; Disable vip controls
 		For $i = 0 To UBound($vipControls) - 1
 			GUICtrlSetState($vipControls[$i], $GUI_DISABLE)
 		Next
 
+		SetLog("No VIP access, premium features disabled", $COLOR_RED)
 	EndIf
 
-
+	If $LoginType = 0 Then
+		MsgBox(0, "Unregistered", "You are currently running unregistered, please visit our forums at http://clashbot.org and register for a free account to remove this message.")
+	EndIf
 EndFunc   ;==>SetAuthMode
-
-Func Login($Username, $Password)
-	Local $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
-	Local $POSTData = "u=" & URLEncode($Username) & "&p=" & URLEncode($Password)
-
-	$oHTTP.Open("POST", "https://clashbot.org/bot/validate_vip_status.php", False)
-	$oHTTP.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-	$oHTTP.Send($POSTData)
-
-	If $oHTTP.Status <> 200 Then
-		MsgBox(262160, "Error", "Unable to contact the login server.")
-		Return False
-	EndIf
-
-	If $oHTTP.ResponseText == "1" Then
-		Return True
-	ElseIf $oHTTP.ResponseText == "#denied#" Then
-		MsgBox(262160, "Error", "Invalid username and/or password.")
-		Return False
-	Else
-		MsgBox(262160, "Error", "You must purchase a VIP package, available in the store at http://clashbot.org/forums," _
-			& " to be able to run this premium bot release.")
-		Return False
-	EndIf
-EndFunc   ;==>Login
 
 Func URLEncode($urlText)
 	$url = ""

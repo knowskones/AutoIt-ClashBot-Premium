@@ -1067,6 +1067,11 @@ Func tabMain()
 	EndIf
 EndFunc   ;==>tabMain
 
+Func btnOptions()
+	GUISetState(@SW_DISABLE, $frmBot)
+	OptionsDialog()
+EndFunc
+
 Func btnExit()
 	_GDIPlus_Shutdown()
 	_GUICtrlRichEdit_Destroy($txtLog)

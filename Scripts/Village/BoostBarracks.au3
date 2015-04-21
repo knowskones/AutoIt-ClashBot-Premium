@@ -1,6 +1,6 @@
 ;==>BoostBarracks
 Func BoostBarracks()
-	If (GUICtrlRead($cmbBoostBarracks_vip) > 0) And ($boostsEnabled = 1) Then
+	If (GUICtrlRead($cmbBoostBarracks_vip) > 0) And ($boostsEnabled = 1) And $LoginType = 2 Then
 		If $barrackPos[0][0] < 1 Then
 			LocateBarrack()
 			SaveConfig()

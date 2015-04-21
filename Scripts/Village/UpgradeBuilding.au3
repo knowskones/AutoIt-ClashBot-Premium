@@ -1,4 +1,5 @@
 Func UpgradeBuilding()
+	If $LoginType < 2 Then Return
 	If $ichkUpgrade1 = 0 And $ichkUpgrade2 = 0 And $ichkUpgrade3 = 0 Then Return
 
 	If GUICtrlRead($txtUpgradeX1_vip) = "" And GUICtrlRead($txtUpgradeX2_vip) = "" And GUICtrlRead($txtUpgradeX3_vip) = "" Then
