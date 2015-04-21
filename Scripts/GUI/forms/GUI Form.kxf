@@ -7423,54 +7423,63 @@
 						<object type="TAMenuItem" name="MenuItem10">
 							<properties>
 								<property name="Caption" vt="String">Arabic</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem9">
 							<properties>
 								<property name="Caption" vt="String">Deutsch</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem8">
 							<properties>
 								<property name="Caption" vt="String">English</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem7">
 							<properties>
 								<property name="Caption" vt="String">Filipino</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem6">
 							<properties>
 								<property name="Caption" vt="String">French</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem5">
 							<properties>
 								<property name="Caption" vt="String">Portuguese</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem4">
 							<properties>
 								<property name="Caption" vt="String">Spanish</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem3">
 							<properties>
 								<property name="Caption" vt="String">Turkish</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
 						<object type="TAMenuItem" name="MenuItem2">
 							<properties>
 								<property name="Caption" vt="String">Vietnamese</property>
+								<property name="Enabled" vt="False">False</property>
 							</properties>
 							<components/>
 						</object>
