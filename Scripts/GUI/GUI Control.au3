@@ -1079,48 +1079,6 @@ Func btnExit()
 	Exit
 EndFunc   ;==>btnExit
 
-Func btnTheme()
-	Switch @GUI_CtrlId
-		Case $menuItemNone
-			$themePath = ""
-		Case $menuItemDefault
-			$themePath = @ScriptDir & "\Images\Skins\orange.msstyles"
-		Case $menuItemIron
-			$themePath = @ScriptDir & "\Images\Skins\gray0.msstyles"
-		Case $menuItemSteel
-			$themePath = @ScriptDir & "\Images\Skins\blue1.msstyles"
-		Case $menuItemGray
-			$themePath = @ScriptDir & "\Images\Skins\gray5.msstyles"
-		Case $menuItemDark
-			$themePath = @ScriptDir & "\Images\Skins\gray2.msstyles"
-		Case $menuItemBlack
-			$themePath = @ScriptDir & "\Images\Skins\dark0.msstyles"
-		Case $menuItemAlloy
-			$themePath = @ScriptDir & "\Images\Skins\aa.msstyles"
-		Case $menuItemHex
-			$themePath = @ScriptDir & "\Images\Skins\hex.msstyles"
-		Case $menuItemCore
-			$themePath = @ScriptDir & "\Images\Skins\core.msstyles"
-		Case $menuItemFresco
-			$themePath = @ScriptDir & "\Images\Skins\fresco.msstyles"
-		Case $menuItemSoft
-			$themePath = @ScriptDir & "\Images\Skins\gray4.msstyles"
-		Case $menuItemGreen
-			$themePath = @ScriptDir & "\Images\Skins\green.msstyles"
-		Case $menuItemTeal
-			$themePath = @ScriptDir & "\Images\Skins\blue.msstyles"
-		Case $menuItemOrange
-			$themePath = @ScriptDir & "\Images\Skins\orange2.msstyles"
-		Case $menuItemRed
-			$themePath = @ScriptDir & "\Images\Skins\red.msstyles"
-		Case Else
-			SetLog("Unknown Theme", $COLOR_RED)
-			Return
-	EndSwitch
-
-	ApplyTheme($themePath)
-EndFunc   ;==>btnTheme
-
 Func ApplyTheme($path)
 	If $path <> "" Then
 		If FileExists($path) Then

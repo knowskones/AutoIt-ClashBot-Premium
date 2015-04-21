@@ -38,7 +38,6 @@ GUISetState(@SW_SHOW)
 	GUICtrlSetOnEvent($btnOptOK, "btnOptOK")
 	GUICtrlSetOnEvent($btnOptApply, "OptApply")
 	GUICtrlSetOnEvent($btnOptCancel, "OptClose")
-	GUICtrlSetOnEvent($cmbOptTheme, "btnTheme")
 
 	GUICtrlSetData($txtOptUsername, $sUsername)
 	GUICtrlSetData($txtOptPassword, $sPassword)
@@ -49,6 +48,7 @@ GUISetState(@SW_SHOW)
 		GUICtrlSetState($chkOptSaveLogin, $GUI_UNCHECKED)
 	EndIf
 
+	_GUICtrlComboBox_SetCurSel($cmbOptTheme, $iTheme)
 EndFunc
 
 Func btnOptOK()
@@ -66,8 +66,7 @@ Func OptApply()
 		IniWrite($config, "login", "username", $sUsername)
 
 		_Crypt_Startup()
-		Local $hKey = @ComputerName
-		Local $sEncrypted = _Crypt_EncryptData($sPassword, $hKey, $CALG_AES_256)
+		Local $sEncrypted = _Crypt_EncryptData($sPassword, @ComputerName, $CALG_AES_256)
 		IniWrite($config, "login", "password", $sEncrypted)
 		_Crypt_Shutdown()
 	Else
@@ -78,6 +77,8 @@ Func OptApply()
 	EndIf
 
 	AuthCheck(False)
+
+	OptTheme()
 EndFunc
 
 Func OptClose()
@@ -86,3 +87,46 @@ Func OptClose()
 	GUISetState(@SW_ENABLE, $frmBot)
 	WinActivate($frmBot)
 EndFunc
+
+Func OptTheme()
+	$iTheme = _GUICtrlComboBox_GetCurSel($cmbOptTheme)
+	Switch $iTheme
+		Case 0
+			$themePath = ""
+		Case 1
+			$themePath = @ScriptDir & "\Images\Skins\orange.msstyles"
+		Case 2
+			$themePath = @ScriptDir & "\Images\Skins\gray0.msstyles"
+		Case 3
+			$themePath = @ScriptDir & "\Images\Skins\blue1.msstyles"
+		Case 4
+			$themePath = @ScriptDir & "\Images\Skins\gray5.msstyles"
+		Case 5
+			$themePath = @ScriptDir & "\Images\Skins\gray2.msstyles"
+		Case 6
+			$themePath = @ScriptDir & "\Images\Skins\dark0.msstyles"
+		Case 7
+			$themePath = @ScriptDir & "\Images\Skins\aa.msstyles"
+		Case 8
+			$themePath = @ScriptDir & "\Images\Skins\hex.msstyles"
+		Case 9
+			$themePath = @ScriptDir & "\Images\Skins\core.msstyles"
+		Case 10
+			$themePath = @ScriptDir & "\Images\Skins\fresco.msstyles"
+		Case 11
+			$themePath = @ScriptDir & "\Images\Skins\gray4.msstyles"
+		Case 12
+			$themePath = @ScriptDir & "\Images\Skins\green.msstyles"
+		Case 13
+			$themePath = @ScriptDir & "\Images\Skins\blue.msstyles"
+		Case 14
+			$themePath = @ScriptDir & "\Images\Skins\orange2.msstyles"
+		Case 15
+			$themePath = @ScriptDir & "\Images\Skins\red.msstyles"
+		Case Else
+			SetLog("Unknown Theme", $COLOR_RED)
+			Return
+	EndSwitch
+
+	ApplyTheme($themePath)
+EndFunc   ;==>btnTheme

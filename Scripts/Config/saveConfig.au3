@@ -353,6 +353,7 @@ Func saveConfig() ;Saves the controls settings to the config
 	;General Settings--------------------------------------------------------------------------
 	Local $frmBotPos = WinGetPos($sBotTitle)
 	IniWrite($config, "general", "theme", $themePath)
+	IniWrite($config, "general", "themeIndex", $iTheme)
 	IniWrite($config, "general", "frmBotPosX", $frmBotPos[0])
 	IniWrite($config, "general", "frmBotPosY", $frmBotPos[1])
 	IniWrite($config, "general", "MinTrophy", GUICtrlRead($txtMinimumTrophy))

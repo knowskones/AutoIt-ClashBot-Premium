@@ -9,8 +9,7 @@ Func readConfig() ;Reads config and sets it to the variables
 		If $bSaveLogin = 1 Then
 			$sUsername = IniRead($config, "login", "username", "")
 			_Crypt_Startup()
-			Local $hKey = @ComputerName
-			$sPassword = BinaryToString(_Crypt_DecryptData(IniRead($config, "login", "password", ""), $hKey, $CALG_AES_256))
+			$sPassword = BinaryToString(_Crypt_DecryptData(IniRead($config, "login", "password", ""), @ComputerName, $CALG_AES_256))
 			_Crypt_Shutdown()
 		EndIf
 
@@ -136,6 +135,7 @@ Func readConfig() ;Reads config and sets it to the variables
 		$itxtUpgradeY3 = IniRead($config, "other", "BuildUpgradeY3", "0")
 		;General Settings--------------------------------------------------------------------------
 		$themePath = IniRead($config, "general", "theme", @ScriptDir & "\skins\orange.msstyles")
+		$iTheme = IniRead($config, "general", "themeIndex", 1)
 		$frmBotPosX = IniRead($config, "general", "frmBotPosX", "207")
 		$frmBotPosY = IniRead($config, "general", "frmBotPosY", "158")
 		$itxtMinTrophy = IniRead($config, "general", "MinTrophy", "2000")

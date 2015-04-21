@@ -290,6 +290,7 @@ Global $frmBotPosX ; Position X of the GUI
 Global $frmBotPosY ; Position Y of the GUI
 Global $Hide = False ; If hidden or not
 Global $themePath = @ScriptDir & "\Images\Skins\orange.msstyles" ; Path to load theme from
+Global $iTheme
 
 Global $ichkBotStop, $icmbBotCommand, $icmbBotCond, $icmbHoursStop
 Global $CommandStop = -1
