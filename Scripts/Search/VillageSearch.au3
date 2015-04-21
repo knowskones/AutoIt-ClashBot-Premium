@@ -69,6 +69,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 				Click(750, 500) ;Click Next
 				GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
 				GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
+				ContinueLoop
 			EndIf
 		WEnd
 
