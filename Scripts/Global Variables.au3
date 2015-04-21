@@ -319,7 +319,6 @@ Global $FirstDarkTrain = True
 Global $FirstTrain = True
 Global $DCattack = False
 Global $Checkrearm = True
-Global $lblgoldnowM, $lblresultgoldnowM, $imggoldnowM, $lblelixirnowM, $lblresultelixirnowM, $imgelixirnowM, $lbldenowM, $lblresultdenowM, $imgdenowM
 Global $CheckDupGold1 = 0, $CheckDupElixir1 = 0, $CheckDupGold2 = 0, $CheckDupElixir2 = 0
 
 ;PushBullet

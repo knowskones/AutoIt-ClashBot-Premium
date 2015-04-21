@@ -24,7 +24,7 @@ Func SpellDarkStorage()
 	Next
 
 	If ($SDark - $itxtSpellDarkStorage >= 0) And ($DELocation = 1) And ($LSpell <> -1) Then
-		SetLog("Found Dark Storage at PosX: " & $DElixx & ", PosY: " & $DElixy & ", activate Lightning Skill", $COLOR_BLUE)
+		SetLog("Found Dark Storage at PosX: " & $DElixx & ", PosY: " & $DElixy & ", activate Lightning Spell", $COLOR_BLUE)
 		Click(68 + (72 * $LSpell), 595) ;Select Spell
 		If _Sleep(500) Then Return
 		Click($DElixx, $DElixy)

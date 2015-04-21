@@ -69,6 +69,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 				Click(750, 500) ;Click Next
 				GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
 				GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
+				ContinueLoop
 			EndIf
 		WEnd
 
@@ -98,8 +99,9 @@ Func CheckAttackStatus()
 	   SetLog("Attack other players is temporarily disabled, return to base after 60 seconds...", $COLOR_RED)
 	   If _Sleep(60000) Then Return
 	   Click(822, 48) ;Clicks X
-	   $DCattack = False
 	   $Restart = True
+	   $DCattack = False
+	   Return
 	EndIf
 EndFunc
 
