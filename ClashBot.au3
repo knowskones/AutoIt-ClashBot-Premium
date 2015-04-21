@@ -192,7 +192,7 @@ Func Idle() ;Sequence that runs until Full Army
 			   EndIf
 			EndIf
 		EndIf
-		If $CommandStop = 3 And $CurCamp < round($itxtcampCap/2) And GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
+		If $CommandStop = 3 And $CurCamp < round($itxtcampCap/3) And GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
 			SetLog("Army Camp is not Full, Continue Training", $COLOR_ORANGE)
 			$CommandStop = 0
 		EndIf
