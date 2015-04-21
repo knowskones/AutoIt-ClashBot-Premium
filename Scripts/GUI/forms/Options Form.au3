@@ -1,14 +1,15 @@
+#include <Crypt.au3>
 #include <ButtonConstants.au3>
 #include <ComboConstants.au3>
 #include <EditConstants.au3>
 #include <GUIConstantsEx.au3>
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
-Global $frmOptions
+Global $frmOptions, $txtOptUsername, $txtOptPassword, $chkOptSaveLogin, $cmbOptTheme, $cmbOptLanguage
 Func OptionsDialog()
 Opt("GUICloseOnESC", 0)
 #Region ### START Koda GUI section ### Form=Options Form.kxf
-$frmOptions = GUICreate("Options", 268, 293, -1, -1, BitOR($DS_MODALFRAME,$DS_SETFOREGROUND), BitOR($WS_EX_TOPMOST,$WS_EX_WINDOWEDGE), $frmBot)
+$frmOptions = GUICreate("Options", 268, 293, -1, -1, BitOR($DS_MODALFRAME,$DS_SETFOREGROUND), -1, $frmBot)
 $groupOptLogin = GUICtrlCreateGroup("", 8, 1, 249, 137)
 $txtOptUsername = GUICtrlCreateInput("", 88, 56, 150, 21)
 $lblOptUsername = GUICtrlCreateLabel("Username:", 24, 57, 55, 17)
@@ -39,21 +40,49 @@ GUISetState(@SW_SHOW)
 	GUICtrlSetOnEvent($btnOptCancel, "OptClose")
 	GUICtrlSetOnEvent($cmbOptTheme, "btnTheme")
 
-;	While 1
+	GUICtrlSetData($txtOptUsername, $sUsername)
+	GUICtrlSetData($txtOptPassword, $sPassword)
 
-;	WEnd
+	If $bSaveLogin = 1 Then
+		GUICtrlSetState($chkOptSaveLogin, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkOptSaveLogin, $GUI_UNCHECKED)
+	EndIf
+
 EndFunc
 
 Func btnOptOK()
+	OptApply()
 	OptClose()
 EndFunc
 
 Func OptApply()
-	OptClose()
+	$sUsername = GUICtrlRead($txtOptUsername)
+	$sPassword = GUICtrlRead($txtOptPassword)
+
+	If GUICtrlRead($chkOptSaveLogin) = $GUI_CHECKED Then
+		$bSaveLogin = 1
+		IniWrite($config, "login", "savelogin", 1)
+		IniWrite($config, "login", "username", $sUsername)
+
+		_Crypt_Startup()
+		Local $hKey = @ComputerName
+		Local $sEncrypted = _Crypt_EncryptData($sPassword, $hKey, $CALG_AES_256)
+		IniWrite($config, "login", "password", $sEncrypted)
+		_Crypt_Shutdown()
+	Else
+		$bSaveLogin = 0
+		IniWrite($config, "login", "savelogin", 0)
+		IniWrite($config, "login", "username", "")
+		IniWrite($config, "login", "password", "")
+	EndIf
+
+	AuthCheck(False)
 EndFunc
 
 Func OptClose()
 	Opt("GUICloseOnESC", 1)
 	GUIDelete($frmOptions)
 	GUISetState(@SW_ENABLE, $frmBot)
+	WinActivate($frmBot)
 EndFunc

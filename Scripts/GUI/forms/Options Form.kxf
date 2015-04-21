@@ -17,7 +17,7 @@
 		<property name="Visible" vt="True">True</property>
 		<property name="ParentForm" vt="String">frmBot</property>
 		<property name="Style" vt="Int32">339739264</property>
-		<property name="ExStyle" vt="Int16">264</property>
+		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
 		<property name="Description" vt="String">Options Form</property>
 		<property name="FormOptOnEvent" vt="False">False</property>

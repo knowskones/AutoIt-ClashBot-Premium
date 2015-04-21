@@ -1,7 +1,19 @@
+#include <Crypt.au3>
+
 ;Reads config file and sets variables
 
 Func readConfig() ;Reads config and sets it to the variables
 	If FileExists($config) Then
+		;Option settings------------------------------------------------------------------------
+		$bSaveLogin = IniRead($config, "login", "savelogin", "0")
+		If $bSaveLogin = 1 Then
+			$sUsername = IniRead($config, "login", "username", "")
+			_Crypt_Startup()
+			Local $hKey = @ComputerName
+			$sPassword = BinaryToString(_Crypt_DecryptData(IniRead($config, "login", "password", ""), $hKey, $CALG_AES_256))
+			_Crypt_Shutdown()
+		EndIf
+
 		;Search Settings------------------------------------------------------------------------
 		$MinDeadGold = IniRead($config, "search", "searchDeadGold", "50000")
 		$MinDeadElixir = IniRead($config, "search", "searchDeadElixir", "50000")

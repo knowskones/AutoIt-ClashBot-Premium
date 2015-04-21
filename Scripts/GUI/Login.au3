@@ -1,14 +1,11 @@
 Global $AuthTimer, $AuthConnected = True
 
-Func AuthCheck()
-	Local $Username = "" ; GUICtrlRead($txtUsername) ; edit source of username here
-	Local $Password = "" ; GUICtrlRead($txtPassword) ; edit source of password here
-
-	If $Username = "" Or $Password = "" Then
+Func AuthCheck($unregPopup = True)
+	If $sUsername = "" Or $sPassword = "" Then
 		$LoginType = 0 ; Unregistered mode
 	Else
 		Local $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
-		Local $POSTData = "u=" & URLEncode($Username) & "&p=" & URLEncode($Password)
+		Local $POSTData = "u=" & URLEncode($sUsername) & "&p=" & URLEncode($sPassword)
 
 		$oHTTP.Open("POST", "https://clashbot.org/bot/validate_vip_status.php", False)
 		$oHTTP.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
@@ -41,10 +38,10 @@ Func AuthCheck()
 	EndIf
 
 	AdlibRegister("AuthCheck", 3600000)
-	SetAuthMode()
+	SetAuthMode($unregPopup)
 EndFunc   ;==>AuthCheck
 
-Func SetAuthMode()
+Func SetAuthMode($unregPopup = True)
 	If $LoginType = 2 Then ; VIP mode
 		; Enable vip controls
 		For $i = 0 To UBound($vipControls) - 1
@@ -64,7 +61,7 @@ Func SetAuthMode()
 		SetLog("No VIP access, premium features disabled", $COLOR_RED)
 	EndIf
 
-	If $LoginType = 0 Then
+	If $LoginType = 0 And $unregPopup Then
 		MsgBox(0, "Unregistered", "You are currently running unregistered, please visit our forums at http://clashbot.org and register for a free account to remove this message.")
 	EndIf
 EndFunc   ;==>SetAuthMode
