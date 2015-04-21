@@ -33,8 +33,6 @@ _Uskin_LoadDLL()
 _USkin_Init(@ScriptDir & "\Images\Skins\orange.msstyles")
 #include "Scripts\Global Variables.au3"
 #include "Scripts\Global Includes.au3"
-#include "Scripts\GUI\Login.au3"
-#include "Scripts\GUI\forms\Options Form.au3"
 #include "Scripts\GUI\forms\GUI Form.au3"
 #include "Scripts\GUI\GUI Control.au3"
 #include-once

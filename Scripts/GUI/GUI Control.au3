@@ -1072,6 +1072,11 @@ Func btnOptions()
 	OptionsDialog()
 EndFunc
 
+Func btnAbout()
+	GUISetState(@SW_DISABLE, $frmBot)
+	AboutDialog()
+EndFunc
+
 Func btnExit()
 	_GDIPlus_Shutdown()
 	_GUICtrlRichEdit_Destroy($txtLog)

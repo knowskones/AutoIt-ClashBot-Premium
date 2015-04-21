@@ -1,3 +1,7 @@
+#include "GUI\Login.au3"
+#include "GUI\forms\Options Form.au3"
+#include "GUI\forms\About Form.au3"
+
 #include "Attack\dropCC.au3"
 #include "Attack\dropHeroes.au3"
 #include "Attack\GoldElixirChange.au3"

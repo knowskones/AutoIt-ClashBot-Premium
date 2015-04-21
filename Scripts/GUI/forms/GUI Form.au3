@@ -5,6 +5,7 @@
 #include <StaticConstants.au3>
 #include <TabConstants.au3>
 #include <WindowsConstants.au3>
+Opt("GUICloseOnESC", 0)
 Opt("GUIOnEventMode", 1)
 Opt("MouseClickDelay", 10)
 Opt("MouseClickDownDelay", 10)
@@ -810,6 +811,7 @@ GUICtrlSetOnEvent($menuItemExit, "btnExit")
 GUICtrlSetOnEvent($menuItemLoad, "btnLoadConfig")
 GUICtrlSetOnEvent($menuItemSave, "btnSaveConfig")
 GUICtrlSetOnEvent($menuItemOptions, "btnOptions")
+GUICtrlSetOnEvent($menuItemAbout, "btnAbout")
 GUICtrlSetOnEvent($tabMain, "tabMain")
 GUICtrlSetOnEvent($btnStart, "btnStart")
 GUICtrlSetOnEvent($btnStop, "btnStop")
