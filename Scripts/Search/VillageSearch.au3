@@ -42,7 +42,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			GUICtrlSetState($btnAtkNow, $GUI_ENABLE)
 			GetResources() ;Reads Resource Values
 
-			If $Restart = True Then Return
+			If $Restart = True Then ExitLoop (2)
 
 			If $TakeAllTownSnapShot = 1 Then
 				Local $Date = @MDAY & "." & @MON & "." & @YEAR
@@ -101,7 +101,7 @@ Func CheckAttackStatus()
 	   Click(822, 48) ;Clicks X
 	   $Restart = True
 	   $DCattack = False
-	   Return
+	   ExitLoop (2)
 	EndIf
 EndFunc
 
