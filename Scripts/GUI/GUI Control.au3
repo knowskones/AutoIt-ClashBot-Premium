@@ -169,10 +169,10 @@ Func Initiate()
 		GUICtrlSetData($lblresultelixirgain, 0)
 		GUICtrlSetData($lblresultdegain, 0)
 		GUICtrlSetData($lblresulttrophiesdropped, 0)
-		GUICtrlSetData($GoldGained, 0)
-		GUICtrlSetData($ElixirGained, 0)
-		GUICtrlSetData($DarkGained, 0)
-		GUICtrlSetData($TrophyGained, 0)
+		$GoldGained = 0
+		$ElixirGained = 0
+		$DarkGained = 0
+		$TrophyGained = 0
 		$sTimer = TimerInit()
 		AdlibRegister("SetTime", 1000)
 		If $PushBulletinterval <> 0 Then
