@@ -6,6 +6,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 	_WinAPI_EmptyWorkingSet(WinGetProcess($Title)) ; Reduce BlueStacks Memory Usage
 
     If _ColorCheck(_GetPixelColor(287, 494), Hex(0xEEAC28, 6), 50) Then CheckAttackStatus()
+    If $Restart = True Then Return
 
 	$AtkDeadEnabled = False
 	$AtkAnyEnabled = False
