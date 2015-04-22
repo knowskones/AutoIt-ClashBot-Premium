@@ -91,7 +91,7 @@ Func runBot() ;Bot that runs everything in order
 				checkMainScreen(False)
 				$Checkrearm = False
 			EndIf
-			DonateCC()
+			DonateCC(False)
 			If _Sleep(1000) Then Return
 			checkMainScreen(False)
 			If $CommandStop <> 0 And $CommandStop <> 3 Then
