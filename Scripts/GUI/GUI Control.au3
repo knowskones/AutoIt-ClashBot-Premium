@@ -32,7 +32,7 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					chkBlacklist()
 				Case $tabMain
 					tabMain()
-				Case $chkRandomSpeedAtk
+				Case $chkRandomSpeedAtk_vip
 					Randomspeedatk()
 				Case $chkNoAttack
 					If GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
@@ -44,14 +44,14 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					EndIf
 				Case $chkMeetGE
 					If GUICtrlRead($chkMeetGE) = $GUI_UNCHECKED Then
-						GUICtrlSetState($chkSpellDarkStorage, $GUI_UNCHECKED)
-						GUICtrlSetState($chkSpellDarkStorage, $GUI_DISABLE)
-						GUICtrlSetState($chkMultiLight, $GUI_UNCHECKED)
-						GUICtrlSetState($chkMultiLight, $GUI_DISABLE)
-					ElseIf GUICtrlRead($chkMeetGE) = $GUI_CHECKED Then
-						GUICtrlSetState($chkSpellDarkStorage, $GUI_ENABLE)
+						GUICtrlSetState($chkSpellDarkStorage_vip, $GUI_UNCHECKED)
+						GUICtrlSetState($chkSpellDarkStorage_vip, $GUI_DISABLE)
+						GUICtrlSetState($chkMultiLight_vip, $GUI_UNCHECKED)
+						GUICtrlSetState($chkMultiLight_vip, $GUI_DISABLE)
+					ElseIf GUICtrlRead($chkMeetGE) = $GUI_CHECKED And $LoginType = 2 Then
+						GUICtrlSetState($chkSpellDarkStorage_vip, $GUI_ENABLE)
 					EndIf
-				Case $chkSpellDarkStorage
+				Case $chkSpellDarkStorage_vip
 					chkSpellDarkStorage()
 				Case $chkKeepLogs
 					chkKeepLogs()
@@ -88,7 +88,7 @@ Func SetTime()
 EndFunc   ;==>SetTime
 
 Func SetTimeRC()
-	If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushBulletRemote) = $GUI_CHECKED Then
+	If PushBulletEnabled() And GUICtrlRead($chkPushBulletRemote_vip) = $GUI_CHECKED Then
 		_RemoteControl()
 	EndIf
 EndFunc   ;==>SetTimeRC
@@ -128,7 +128,7 @@ Func Initiate()
 		SetLog($Compiled & " running on " & @OSArch & " OS", $COLOR_GREEN)
 		SetLog("Bot is starting...", $COLOR_ORANGE)
 
-		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushBulletDelete) = $GUI_CHECKED Then
+		If PushBulletEnabled() And GUICtrlRead($chkPushBulletDelete_vip) = $GUI_CHECKED Then
 			_DeletePush()
 		EndIf
 
@@ -156,11 +156,11 @@ Func Initiate()
 		GUICtrlSetState($menuItemRed, $GUI_DISABLE)
 		GUICtrlSetState($menuItemLoad, $GUI_DISABLE)
 		GUICtrlSetState($menuItemSave, $GUI_DISABLE)
-		GUICtrlSetState($cmbBoostBarracks, $GUI_DISABLE)
+		GUICtrlSetState($cmbBoostBarracks_vip, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateCamp, $GUI_DISABLE)
-		GUICtrlSetState($btnFindWall, $GUI_DISABLE)
+		GUICtrlSetState($btnFindWall_vip, $GUI_DISABLE)
 		GUICtrlSetState($btnSearchMode, $GUI_DISABLE)
 		GUICtrlSetState($cmbTroopComp, $GUI_DISABLE)
 		GUICtrlSetState($chkBackground, $GUI_DISABLE)
@@ -174,9 +174,9 @@ Func Initiate()
 		GUICtrlSetState($btnLocateQueenAltar, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateClanCastle2, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateSFactory, $GUI_DISABLE)
-		GUICtrlSetState($btnLocateUp1, $GUI_DISABLE)
-		GUICtrlSetState($btnLocateUp2, $GUI_DISABLE)
-		GUICtrlSetState($btnLocateUp3, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateUp1_vip, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateUp2_vip, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateUp3_vip, $GUI_DISABLE)
 		$sTimer = TimerInit()
 		AdlibRegister("SetTime", 1000)
 		If $PushBulletinterval <> 0 Then
@@ -220,7 +220,7 @@ Func Check()
 EndFunc   ;==>Check
 
 Func btnStart()
-	If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($txtPushBulletTokenValue) = "" Then
+	If PushBulletEnabled() And GUICtrlRead($txtPushBulletTokenValue_vip) = "" Then
 		SetLog("Please set PushBullet account token")
 		Return
 	EndIf
@@ -282,10 +282,6 @@ Func btnStop()
 		GUICtrlSetState($btnLocateQueenAltar, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateCamp, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateSFactory, $GUI_ENABLE)
-		GUICtrlSetState($btnLocateUp1, $GUI_ENABLE)
-		GUICtrlSetState($btnLocateUp2, $GUI_ENABLE)
-		GUICtrlSetState($btnLocateUp3, $GUI_ENABLE)
-		GUICtrlSetState($btnFindWall, $GUI_ENABLE)
 		GUICtrlSetState($chkBackground, $GUI_ENABLE)
 		GUICtrlSetState($chkNoAttack, $GUI_ENABLE)
 		GUICtrlSetState($chkDonateOnly, $GUI_ENABLE)
@@ -294,12 +290,19 @@ Func btnStop()
 		GUICtrlSetState($cmbRaidcap, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateClanCastle2, $GUI_ENABLE)
 		GUICtrlSetState($chkBackground, $GUI_ENABLE)
-		GUICtrlSetState($cmbBoostBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnAtkNow, $GUI_DISABLE)
 		GUICtrlSetState($btnStart, $GUI_SHOW)
 		GUICtrlSetState($btnStop, $GUI_HIDE)
 		GUICtrlSetState($btnPause, $GUI_HIDE)
 		GUICtrlSetData($btnPause, "Pause")
+
+		If ($LoginType = 2) Then ; enable VIP features
+			GUICtrlSetState($btnFindWall_vip, $GUI_ENABLE)
+			GUICtrlSetState($btnLocateUp1_vip, $GUI_ENABLE)
+			GUICtrlSetState($btnLocateUp2_vip, $GUI_ENABLE)
+			GUICtrlSetState($btnLocateUp3_vip, $GUI_ENABLE)
+			GUICtrlSetState($cmbBoostBarracks_vip, $GUI_ENABLE)
+		EndIf
 
 		AdlibUnRegister("SetTime")
 		AdlibUnRegister("SetTimeRC")
@@ -431,10 +434,10 @@ EndFunc   ;==>btnLocateUp3
 
 Func btnFindWall()
 	$RunState = True
-	GUICtrlSetState($chkWalls, $GUI_DISABLE)
-	GUICtrlSetState($UseGold, $GUI_DISABLE)
-	GUICtrlSetState($UseElixir, $GUI_DISABLE)
-	GUICtrlSetState($UseGoldElix, $GUI_DISABLE)
+	GUICtrlSetState($chkWalls_vip, $GUI_DISABLE)
+	GUICtrlSetState($UseGold_vip, $GUI_DISABLE)
+	GUICtrlSetState($UseElixir_vip, $GUI_DISABLE)
+	GUICtrlSetState($UseGoldElix_vip, $GUI_DISABLE)
 	While 1
 		SaveConfig()
 		readConfig()
@@ -451,10 +454,10 @@ Func btnFindWall()
 
 		ExitLoop
 	WEnd
-	GUICtrlSetState($chkWalls, $GUI_ENABLE)
-	GUICtrlSetState($UseGold, $GUI_ENABLE)
-	GUICtrlSetState($UseElixir, $GUI_ENABLE)
-	GUICtrlSetState($UseGoldElix, $GUI_ENABLE)
+	GUICtrlSetState($chkWalls_vip, $GUI_ENABLE)
+	GUICtrlSetState($UseGold_vip, $GUI_ENABLE)
+	GUICtrlSetState($UseElixir_vip, $GUI_ENABLE)
+	GUICtrlSetState($UseGoldElix_vip, $GUI_ENABLE)
 	$RunState = False
 EndFunc   ;==>btnFindWall
 
@@ -506,10 +509,10 @@ Func btnSearchMode()
 		GUICtrlSetState($btnLocateQueenAltar, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateCamp, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateSFactory, $GUI_DISABLE)
-		GUICtrlSetState($btnLocateUp1, $GUI_DISABLE)
-		GUICtrlSetState($btnLocateUp2, $GUI_DISABLE)
-		GUICtrlSetState($btnLocateUp3, $GUI_DISABLE)
-		GUICtrlSetState($btnFindWall, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateUp1_vip, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateUp2_vip, $GUI_DISABLE)
+		GUICtrlSetState($btnLocateUp3_vip, $GUI_DISABLE)
+		GUICtrlSetState($btnFindWall_vip, $GUI_DISABLE)
 		GUICtrlSetState($btnSearchMode, $GUI_DISABLE)
 		GUICtrlSetState($cmbTroopComp, $GUI_DISABLE)
 		GUICtrlSetState($chkBackground, $GUI_DISABLE)
@@ -529,14 +532,16 @@ Func btnSearchMode()
 		GUICtrlSetState($btnLocateQueenAltar, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateCamp, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateSFactory, $GUI_ENABLE)
-		GUICtrlSetState($btnLocateUp1, $GUI_ENABLE)
-		GUICtrlSetState($btnLocateUp2, $GUI_ENABLE)
-		GUICtrlSetState($btnLocateUp3, $GUI_ENABLE)
-		GUICtrlSetState($btnFindWall, $GUI_ENABLE)
 		GUICtrlSetState($btnSearchMode, $GUI_ENABLE)
 		GUICtrlSetState($cmbTroopComp, $GUI_ENABLE)
 		GUICtrlSetState($chkBackground, $GUI_ENABLE)
 		GUICtrlSetState($chkForceBS, $GUI_ENABLE)
+		If $LoginType = 2 Then ; enable VIP features
+			GUICtrlSetState($btnFindWall_vip, $GUI_ENABLE)
+			GUICtrlSetState($btnLocateUp1_vip, $GUI_ENABLE)
+			GUICtrlSetState($btnLocateUp2_vip, $GUI_ENABLE)
+			GUICtrlSetState($btnLocateUp3_vip, $GUI_ENABLE)
+		EndIf
 		ExitLoop
 	WEnd
 EndFunc   ;==>btnSearchMode
@@ -969,7 +974,7 @@ EndFunc   ;==>chkBackground
 
 Func chkNoAttack()
 	If GUICtrlRead($chkNoAttack) = $GUI_CHECKED Then
-		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
+		If PushBulletEnabled() Then
 			SetLog("Please disable PushBullet if you intend to use donate only mode")
 			GUICtrlSetState($chkNoAttack, $GUI_UNCHECKED)
 		Else
@@ -977,7 +982,7 @@ Func chkNoAttack()
 			SetLog("~~~Donate / Train Only Activated~~~", $COLOR_PURPLE)
 		EndIf
 	ElseIf GUICtrlRead($chkDonateOnly) = $GUI_CHECKED Then
-		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED Then
+		If PushBulletEnabled() Then
 			SetLog("Please disable PushBullet if you intend to do donate only mode")
 			GUICtrlSetState($chkDonateOnly, $GUI_UNCHECKED)
 		Else
@@ -1020,14 +1025,16 @@ Func chkBlacklist()
 EndFunc   ;==>chkBlacklist
 
 Func Randomspeedatk()
-	If GUICtrlRead($chkRandomSpeedAtk) = $GUI_CHECKED Then
-		$iRandomspeedatk = 1
-		GUICtrlSetState($cmbUnitDelay, $GUI_DISABLE)
-		GUICtrlSetState($cmbWaveDelay, $GUI_DISABLE)
-	Else
-		$iRandomspeedatk = 0
-		GUICtrlSetState($cmbUnitDelay, $GUI_ENABLE)
-		GUICtrlSetState($cmbWaveDelay, $GUI_ENABLE)
+	If $LoginType = 2 Then
+		If GUICtrlRead($chkRandomSpeedAtk_vip) = $GUI_CHECKED Then
+			$iRandomspeedatk = 1
+			GUICtrlSetState($cmbUnitDelay_vip, $GUI_DISABLE)
+			GUICtrlSetState($cmbWaveDelay_vip, $GUI_DISABLE)
+		Else
+			$iRandomspeedatk = 0
+			GUICtrlSetState($cmbUnitDelay_vip, $GUI_ENABLE)
+			GUICtrlSetState($cmbWaveDelay_vip, $GUI_ENABLE)
+		EndIf
 	EndIf
 EndFunc   ;==>Randomspeedatk
 
@@ -1042,13 +1049,13 @@ Func chkKeepLogs()
 EndFunc   ;==>chkKeepLogs
 
 Func chkSpellDarkStorage()
-	If GUICtrlRead($chkSpellDarkStorage) = $GUI_UNCHECKED Then
+	If GUICtrlRead($chkSpellDarkStorage_vip) = $GUI_UNCHECKED Then
 		$SpellDarkStorage = 0
-		GUICtrlSetState($chkMultiLight, $GUI_UNCHECKED)
-		GUICtrlSetState($chkMultiLight, $GUI_DISABLE)
-	ElseIf GUICtrlRead($chkSpellDarkStorage) = $GUI_CHECKED Then
+		GUICtrlSetState($chkMultiLight_vip, $GUI_UNCHECKED)
+		GUICtrlSetState($chkMultiLight_vip, $GUI_DISABLE)
+	ElseIf GUICtrlRead($chkSpellDarkStorage_vip) = $GUI_CHECKED Then
 		$SpellDarkStorage = 1
-		GUICtrlSetState($chkMultiLight, $GUI_ENABLE)
+		If $LoginType = 2 Then GUICtrlSetState($chkMultiLight_vip, $GUI_ENABLE)
 	EndIf
 EndFunc
 
@@ -1060,54 +1067,22 @@ Func tabMain()
 	EndIf
 EndFunc   ;==>tabMain
 
+Func btnOptions()
+	GUISetState(@SW_DISABLE, $frmBot)
+	OptionsDialog()
+EndFunc
+
+Func btnAbout()
+	GUISetState(@SW_DISABLE, $frmBot)
+	AboutDialog()
+EndFunc
+
 Func btnExit()
 	_GDIPlus_Shutdown()
 	_GUICtrlRichEdit_Destroy($txtLog)
 	SaveConfig()
 	Exit
 EndFunc   ;==>btnExit
-
-Func btnTheme()
-	Switch @GUI_CtrlId
-		Case $menuItemNone
-			$themePath = ""
-		Case $menuItemDefault
-			$themePath = @ScriptDir & "\Images\Skins\orange.msstyles"
-		Case $menuItemIron
-			$themePath = @ScriptDir & "\Images\Skins\gray0.msstyles"
-		Case $menuItemSteel
-			$themePath = @ScriptDir & "\Images\Skins\blue1.msstyles"
-		Case $menuItemGray
-			$themePath = @ScriptDir & "\Images\Skins\gray5.msstyles"
-		Case $menuItemDark
-			$themePath = @ScriptDir & "\Images\Skins\gray2.msstyles"
-		Case $menuItemBlack
-			$themePath = @ScriptDir & "\Images\Skins\dark0.msstyles"
-		Case $menuItemAlloy
-			$themePath = @ScriptDir & "\Images\Skins\aa.msstyles"
-		Case $menuItemHex
-			$themePath = @ScriptDir & "\Images\Skins\hex.msstyles"
-		Case $menuItemCore
-			$themePath = @ScriptDir & "\Images\Skins\core.msstyles"
-		Case $menuItemFresco
-			$themePath = @ScriptDir & "\Images\Skins\fresco.msstyles"
-		Case $menuItemSoft
-			$themePath = @ScriptDir & "\Images\Skins\gray4.msstyles"
-		Case $menuItemGreen
-			$themePath = @ScriptDir & "\Images\Skins\green.msstyles"
-		Case $menuItemTeal
-			$themePath = @ScriptDir & "\Images\Skins\blue.msstyles"
-		Case $menuItemOrange
-			$themePath = @ScriptDir & "\Images\Skins\orange2.msstyles"
-		Case $menuItemRed
-			$themePath = @ScriptDir & "\Images\Skins\red.msstyles"
-		Case Else
-			SetLog("Unknown Theme", $COLOR_RED)
-			Return
-	EndSwitch
-
-	ApplyTheme($themePath)
-EndFunc   ;==>btnTheme
 
 Func ApplyTheme($path)
 	If $path <> "" Then

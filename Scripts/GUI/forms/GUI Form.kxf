@@ -15,6 +15,7 @@
 		<property name="Menu" vt="Ident">AMenu1</property>
 		<property name="OldCreateOrder" vt="True">True</property>
 		<property name="Position" vt="Ident">poDesktopCenter</property>
+		<property name="Visible" vt="True">True</property>
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
@@ -1590,13 +1591,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbDeadAttackTH">
+								<object type="TACombo" name="cmbDeadAttackTH_vip">
 									<properties>
 										<property name="Left" vt="Int16">445</property>
 										<property name="Top" vt="Int8">54</property>
 										<property name="Width" vt="Int16">145</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="Hint" vt="String">Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
@@ -1725,13 +1727,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbAttackTH">
+								<object type="TACombo" name="cmbAttackTH_vip">
 									<properties>
 										<property name="Left" vt="Int16">445</property>
 										<property name="Top" vt="Int8">54</property>
 										<property name="Width" vt="Int16">145</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="Hint" vt="String">Troops can either not focus on townhall, send a single wave of archers and barbarians at the townhall, or focus all troops on townhall</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">5</property>
@@ -1780,12 +1783,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbUnitDelay">
+								<object type="TACombo" name="cmbUnitDelay_vip">
 									<properties>
 										<property name="Left" vt="Int8">80</property>
 										<property name="Top" vt="Int8">25</property>
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">25</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">1</property>
@@ -1826,12 +1830,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbWaveDelay">
+								<object type="TACombo" name="cmbWaveDelay_vip">
 									<properties>
 										<property name="Left" vt="Int8">80</property>
 										<property name="Top" vt="Int8">55</property>
 										<property name="Width" vt="Int8">50</property>
 										<property name="Height" vt="Int8">25</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">5</property>
 										<property name="TabOrder" vt="Int8">3</property>
@@ -1856,13 +1861,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkRandomSpeedAtk">
+								<object type="TACheckbox" name="chkRandomSpeedAtk_vip">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
 										<property name="Top" vt="Int8">83</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Random Speeds!!</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -3879,13 +3885,14 @@
 								<property name="Resizing" vt="Set"/>
 							</properties>
 							<components>
-								<object type="TACheckbox" name="chkWalls">
+								<object type="TACheckbox" name="chkWalls_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">22</property>
 										<property name="Width" vt="Int8">110</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Auto Wall Upgrade</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -3893,7 +3900,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TARadio" name="UseGold">
+								<object type="TARadio" name="UseGold_vip">
 									<properties>
 										<property name="Left" vt="Int8">20</property>
 										<property name="Top" vt="Int8">47</property>
@@ -3901,6 +3908,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Use Only Gold</property>
 										<property name="Checked" vt="True">True</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">1</property>
 										<property name="TabStop" vt="True">True</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
@@ -3926,13 +3934,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtWallMinGold">
+								<object type="TAInput" name="txtWallMinGold_vip">
 									<properties>
 										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">72</property>
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Gold storage to perform the upgrade</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">1300000</property>
@@ -3942,13 +3951,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TARadio" name="UseElixir">
+								<object type="TARadio" name="UseElixir_vip">
 									<properties>
 										<property name="Left" vt="Int8">20</property>
 										<property name="Top" vt="Int8">72</property>
 										<property name="Width" vt="Int8">115</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Use Only Elixir</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -3973,13 +3983,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtWallMinElixir">
+								<object type="TAInput" name="txtWallMinElixir_vip">
 									<properties>
 										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">97</property>
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Elixir storage to perform the upgrade</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">1300000</property>
@@ -3989,13 +4000,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TARadio" name="UseGoldElix">
+								<object type="TARadio" name="UseGoldElix_vip">
 									<properties>
 										<property name="Left" vt="Int8">20</property>
 										<property name="Top" vt="Int8">97</property>
 										<property name="Width" vt="Int16">150</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Use Gold and then Elixir</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4019,12 +4031,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbWalls">
+								<object type="TACombo" name="cmbWalls_vip">
 									<properties>
 										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">20</property>
-										<property name="Width" vt="Int8">40</property>
+										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">9</property>
@@ -4062,12 +4075,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbTolerance">
+								<object type="TACombo" name="cmbTolerance_vip">
 									<properties>
 										<property name="Left" vt="Int16">390</property>
 										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">11</property>
@@ -4085,13 +4099,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAButton" name="btnFindWall">
+								<object type="TAButton" name="btnFindWall_vip">
 									<properties>
 										<property name="Left" vt="Int8">125</property>
 										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">63</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="Caption" vt="String">Find Wall</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="Color" vt="Ident">clBtnFace</property>
 										<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -4115,13 +4130,14 @@
 								<property name="Resizing" vt="Set"/>
 							</properties>
 							<components>
-								<object type="TACheckbox" name="chkUpgrade1">
+								<object type="TACheckbox" name="chkUpgrade1_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">17</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Upgrade 1 :</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">0</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4145,12 +4161,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtUpgradeX1">
+								<object type="TAInput" name="txtUpgradeX1_vip">
 									<properties>
 										<property name="Left" vt="Int16">132</property>
 										<property name="Top" vt="Int8">14</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">2</property>
 										<property name="CtrlStyle" vt="Int32">1342384257</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4174,12 +4191,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtUpgradeY1">
+								<object type="TAInput" name="txtUpgradeY1_vip">
 									<properties>
 										<property name="Left" vt="Int16">215</property>
 										<property name="Top" vt="Int8">14</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="CtrlStyle" vt="Int32">1342384257</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4187,13 +4205,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAButton" name="btnLocateUp1">
+								<object type="TAButton" name="btnLocateUp1_vip">
 									<properties>
 										<property name="Left" vt="Int16">265</property>
 										<property name="Top" vt="Int8">14</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="Caption" vt="String">Locate Building 1</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Color" vt="Ident">clBtnFace</property>
 										<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -4202,13 +4221,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkUpgrade2">
+								<object type="TACheckbox" name="chkUpgrade2_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">47</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Upgrade 2 :</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4232,12 +4252,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtUpgradeX2">
+								<object type="TAInput" name="txtUpgradeX2_vip">
 									<properties>
 										<property name="Left" vt="Int16">132</property>
 										<property name="Top" vt="Int8">44</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="CtrlStyle" vt="Int32">1342384257</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4261,12 +4282,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtUpgradeY2">
+								<object type="TAInput" name="txtUpgradeY2_vip">
 									<properties>
 										<property name="Left" vt="Int16">215</property>
 										<property name="Top" vt="Int8">44</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="CtrlStyle" vt="Int32">1342384257</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4274,13 +4296,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAButton" name="btnLocateUp2">
+								<object type="TAButton" name="btnLocateUp2_vip">
 									<properties>
 										<property name="Left" vt="Int16">265</property>
 										<property name="Top" vt="Int8">44</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="Caption" vt="String">Locate Building 2</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">11</property>
 										<property name="Color" vt="Ident">clBtnFace</property>
 										<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -4289,13 +4312,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkUpgrade3">
+								<object type="TACheckbox" name="chkUpgrade3_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">77</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Upgrade 3 :</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">12</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4319,12 +4343,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtUpgradeX3">
+								<object type="TAInput" name="txtUpgradeX3_vip">
 									<properties>
 										<property name="Left" vt="Int16">132</property>
 										<property name="Top" vt="Int8">74</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">14</property>
 										<property name="CtrlStyle" vt="Int32">1342384257</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4348,12 +4373,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtUpgradeY3">
+								<object type="TAInput" name="txtUpgradeY3_vip">
 									<properties>
 										<property name="Left" vt="Int16">215</property>
 										<property name="Top" vt="Int8">74</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">16</property>
 										<property name="CtrlStyle" vt="Int32">1342384257</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -4361,13 +4387,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAButton" name="btnLocateUp3">
+								<object type="TAButton" name="btnLocateUp3_vip">
 									<properties>
 										<property name="Left" vt="Int16">265</property>
 										<property name="Top" vt="Int8">74</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="Caption" vt="String">Locate Building 3</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">17</property>
 										<property name="Color" vt="Ident">clBtnFace</property>
 										<property name="CtrlStyle" vt="Int32">1342373888</property>
@@ -4410,13 +4437,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtBldgMinGold">
+								<object type="TAInput" name="txtBldgMinGold_vip">
 									<properties>
 										<property name="Left" vt="Int16">385</property>
 										<property name="Top" vt="Int8">32</property>
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Gold storage to perform Building upgrade</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">20</property>
 										<property name="Text" vt="String">1300000</property>
@@ -4426,13 +4454,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtBldgMinElixir">
+								<object type="TAInput" name="txtBldgMinElixir_vip">
 									<properties>
 										<property name="Left" vt="Int16">385</property>
 										<property name="Top" vt="Int8">76</property>
 										<property name="Width" vt="Int8">61</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="Hint" vt="String">Minimum level of Elixir storage to perform Building upgrade</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">7</property>
 										<property name="TabOrder" vt="Int8">21</property>
 										<property name="Text" vt="String">1300000</property>
@@ -4473,12 +4502,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACombo" name="cmbBoostBarracks">
+								<object type="TACombo" name="cmbBoostBarracks_vip">
 									<properties>
 										<property name="Left" vt="Int8">80</property>
 										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">40</property>
 										<property name="Height" vt="Int8">25</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">1</property>
@@ -4504,13 +4534,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostKing">
+								<object type="TACheckbox" name="chkBoostKing_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">King Altar</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">2</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4518,13 +4549,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostQueen">
+								<object type="TACheckbox" name="chkBoostQueen_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">75</property>
 										<property name="Width" vt="Int8">75</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Queen Altar</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4532,13 +4564,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostRax1">
+								<object type="TACheckbox" name="chkBoostRax1_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">100</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 1</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4546,13 +4579,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostRax2">
+								<object type="TACheckbox" name="chkBoostRax2_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">125</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 2</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4560,13 +4594,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostRax3">
+								<object type="TACheckbox" name="chkBoostRax3_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int16">150</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 3</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4574,13 +4609,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostRax4">
+								<object type="TACheckbox" name="chkBoostRax4_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int16">175</property>
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 4</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4588,13 +4624,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostSpell">
+								<object type="TACheckbox" name="chkBoostSpell_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int16">250</property>
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Spell Factory</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4602,13 +4639,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostDark1">
+								<object type="TACheckbox" name="chkBoostDark1_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int16">200</property>
 										<property name="Width" vt="Int8">90</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Dark Barrack 1</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4616,13 +4654,14 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkBoostDark2">
+								<object type="TACheckbox" name="chkBoostDark2_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int16">225</property>
 										<property name="Width" vt="Int8">90</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Dark Barrack 2</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">9</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4894,7 +4933,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkSpellDarkStorage">
+								<object type="TACheckbox" name="chkSpellDarkStorage_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int16">154</property>
@@ -4902,6 +4941,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Set Min Dark Elixir to Lightning Dark Storage</property>
 										<property name="Caption" vt="String">Cast Lightning when left:</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">15</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4909,12 +4949,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtSpellDarkStorage">
+								<object type="TAInput" name="txtSpellDarkStorage_vip">
 									<properties>
 										<property name="Left" vt="Int16">150</property>
 										<property name="Top" vt="Int16">150</property>
 										<property name="Width" vt="Int8">31</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">4</property>
 										<property name="TabOrder" vt="Int8">16</property>
 										<property name="Text" vt="String">500</property>
@@ -5014,7 +5055,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkMultiLight">
+								<object type="TACheckbox" name="chkMultiLight_vip">
 									<properties>
 										<property name="Left" vt="Int16">300</property>
 										<property name="Top" vt="Int16">154</property>
@@ -5022,6 +5063,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Cast Lightning as long as Dark Elixir more than Min requirement</property>
 										<property name="Caption" vt="String">Smart Lightning Spell</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">23</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -5074,7 +5116,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkRedLine">
+								<object type="TACheckbox" name="chkRedLine_vip">
 									<properties>
 										<property name="Left" vt="Int16">450</property>
 										<property name="Top" vt="Int16">182</property>
@@ -5082,6 +5124,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Look for red line and deploy troops near them</property>
 										<property name="Caption" vt="String">Attack Near Red Line</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">27</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6343,12 +6386,13 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TAInput" name="txtPushBulletTokenValue">
+								<object type="TAInput" name="txtPushBulletTokenValue_vip">
 									<properties>
 										<property name="Left" vt="Int8">100</property>
 										<property name="Top" vt="Int8">50</property>
 										<property name="Width" vt="Int16">260</property>
 										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">1</property>
 										<property name="CtrlStyle" vt="Int32">1342374016</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -6356,7 +6400,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkPushBulletEnabled">
+								<object type="TACheckbox" name="chkPushBulletEnabled_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">25</property>
@@ -6364,6 +6408,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Enable pushbullet notification</property>
 										<property name="Caption" vt="String">Enable</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">2</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6371,7 +6416,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkPushBulletDebug">
+								<object type="TACheckbox" name="chkPushBulletDebug_vip">
 									<properties>
 										<property name="Left" vt="Int8">80</property>
 										<property name="Top" vt="Int8">25</property>
@@ -6379,6 +6424,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">This will add verbosity on log while sending files via pushbullet</property>
 										<property name="Caption" vt="String">Debug</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6386,7 +6432,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkPushBulletRemote">
+								<object type="TACheckbox" name="chkPushBulletRemote_vip">
 									<properties>
 										<property name="Left" vt="Int16">150</property>
 										<property name="Top" vt="Int8">25</property>
@@ -6394,6 +6440,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Enables pushbullet remote function</property>
 										<property name="Caption" vt="String">Remote</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6401,7 +6448,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TACheckbox" name="chkPushBulletDelete">
+								<object type="TACheckbox" name="chkPushBulletDelete_vip">
 									<properties>
 										<property name="Left" vt="Int16">220</property>
 										<property name="Top" vt="Int8">25</property>
@@ -6409,6 +6456,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Will delete all messages when bot starts</property>
 										<property name="Caption" vt="String">Delete All Msg on Start</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6429,13 +6477,14 @@
 										<property name="Resizing" vt="Set"/>
 									</properties>
 									<components>
-										<object type="TACheckbox" name="chkPushFreeBuilder">
+										<object type="TACheckbox" name="chkPushFreeBuilder_vip">
 											<properties>
 												<property name="Left" vt="Int16">173</property>
 												<property name="Top" vt="Int8">22</property>
 												<property name="Width" vt="Int8">75</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Free Builder</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">4</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6443,13 +6492,14 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TACheckbox" name="chkPushVillageReport">
+										<object type="TACheckbox" name="chkPushVillageReport_vip">
 											<properties>
 												<property name="Left" vt="Int8">10</property>
 												<property name="Top" vt="Int8">22</property>
 												<property name="Width" vt="Int8">90</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Village Report</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">0</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6457,13 +6507,14 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TACheckbox" name="chkPushMatchFound">
+										<object type="TACheckbox" name="chkPushMatchFound_vip">
 											<properties>
 												<property name="Left" vt="Int8">10</property>
 												<property name="Top" vt="Int8">39</property>
 												<property name="Width" vt="Int8">90</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Match Found</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">1</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6471,13 +6522,14 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TACheckbox" name="chkPushTotalRaid">
+										<object type="TACheckbox" name="chkPushTotalRaid_vip">
 											<properties>
 												<property name="Left" vt="Int8">100</property>
 												<property name="Top" vt="Int8">39</property>
 												<property name="Width" vt="Int8">70</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Total Raid</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">3</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6485,13 +6537,14 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TACheckbox" name="chkPushError">
+										<object type="TACheckbox" name="chkPushError_vip">
 											<properties>
 												<property name="Left" vt="Int16">174</property>
 												<property name="Top" vt="Int8">39</property>
 												<property name="Width" vt="Int8">70</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Errors</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">5</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6499,13 +6552,14 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TACheckbox" name="chkPushLastRaid">
+										<object type="TACheckbox" name="chkPushLastRaid_vip">
 											<properties>
 												<property name="Left" vt="Int8">100</property>
 												<property name="Top" vt="Int8">22</property>
 												<property name="Width" vt="Int8">70</property>
 												<property name="Height" vt="Int8">17</property>
 												<property name="Caption" vt="String">Last Raid</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">2</property>
 												<property name="CtrlStyle" vt="Int32">1342242819</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6528,7 +6582,7 @@
 										<property name="Resizing" vt="Set"/>
 									</properties>
 									<components>
-										<object type="TARadio" name="UseJPG">
+										<object type="TARadio" name="UsePushJPG_vip">
 											<properties>
 												<property name="Left" vt="Int8">10</property>
 												<property name="Top" vt="Int8">22</property>
@@ -6536,6 +6590,7 @@
 												<property name="Height" vt="Int8">17</property>
 												<property name="Hint" vt="String">Attach the loot jpg file in push message</property>
 												<property name="Caption" vt="String">as JPG</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">0</property>
 												<property name="CtrlStyle" vt="Int32">1342242825</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6543,7 +6598,7 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TARadio" name="UseText">
+										<object type="TARadio" name="UsePushText_vip">
 											<properties>
 												<property name="Left" vt="Int8">10</property>
 												<property name="Top" vt="Int8">39</property>
@@ -6551,6 +6606,7 @@
 												<property name="Height" vt="Int8">17</property>
 												<property name="Hint" vt="String">Push only text message</property>
 												<property name="Caption" vt="String">as TXT</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="TabOrder" vt="Int8">1</property>
 												<property name="CtrlStyle" vt="Int32">1342242825</property>
 												<property name="CtrlExStyle" vt="Int8">0</property>
@@ -6589,12 +6645,13 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TAInput" name="txtPushBulletInterval">
+										<object type="TAInput" name="txtPushBulletInterval_vip">
 											<properties>
 												<property name="Left" vt="Int8">95</property>
 												<property name="Top" vt="Int8">20</property>
 												<property name="Width" vt="Int8">31</property>
 												<property name="Height" vt="Int8">22</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="MaxLength" vt="Int8">2</property>
 												<property name="TabOrder" vt="Int8">1</property>
 												<property name="Text" vt="String">10</property>
@@ -6620,12 +6677,13 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TAInput" name="txtPushBulletMessages">
+										<object type="TAInput" name="txtPushBulletMessages_vip">
 											<properties>
 												<property name="Left" vt="Int8">95</property>
 												<property name="Top" vt="Int8">45</property>
 												<property name="Width" vt="Int8">31</property>
 												<property name="Height" vt="Int8">22</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="MaxLength" vt="Int8">3</property>
 												<property name="TabOrder" vt="Int8">3</property>
 												<property name="Text" vt="String">100</property>
@@ -6681,12 +6739,13 @@
 											</properties>
 											<components/>
 										</object>
-										<object type="TACombo" name="cmbDevice">
+										<object type="TACombo" name="cmbPushDevice_vip">
 											<properties>
 												<property name="Left" vt="Int8">54</property>
 												<property name="Top" vt="Int8">31</property>
 												<property name="Width" vt="Int8">121</property>
 												<property name="Height" vt="Int8">25</property>
+												<property name="Enabled" vt="False">False</property>
 												<property name="ItemHeight" vt="Int8">14</property>
 												<property name="TabOrder" vt="Int8">1</property>
 												<property name="Text" vt="String">All</property>
@@ -7310,176 +7369,9 @@
 							</properties>
 							<components/>
 						</object>
-					</components>
-				</object>
-				<object type="TAMenuItem" name="menuTheme">
-					<properties>
-						<property name="Caption" vt="String">&amp;Theme</property>
-					</properties>
-					<components>
-						<object type="TAMenuItem" name="menuItemNone">
+						<object type="TAMenuItem" name="menuItemOptions">
 							<properties>
-								<property name="Caption" vt="String">None</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemDefault">
-							<properties>
-								<property name="Caption" vt="String">Default</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemIron">
-							<properties>
-								<property name="Caption" vt="String">Iron</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemSteel">
-							<properties>
-								<property name="Caption" vt="String">Steel</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemGray">
-							<properties>
-								<property name="Caption" vt="String">Gray</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemDark">
-							<properties>
-								<property name="Caption" vt="String">Dark</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemBlack">
-							<properties>
-								<property name="Caption" vt="String">Black</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemAlloy">
-							<properties>
-								<property name="Caption" vt="String">Alloy</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemHex">
-							<properties>
-								<property name="Caption" vt="String">Hex</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemCore">
-							<properties>
-								<property name="Caption" vt="String">Core</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemFresco">
-							<properties>
-								<property name="Caption" vt="String">Fresco</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemSoft">
-							<properties>
-								<property name="Caption" vt="String">Soft</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemGreen">
-							<properties>
-								<property name="Caption" vt="String">Green</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemTeal">
-							<properties>
-								<property name="Caption" vt="String">Teal</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemOrange">
-							<properties>
-								<property name="Caption" vt="String">Orange</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="menuItemRed">
-							<properties>
-								<property name="Caption" vt="String">Red</property>
-							</properties>
-							<components/>
-						</object>
-					</components>
-				</object>
-				<object type="TAMenuItem" name="menuLanguage">
-					<properties>
-						<property name="Caption" vt="String">&amp;Language</property>
-					</properties>
-					<components>
-						<object type="TAMenuItem" name="MenuItem10">
-							<properties>
-								<property name="Caption" vt="String">Arabic</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem9">
-							<properties>
-								<property name="Caption" vt="String">Deutsch</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem8">
-							<properties>
-								<property name="Caption" vt="String">English</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem7">
-							<properties>
-								<property name="Caption" vt="String">Filipino</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem6">
-							<properties>
-								<property name="Caption" vt="String">French</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem5">
-							<properties>
-								<property name="Caption" vt="String">Portuguese</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem4">
-							<properties>
-								<property name="Caption" vt="String">Spanish</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem3">
-							<properties>
-								<property name="Caption" vt="String">Turkish</property>
-								<property name="Enabled" vt="False">False</property>
-							</properties>
-							<components/>
-						</object>
-						<object type="TAMenuItem" name="MenuItem2">
-							<properties>
-								<property name="Caption" vt="String">Vietnamese</property>
-								<property name="Enabled" vt="False">False</property>
+								<property name="Caption" vt="String">&amp;Options...</property>
 							</properties>
 							<components/>
 						</object>

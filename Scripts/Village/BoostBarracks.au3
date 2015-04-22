@@ -1,6 +1,6 @@
 ;==>BoostBarracks
 Func BoostBarracks()
-	If (GUICtrlRead($cmbBoostBarracks) > 0) And ($boostsEnabled = 1) Then
+	If (GUICtrlRead($cmbBoostBarracks_vip) > 0) And ($boostsEnabled = 1) And $LoginType = 2 Then
 		If $barrackPos[0][0] < 1 Then
 			LocateBarrack()
 			SaveConfig()
@@ -19,11 +19,11 @@ Func BoostBarracks()
 				If _WaitForPixel(420, 375, Hex(0xd2ec78, 6), 20) Then
 					Click(420, 375)
 					If _WaitForPixel(586, 267, Hex(0xd80405, 6), 20, 2000, 500) Then
-						_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, 0)
+						_GUICtrlComboBox_SetCurSel($cmbBoostBarracks_vip, 0)
 						SetLog("Not enough gems", $COLOR_RED)
 					Else
-						_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, (GUICtrlRead($cmbBoostBarracks) - 1))
-						SetLog('Boost completed. Remaining :' & (GUICtrlRead($cmbBoostBarracks)), $COLOR_GREEN)
+						_GUICtrlComboBox_SetCurSel($cmbBoostBarracks_vip, (GUICtrlRead($cmbBoostBarracks_vip) - 1))
+						SetLog('Boost completed. Remaining :' & (GUICtrlRead($cmbBoostBarracks_vip)), $COLOR_GREEN)
 					EndIf
 				Else
 					SetLog("Barracks are already Boosted", $COLOR_ORANGE)

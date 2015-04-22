@@ -2,7 +2,7 @@ Global $wallbuild
 Global $walllowlevel
 
 Func UpgradeWall()
-	If GUICtrlRead($chkWalls) <> $GUI_CHECKED Then
+	If GUICtrlRead($chkWalls_vip) <> $GUI_CHECKED Or $LoginType < 2 Then
 		SetLog("Upgrade Wall option disabled, skipping upgrading", $COLOR_RED)
 		ClickP($TopLeftClient) ; Click Away
 		Return
@@ -22,18 +22,18 @@ Func UpgradeWall()
 		Return
 	EndIf
 
-	Local $iWallMinGold = Number(GUICtrlRead($txtWallMinGold))
-	Local $iWallMinElixir = Number(GUICtrlRead($txtWallMinElixir))
+	Local $iWallMinGold = Number(GUICtrlRead($txtWallMinGold_vip))
+	Local $iWallMinElixir = Number(GUICtrlRead($txtWallMinElixir_vip))
 	Local $iGoldStorage = Number($GoldCount)
 	Local $iElixirStorage = Number($ElixirCount)
 	Local $iBeforeGoldStorage = $iGoldStorage + 1
 	Local $iBeforeElixirStorage = $iElixirStorage + 1
 
-	If GUICtrlRead($UseGold) = $GUI_CHECKED Then
+	If GUICtrlRead($UseGold_vip) = $GUI_CHECKED Then
 		$iUseStorage = 1
-	ElseIf GUICtrlRead($UseElixir) = $GUI_CHECKED Then
+	ElseIf GUICtrlRead($UseElixir_vip) = $GUI_CHECKED Then
 		$iUseStorage = 2
-	ElseIf GUICtrlRead($UseGoldElix) = $GUI_CHECKED Then
+	ElseIf GUICtrlRead($UseGoldElix_vip) = $GUI_CHECKED Then
 		$iUseStorage = 3
 	EndIf
 

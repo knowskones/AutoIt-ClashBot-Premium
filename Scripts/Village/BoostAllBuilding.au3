@@ -1,6 +1,6 @@
 ;==>BoostBarracks
 Func BoostAllBuilding()
-	If (GUICtrlRead($cmbBoostBarracks) > 0) And ($boostsEnabled = 1) Then
+	If (GUICtrlRead($cmbBoostBarracks_vip) > 0) And ($boostsEnabled = 1) And $LoginType = 2 Then
 
 		If $barrackPos[0][0] < 1 Then
 			LocateBarrack()
@@ -12,71 +12,71 @@ Func BoostAllBuilding()
 		ClickP($TopLeftClient) ;Click Away
 		If _Sleep(500) Then Return
 
-	 If $ichkBoostRax1 + $ichkBoostRax2 + $ichkBoostRax3 + $ichkBoostRax4 = 4 Then
-		SetLog("Boosting All Barrack...", $COLOR_BLUE)
-	    Click($barrackPos[0][0], $barrackPos[0][1]) ;Click Barrack 1
-		If _Sleep(500) Then Return
-		BoostAllBarrack()
-	 Else
-		If $ichkBoostRax1 = 1 Then; Barrack 1
-			SetLog("Boosting Barrack 1...", $COLOR_BLUE)
+		If $ichkBoostRax1 + $ichkBoostRax2 + $ichkBoostRax3 + $ichkBoostRax4 = 4 Then
+			SetLog("Boosting All Barrack...", $COLOR_BLUE)
 			Click($barrackPos[0][0], $barrackPos[0][1]) ;Click Barrack 1
 			If _Sleep(500) Then Return
-			BoostBuilding()
-		EndIf
-
-		If $ichkBoostRax2 = 1 Then; Barrack 2
-			SetLog("Boosting Barrack 2...", $COLOR_BLUE)
-			Click($barrackPos[1][0], $barrackPos[1][1]) ;Click Barrack 2
-			If _Sleep(500) Then Return
-			BoostBuilding()
-		EndIf
-
-		If $ichkBoostRax3 = 1 Then; Barrack 3
-			SetLog("Boosting Barrack 3...", $COLOR_BLUE)
-			Click($barrackPos[2][0], $barrackPos[2][1]) ;Click Barrack 3
-			If _Sleep(500) Then Return
-			BoostBuilding()
-		EndIf
-
-		If $ichkBoostRax4 = 1 Then; Barrack 4
-			SetLog("Boosting Barrack 4...", $COLOR_BLUE)
-			Click($barrackPos[3][0], $barrackPos[3][1]) ;Click Barrack 4
-			If _Sleep(500) Then Return
-			BoostBuilding()
-		EndIf
-	 EndIf
-
-	 If $ichkBoostDark1 + $ichkBoostDark2 = 2 Then
-		SetLog("Boosting All Dark Barrack...", $COLOR_BLUE)
-	    Click($DarkBarrackPos[0][0], $DarkBarrackPos[0][1]) ;Click Dark Barrack 1
-		If _Sleep(500) Then Return
-		BoostDkBarrack()
-	 Else
-		If $ichkBoostDark1 = 1 Then; Dark Barrack 1
-			If $DarkBarrackPos[0][0] < 1 Then
-			SetLog("Dark Barrack 1 not located, skip boosting...", $COLOR_RED)
-			$BoostAll += 1 ; Must add to avoid boosting error
+			BoostAllBarrack()
 		Else
-			SetLog("Boosting Dark Barrack 1...", $COLOR_BLUE)
+			If $ichkBoostRax1 = 1 Then; Barrack 1
+				SetLog("Boosting Barrack 1...", $COLOR_BLUE)
+				Click($barrackPos[0][0], $barrackPos[0][1]) ;Click Barrack 1
+				If _Sleep(500) Then Return
+				BoostBuilding()
+			EndIf
+
+			If $ichkBoostRax2 = 1 Then; Barrack 2
+				SetLog("Boosting Barrack 2...", $COLOR_BLUE)
+				Click($barrackPos[1][0], $barrackPos[1][1]) ;Click Barrack 2
+				If _Sleep(500) Then Return
+				BoostBuilding()
+			EndIf
+
+			If $ichkBoostRax3 = 1 Then; Barrack 3
+				SetLog("Boosting Barrack 3...", $COLOR_BLUE)
+				Click($barrackPos[2][0], $barrackPos[2][1]) ;Click Barrack 3
+				If _Sleep(500) Then Return
+				BoostBuilding()
+			EndIf
+
+			If $ichkBoostRax4 = 1 Then; Barrack 4
+				SetLog("Boosting Barrack 4...", $COLOR_BLUE)
+				Click($barrackPos[3][0], $barrackPos[3][1]) ;Click Barrack 4
+				If _Sleep(500) Then Return
+				BoostBuilding()
+			EndIf
+		EndIf
+
+		If $ichkBoostDark1 + $ichkBoostDark2 = 2 Then
+			SetLog("Boosting All Dark Barrack...", $COLOR_BLUE)
 			Click($DarkBarrackPos[0][0], $DarkBarrackPos[0][1]) ;Click Dark Barrack 1
 			If _Sleep(500) Then Return
-			BoostBuilding()
-			EndIf
-		EndIf
-
-		If $ichkBoostDark2 = 1 Then; Dark Barrack 2
-			If $DarkBarrackPos[1][0] < 1 Then
-			SetLog("Dark Barrack 2 not located, skip boosting...", $COLOR_RED)
-			$BoostAll += 1 ; Must add to avoid boosting error
+			BoostDkBarrack()
 		Else
-			SetLog("Boosting Dark Barrack 2...", $COLOR_BLUE)
-			Click($DarkBarrackPos[1][0], $DarkBarrackPos[1][1]) ;Click Dark Barrack 2
-			If _Sleep(500) Then Return
-			BoostBuilding()
+			If $ichkBoostDark1 = 1 Then; Dark Barrack 1
+				If $DarkBarrackPos[0][0] < 1 Then
+					SetLog("Dark Barrack 1 not located, skip boosting...", $COLOR_RED)
+					$BoostAll += 1 ; Must add to avoid boosting error
+				Else
+					SetLog("Boosting Dark Barrack 1...", $COLOR_BLUE)
+					Click($DarkBarrackPos[0][0], $DarkBarrackPos[0][1]) ;Click Dark Barrack 1
+					If _Sleep(500) Then Return
+					BoostBuilding()
+				EndIf
+			EndIf
+
+			If $ichkBoostDark2 = 1 Then; Dark Barrack 2
+				If $DarkBarrackPos[1][0] < 1 Then
+					SetLog("Dark Barrack 2 not located, skip boosting...", $COLOR_RED)
+					$BoostAll += 1 ; Must add to avoid boosting error
+				Else
+					SetLog("Boosting Dark Barrack 2...", $COLOR_BLUE)
+					Click($DarkBarrackPos[1][0], $DarkBarrackPos[1][1]) ;Click Dark Barrack 2
+					If _Sleep(500) Then Return
+					BoostBuilding()
+				EndIf
 			EndIf
 		EndIf
-	 EndIf
 
 		If $ichkBoostKing = 1 Then; King Altar
 			If $KingPos[0] = "" Then
@@ -118,8 +118,8 @@ Func BoostAllBuilding()
 		EndIf
 
 		If $BoostAll >= $ichkBoostRax1 + $ichkBoostRax2 + $ichkBoostRax3 + $ichkBoostRax4 + $ichkBoostKing + $ichkBoostQueen + $ichkBoostSpell + $ichkBoostDark1 + $ichkBoostDark2 Then
-			_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, (GUICtrlRead($cmbBoostBarracks) - 1))
-			SetLog("Boost remaining : " & GUICtrlRead($cmbBoostBarracks), $COLOR_GREEN)
+			_GUICtrlComboBox_SetCurSel($cmbBoostBarracks_vip, (GUICtrlRead($cmbBoostBarracks_vip) - 1))
+			SetLog("Boost remaining : " & GUICtrlRead($cmbBoostBarracks_vip), $COLOR_GREEN)
 			$BoostAll = 0
 		EndIf
 	EndIf
@@ -132,7 +132,7 @@ Func BoostBuilding()
 		If _WaitForPixel(420, 375, Hex(0xd2ec78, 6), 20) Then ;Confirm Message
 			Click(420, 375)
 			If _WaitForPixel(586, 267, Hex(0xd80405, 6), 20, 2000, 500) Then ;Not enough Gem
-				_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, 0)
+				_GUICtrlComboBox_SetCurSel($cmbBoostBarracks_vip, 0)
 				SetLog("Not Enough GEMS...", $COLOR_RED)
 			Else
 				SetLog("Boost Completed...", $COLOR_GREEN)
@@ -147,16 +147,16 @@ Func BoostBuilding()
 		SetLog("Building is already Boosted", $COLOR_ORANGE)
 		If _Sleep(1000) Then Return
 	EndIf
- EndFunc   ;==>BoostBuilding
+EndFunc   ;==>BoostBuilding
 
- Func BoostAllBarrack()
+Func BoostAllBarrack()
 	Local $BoostAllFix = _PixelSearch(410, 610, 493, 615, Hex(0xfffd70, 6), 10) ;Check Boost All
 	If IsArray($BoostAllFix) Then
 		Click($BoostAllFix[0], $BoostAllFix[1]) ;Click Boost
 		If _WaitForPixel(420, 375, Hex(0xd2ec78, 6), 20) Then ;Confirm Message
 			Click(420, 375)
 			If _WaitForPixel(586, 267, Hex(0xd80405, 6), 20, 2000, 500) Then ;Not enough Gem
-				_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, 0)
+				_GUICtrlComboBox_SetCurSel($cmbBoostBarracks_vip, 0)
 				SetLog("Not Enough GEMS...", $COLOR_RED)
 			Else
 				SetLog("All Barrack Boost Completed...", $COLOR_GREEN)
@@ -173,14 +173,14 @@ Func BoostBuilding()
 	EndIf
 EndFunc   ;==>BoostAllBarrack
 
- Func BoostDkBarrack()
+Func BoostDkBarrack()
 	Local $BoostAllDark = _PixelSearch(410, 610, 493, 615, Hex(0xfffd70, 6), 10) ;Check Boost All
 	If IsArray($BoostAllDark) Then
 		Click($BoostAllDark[0], $BoostAllDark[1]) ;Click Boost
 		If _WaitForPixel(420, 375, Hex(0xd2ec78, 6), 20) Then ;Confirm Message
 			Click(420, 375)
 			If _WaitForPixel(586, 267, Hex(0xd80405, 6), 20, 2000, 500) Then ;Not enough Gem
-				_GUICtrlComboBox_SetCurSel($cmbBoostBarracks, 0)
+				_GUICtrlComboBox_SetCurSel($cmbBoostBarracks_vip, 0)
 				SetLog("Not Enough GEMS...", $COLOR_RED)
 			Else
 				SetLog("All Dark Barrack Boost Completed...", $COLOR_GREEN)

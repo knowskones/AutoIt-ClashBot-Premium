@@ -1,5 +1,5 @@
 Func CreateSpell()
-	If $SpellDarkStorage = 0 Or $CreateSpell = False Then Return
+	If $SpellDarkStorage = 0 Or $CreateSpell = False Or $LoginType < 2 Then Return
 
 	SetLog("Create Lightning Spells...", $COLOR_BLUE)
 

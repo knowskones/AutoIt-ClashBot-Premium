@@ -4,7 +4,7 @@ Global $LightSpell
 Global $TakeDarkStorageSS = 1
 
 Func CheckDarkStorage()
-	If $SpellDarkStorage = 0 Or $searchDark = 0 Then Return
+	If $SpellDarkStorage = 0 Or $searchDark = 0 Or $LoginType < 2 Then Return
 
 	$SDark = getDarkElixir(51, 66 + 57)
 	$DELocation = checkDarkElix()

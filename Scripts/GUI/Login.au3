@@ -1,47 +1,70 @@
-Global $LoggedIn = False
+Global $AuthTimer, $AuthConnected = True
 
-#include "forms\Login Form.au3"
-
-Func LoginButton_Click()
-	GUICtrlSetState($btnLogin, $GUI_DISABLE)
-	GUICtrlSetData($btnLogin, "Authenticating...")
-
-	$LoggedIn = Login(StringStripWS(GUICtrlRead($txtUsername), 3), StringStripWS(GUICtrlRead($txtPassword), 3))
-
-	GUICtrlSetState($btnLogin, $GUI_ENABLE)
-	GUICtrlSetData($btnLogin, "Login")
-	GUICtrlSetState($txtUsername, $GUI_FOCUS)
-EndFunc   ;==>LoginButton_Click
-
-Func Login($Username, $Password)
-	If $Username = "" Or $Password = "" Then
-		MsgBox(262160, "Error", "Please enter both your username and password.")
-		Return False
-	EndIf
-
-	Local $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
-	Local $POSTData = "u=" & URLEncode($Username) & "&p=" & URLEncode($Password)
-
-	$oHTTP.Open("POST", "https://clashbot.org/bot/validate_vip_status.php", False)
-	$oHTTP.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-	$oHTTP.Send($POSTData)
-
-	If $oHTTP.Status <> 200 Then
-		MsgBox(262160, "Error", "Unable to contact the login server.")
-		Return False
-	EndIf
-
-	If $oHTTP.ResponseText == "1" Then
-		Return True
-	ElseIf $oHTTP.ResponseText == "#denied#" Then
-		MsgBox(262160, "Error", "Invalid username and/or password.")
-		Return False
+Func AuthCheck($unregPopup = True)
+	If $sUsername = "" Or $sPassword = "" Then
+		$LoginType = 0 ; Unregistered mode
 	Else
-		MsgBox(262160, "Error", "You must purchase a VIP package, available in the store at http://clashbot.org/forums," _
-			& " to be able to run this premium bot release.")
-		Return False
+		Local $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
+		Local $POSTData = "u=" & URLEncode($sUsername) & "&p=" & URLEncode($sPassword)
+
+		$oHTTP.Open("POST", "https://clashbot.org/bot/validate_vip_status.php", False)
+		$oHTTP.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+		$oHTTP.Send($POSTData)
+
+		If $oHTTP.Status <> 200 Then
+			If $AuthConnected Then
+				$AuthConnected = False
+				$AuthTimer = TimerInit()
+				AdlibRegister("AuthCheck", 10000)
+				SetLog("Unable to contact the login server. Trying again in 10s.", $COLOR_RED)
+				Return
+			Else
+				If TimerDiff($AuthTimer) < 60000 Then
+					SetLog("Unable to contact the login server. Trying again in 10s.", $COLOR_RED)
+					Return
+				Else
+					SetLog("Unable to contact the login server. Continuing in unregistered mode.", $COLOR_RED)
+					$LoginType = 0 ; Unregistered mode
+				EndIf
+			EndIf
+		ElseIf $oHTTP.ResponseText == "1" Then
+			$LoginType = 2 ; VIP mode
+		ElseIf $oHTTP.ResponseText == "#denied#" Then
+			SetLog("Invalid username and/or password specified. Unable to authorise account.", $COLOR_RED)
+			$LoginType = 0 ; Unregistered mode
+		Else
+			$LoginType = 1 ; Registered mode
+		EndIf
 	EndIf
-EndFunc   ;==>Login
+
+	AdlibRegister("AuthCheck", 3600000)
+	SetAuthMode($unregPopup)
+EndFunc   ;==>AuthCheck
+
+Func SetAuthMode($unregPopup = True)
+	If $LoginType = 2 Then ; VIP mode
+		; Enable vip controls
+		For $i = 0 To UBound($vipControls) - 1
+			GUICtrlSetState($vipControls[$i], $GUI_ENABLE)
+		Next
+
+		; Set controls for deploy speed options
+		Randomspeedatk()
+
+		SetLog("VIP Mode active.", $COLOR_GREEN)
+	Else ; Not VIP mode
+		; Disable vip controls
+		For $i = 0 To UBound($vipControls) - 1
+			GUICtrlSetState($vipControls[$i], $GUI_DISABLE)
+		Next
+
+		SetLog("No VIP access, premium features disabled", $COLOR_RED)
+	EndIf
+
+	If $LoginType = 0 And $unregPopup Then
+		MsgBox(0, "Unregistered", "You are currently running unregistered, please visit our forums at http://clashbot.org and register for a free account to remove this message.")
+	EndIf
+EndFunc   ;==>SetAuthMode
 
 Func URLEncode($urlText)
 	$url = ""

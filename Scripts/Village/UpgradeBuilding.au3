@@ -1,7 +1,8 @@
 Func UpgradeBuilding()
+	If $LoginType < 2 Then Return
 	If $ichkUpgrade1 = 0 And $ichkUpgrade2 = 0 And $ichkUpgrade3 = 0 Then Return
 
-	If GUICtrlRead($txtUpgradeX1) = "" And GUICtrlRead($txtUpgradeX2) = "" And GUICtrlRead($txtUpgradeX3) = "" Then
+	If GUICtrlRead($txtUpgradeX1_vip) = "" And GUICtrlRead($txtUpgradeX2_vip) = "" And GUICtrlRead($txtUpgradeX3_vip) = "" Then
 		SetLog("Building location not set, skipping upgrade...", $COLOR_RED)
 		ClickP($TopLeftClient) ; Click Away
 		Return
@@ -16,8 +17,8 @@ Func UpgradeBuilding()
 	Local $ElixirUpgrade1 = False
 	Local $ElixirUpgrade2 = False
 	Local $ElixirUpgrade3 = False
-	Local $iMinGold = Number(GUICtrlRead($txtBldgMinGold))
-	Local $iMinElixir = Number(GUICtrlRead($txtBldgMinElixir))
+	Local $iMinGold = Number(GUICtrlRead($txtBldgMinGold_vip))
+	Local $iMinElixir = Number(GUICtrlRead($txtBldgMinElixir_vip))
 	Local $iGoldStorage = Number($GoldCount)
 	Local $iElixirStorage = Number($ElixirCount)
 
@@ -32,7 +33,7 @@ Func UpgradeBuilding()
 		SetLog("Attempting to upgrade Building 1...")
 
 		If _Sleep(500) Then Return
-		Click(GUICtrlRead($txtUpgradeX1), GUICtrlRead($txtUpgradeY1))
+		Click(GUICtrlRead($txtUpgradeX1_vip), GUICtrlRead($txtUpgradeY1_vip))
 		If _Sleep(500) Then Return
 
 		Local $ElixirUpgrade = _PixelSearch(300, 565, 629, 575, Hex(0xF759E8, 6), 10) ;Finds Elixir Upgrade Button
@@ -48,12 +49,12 @@ Func UpgradeBuilding()
 					SetLog("Building 1 successfully upgraded...", $COLOR_GREEN)
 					If _Sleep(500) Then Return
 					ClickP($TopLeftClient, 2)
-					GUICtrlSetState($chkUpgrade1, $GUI_UNCHECKED)
+					GUICtrlSetState($chkUpgrade1_vip, $GUI_UNCHECKED)
 				Else
 					SetLog("Not enough Elixir to upgrade, try upgrade using Gold...", $COLOR_RED)
 					ClickP($TopLeftClient, 2)
 					If $iGoldStorage >= $iMinGold Then
-						Click(GUICtrlRead($txtUpgradeX1), GUICtrlRead($txtUpgradeY1))
+						Click(GUICtrlRead($txtUpgradeX1_vip), GUICtrlRead($txtUpgradeY1_vip))
 						If _Sleep(500) Then Return
 						GoldUpgrade1()
 					ElseIf $iGoldStorage < $iMinGold Then
@@ -76,7 +77,7 @@ Func UpgradeBuilding()
 					SetLog("Building 1 successfully upgraded...", $COLOR_GREEN)
 					If _Sleep(500) Then Return
 					ClickP($TopLeftClient, 2)
-					GUICtrlSetState($chkUpgrade1, $GUI_UNCHECKED)
+					GUICtrlSetState($chkUpgrade1_vip, $GUI_UNCHECKED)
 				EndIf
 			EndIf
 		EndIf
@@ -105,7 +106,7 @@ Func UpgradeBuilding()
 		SetLog("Attempting to upgrade Building 2...")
 
 		If _Sleep(500) Then Return
-		Click(GUICtrlRead($txtUpgradeX2), GUICtrlRead($txtUpgradeY2))
+		Click(GUICtrlRead($txtUpgradeX2_vip), GUICtrlRead($txtUpgradeY2_vip))
 		If _Sleep(500) Then Return
 
 		Local $ElixirUpgrade = _PixelSearch(300, 565, 629, 575, Hex(0xF759E8, 6), 10) ;Finds Elixir Upgrade Button
@@ -121,12 +122,12 @@ Func UpgradeBuilding()
 					SetLog("Building 2 successfully upgraded...", $COLOR_GREEN)
 					If _Sleep(500) Then Return
 					ClickP($TopLeftClient, 2)
-					GUICtrlSetState($chkUpgrade2, $GUI_UNCHECKED)
+					GUICtrlSetState($chkUpgrade2_vip, $GUI_UNCHECKED)
 				Else
 					SetLog("Not enough Elixir to upgrade, try upgrade using Gold...", $COLOR_RED)
 					ClickP($TopLeftClient, 2)
 					If $iGoldStorage >= $iMinGold Then
-						Click(GUICtrlRead($txtUpgradeX2), GUICtrlRead($txtUpgradeY2))
+						Click(GUICtrlRead($txtUpgradeX2_vip), GUICtrlRead($txtUpgradeY2_vip))
 						If _Sleep(500) Then Return
 						GoldUpgrade2()
 					ElseIf $iGoldStorage < $iMinGold Then
@@ -149,7 +150,7 @@ Func UpgradeBuilding()
 					SetLog("Building 2 successfully upgraded...", $COLOR_GREEN)
 					If _Sleep(500) Then Return
 					ClickP($TopLeftClient, 2)
-					GUICtrlSetState($chkUpgrade2, $GUI_UNCHECKED)
+					GUICtrlSetState($chkUpgrade2_vip, $GUI_UNCHECKED)
 				EndIf
 			EndIf
 		EndIf
@@ -177,7 +178,7 @@ Func UpgradeBuilding()
 		SetLog("Attempting to upgrade Building 3...")
 
 		If _Sleep(500) Then Return
-		Click(GUICtrlRead($txtUpgradeX3), GUICtrlRead($txtUpgradeY3))
+		Click(GUICtrlRead($txtUpgradeX3_vip), GUICtrlRead($txtUpgradeY3_vip))
 		If _Sleep(500) Then Return
 
 		Local $ElixirUpgrade = _PixelSearch(300, 565, 629, 575, Hex(0xF759E8, 6), 10) ;Finds Elixir Upgrade Button
@@ -193,12 +194,12 @@ Func UpgradeBuilding()
 					SetLog("Building 3 successfully upgraded...", $COLOR_GREEN)
 					If _Sleep(500) Then Return
 					ClickP($TopLeftClient, 2)
-					GUICtrlSetState($chkUpgrade3, $GUI_UNCHECKED)
+					GUICtrlSetState($chkUpgrade3_vip, $GUI_UNCHECKED)
 				Else
 					SetLog("Not enough Elixir to upgrade, try upgrade using Gold...", $COLOR_RED)
 					ClickP($TopLeftClient, 2)
 					If $iGoldStorage >= $iMinGold Then
-						Click(GUICtrlRead($txtUpgradeX3), GUICtrlRead($txtUpgradeY3))
+						Click(GUICtrlRead($txtUpgradeX3_vip), GUICtrlRead($txtUpgradeY3_vip))
 						If _Sleep(500) Then Return
 						GoldUpgrade3()
 					ElseIf $iGoldStorage < $iMinGold Then
@@ -221,7 +222,7 @@ Func UpgradeBuilding()
 					SetLog("Building 3 successfully upgraded...", $COLOR_GREEN)
 					If _Sleep(1000) Then Return
 					ClickP($TopLeftClient, 2)
-					GUICtrlSetState($chkUpgrade3, $GUI_UNCHECKED)
+					GUICtrlSetState($chkUpgrade3_vip, $GUI_UNCHECKED)
 				EndIf
 			EndIf
 		EndIf
@@ -254,7 +255,7 @@ Func GoldUpgrade1()
 				SetLog("Building 1 successfully upgraded...", $COLOR_GREEN)
 				If _Sleep(500) Then Return
 				ClickP($TopLeftClient, 2)
-				GUICtrlSetState($chkUpgrade1, $GUI_UNCHECKED)
+				GUICtrlSetState($chkUpgrade1_vip, $GUI_UNCHECKED)
 			EndIf
 		EndIf
 	EndIf
@@ -274,7 +275,7 @@ Func GoldUpgrade2()
 				SetLog("Building 2 successfully upgraded...", $COLOR_GREEN)
 				If _Sleep(500) Then Return
 				ClickP($TopLeftClient, 2)
-				GUICtrlSetState($chkUpgrade2, $GUI_UNCHECKED)
+				GUICtrlSetState($chkUpgrade2_vip, $GUI_UNCHECKED)
 			EndIf
 		EndIf
 	EndIf
@@ -294,7 +295,7 @@ Func GoldUpgrade3()
 				SetLog("Building 3 successfully upgraded...", $COLOR_GREEN)
 				If _Sleep(500) Then Return
 				ClickP($TopLeftClient, 2)
-				GUICtrlSetState($chkUpgrade3, $GUI_UNCHECKED)
+				GUICtrlSetState($chkUpgrade3_vip, $GUI_UNCHECKED)
 			EndIf
 		EndIf
 	EndIf

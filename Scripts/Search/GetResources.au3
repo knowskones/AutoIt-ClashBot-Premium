@@ -12,7 +12,7 @@ Func GetResources() ;Reads resources
 		If $i >= $itxtwhitecloud * 2 Then ; If gold cannot be read by 30 seconds
 			SetLog("Cannot locate gold value, Restarting Bot...", $COLOR_RED)
 			GUICtrlSetData($lblresultoos, GUICtrlRead($lblresultoos) + 1)
-			If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+			If PushBulletEnabled() And GUICtrlRead($chkPushError_vip) = $GUI_CHECKED Then
 				_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
 			EndIf
 			checkMainScreen()
@@ -22,13 +22,13 @@ Func GetResources() ;Reads resources
 		EndIf
 	WEnd
 
-    If _Sleep(300) Then Return
+	If _Sleep(300) Then Return
 
 	$searchGold = getGold(51, 66)
 	$searchElixir = getElixir(51, 66 + 29)
 	If DuplicateCheck() = True Then
 		SetLog("Identical resource found between previous and current search, Restarting Bot...", $COLOR_RED)
-		If GUICtrlRead($chkPushBulletEnabled) = $GUI_CHECKED And GUICtrlRead($chkPushError) = $GUI_CHECKED Then
+		If PushBulletEnabled() And GUICtrlRead($chkPushError_vip) = $GUI_CHECKED Then
 			_Push("Disconnected", "Your bot got disconnected while searching for enemy..")
 		EndIf
 		checkMainScreen()
@@ -43,7 +43,8 @@ Func GetResources() ;Reads resources
 	EndIf
 	If $searchDead Then $txtDead = "Dead"
 
-	If GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or $icmbAttackTH > 0 Or $icmbDeadAttackTH > 0 Then
+	If ((GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or ($icmbDeadAttackTH > 0 And $LoginType = 2)) And $searchDead) Or _
+			GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or ($icmbAttackTH > 0 And $LoginType = 2) Then
 		$searchTH = checkTownhall()
 	Else
 		$searchTH = "-"
