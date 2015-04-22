@@ -296,7 +296,7 @@ Func getDigitSmall(ByRef $x, $y, $type)
 	EndIf
 
 	;Search for digit 9
-	$width = 9
+	$width = 8
 	Select
 		Case $type = "Camp"
 			Local $c1 = Hex(0x070707, 6), $c2 = Hex(0xAFAFAF, 6), $c3 = Hex(0x5F5F5F, 6)

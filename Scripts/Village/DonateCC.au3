@@ -1,6 +1,6 @@
 ;Donates troops
 
-Func DonateCC()
+Func DonateCC($DonateChat = True)
    Global $ColDist = 1, $RowDist = 0 ; default to archer
    ;Global $BClick1 = Number(GUICtrlRead($NoOfBarbarians1)), $BClick2 = Number(GUICtrlRead($NoOfBarbarians2)), $BClick3 = Number(GUICtrlRead($NoOfBarbarians3))
    Global $AClick1 = Number(GUICtrlRead($NoOfArchers1)), $AClick2 = Number(GUICtrlRead($NoOfArchers2)), $AClick3 = Number(GUICtrlRead($NoOfArchers3))
@@ -12,10 +12,12 @@ Func DonateCC()
 	SetLog("Donating Troops", $COLOR_BLUE)
 
 	_CaptureRegion()
-	;If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 And $CommandStop <> 0 Then
-		;SetLog("No new chats, skip donating", $COLOR_ORANGE)
-		;Return
-	;EndIf
+	If $DonateChat = False Then
+	  If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False Then
+		 SetLog("No new chats, skip donating", $COLOR_ORANGE)
+		 Return
+	  EndIf
+   EndIf
 
 	ClickP($TopLeftClient) ;Click Away
 	If _ColorCheck(_GetPixelColor(331, 330), Hex(0xF0A03B, 6), 20) = False Then Click(19, 349) ;Clicks chat thing

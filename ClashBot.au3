@@ -91,6 +91,9 @@ Func runBot() ;Bot that runs everything in order
 				checkMainScreen(False)
 				$Checkrearm = False
 			EndIf
+			DonateCC()
+			If _Sleep(1000) Then Return
+			checkMainScreen(False)
 			If $CommandStop <> 0 And $CommandStop <> 3 Then
 				If ZoomOut() = False Then ContinueLoop
 				CheckArmyCamp()

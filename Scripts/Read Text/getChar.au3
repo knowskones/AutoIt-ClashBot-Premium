@@ -357,6 +357,20 @@ Func getChar(ByRef $x, $y)
 	Next
 	$x -= 3
 
+	;search for second version 'k'
+	$width = 5
+	Local $c1 = Hex(0xFBFBFB, 6), $c2 = Hex(0x656965, 6), $c3 = Hex(0xDADBDA, 6)
+	For $i = 1 To 3
+		Local $pixel1[3] = [$x + 1, $y + 1, $c1], $pixel2[3] = [$x + 2, $y + 1, $c2], $pixel3[3] = [$x + 4, $y + 8, $c3]
+		If boolPixelSearch($pixel1, $pixel2, $pixel3, 1) Then
+			$x += $width
+			Return "k"
+		Else
+			$x += 1
+		EndIf
+	Next
+	$x -= 3
+
 	;search for 'L'
 	$width = 4
 	Local $c1 = Hex(0xFDFDFD, 6), $c2 = Hex(0x828482, 6), $c3 = Hex(0x646764, 6)
@@ -777,6 +791,21 @@ Func getChar(ByRef $x, $y)
 		EndIf
 	Next
 	$x -= 3
+
+	;search for '1'
+	$width = 3
+	Local $c1 = Hex(0xFBFBFB, 6), $c2 = Hex(0xBCBDBC, 6), $c3 = Hex(0xCFD0CF, 6)
+	For $i = 1 To 3
+		Local $pixel1[3] = [$x + 1, $y + 1, $c1], $pixel2[3] = [$x + 1, $y + 5, $c2], $pixel3[3] = [$x + 2, $y + 8, $c3]
+		If boolPixelSearch($pixel1, $pixel2, $pixel3, 1) Then
+			$x += $width
+			Return "1"
+		Else
+			$x += 1
+		EndIf
+	Next
+	$x -= 3
+
 
 	;search for ','
 	$width = 3
