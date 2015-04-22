@@ -339,7 +339,7 @@ Func saveConfig() ;Saves the controls settings to the config
 	;Misc
 	If GUICtrlRead($UseSkillTimed) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "skillactivate", "0")
-	ElseIf GUICtrlRead($UseSkillAuto) = $GUI_CHECKED Then
+	ElseIf GUICtrlRead($UseSkillAuto_vip) = $GUI_CHECKED Then
 		IniWrite($config, "misc", "skillactivate", "1")
 	EndIf
 

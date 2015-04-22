@@ -169,7 +169,6 @@ Global $checkDeadUseKing ;King attack settings
 Global $checkDeadUseQueen ;Queen attack settings
 Global $checkDeadUseClanCastle ; Use Clan Castle settings
 Global $icmbDeadAttackTH ; Attack Outside Townhall settings
-Global $iSkillActivateCond ; Heroes ability timed or auto activated
 
 Global $deploySettings ;Method of deploy found in attack settings
 Global $icmbAlgorithm ;Algorithm to use when attacking
@@ -198,6 +197,7 @@ Global $ichkCollect
 Global $ichkRaxRestart
 Global $itxtKingSkill ;Delay before activating King Skill
 Global $itxtQueenSkill ;Delay before activating Queen Skill
+Global $iSkillActivateCond ; Heroes ability timed or auto activated
 Global $itxtSpellDarkStorage
 Global $SpellDarkStorage
 Global $ichkMultiLight
@@ -207,7 +207,6 @@ Global $CreateSpell = True
 Global $ichkBoostRax1, $ichkBoostRax2, $ichkBoostRax3, $ichkBoostRax4, $ichkBoostDark1, $ichkBoostDark2, $ichkBoostKing, $ichkBoostQueen, $ichkBoostSpell
 Global $DeBattleEnd
 Global $ichkKeepLogs, $itxtKeepLogs
-Global $iSkillActivateCond
 
 ;Boosts Settings
 Global $BoostAll

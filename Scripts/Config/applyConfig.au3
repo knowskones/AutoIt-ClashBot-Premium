@@ -508,10 +508,10 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	;Misc
 	Switch $iSkillActivateCond
 	    Case 0
-			GUICtrlSetState($UseSkillAuto, $GUI_UNCHECKED)
+			GUICtrlSetState($UseSkillAuto_vip, $GUI_UNCHECKED)
 			GUICtrlSetState($UseSkillTimed, $GUI_CHECKED)
 		Case 1
-			GUICtrlSetState($UseSkillAuto, $GUI_CHECKED)
+			GUICtrlSetState($UseSkillAuto_vip, $GUI_CHECKED)
 			GUICtrlSetState($UseSkillTimed, $GUI_UNCHECKED)
 	EndSwitch
 

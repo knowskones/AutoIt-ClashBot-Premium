@@ -4,7 +4,7 @@
 #AutoIt3Wrapper_UseX64=n
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #pragma compile(Icon, "Images\Icons\cocbot.ico")
-#pragma compile(FileDescription, Premium Clash of Clans Bot - http://clashbot.org)
+#pragma compile(FileDescription, Clash of Clans Bot - http://clashbot.org)
 #pragma compile(ProductName, ClashBot)
 #pragma compile(ProductVersion, 6.2)
 #pragma compile(FileVersion, 6.2)

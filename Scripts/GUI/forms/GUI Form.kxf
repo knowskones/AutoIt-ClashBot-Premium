@@ -38,7 +38,7 @@
 				<property name="Top" vt="Int8">30</property>
 				<property name="Width" vt="Int16">645</property>
 				<property name="Height" vt="Int16">355</property>
-				<property name="ActivePage" vt="Ident">pageGeneral</property>
+				<property name="ActivePage" vt="Ident">pageMiscSettings</property>
 				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
 				<property name="Font.Color" vt="Ident">clWindowText</property>
 				<property name="Font.Height" vt="Int8">-11</property>
@@ -5025,7 +5025,7 @@
 									</properties>
 									<components/>
 								</object>
-								<object type="TARadio" name="UseSkillAuto">
+								<object type="TARadio" name="UseSkillAuto_vip">
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">101</property>
@@ -5033,6 +5033,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Skill will activate when hero's health is low</property>
 										<property name="Caption" vt="String">Auto Activate Heroes Skill on Low Health</property>
+										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">21</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>

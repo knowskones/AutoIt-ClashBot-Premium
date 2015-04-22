@@ -528,6 +528,7 @@ $chkBoostSpell_vip = GUICtrlCreateCheckbox("Spell Factory", 503, 315, 80, 17)
 GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $pageMiscSettings = GUICtrlCreateTabItem("Misc")
+GUICtrlSetState(-1,$GUI_SHOW)
 $groupMiscs = GUICtrlCreateGroup("Misc", 16, 65, 600, 235)
 GUICtrlSetFont(-1, 8, 400, 0, "Arial")
 $lblReconnect = GUICtrlCreateLabel("Reconnect Interval:", 26, 85, 98, 17)
@@ -568,7 +569,8 @@ $chkTakeTownSS = GUICtrlCreateCheckbox("Take All Towns Snapshot", 466, 275, 141,
 $chkTakeLootSS = GUICtrlCreateCheckbox("Take Loots Snapshot", 316, 275, 118, 17)
 GUICtrlSetState(-1, $GUI_CHECKED)
 $chkAlertSearch = GUICtrlCreateCheckbox("Base Found Alert", 171, 275, 100, 17)
-$UseSkillAuto = GUICtrlCreateRadio("Auto Activate Heroes Skill on Low Health", 26, 166, 215, 17)
+$UseSkillAuto_vip = GUICtrlCreateRadio("Auto Activate Heroes Skill on Low Health", 26, 166, 215, 17)
+GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlSetTip(-1, "Skill will activate when hero's health is low")
 $chkRaxRestart = GUICtrlCreateCheckbox("Restart Bluestack if Fail to Locate All 4 Barracks", 316, 84, 250, 17)
 GUICtrlSetTip(-1, "Restart bluestack if fail to detect all 4 barracks")
@@ -840,7 +842,7 @@ GUICtrlSetOnEvent($btnCheckDefense, "btnCheckDefense")
 GUICtrlSetOnEvent($chkPushMatchFound_vip, "MatchFound")
 
 ; add vip features to array
-ReDim $vipControls[58] ; define number of elements for array
+ReDim $vipControls[59] ; define number of elements for array
 $vipControls[0] = $cmbUnitDelay_vip
 $vipControls[1] = $cmbWaveDelay_vip
 $vipControls[2] = $chkRandomSpeedAtk_vip
@@ -899,6 +901,7 @@ $vipControls[54] = $UsePushText_vip
 $vipControls[55] = $cmbPushDevice_vip
 $vipControls[56] = $txtPushBulletInterval_vip
 $vipControls[57] = $txtPushBulletMessages_vip
+$vipControls[58] = $UseSkillAuto_vip
 
 ; set title and icons
 WinSetTitle("sBotTitle", "", $sBotTitle)
