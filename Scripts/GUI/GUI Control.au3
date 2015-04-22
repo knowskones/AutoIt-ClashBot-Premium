@@ -16,6 +16,8 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 			Switch $nID
 				Case $GUI_EVENT_CLOSE
 					btnExit()
+				Case $menuItemExit
+					btnExit()
 				Case $btnStop
 					If $RunState Then btnStop()
 				Case $btnAtkNow
@@ -140,6 +142,8 @@ Func Initiate()
 		$CreateSpell = True
 		GUICtrlSetState($menuItemLoad, $GUI_DISABLE)
 		GUICtrlSetState($menuItemSave, $GUI_DISABLE)
+		GUICtrlSetState($menuItemOptions, $GUI_DISABLE)
+		GUICtrlSetState($menuItemAbout, $GUI_DISABLE)
 		GUICtrlSetState($cmbBoostBarracks_vip, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_DISABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_DISABLE)
@@ -240,6 +244,8 @@ Func btnStop()
 		EnableBS($HWnD, $SC_CLOSE)
 		GUICtrlSetState($menuItemLoad, $GUI_ENABLE)
 		GUICtrlSetState($menuItemSave, $GUI_ENABLE)
+		GUICtrlSetState($menuItemOptions, $GUI_ENABLE)
+		GUICtrlSetState($menuItemAbout, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnLocateDarkBarracks, $GUI_ENABLE)
 		GUICtrlSetState($btnSearchMode, $GUI_ENABLE)
