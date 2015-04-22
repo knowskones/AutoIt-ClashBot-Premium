@@ -38,7 +38,7 @@
 				<property name="Top" vt="Int8">30</property>
 				<property name="Width" vt="Int16">645</property>
 				<property name="Height" vt="Int16">355</property>
-				<property name="ActivePage" vt="Ident">pageMiscSettings</property>
+				<property name="ActivePage" vt="Ident">pageGeneral</property>
 				<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
 				<property name="Font.Color" vt="Ident">clWindowText</property>
 				<property name="Font.Height" vt="Int8">-11</property>
