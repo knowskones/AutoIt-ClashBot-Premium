@@ -412,9 +412,9 @@
 						<object type="TAGroup" name="groupDeadConditions">
 							<properties>
 								<property name="Left" vt="Int8">25</property>
-								<property name="Top" vt="Int8">11</property>
+								<property name="Top" vt="Int8">8</property>
 								<property name="Width" vt="Int16">250</property>
-								<property name="Height" vt="Int16">220</property>
+								<property name="Height" vt="Int16">233</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Dead Base Conditions</property>
@@ -426,7 +426,7 @@
 								<object type="TALabel" name="lblDeadConditions">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">23</property>
+										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int16">220</property>
 										<property name="Height" vt="Int8">15</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -442,7 +442,7 @@
 								<object type="TACheckbox" name="chkDeadGE">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">67</property>
+										<property name="Top" vt="Int8">85</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Min Resources:</property>
@@ -456,7 +456,7 @@
 								<object type="TALabel" name="lblDeadMinGold">
 									<properties>
 										<property name="Left" vt="Int8">120</property>
-										<property name="Top" vt="Int8">69</property>
+										<property name="Top" vt="Int8">86</property>
 										<property name="Width" vt="Int8">28</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -472,7 +472,7 @@
 								<object type="TAInput" name="txtDeadMinGold">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int8">65</property>
+										<property name="Top" vt="Int8">82</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">6</property>
@@ -487,7 +487,7 @@
 								<object type="TACombo" name="cmbDead">
 									<properties>
 										<property name="Left" vt="Int8">60</property>
-										<property name="Top" vt="Int8">90</property>
+										<property name="Top" vt="Int8">106</property>
 										<property name="Width" vt="Int8">45</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -509,7 +509,7 @@
 								<object type="TALabel" name="lblDeadMinElixir">
 									<properties>
 										<property name="Left" vt="Int8">120</property>
-										<property name="Top" vt="Int8">94</property>
+										<property name="Top" vt="Int8">111</property>
 										<property name="Width" vt="Int8">28</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -525,7 +525,7 @@
 								<object type="TAInput" name="txtDeadMinElixir">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int8">90</property>
+										<property name="Top" vt="Int8">107</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">6</property>
@@ -540,7 +540,7 @@
 								<object type="TACheckbox" name="chkDeadMeetDE">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">117</property>
+										<property name="Top" vt="Int16">135</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Min Dark Elixir:</property>
@@ -554,7 +554,7 @@
 								<object type="TAInput" name="txtDeadMinDarkElixir">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int8">115</property>
+										<property name="Top" vt="Int16">132</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">4</property>
@@ -569,7 +569,7 @@
 								<object type="TACheckbox" name="chkDeadMeetTH">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int16">167</property>
+										<property name="Top" vt="Int16">185</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Max TH Level:</property>
@@ -583,7 +583,7 @@
 								<object type="TACombo" name="cmbDeadTH">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int16">165</property>
+										<property name="Top" vt="Int16">182</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -608,7 +608,7 @@
 								<object type="TACheckbox" name="chkDeadMeetTrophy">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">160</property>
 										<property name="Width" vt="Int8">85</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Min Trophies:</property>
@@ -622,7 +622,7 @@
 								<object type="TAInput" name="txtDeadMinTrophy">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int16">140</property>
+										<property name="Top" vt="Int16">157</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -637,7 +637,7 @@
 								<object type="TACheckbox" name="chkDeadMeetTHO">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int16">192</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Townhall Outside</property>
@@ -651,7 +651,7 @@
 								<object type="TALabel" name="lblDeadConditions2">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">40</property>
+										<property name="Top" vt="Int8">37</property>
 										<property name="Width" vt="Int16">220</property>
 										<property name="Height" vt="Int8">15</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -664,14 +664,45 @@
 									</properties>
 									<components/>
 								</object>
+								<object type="TACheckbox" name="chkTotalDeadGE">
+									<properties>
+										<property name="Left" vt="Int8">15</property>
+										<property name="Top" vt="Int8">60</property>
+										<property name="Width" vt="Int8">120</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Total Gold and Elixir :</property>
+										<property name="Enabled" vt="False">False</property>
+										<property name="TabOrder" vt="Int8">15</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtTotalDeadGE">
+									<properties>
+										<property name="Left" vt="Int16">155</property>
+										<property name="Top" vt="Int8">57</property>
+										<property name="Width" vt="Int8">60</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
+										<property name="MaxLength" vt="Int8">6</property>
+										<property name="TabOrder" vt="Int8">16</property>
+										<property name="Text" vt="String">50000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
 							</components>
 						</object>
 						<object type="TAGroup" name="groupAnyConditions">
 							<properties>
 								<property name="Left" vt="Int16">310</property>
-								<property name="Top" vt="Int8">11</property>
+								<property name="Top" vt="Int8">8</property>
 								<property name="Width" vt="Int16">250</property>
-								<property name="Height" vt="Int16">220</property>
+								<property name="Height" vt="Int16">233</property>
 								<property name="CtrlStyle" vt="Int32">1342308359</property>
 								<property name="CtrlExStyle" vt="Int8">0</property>
 								<property name="Caption" vt="String">Any Base Conditions</property>
@@ -682,7 +713,7 @@
 								<object type="TALabel" name="lblAnyConditions">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">23</property>
+										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int16">220</property>
 										<property name="Height" vt="Int8">15</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -698,7 +729,7 @@
 								<object type="TACheckbox" name="chkMeetGE">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">67</property>
+										<property name="Top" vt="Int8">85</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Min Resources:</property>
@@ -714,7 +745,7 @@
 								<object type="TALabel" name="lblMinGold">
 									<properties>
 										<property name="Left" vt="Int8">120</property>
-										<property name="Top" vt="Int8">69</property>
+										<property name="Top" vt="Int8">86</property>
 										<property name="Width" vt="Int8">28</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -730,7 +761,7 @@
 								<object type="TAInput" name="txtMinGold">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int8">65</property>
+										<property name="Top" vt="Int8">82</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">6</property>
@@ -745,7 +776,7 @@
 								<object type="TACombo" name="cmbAny">
 									<properties>
 										<property name="Left" vt="Int8">60</property>
-										<property name="Top" vt="Int8">90</property>
+										<property name="Top" vt="Int8">106</property>
 										<property name="Width" vt="Int8">45</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -767,7 +798,7 @@
 								<object type="TALabel" name="lblMinElixir">
 									<properties>
 										<property name="Left" vt="Int8">120</property>
-										<property name="Top" vt="Int8">94</property>
+										<property name="Top" vt="Int8">111</property>
 										<property name="Width" vt="Int8">28</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -783,7 +814,7 @@
 								<object type="TAInput" name="txtMinElixir">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int8">90</property>
+										<property name="Top" vt="Int8">107</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">6</property>
@@ -798,7 +829,7 @@
 								<object type="TACheckbox" name="chkMeetDE">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">117</property>
+										<property name="Top" vt="Int16">135</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Min Dark Elixir:</property>
@@ -812,7 +843,7 @@
 								<object type="TAInput" name="txtMinDarkElixir">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int8">115</property>
+										<property name="Top" vt="Int16">132</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">4</property>
@@ -827,7 +858,7 @@
 								<object type="TACheckbox" name="chkMeetTH">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int16">167</property>
+										<property name="Top" vt="Int16">185</property>
 										<property name="Width" vt="Int8">95</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Max TH Level:</property>
@@ -841,7 +872,7 @@
 								<object type="TACombo" name="cmbTH">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int16">165</property>
+										<property name="Top" vt="Int16">182</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">25</property>
 										<property name="ItemHeight" vt="Int8">14</property>
@@ -866,7 +897,7 @@
 								<object type="TACheckbox" name="chkMeetTrophy">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int16">142</property>
+										<property name="Top" vt="Int16">160</property>
 										<property name="Width" vt="Int8">85</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Min Trophies:</property>
@@ -880,7 +911,7 @@
 								<object type="TAInput" name="txtMinTrophy">
 									<properties>
 										<property name="Left" vt="Int16">155</property>
-										<property name="Top" vt="Int16">140</property>
+										<property name="Top" vt="Int16">157</property>
 										<property name="Width" vt="Int8">60</property>
 										<property name="Height" vt="Int8">22</property>
 										<property name="MaxLength" vt="Int8">2</property>
@@ -895,7 +926,7 @@
 								<object type="TACheckbox" name="chkMeetTHO">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int16">192</property>
+										<property name="Top" vt="Int16">210</property>
 										<property name="Width" vt="Int8">100</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Townhall Outside</property>
@@ -909,7 +940,7 @@
 								<object type="TALabel" name="lblAnyConditions2">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">40</property>
+										<property name="Top" vt="Int8">37</property>
 										<property name="Width" vt="Int16">220</property>
 										<property name="Height" vt="Int8">15</property>
 										<property name="AutoSize" vt="False">False</property>
@@ -919,6 +950,39 @@
 										<property name="CtrlStyle" vt="Int32">1342308609</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set"/>
+									</properties>
+									<components/>
+								</object>
+								<object type="TACheckbox" name="chkTotalGE">
+									<properties>
+										<property name="Left" vt="Int8">15</property>
+										<property name="Top" vt="Int8">60</property>
+										<property name="Width" vt="Int8">120</property>
+										<property name="Height" vt="Int8">17</property>
+										<property name="Caption" vt="String">Total Gold and Elixir:</property>
+										<property name="Checked" vt="True">True</property>
+										<property name="Enabled" vt="False">False</property>
+										<property name="State" vt="Ident">cbChecked</property>
+										<property name="TabOrder" vt="Int8">15</property>
+										<property name="CtrlStyle" vt="Int32">1342242819</property>
+										<property name="CtrlExStyle" vt="Int8">0</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
+									</properties>
+									<components/>
+								</object>
+								<object type="TAInput" name="txtTotalGE">
+									<properties>
+										<property name="Left" vt="Int16">155</property>
+										<property name="Top" vt="Int8">57</property>
+										<property name="Width" vt="Int8">60</property>
+										<property name="Height" vt="Int8">22</property>
+										<property name="Enabled" vt="False">False</property>
+										<property name="MaxLength" vt="Int8">6</property>
+										<property name="TabOrder" vt="Int8">16</property>
+										<property name="Text" vt="String">80000</property>
+										<property name="CtrlStyle" vt="Int32">1342382209</property>
+										<property name="CtrlExStyle" vt="Int16">512</property>
+										<property name="Resizing" vt="Set">DockHeight</property>
 									</properties>
 									<components/>
 								</object>
