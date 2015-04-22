@@ -75,7 +75,8 @@ Func OptApply()
 		IniWrite($config, "login", "password", "")
 	EndIf
 
-	AuthCheck(False)
+	$unregPopup = False
+	AuthCheck()
 
 	OptTheme()
 EndFunc

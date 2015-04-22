@@ -38,6 +38,7 @@ Global $Buffer
 Global $Title = "BlueStacks App Player" ; Name of the Window
 Global $HWnD = WinGetHandle($Title) ;Handle for Bluestacks window
 Global $statLog, $tiAbout, $tiExit
+Global $unregPopup = True
 Global $LoginType = 0 ; 0-unregistered, 1-registered, 2-vip
 Global $bSaveLogin, $sUsername, $sPassword
 Global $vipControls[1]

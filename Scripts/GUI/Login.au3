@@ -1,6 +1,6 @@
 Global $AuthTimer, $AuthConnected = True
 
-Func AuthCheck($unregPopup = True)
+Func AuthCheck()
 	If $sUsername = "" Or $sPassword = "" Then
 		$LoginType = 0 ; Unregistered mode
 	Else
@@ -38,10 +38,10 @@ Func AuthCheck($unregPopup = True)
 	EndIf
 
 	AdlibRegister("AuthCheck", 3600000)
-	SetAuthMode($unregPopup)
+	SetAuthMode()
 EndFunc   ;==>AuthCheck
 
-Func SetAuthMode($unregPopup = True)
+Func SetAuthMode()
 	If $LoginType = 2 Then ; VIP mode
 		; Enable vip controls
 		For $i = 0 To UBound($vipControls) - 1
@@ -64,6 +64,7 @@ Func SetAuthMode($unregPopup = True)
 	If $LoginType = 0 And $unregPopup Then
 		MsgBox(0, "Unregistered", "You are currently running unregistered, please visit our forums at http://clashbot.org and register for a free account to remove this message.")
 	EndIf
+	$unregPopup = True
 EndFunc   ;==>SetAuthMode
 
 Func URLEncode($urlText)
