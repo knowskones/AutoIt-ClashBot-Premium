@@ -154,6 +154,8 @@ Func runBot() ;Bot that runs everything in order
 				If _Sleep(1000) Then Return
 				checkMainScreen(False)
 				If $Restart = True Then ContinueLoop
+			Else
+				$DCattack = False
 			EndIf
 		EndIf
 	WEnd
