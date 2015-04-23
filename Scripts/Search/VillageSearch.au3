@@ -53,7 +53,7 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			EndIf
 
 			; read setting directly to allow speed change while searching to use attack now
-			If _Sleep($itxtSearchsp * 500) Then Return
+			If _Sleep($itxtSearchsp * 1000) Then Return
 
 			; Attack instantly if Attack Now button pressed
 			GUICtrlSetState($btnAtkNow, $GUI_DISABLE)
@@ -66,7 +66,6 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 			If CompareResources() Then
 				ExitLoop
 			Else
-			    If _Sleep($itxtSearchsp * 500) Then Return
 				Click(750, 500) ;Click Next
 				GUICtrlSetData($lblresultvillagesskipped, GUICtrlRead($lblresultvillagesskipped) + 1)
 				GUICtrlSetData($lblresultsearchcost, GUICtrlRead($lblresultsearchcost) + $SearchCost)
