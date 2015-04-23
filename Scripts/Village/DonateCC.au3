@@ -13,7 +13,7 @@ Func DonateCC($DonateChat = True)
 
 	_CaptureRegion()
 	If $DonateChat = False Then
-	  If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False Then
+	  If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 Then
 		 SetLog("No new chats, skip donating", $COLOR_ORANGE)
 		 Return
 	  EndIf
