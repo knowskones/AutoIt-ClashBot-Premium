@@ -18,8 +18,10 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 	If _Sleep(750) Then Return
 
 	; Capture region for both TakeSS and Last Raid Resources
-	If _Sleep(2000) Then Return
-	_CaptureRegion()
+   If $GoldChangeCheck = True Then
+	  If _Sleep(2000) Then Return
+	  _CaptureRegion()
+   EndIf
 
 	If $TakeSS = 1 Then
 		SetLog("Taking snapshot of your loot", $COLOR_ORANGE)

@@ -33,7 +33,7 @@ Global $DropTrophiesStartPoint      = [ 34, 310]
 Global $TrainBtn[4] 	            = [541, 602, 0x728BB0, 20] ;
 Global $TrainBarbarian[4]           = [261, 366, 0x39D8E0, 20] ;
 Global $TrainArcher[4]              = [369, 366, 0x39D8E0, 20] ;
-Global $TrainGiant[4]               = [474, 280, 0x78C7D8, 20] ; Change pixel to avoid gem clicking when insufficient elixir
+Global $TrainGiant[4]               = [435, 321, 0xF8D898, 20] ; Change pixel to avoid gem clicking when insufficient elixir
 Global $TrainGoblin[4]              = [581, 366, 0x39D8E0, 20] ;
 Global $TrainWallbreaker[4]         = [688, 366, 0x3AD8E0, 20] ;
 Global $TrainBalloon[4]    		    = [261, 425, 0x47ACC8, 20] ;
@@ -41,7 +41,7 @@ Global $TrainWizard[4]    		    = [325, 425, 0xA46052, 20] ;
 
 Global $TrainMinion[4]				= [261, 365, 0x43D9E2, 20] ;
 Global $TrainHog[4]					= [369, 366, 0x39CBDA, 20] ;
-Global $TrainValkyrie[4] 			= [474, 280, 0x78C7D8, 20] ; Change pixel to avoid gem clicking when insufficient elixir
+Global $TrainValkyrie[4] 			= [439, 307, 0xF8CBB4, 20] ; Change pixel to avoid gem clicking when insufficient elixir
 
 Global $NextBtn[2]                  = [ 750, 500]
 ; Someone asking troupes : Color 0xD0E978 in x = 121
