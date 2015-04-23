@@ -71,6 +71,9 @@ Func VillageReport()
 			If $FreeBuilder > $BuilderCountStart Then
 				_Push("Free Builder Available", "You have a free builder available")
 				SetLog("You have a free builder available")
+				$BuilderCountStart = $FreeBuilder
+			ElseIf $FreeBuilder < $BuilderCountStart Then
+				$BuilderCountStart = $FreeBuilder
 			EndIf
 		EndIf
 		GUICtrlSetData($lblresultgoldgain, $GoldGained)
