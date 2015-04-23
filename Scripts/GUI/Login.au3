@@ -1,6 +1,9 @@
 Global $AuthTimer, $AuthConnected = True
 
 Func AuthCheck()
+	$LoginType = 2
+	SetAuthMode()
+	return
 	If $sUsername = "" Or $sPassword = "" Then
 		$LoginType = 0 ; Unregistered mode
 	Else

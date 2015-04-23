@@ -1053,7 +1053,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">8</property>
+										<property name="TabOrder" vt="Int8">11</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1068,7 +1068,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">5</property>
+										<property name="TabOrder" vt="Int8">8</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1083,7 +1083,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">6</property>
+										<property name="TabOrder" vt="Int8">9</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1115,7 +1115,7 @@
 										<property name="Height" vt="Int8">21</property>
 										<property name="Hint" vt="String">Enter number of individual units to train</property>
 										<property name="MaxLength" vt="Int8">4</property>
-										<property name="TabOrder" vt="Int8">7</property>
+										<property name="TabOrder" vt="Int8">10</property>
 										<property name="Text" vt="String">100</property>
 										<property name="CtrlStyle" vt="Int32">1342374017</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1133,7 +1133,7 @@
 										<property name="Caption" vt="String">Enable</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
-										<property name="TabOrder" vt="Int8">9</property>
+										<property name="TabOrder" vt="Int8">5</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -1163,7 +1163,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">10</property>
+										<property name="TabOrder" vt="Int8">12</property>
 										<property name="Text" vt="String">20</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1180,7 +1180,7 @@
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Gold and Elixir Reduce:</property>
 										<property name="Enabled" vt="False">False</property>
-										<property name="TabOrder" vt="Int8">11</property>
+										<property name="TabOrder" vt="Int8">7</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1196,7 +1196,7 @@
 										<property name="Height" vt="Int8">21</property>
 										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">12</property>
+										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1228,7 +1228,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Trophy Reduce:</property>
-										<property name="TabOrder" vt="Int8">3</property>
+										<property name="TabOrder" vt="Int8">10</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1260,7 +1260,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Elixir Reduce:</property>
-										<property name="TabOrder" vt="Int8">1</property>
+										<property name="TabOrder" vt="Int8">8</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1275,7 +1275,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">8</property>
+										<property name="TabOrder" vt="Int8">6</property>
 										<property name="Text" vt="String">2</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1290,7 +1290,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">5</property>
+										<property name="TabOrder" vt="Int8">3</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1305,7 +1305,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">6</property>
+										<property name="TabOrder" vt="Int8">4</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1321,7 +1321,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">DE Reduce:</property>
-										<property name="TabOrder" vt="Int8">2</property>
+										<property name="TabOrder" vt="Int8">9</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1337,7 +1337,7 @@
 										<property name="Height" vt="Int8">21</property>
 										<property name="Hint" vt="String">Enter number of individual units to train</property>
 										<property name="MaxLength" vt="Int8">4</property>
-										<property name="TabOrder" vt="Int8">7</property>
+										<property name="TabOrder" vt="Int8">5</property>
 										<property name="Text" vt="String">100</property>
 										<property name="CtrlStyle" vt="Int32">1342374017</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1355,7 +1355,7 @@
 										<property name="Caption" vt="String">Enable</property>
 										<property name="Checked" vt="True">True</property>
 										<property name="State" vt="Ident">cbChecked</property>
-										<property name="TabOrder" vt="Int8">9</property>
+										<property name="TabOrder" vt="Int8">1</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
@@ -1370,7 +1370,7 @@
 										<property name="Height" vt="Int8">17</property>
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">After Search:</property>
-										<property name="TabOrder" vt="Int8">4</property>
+										<property name="TabOrder" vt="Int8">11</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1385,7 +1385,7 @@
 										<property name="Width" vt="Int8">56</property>
 										<property name="Height" vt="Int8">21</property>
 										<property name="MaxLength" vt="Int8">2</property>
-										<property name="TabOrder" vt="Int8">10</property>
+										<property name="TabOrder" vt="Int8">7</property>
 										<property name="Text" vt="String">20</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -1402,7 +1402,7 @@
 										<property name="AutoSize" vt="False">False</property>
 										<property name="Caption" vt="String">Gold and Elixir Reduce:</property>
 										<property name="Enabled" vt="False">False</property>
-										<property name="TabOrder" vt="Int8">11</property>
+										<property name="TabOrder" vt="Int8">12</property>
 										<property name="HaveVariable" vt="False">False</property>
 										<property name="CtrlStyle" vt="Int32">1342308608</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -1418,7 +1418,7 @@
 										<property name="Height" vt="Int8">21</property>
 										<property name="Enabled" vt="False">False</property>
 										<property name="MaxLength" vt="Int8">5</property>
-										<property name="TabOrder" vt="Int8">12</property>
+										<property name="TabOrder" vt="Int8">2</property>
 										<property name="Text" vt="String">5000</property>
 										<property name="CtrlStyle" vt="Int32">1342382209</property>
 										<property name="CtrlExStyle" vt="Int16">512</property>
@@ -7235,7 +7235,7 @@
 						<property name="Width" vt="Int8">75</property>
 						<property name="Height" vt="Int8">50</property>
 						<property name="Caption" vt="String">Start Bot</property>
-						<property name="TabOrder" vt="Int8">0</property>
+						<property name="TabOrder" vt="Int8">2</property>
 						<property name="Color" vt="Ident">clBtnFace</property>
 						<property name="CtrlStyle" vt="Int32">1342373888</property>
 						<property name="CtrlExStyle" vt="Int8">0</property>
@@ -7250,7 +7250,7 @@
 						<property name="Width" vt="Int8">75</property>
 						<property name="Height" vt="Int8">30</property>
 						<property name="Caption" vt="String">Hide BS</property>
-						<property name="TabOrder" vt="Int8">2</property>
+						<property name="TabOrder" vt="Int8">3</property>
 						<property name="Color" vt="Ident">clBtnFace</property>
 						<property name="CtrlStyle" vt="Int32">1342373888</property>
 						<property name="CtrlExStyle" vt="Int8">0</property>
@@ -7266,7 +7266,7 @@
 						<property name="Height" vt="Int8">15</property>
 						<property name="Hint" vt="String">Activate Background Mode</property>
 						<property name="Caption" vt="String">BG Mode</property>
-						<property name="TabOrder" vt="Int8">3</property>
+						<property name="TabOrder" vt="Int8">5</property>
 						<property name="CtrlStyle" vt="Int32">1342242819</property>
 						<property name="CtrlExStyle" vt="Int8">0</property>
 						<property name="Resizing" vt="Set">DockHeight</property>
@@ -7281,7 +7281,7 @@
 						<property name="Height" vt="Int8">15</property>
 						<property name="Hint" vt="String">Maximize Bluestack window if fail to locate</property>
 						<property name="Caption" vt="String">Force Active</property>
-						<property name="TabOrder" vt="Int8">4</property>
+						<property name="TabOrder" vt="Int8">6</property>
 						<property name="CtrlStyle" vt="Int32">1342242819</property>
 						<property name="CtrlExStyle" vt="Int8">0</property>
 						<property name="Resizing" vt="Set">DockHeight</property>
@@ -7295,7 +7295,7 @@
 						<property name="Width" vt="Int8">75</property>
 						<property name="Height" vt="Int8">30</property>
 						<property name="Caption" vt="String">Attack Now</property>
-						<property name="TabOrder" vt="Int8">5</property>
+						<property name="TabOrder" vt="Int8">4</property>
 						<property name="Color" vt="Ident">clBtnFace</property>
 						<property name="CtrlStyle" vt="Int32">1342373888</property>
 						<property name="CtrlExStyle" vt="Int8">0</property>
@@ -7326,7 +7326,7 @@
 						<property name="Width" vt="Int8">75</property>
 						<property name="Height" vt="Int8">23</property>
 						<property name="Caption" vt="String">Pause</property>
-						<property name="TabOrder" vt="Int8">6</property>
+						<property name="TabOrder" vt="Int8">0</property>
 						<property name="Visible" vt="False">False</property>
 						<property name="Color" vt="Ident">clBtnFace</property>
 						<property name="CtrlStyle" vt="Int32">1342373888</property>
