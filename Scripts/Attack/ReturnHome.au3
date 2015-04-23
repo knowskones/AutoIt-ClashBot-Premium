@@ -17,18 +17,17 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 	Click(512, 394) ;Click Confirm
 	If _Sleep(750) Then Return
 
+	; Capture region for both TakeSS and Last Raid Resources
+	If _Sleep(2000) Then Return
+	_CaptureRegion()
+
 	If $TakeSS = 1 Then
-		If _Sleep(2000) Then Return
 		SetLog("Taking snapshot of your loot", $COLOR_ORANGE)
 		Local $Date = @MDAY & "." & @MON & "." & @YEAR
 		Local $Time = @HOUR & "." & @MIN
-		_CaptureRegion()
 		$Raid = 1
 		_GDIPlus_ImageSaveToFile($hBitmap, $dirLoots & $Date & "_at_" & $Time & ".jpg")
 		$FileName = $Date & "_at_" & $Time & ".jpg"
-	 Else
-		If _Sleep(2000) Then Return
-		_CaptureRegion()
 	EndIf
 
    ;Get Last Raid Resources
