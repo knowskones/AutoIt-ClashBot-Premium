@@ -483,6 +483,20 @@ Func getChar(ByRef $x, $y)
 	Next
 	$x -= 3
 
+	;search for second version 'o'
+	$width = 6
+	Local $c1 = Hex(0x878A87, 6), $c2 = Hex(0xABACAB, 6), $c3 = Hex(0x585B58, 6)
+	For $i = 1 To 3
+		Local $pixel1[3] = [$x + 2, $y + 4, $c1], $pixel2[3] = [$x + 4, $y + 5, $c2], $pixel3[3] = [$x + 3, $y + 2, $c3]
+		If boolPixelSearch($pixel1, $pixel2, $pixel3, 1) Then
+			$x += $width
+			Return "o"
+		Else
+			$x += 1
+		EndIf
+	Next
+	$x -= 3
+
 	;search for 'P'
 	$width = 6
 	Local $c1 = Hex(0x636663, 6), $c2 = Hex(0x858785, 6), $c3 = Hex(0xE6E7E6, 6)
