@@ -28,9 +28,9 @@ EndIf
 ;FileCreate(@ScriptDir & "\License.txt", "Copyright 2015 Application Automation LLC")
 ;EndIf
 
-#include "Others\_UskinLibrary.au3"
-_Uskin_LoadDLL()
-_USkin_Init(@ScriptDir & "\Images\Skins\orange.msstyles")
+;#include "Others\_UskinLibrary.au3"
+;_Uskin_LoadDLL()
+;_USkin_Init(@ScriptDir & "\Images\Skins\orange.msstyles")
 #include "Scripts\Global Variables.au3"
 #include "Scripts\Global Includes.au3"
 #include "Scripts\GUI\forms\GUI Form.au3"
