@@ -66,14 +66,13 @@ Func SetTime()
 	Local $time = _TicksToTime($timeDiff, $hour, $min, $sec)
 	Local $GoldPH = 0, $ElixirPH = 0, $DarkPH = 0
 
-	If ($timeDiff > 0) Then
-		$timeHour = $timeDiff / 3600000
-		$GoldPH = Int($GoldGained / $timeHour)
-		$ElixirPH = Int($ElixirGained / $timeHour)
-		$DarkPH = Int($DarkGained / $timeHour)
-	EndIf
-
 	If _GUICtrlTab_GetCurSel($tabMain) = 8 Then
+	  If ($timeDiff > 0) Then
+		 $timeHour = $timeDiff / 3600000
+		 $GoldPH = Int($GoldGained / $timeHour)
+		 $ElixirPH = Int($ElixirGained / $timeHour)
+		 $DarkPH = Int($DarkGained / $timeHour)
+	  EndIf
 	  GUICtrlSetData($lblresultruntime, StringFormat("%02i:%02i:%02i", $hour, $min, $sec))
 	  GUICtrlSetData($lblresultgph, $GoldPH)
 	  GUICtrlSetData($lblresulteph, $ElixirPH)
