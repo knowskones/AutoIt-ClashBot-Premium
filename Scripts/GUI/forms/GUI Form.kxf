@@ -1985,9 +1985,9 @@
 								<object type="TACheckbox" name="chkDonateAllBarbarians">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">18</property>
+										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">120</property>
-										<property name="Height" vt="Int8">14</property>
+										<property name="Height" vt="Int8">15</property>
 										<property name="Hint" vt="String">Donate to all request regardless Donation Text</property>
 										<property name="Caption" vt="String">Donate to All Request</property>
 										<property name="TabOrder" vt="Int8">0</property>
@@ -2176,9 +2176,9 @@
 								<object type="TACheckbox" name="chkDonateBarbarians">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">35</property>
+										<property name="Top" vt="Int8">33</property>
 										<property name="Width" vt="Int8">82</property>
-										<property name="Height" vt="Int8">14</property>
+										<property name="Height" vt="Int8">15</property>
 										<property name="Hint" vt="String">Donate Troop base on Setting and Donation Text</property>
 										<property name="Caption" vt="String">Smart Donate</property>
 										<property name="Checked" vt="True">True</property>
@@ -2208,9 +2208,9 @@
 								<object type="TACheckbox" name="chkDonateAllArchers">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">18</property>
+										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">120</property>
-										<property name="Height" vt="Int8">14</property>
+										<property name="Height" vt="Int8">15</property>
 										<property name="Hint" vt="String">Donate to all request regardless Donation Text</property>
 										<property name="Caption" vt="String">Donate to All Request</property>
 										<property name="TabOrder" vt="Int8">0</property>
@@ -2399,9 +2399,9 @@
 								<object type="TACheckbox" name="chkDonateArchers">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">35</property>
+										<property name="Top" vt="Int8">33</property>
 										<property name="Width" vt="Int8">82</property>
-										<property name="Height" vt="Int8">14</property>
+										<property name="Height" vt="Int8">15</property>
 										<property name="Hint" vt="String">Donate Troop base on Setting and Donation Text</property>
 										<property name="Caption" vt="String">Smart Donate</property>
 										<property name="Checked" vt="True">True</property>
@@ -2431,9 +2431,9 @@
 								<object type="TACheckbox" name="chkDonateAllGiants">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">18</property>
+										<property name="Top" vt="Int8">16</property>
 										<property name="Width" vt="Int8">120</property>
-										<property name="Height" vt="Int8">14</property>
+										<property name="Height" vt="Int8">15</property>
 										<property name="Hint" vt="String">Donate to all request regardless Donation Text</property>
 										<property name="Caption" vt="String">Donate to All Request</property>
 										<property name="TabOrder" vt="Int8">0</property>
@@ -2622,9 +2622,9 @@
 								<object type="TACheckbox" name="chkDonateGiants">
 									<properties>
 										<property name="Left" vt="Int8">15</property>
-										<property name="Top" vt="Int8">35</property>
+										<property name="Top" vt="Int8">33</property>
 										<property name="Width" vt="Int8">82</property>
-										<property name="Height" vt="Int8">14</property>
+										<property name="Height" vt="Int8">15</property>
 										<property name="Hint" vt="String">Donate Troop base on Setting and Donation Text</property>
 										<property name="Caption" vt="String">Smart Donate</property>
 										<property name="Checked" vt="True">True</property>

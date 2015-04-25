@@ -5,6 +5,10 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 	Local $skippedVillages
 	_WinAPI_EmptyWorkingSet(WinGetProcess($Title)) ; Reduce BlueStacks Memory Usage
 
+    _CaptureRegion()
+	If _ColorCheck(_GetPixelColor(287, 494), Hex(0xEEAC28, 6), 50) Then CheckAttackStatus()
+    If $Restart = True Then Return
+
 	$AtkDeadEnabled = False
 	$AtkAnyEnabled = False
 
@@ -17,9 +21,6 @@ Func VillageSearch() ;Control for searching a village that meets conditions
 		chkNoAttack()
 		Return
 	EndIf
-
-	If _ColorCheck(_GetPixelColor(287, 494), Hex(0xEEAC28, 6), 50) Then CheckAttackStatus()
-    If $Restart = True Then Return
 
 	While 1
 		If $AtkDeadEnabled Then SetLog("~Dead - " & _
@@ -97,14 +98,13 @@ EndFunc   ;==>VillageSearch
 Func CheckAttackStatus()
 	Click(217, 510);Click Find a Match again if stuck at find match screen
     If _Sleep(5000) Then Return
+    _CaptureRegion()
 	If _ColorCheck(_GetPixelColor(287, 494), Hex(0xEEAC28, 6), 50) Then
 	   SetLog("Attack other players is temporarily disabled, return to base after 60 seconds...", $COLOR_RED)
 	   If _Sleep(60000) Then Return
 	   Click(822, 48) ;Clicks X
 	   $Restart = True
 	   $DCattack = False
-	   Return
-	Else
 	   Return
 	EndIf
 EndFunc
