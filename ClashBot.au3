@@ -10,7 +10,7 @@
 #pragma compile(FileVersion, 6.2)
 #pragma compile(LegalCopyright, 2015 © Application Automation LLC)
 
-$sBotVersion = "6.2" ;Edit version in compile option above aswell
+$sBotVersion = "6.2.1" ;Edit version in compile option above aswell
 $sBotTitle = "AutoIt ClashBot v" & $sBotVersion
 
 If _Singleton($sBotTitle, 1) = 0 Then
