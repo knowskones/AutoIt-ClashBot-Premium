@@ -1071,7 +1071,7 @@ Func btnExit()
 	SaveConfig()
 	Exit
 EndFunc   ;==>btnExit
-
+#cs
 Func ApplyTheme($path)
 	If $path <> "" Then
 		If FileExists($path) Then
@@ -1084,7 +1084,7 @@ Func ApplyTheme($path)
 	EndIf
 
 EndFunc   ;==>ApplyTheme
-
+#ce
 Func DisableBS($HWnD, $iButton)
 	ConsoleWrite('+ Window Handle: ' & $HWnD & @CRLF)
 	$hSysMenu = _GUICtrlMenu_GetSystemMenu($HWnD, 0)
@@ -1103,7 +1103,7 @@ EndFunc   ;==>EnableBS
 If FileExists($config) Then
 	readConfig()
 	applyConfig()
-	ApplyTheme($themePath)
+;	ApplyTheme($themePath)
 EndIf
 
 GUIRegisterMsg($WM_COMMAND, "GUIControl")

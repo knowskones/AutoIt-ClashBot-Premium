@@ -8,27 +8,28 @@
 Global $frmOptions, $txtOptUsername, $txtOptPassword, $chkOptSaveLogin, $cmbOptTheme, $cmbOptLanguage
 Func OptionsDialog()
 #Region ### START Koda GUI section ### Form=Options Form.kxf
-$frmOptions = GUICreate("Options", 268, 293, -1, -1, BitOR($DS_MODALFRAME,$DS_SETFOREGROUND), -1, $frmBot)
+$frmOptions = GUICreate("Options", 268, 294, -1, -1, BitOR($WS_DLGFRAME,$WS_CLIPSIBLINGS,$DS_MODALFRAME,$DS_SETFOREGROUND), -1, $frmBot)
 $groupOptLogin = GUICtrlCreateGroup("", 8, 1, 249, 137)
-$txtOptUsername = GUICtrlCreateInput("", 88, 56, 150, 21)
-$lblOptUsername = GUICtrlCreateLabel("Username:", 24, 57, 55, 17)
-$txtOptPassword = GUICtrlCreateInput("", 88, 86, 150, 21, BitOR($GUI_SS_DEFAULT_INPUT,$ES_PASSWORD))
-$lblOptPassword = GUICtrlCreateLabel("Password:", 24, 87, 53, 17)
-$lblOptLogin = GUICtrlCreateLabel("Enter in credentials for a VIP account", 42, 15, 180, 17, $SS_CENTER)
-$lblOptLogin1 = GUICtrlCreateLabel("to unlock premium features.", 65, 33, 134, 17, $SS_CENTER)
+$txtOptUsername = GUICtrlCreateInput("", 88, 56, 150, 21, BitOR($ES_AUTOHSCROLL,$WS_GROUP))
+$lblOptUsername = GUICtrlCreateLabel("Username:", 24, 57, 55, 17, $WS_GROUP)
+$txtOptPassword = GUICtrlCreateInput("", 88, 86, 150, 21, BitOR($ES_PASSWORD,$ES_AUTOHSCROLL,$WS_GROUP))
+$lblOptPassword = GUICtrlCreateLabel("Password:", 24, 87, 53, 17, $WS_GROUP)
+$lblOptLogin = GUICtrlCreateLabel("Enter in credentials for a VIP account", 42, 15, 180, 17, BitOR($SS_CENTER,$WS_GROUP))
+$lblOptLogin1 = GUICtrlCreateLabel("to unlock premium features.", 65, 33, 134, 17, BitOR($SS_CENTER,$WS_GROUP))
 $chkOptSaveLogin = GUICtrlCreateCheckbox("Save Username/Password", 60, 113, 150, 17)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $btnOptOK = GUICtrlCreateButton("&OK", 15, 231, 75, 25)
 $btnOptCancel = GUICtrlCreateButton("&Cancel", 95, 231, 75, 25)
 $btnOptApply = GUICtrlCreateButton("&Apply", 175, 231, 75, 25)
 $groupOptSettings = GUICtrlCreateGroup("", 8, 142, 249, 78)
-$lblOptTheme = GUICtrlCreateLabel("Theme:", 24, 163, 40, 17)
-$cmbOptTheme = GUICtrlCreateCombo("", 88, 157, 150, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+$lblOptTheme = GUICtrlCreateLabel("Theme:", 24, 163, 40, 17, $WS_GROUP)
+$cmbOptTheme = GUICtrlCreateCombo("", 88, 157, 150, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL,$WS_GROUP))
 GUICtrlSetData(-1, "None|Default|Iron|Steel|Gray|Dark|Black|Alloy|Hex|Core|Fresco|Soft|Green|Teal|Orange|Red", "Default")
-$cmbOptLanguage = GUICtrlCreateCombo("", 88, 187, 150, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL))
+GUICtrlSetState(-1, $GUI_DISABLE)
+$cmbOptLanguage = GUICtrlCreateCombo("", 88, 187, 150, 25, BitOR($CBS_DROPDOWN,$CBS_AUTOHSCROLL,$WS_GROUP))
 GUICtrlSetData(-1, "Arabic|Deutsch|English|Filipino|French|Portuguese|Spanish|Turkish|Vietnamese", "English")
 GUICtrlSetState(-1, $GUI_DISABLE)
-$lblOptLanguage = GUICtrlCreateLabel("Language:", 24, 188, 55, 17)
+$lblOptLanguage = GUICtrlCreateLabel("Language:", 24, 188, 55, 17, $WS_GROUP)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
@@ -47,7 +48,7 @@ GUISetState(@SW_SHOW)
 		GUICtrlSetState($chkOptSaveLogin, $GUI_UNCHECKED)
 	EndIf
 
-	_GUICtrlComboBox_SetCurSel($cmbOptTheme, $iTheme)
+;	_GUICtrlComboBox_SetCurSel($cmbOptTheme, $iTheme)
 EndFunc
 
 Func btnOptOK()
@@ -78,7 +79,7 @@ Func OptApply()
 	$unregPopup = False
 	AuthCheck()
 
-	OptTheme()
+;	OptTheme()
 EndFunc
 
 Func OptClose()
