@@ -64,8 +64,6 @@ EndFunc   ;==>GUIControl
 Func SetTime()
 	Local $timeDiff = Int(TimerDiff($sTimer))
 	Local $time = _TicksToTime($timeDiff, $hour, $min, $sec)
-	If _GUICtrlTab_GetCurSel($tabMain) = 8 Then GUICtrlSetData($lblresultruntime, StringFormat("%02i:%02i:%02i", $hour, $min, $sec))
-
 	Local $GoldPH = 0, $ElixirPH = 0, $DarkPH = 0
 
 	If ($timeDiff > 0) Then
@@ -75,9 +73,12 @@ Func SetTime()
 		$DarkPH = Int($DarkGained / $timeHour)
 	EndIf
 
-	GUICtrlSetData($lblresultgph, $GoldPH)
-	GUICtrlSetData($lblresulteph, $ElixirPH)
-	GUICtrlSetData($lblresultdeph, $DarkPH)
+	If _GUICtrlTab_GetCurSel($tabMain) = 8 Then
+	  GUICtrlSetData($lblresultruntime, StringFormat("%02i:%02i:%02i", $hour, $min, $sec))
+	  GUICtrlSetData($lblresultgph, $GoldPH)
+	  GUICtrlSetData($lblresulteph, $ElixirPH)
+	  GUICtrlSetData($lblresultdeph, $DarkPH)
+	EndIf
 EndFunc   ;==>SetTime
 
 Func SetTimeRC()

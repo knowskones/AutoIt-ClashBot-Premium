@@ -67,6 +67,7 @@ Func runBot() ;Bot that runs everything in order
 		chkNoAttack()
 		$Restart = False
 		$fullArmy = False
+		$CastleFull = False
 		If _Sleep(1000) Then Return
 		checkMainScreen()
 		If _Sleep(1000) Then Return
@@ -237,6 +238,9 @@ Func Idle() ;Sequence that runs until Full Army
 			If _Sleep(1000) Then ExitLoop
 		EndIf
 		DonateCC()
+		If _Sleep(1000) Then Return
+		checkMainScreen(False)
+		RequestCC()
 		$TimeIdle += Round(TimerDiff($hTimer) / 1000, 2) ;In Seconds
 		SetLog("Time Idle: " & Floor(Floor($TimeIdle / 60) / 60) & " hours " & Floor(Mod(Floor($TimeIdle / 60), 60)) & " minutes " & Floor(Mod($TimeIdle, 60)) & " seconds", $COLOR_ORANGE)
 	WEnd
