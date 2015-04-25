@@ -32,6 +32,19 @@ Func ReturnHome($TakeSS = 1, $GoldChangeCheck = True) ;Return main screen
 		$FileName = $Date & "_at_" & $Time & ".jpg"
 	EndIf
 
+	;Get Stars
+    $Stars = 0
+    _CaptureRegion()
+	if _ColorCheck(_GetPixelColor(311, 193), Hex(0xCFD0CA, 6), 20) Then
+		$Stars += 1
+	EndIf
+	if _ColorCheck(_GetPixelColor(401, 172), Hex(0xD0D2CC, 6), 20) Then
+		$Stars += 1
+	EndIf
+	if _ColorCheck(_GetPixelColor(518, 194), Hex(0xD0D0CC, 6), 20) Then
+		$Stars += 1
+	EndIf
+
    ;Get Last Raid Resources
    If $GoldChangeCheck = True Then
 		$LastRaidGold = getOther(330, 289, "LastRaidGold")

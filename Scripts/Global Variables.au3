@@ -345,6 +345,7 @@ Global $PushBulletinterval = 10
 Global $PushBulletmessages = 100
 Global $PBdevice = ""
 Global $PushBulletDevice
+Global $Stars = 0
 
 ;GoldCostPerSearch
 Global $SearchCost = 0

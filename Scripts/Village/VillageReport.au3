@@ -90,12 +90,15 @@ Func VillageReport()
 			If $PushBullettype = 0 And $TakeLootSnapShot = 1 Then
 				If _Sleep(2000) Then Return
 				_PushFile($FileName, "Profile\Loots", "image/jpeg", "Last Raid", $FileName)
-				$Raid = 0
 			ElseIf $PushBullettype = 1 Then
-				_Push("Last Raid", "[G]: " & _NumberFormat($LastRaidGold) & " [E]: " & _NumberFormat($LastRaidElixir) & " [D]: " & _NumberFormat($LastRaidDarkElixir) & " [T]: " & $LastRaidTrophy)
+				If $Stars > 0 Then
+					_Push("Last Raid", "[G]: " & _NumberFormat($LastRaidGold) & " [E]: " & _NumberFormat($LastRaidElixir) & " [D]: " & _NumberFormat($LastRaidDarkElixir) & " [T]: " & $LastRaidTrophy & " [Result]: " & $Stars & "-Star Victory!")
+				Else
+					_Push("Last Raid", "[G]: " & _NumberFormat($LastRaidGold) & " [E]: " & _NumberFormat($LastRaidElixir) & " [D]: " & _NumberFormat($LastRaidDarkElixir) & " [T]: " & $LastRaidTrophy & " [Result]: Defeat!")
+				EndIf
 				SetLog("Push: Last Raid", $COLOR_GREEN)
-				$Raid = 0
 			EndIf
+			$Raid = 0
 		EndIf
 	EndIf
 	GUICtrlSetData($lblresultgoldnow, $GoldCount)
