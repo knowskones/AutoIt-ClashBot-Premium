@@ -44,15 +44,6 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					If GUICtrlRead($chkDonateOnly) = $GUI_CHECKED Then
 						GUICtrlSetState($chkNoAttack, $GUI_UNCHECKED)
 					EndIf
-				Case $chkMeetGE
-					If GUICtrlRead($chkMeetGE) = $GUI_UNCHECKED Then
-						GUICtrlSetState($chkSpellDarkStorage_vip, $GUI_UNCHECKED)
-						GUICtrlSetState($chkSpellDarkStorage_vip, $GUI_DISABLE)
-						GUICtrlSetState($chkMultiLight_vip, $GUI_UNCHECKED)
-						GUICtrlSetState($chkMultiLight_vip, $GUI_DISABLE)
-					ElseIf GUICtrlRead($chkMeetGE) = $GUI_CHECKED And $LoginType = 2 Then
-						GUICtrlSetState($chkSpellDarkStorage_vip, $GUI_ENABLE)
-					EndIf
 				Case $chkSpellDarkStorage_vip
 					chkSpellDarkStorage()
 				Case $chkKeepLogs
