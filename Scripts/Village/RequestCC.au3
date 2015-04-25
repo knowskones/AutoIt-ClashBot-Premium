@@ -28,10 +28,10 @@ Func RequestCC()
 					If _Sleep(1000) Then ExitLoop
 					Click(524, 228)
 					;Click(340, 228)
-					$CastleFull = True
 				Else
 					SetLog("Clan Castle is already Full...", $COLOR_ORANGE)
 					ClickP($TopLeftClient, 2)
+					$CastleFull = True
 				EndIf
 				EndIf
 			Else
