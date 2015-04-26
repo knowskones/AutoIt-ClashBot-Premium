@@ -43,8 +43,7 @@ Func GetResources() ;Reads resources
 	EndIf
 	If $searchDead Then $txtDead = "Dead"
 
-	If ((GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or ($icmbDeadAttackTH > 0 And $LoginType = 2)) And $searchDead) Or _
-			GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or ($icmbAttackTH > 0 And $LoginType = 2) Then
+	If ((GUICtrlRead($chkDeadMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkDeadMeetTHO) = $GUI_CHECKED Or ($icmbDeadAttackTH > 0 And $LoginType = 2)) And $searchDead) Or (GUICtrlRead($chkMeetTH) = $GUI_CHECKED Or GUICtrlRead($chkMeetTHO) = $GUI_CHECKED Or ($icmbAttackTH > 0 And $LoginType = 2)) Then
 		$searchTH = checkTownhall()
 	Else
 		$searchTH = "-"
