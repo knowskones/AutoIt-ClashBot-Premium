@@ -4508,7 +4508,6 @@
 										<property name="Top" vt="Int8">20</property>
 										<property name="Width" vt="Int8">40</property>
 										<property name="Height" vt="Int8">25</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="ItemHeight" vt="Int8">14</property>
 										<property name="ItemIndex" vt="Int8">1</property>
 										<property name="TabOrder" vt="Int8">1</property>
@@ -4541,7 +4540,6 @@
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">King Altar</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">2</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4556,7 +4554,6 @@
 										<property name="Width" vt="Int8">75</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Queen Altar</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">3</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4571,7 +4568,6 @@
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 1</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">4</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4586,7 +4582,6 @@
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 2</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">5</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4601,7 +4596,6 @@
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 3</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">6</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4616,7 +4610,6 @@
 										<property name="Width" vt="Int8">65</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Barrack 4</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">7</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4631,7 +4624,6 @@
 										<property name="Width" vt="Int8">80</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Spell Factory</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">10</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4646,7 +4638,6 @@
 										<property name="Width" vt="Int8">90</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Dark Barrack 1</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">8</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
@@ -4661,7 +4652,6 @@
 										<property name="Width" vt="Int8">90</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Caption" vt="String">Dark Barrack 2</property>
-										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">9</property>
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>

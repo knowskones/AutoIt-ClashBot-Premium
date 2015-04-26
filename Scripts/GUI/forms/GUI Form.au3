@@ -507,25 +507,15 @@ GUICtrlSetFont(-1, 8, 400, 0, "Arial")
 $lblBoostBarracks = GUICtrlCreateLabel("Boosts left :", 503, 89, 60, 17)
 $cmbBoostBarracks_vip = GUICtrlCreateCombo("", 573, 85, 40, 25, BitOR($GUI_SS_DEFAULT_COMBO,$CBS_SIMPLE))
 GUICtrlSetData(-1, "0|1|2|3|4|5|6|7|8|9|10", "0")
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostKing_vip = GUICtrlCreateCheckbox("King Altar", 503, 115, 65, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostQueen_vip = GUICtrlCreateCheckbox("Queen Altar", 503, 140, 75, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostRax1_vip = GUICtrlCreateCheckbox("Barrack 1", 503, 165, 65, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostRax2_vip = GUICtrlCreateCheckbox("Barrack 2", 503, 190, 65, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostRax3_vip = GUICtrlCreateCheckbox("Barrack 3", 503, 215, 65, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostRax4_vip = GUICtrlCreateCheckbox("Barrack 4", 503, 240, 65, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostDark1_vip = GUICtrlCreateCheckbox("Dark Barrack 1", 503, 265, 90, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostDark2_vip = GUICtrlCreateCheckbox("Dark Barrack 2", 503, 290, 90, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 $chkBoostSpell_vip = GUICtrlCreateCheckbox("Spell Factory", 503, 315, 80, 17)
-GUICtrlSetState(-1, $GUI_DISABLE)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $pageMiscSettings = GUICtrlCreateTabItem("Misc")
 $groupMiscs = GUICtrlCreateGroup("Misc", 16, 65, 600, 235)
@@ -869,6 +859,7 @@ $vipControls[23] = $btnLocateUp2_vip
 $vipControls[24] = $btnLocateUp3_vip
 $vipControls[25] = $txtBldgMinGold_vip
 $vipControls[26] = $txtBldgMinElixir_vip
+#cs
 $vipControls[27] = $cmbBoostBarracks_vip
 $vipControls[28] = $chkBoostKing_vip
 $vipControls[29] = $chkBoostQueen_vip
@@ -879,6 +870,7 @@ $vipControls[33] = $chkBoostRax4_vip
 $vipControls[34] = $chkBoostDark1_vip
 $vipControls[35] = $chkBoostDark2_vip
 $vipControls[36] = $chkBoostSpell_vip
+#ce
 $vipControls[37] = $cmbDeadAttackTH_vip
 $vipControls[38] = $cmbAttackTH_vip
 $vipControls[39] = $chkSpellDarkStorage_vip

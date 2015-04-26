@@ -484,6 +484,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	$CC = -1
 	$King = -1
 	$Queen = -1
+	$LSpell = -1
 	For $i = 0 To 8
 		If $atkTroops[$i][0] = $eBarbarian Then
 			$Barb = $i
@@ -499,6 +500,8 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 			$King = $i
 		ElseIf $atkTroops[$i][0] = $eQueen Then
 			$Queen = $i
+		ElseIf $atkTroops[$i][0] = $eLSpell Then
+			$LSpell = $i
 		EndIf
 	Next
 
@@ -767,7 +770,7 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	SetLog("Dropping left over troops", $COLOR_BLUE)
 	For $x = 0 To 1
 		PrepareAttack(True) ;Check remaining quantities
-		For $i = $eBarbarian To $eWizard ; launch all remaining troops
+		For $i = $eBarbarian To $eValkyrie ; launch all remaining troops
 			If $i = $eBarbarian Or $i = $eArcher Or $i = $eWizard Then
 				LaunchTroop($i, False, $nbSides, 0, 1)
 			Else
