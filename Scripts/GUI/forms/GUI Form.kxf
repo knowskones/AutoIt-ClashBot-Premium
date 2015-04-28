@@ -19,15 +19,7 @@
 		<property name="Style" vt="Int32">-1798701056</property>
 		<property name="ExStyle" vt="Int16">256</property>
 		<property name="Version" vt="String">1.04</property>
-		<property name="FormOptOnEvent" vt="False">False</property>
-		<property name="FormOptExpVars" vt="False">False</property>
-		<property name="FormOptPopulate" vt="False">False</property>
-		<property name="FormOptVarsForSet" vt="False">False</property>
-		<property name="FormOptIndentChar" vt="Int8">0</property>
-		<property name="FormOptIndentCount" vt="Int8">1</property>
-		<property name="FormOptIndentInit" vt="Int8">0</property>
-		<property name="FormOptVarScope" vt="Int8">0</property>
-		<property name="Resizing" vt="Set"/>
+		<property name="FormOptIndentCount" vt="Int8">0</property>
 		<property name="PixelsPerInch" vt="Int8">96</property>
 		<property name="TextHeight" vt="Int8">13</property>
 	</properties>
@@ -995,7 +987,6 @@
 								<property name="Caption" vt="String">Any Base Search Reduction</property>
 								<property name="TabOrder" vt="Int8">1</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblTroRedAny">
@@ -1217,7 +1208,6 @@
 								<property name="Caption" vt="String">Dead Base Search Reduction</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblTroRedDead">
@@ -1439,7 +1429,6 @@
 								<property name="Caption" vt="String">Avoid Defend</property>
 								<property name="TabOrder" vt="Int8">2</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
 								<object type="TACheckbox" name="chkInfTow">
@@ -1873,7 +1862,6 @@
 										<property name="CtrlStyle" vt="Int32">1342242819</property>
 										<property name="CtrlExStyle" vt="Int8">0</property>
 										<property name="Resizing" vt="Set">DockHeight</property>
-										<property name="Description" vt="String">chkRandomSpeedAtk</property>
 									</properties>
 									<components/>
 								</object>
@@ -1979,7 +1967,6 @@
 								<property name="Caption" vt="String">Option 1</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupBarbarians</property>
 							</properties>
 							<components>
 								<object type="TACheckbox" name="chkDonateAllBarbarians">
@@ -2736,6 +2723,27 @@
 								</object>
 							</components>
 						</object>
+						<object type="TACheckbox" name="chkRequestOnce">
+							<properties>
+								<property name="Left" vt="Int16">295</property>
+								<property name="Top" vt="Int16">287</property>
+								<property name="Width" vt="Int16">220</property>
+								<property name="Height" vt="Int8">17</property>
+								<property name="Hint" vt="String">Request troop once after every raid regardless if Castle is full</property>
+								<property name="Caption" vt="String">Only request troop once for every raid</property>
+								<property name="Font.Charset" vt="Ident">DEFAULT_CHARSET</property>
+								<property name="Font.Color" vt="Ident">clWindowText</property>
+								<property name="Font.Height" vt="Int8">-12</property>
+								<property name="Font.Name" vt="String">Arial</property>
+								<property name="Font.Style" vt="Set"/>
+								<property name="ParentFont" vt="False">False</property>
+								<property name="TabOrder" vt="Int8">6</property>
+								<property name="CtrlStyle" vt="Int32">1342242819</property>
+								<property name="CtrlExStyle" vt="Int8">0</property>
+								<property name="Resizing" vt="Set">DockHeight</property>
+							</properties>
+							<components/>
+						</object>
 					</components>
 				</object>
 				<object type="TTabSheet" name="pageTroopSettings">
@@ -2754,7 +2762,6 @@
 								<property name="Caption" vt="String">Troops</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupTroops</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblBarbarians">
@@ -3104,7 +3111,6 @@
 								<property name="Caption" vt="String">Custom Troops 2</property>
 								<property name="TabOrder" vt="Int8">1</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupCustomTroops2</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblBarrackJOE1">
@@ -3532,7 +3538,6 @@
 								<property name="Caption" vt="String">Barracks</property>
 								<property name="TabOrder" vt="Int8">2</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupBarracks</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblBarrack1">
@@ -3736,7 +3741,6 @@
 								<property name="Caption" vt="String">Dark Troops</property>
 								<property name="TabOrder" vt="Int8">3</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupDarkTroops</property>
 							</properties>
 							<components>
 								<object type="TACheckbox" name="chkDarkTroop">
@@ -5019,10 +5023,10 @@
 									<properties>
 										<property name="Left" vt="Int8">10</property>
 										<property name="Top" vt="Int8">101</property>
-										<property name="Width" vt="Int16">215</property>
+										<property name="Width" vt="Int16">320</property>
 										<property name="Height" vt="Int8">17</property>
 										<property name="Hint" vt="String">Skill will activate when hero's health is low</property>
-										<property name="Caption" vt="String">Auto Activate Heroes Skill on Low Health</property>
+										<property name="Caption" vt="String">Auto Activate Heroes Skill on Low Health (Temporary disable)</property>
 										<property name="Enabled" vt="False">False</property>
 										<property name="TabOrder" vt="Int8">21</property>
 										<property name="CtrlStyle" vt="Int32">1342242825</property>
@@ -5223,7 +5227,6 @@
 								<property name="Caption" vt="String">Resources at Start</property>
 								<property name="TabOrder" vt="Int8">0</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupResourceAtStart</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblgoldonstart">
@@ -5419,7 +5422,6 @@
 								<property name="Caption" vt="String">Other Stats</property>
 								<property name="TabOrder" vt="Int8">1</property>
 								<property name="Resizing" vt="Set"/>
-								<property name="Description" vt="String">groupOtherStats</property>
 							</properties>
 							<components>
 								<object type="TALabel" name="lblvillagesattacked">
@@ -6344,7 +6346,6 @@
 								<property name="Height" vt="Int8">28</property>
 								<property name="Associate" vt="Ident">Owner</property>
 								<property name="WrappedName" vt="String">MainMenu1</property>
-								<property name="AutoHotkeys" vt="Ident">maManual</property>
 							</properties>
 							<components/>
 						</object>
