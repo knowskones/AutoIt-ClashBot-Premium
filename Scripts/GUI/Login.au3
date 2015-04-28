@@ -62,7 +62,7 @@ Func SetAuthMode()
 	EndIf
 
 	If $LoginType = 0 And $unregPopup Then
-		MsgBox(0, "Unregistered", "You are currently running unregistered, please visit our forums at http://clashbot.org and register for a free account to remove this message.                                                                                                                                                         For Clashbot forum registered user, kindly login your account at                               Config -> Options to remove the time limit restriction.")
+		MsgBox(0, "Unregistered", "You are currently running unregistered, please visit our forums at http://clashbot.org and register for a free account to remove this message.")
 	EndIf
 	$unregPopup = True
 EndFunc   ;==>SetAuthMode

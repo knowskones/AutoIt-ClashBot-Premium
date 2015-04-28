@@ -216,7 +216,6 @@ Global $boostsEnabled = 1 ; is this function enabled
 ;Donate Settings
 Global $CCPos[2] = [-1, -1] ;Position of clan castle
 Global $CastleFull = False
-Global $ichkRequestOnce
 Global $RequestTroop[2]
 
 Global $ichkRequest = 0 ;Checkbox for Request box

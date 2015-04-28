@@ -25,7 +25,6 @@ Func RequestCC()
 			EndIf
 			If _Sleep(1000) Then Return
 			Click(524, 228)
-			If $ichkRequestOnce = 1 Then $CastleFull = True
 		Else
 			SetLog("Clan Castle is already Full...", $COLOR_ORANGE)
 			$CastleFull = True

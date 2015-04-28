@@ -79,7 +79,6 @@ Func readConfig() ;Reads config and sets it to the variables
 		$CCPos[1] = IniRead($config, "donate", "yCCPos", "0")
 
 		$ichkRequest = IniRead($config, "donate", "chkRequest", "1")
-		$ichkRequestOnce = IniRead($config, "donate", "chkRequestOnce", "0")
 		$itxtRequest = IniRead($config, "donate", "txtRequest", "any")
 		$itxtNotDonate = StringReplace(IniRead($config, "donate", "blacklist", "cw|clan war|max|level|lvl"), "|", @CRLF)
 		$ichkBlacklist = IniRead($config, "donate", "chkBlacklist", "1")
