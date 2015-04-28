@@ -226,6 +226,11 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Else
 		GUICtrlSetState($chkRequest, $GUI_UNCHECKED)
 	EndIf
+	If $ichkRequestOnce = 1 Then
+		GUICtrlSetState($chkRequestOnce, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkRequestOnce, $GUI_UNCHECKED)
+	EndIf
 	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If $ichkDonateBarbarians = 1 Then
 		GUICtrlSetState($chkDonateBarbarians, $GUI_CHECKED)
