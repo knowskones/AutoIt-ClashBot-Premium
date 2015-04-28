@@ -36,13 +36,13 @@ EndFunc   ;==>dropHeroes
 
 ; function used to check for king skill in background and activate it as necessary
 Func UseKingSkill()
-	If IsSkillAutoActivate() Then ; Activate by hero health
+	If $iSkillActivateCond = 1 And $LoginType = 2 Then ; Activate by hero health
 		_CaptureRegion(0, 550, 800, 560)
-		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $King), 555 - 550), Hex(0xDD8208, 6), 10) Then
-			SetLog("Activate King's power", $COLOR_BLUE)
-			SelectDropTroupe($King)
-			AdlibUnRegister("UseKingSkill")
-		ElseIf TimerDiff($KingTimer) > 90000 Then
+		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $King), 555 - 550), Hex(0xDD8208, 6), 10) Or TimerDiff($KingTimer) > 90000 Then
+;			SetLog("Activate King's power", $COLOR_BLUE)
+;			SelectDropTroupe($King)
+;			AdlibUnRegister("UseKingSkill")
+;		ElseIf TimerDiff($KingTimer) > 90000 Then
 			; If still in battle activate skill after 90s regardless
 			If getGold(51, 66) <> "" Then
 				SetLog("Activate King's power", $COLOR_BLUE)
@@ -61,13 +61,13 @@ EndFunc   ;==>UseKingSkill
 
 ; function used to check for queen skill in background and activate it as necessary
 Func UseQueenSkill()
-	If IsSkillAutoActivate() Then ; Activate by hero health
+	If $iSkillActivateCond = 1 And $LoginType = 2 Then ; Activate by hero health
 		_CaptureRegion(0, 550, 800, 560)
-		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $Queen), 555 - 550), Hex(0xDD8208, 6), 10) Then
-			SetLog("Activate Queen's power", $COLOR_BLUE)
-			SelectDropTroupe($Queen)
-			AdlibUnRegister("UseQueenSkill")
-		ElseIf TimerDiff($QueenTimer) > 90000 Then
+		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $Queen), 555 - 550), Hex(0xDD8208, 6), 10) Or TimerDiff($QueenTimer) > 90000 Then
+;			SetLog("Activate Queen's power", $COLOR_BLUE)
+;			SelectDropTroupe($Queen)
+;			AdlibUnRegister("UseQueenSkill")
+;		ElseIf TimerDiff($QueenTimer) > 90000 Then
 			; If still in battle activate skill after 90s regardless
 			If getGold(51, 66) <> "" Then
 				SetLog("Activate Queen's power", $COLOR_BLUE)
