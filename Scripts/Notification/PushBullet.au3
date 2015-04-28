@@ -2,7 +2,7 @@
 #include <String.au3>
 
 Func PushBulletEnabled()
-	Return ($PushBulletEnabled = 1 And $LoginType = 2)
+	Return (GUICtrlRead($chkPushBulletEnabled_vip) = $GUI_CHECKED And $LoginType = 2)
 EndFunc   ;==>PushBulletEnabled
 
 Func _RemoteControl()
