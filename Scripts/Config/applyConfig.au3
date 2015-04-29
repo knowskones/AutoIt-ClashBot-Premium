@@ -225,6 +225,10 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 
 	If $ichkMultiMode = 1 Then
 		GUICtrlSetState($chkMultiMode, $GUI_CHECKED)
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+		For $i = 0 to UBound($StateTroop) - 1
+			$StateTroop[$i][0] = False
+		Next
 	Else
 		GUICtrlSetState($chkMultiMode, $GUI_UNCHECKED)
 	EndIf
