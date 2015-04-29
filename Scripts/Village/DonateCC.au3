@@ -38,7 +38,7 @@ Func DonateTroops($NbTroops, $PosYDemand)
     Local $UnitIndex
     Local $CurrentPosY
     Local $SaveNb = $NbTroops
-
+	Local $flagexit = True
 
    ;inform user of donation state
 	If $NbTroops = 1 Then SetLog("Donating " & $NameStateTroop[$indexDonate.Item(0)], $COLOR_BLUE)
@@ -72,8 +72,14 @@ Func DonateTroops($NbTroops, $PosYDemand)
 				WEnd
 			Else
 				SetLog($NameStateTroop[$UnitIndex] & " can't be given or is not available for donation", $COLOR_ORANGE)
-				If $SaveNb = 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then ExitLoop ;only one troop can be given and the bot can't then go out of this loop
-			EndIF
+			EndIf
+			For $i = 0 To $NbTroops
+				If _ColorCheck(_GetPixelColor($PosUnits[$indexDonate.Item($i)][0], $PosYDemand + $PosUnits[$indexDonate.Item($i)][1]), Hex(0x507C00, 6), 10) Then
+					$flagexit = False
+					ExitLoop
+				EndIf
+			Next
+			If $flagexit Then ExitLoop
 		Else
 			ExitLoop ;donation window disapear (end of donation)
 		EndIf
