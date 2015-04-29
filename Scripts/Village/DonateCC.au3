@@ -79,7 +79,11 @@ Func DonateTroops($NbTroops, $PosYDemand)
 					ExitLoop
 				EndIf
 			Next
-			If $flagexit Then ExitLoop
+			If $flagexit And $IndexTable = $NbTroops Then
+				ExitLoop
+			Else
+				$flagexit = True
+			EndIf
 		Else
 			ExitLoop ;donation window disapear (end of donation)
 		EndIf
