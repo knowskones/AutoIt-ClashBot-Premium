@@ -1095,6 +1095,9 @@ Func cmbDonateTroop()
 	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
 	If $StateTroop[$index][0] Then
 		GUICtrlSetState($chkDonateToAll, $GUI_CHECKED)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		$ichkMultiMode = 0
+		GUICtrlSetState($chkMultiMode, $GUI_UNCHECKED)
 		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
 		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
 	Else
@@ -1109,6 +1112,7 @@ Func cmbDonateTroop()
 
 	If $StateTroop[$index][1] Then
 		GUICtrlSetState($chkSmartDonate, $GUI_CHECKED)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
 		GUICtrlSetState($txtDonationKeywords, $GUI_ENABLE)
 		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
 	Else

@@ -236,6 +236,7 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	If $StateTroop[$index][0] Then
 		GUICtrlSetState($chkDonateToAll, $GUI_CHECKED)
 		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		$ichkMultiMode = 0
 		GUICtrlSetState($chkMultiMode, $GUI_UNCHECKED)
 		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
 		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
