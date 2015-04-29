@@ -18,7 +18,6 @@ Func CheckDonate($String, $clanString) ;Checks if it exact
  EndFunc   ;==>CheckDonate
 
  Func ProcessNbTroops($indexTroop, $Value)
-   ;here we make a special processing for barbarians, archers & giants (training Algorithm)
 	Switch $indexTroop
 		Case 0;barbs
 			$CurBarb += $Value
@@ -41,9 +40,9 @@ Func DonateTroops($NbTroops, $PosYDemand)
 	Local $flagexit = True
 
    ;inform user of donation state
+   $NbTroops -= 1
 	If $NbTroops = 1 Then SetLog("Donating " & $NameStateTroop[$indexDonate.Item(0)], $COLOR_BLUE)
 	If $NbTroops > 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
-		$NbTroops -= 1
 		Local $TextTroops = "Multi Troops Mode : "
 		For $i = 0 To $NbTroops
 			$TextTroops = $TextTroops & $NameStateTroop[$indexDonate.Item($i)] & ", "
@@ -57,35 +56,30 @@ Func DonateTroops($NbTroops, $PosYDemand)
 	While 1 ; infinite loop because we can't know how much troops we can give (Clan donate bonus - currently 8 max..)
 		_Sleep(250)
 		_CaptureRegion();capture new screen
-		If _ColorCheck(_GetPixelColor(193, $PosYDemand), Hex(0xF8FCFF, 6)) Then; check if the donation window is open
-			$UnitIndex = $indexDonate.Item($IndexTable); loading troop index with the loop index
-			$CurrentPosY = $PosYDemand + $PosUnits[$UnitIndex][1]
-			If _ColorCheck(_GetPixelColor($PosUnits[$UnitIndex][0], $CurrentPosY), Hex(0x507C00, 6), 10) Then; check if the troop is available
-				While _WaitForPixelCapture(0, 0, 860, 720, $PosUnits[$UnitIndex][0], $CurrentPosY, Hex(0x507C00, 6), 10, 800, 50)
-					Click($PosUnits[$UnitIndex][0], $CurrentPosY); we give 1 troop of this type
-					$SucessDonate = True
-					ProcessNbTroops($UnitIndex, 1)
-					If $SaveNb > 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
-						_Sleep(250)
-						ExitLoop; we alternate troops, else we just spam the same troop
-					EndIf
-				WEnd
-			Else
-				SetLog($NameStateTroop[$UnitIndex] & " can't be given or is not available for donation", $COLOR_ORANGE)
-			EndIf
-			For $i = 0 To $NbTroops
-				If _ColorCheck(_GetPixelColor($PosUnits[$indexDonate.Item($i)][0], $PosYDemand + $PosUnits[$indexDonate.Item($i)][1]), Hex(0x507C00, 6), 10) Then
-					$flagexit = False
-					ExitLoop
+		$UnitIndex = $indexDonate.Item($IndexTable); loading troop index with the loop index
+		$CurrentPosY = $PosYDemand + $PosUnits[$UnitIndex][1]
+		If _ColorCheck(_GetPixelColor($PosUnits[$UnitIndex][0], $CurrentPosY), Hex(0x507C00, 6), 10) Then; check if the troop is available
+			While _WaitForPixelCapture(0, 0, 860, 720, $PosUnits[$UnitIndex][0], $CurrentPosY, Hex(0x507C00, 6), 10, 800, 50)
+				Click($PosUnits[$UnitIndex][0], $CurrentPosY); we give 1 troop of this type
+				ProcessNbTroops($UnitIndex, 1)
+				If $SaveNb > 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
+					_Sleep(250)
+					ExitLoop; we alternate troops, else we just spam the same troop
 				EndIf
-			Next
-			If $flagexit And $IndexTable = $NbTroops Then
-				ExitLoop
-			Else
-				$flagexit = True
-			EndIf
+			WEnd
 		Else
-			ExitLoop ;donation window disapear (end of donation)
+			SetLog($NameStateTroop[$UnitIndex] & " can't be given or is not available for donation", $COLOR_ORANGE)
+		EndIf
+		For $i = 0 To $NbTroops
+			If _ColorCheck(_GetPixelColor($PosUnits[$indexDonate.Item($i)][0], $PosYDemand + $PosUnits[$indexDonate.Item($i)][1]), Hex(0x507C00, 6), 10) Then
+				$flagexit = False
+				ExitLoop
+			EndIf
+		Next
+		If $flagexit And $IndexTable = $NbTroops Then
+			ExitLoop
+		Else
+			$flagexit = True
 		EndIf
 
 		$IndexTable += 1;we increment index
@@ -108,7 +102,6 @@ Func DonateCC($DonateChat = True)
 	Local $Savepos = -1
 	Local $SizeTableTroop = UBound($StateTroop) - 1
 	Local $Scroll
-	$SucessDonate = False
 	$indexDonate = ObjCreate("System.Collections.ArrayList")
 
 	SetLog("Donating Troops", $COLOR_BLUE)
@@ -128,13 +121,12 @@ Func DonateCC($DonateChat = True)
 
 	While 1
 		While 1
-			If $SucessDonate Or $Savepos = -1 Then;first turn or the donation was a succes, then we can take the same screen dimension
+			If $Savepos = -1 Then ;first start or after scroll
 				$DonatePixel = _MultiPixelSearch(202, 119, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20)
-			Else;we take special screen to avoid fails result in the past
-				If ($Savepos + 30) > 720 Then ExitLoop (2);we quit this donation tab because we are out of screen
+			Else ;we take special screen to avoid fails result in the past
+				If ($Savepos + 30) > 720 Then ExitLoop; we quit this donation tab because we are out of screen
 				$DonatePixel = _MultiPixelSearch(202, $Savepos + 30, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20)
 			EndIf
-			$SucessDonate = False
 			If IsArray($DonatePixel) Then
 				$CountResult = 0
 				$indexDonate.RemoveAll
@@ -150,9 +142,8 @@ Func DonateCC($DonateChat = True)
 
 				SetLog("Chat Text: " & $String, $COLOR_GREEN)
 
-				;searching words in troops table
-				For $i = 0 To $SizeTableTroop ; run donate troop
-					If $StateTroop[$i][0] Then ;here we got a give to all option then we give this unit
+				For $i = 0 To $SizeTableTroop
+					If $StateTroop[$i][0] Then
 						Local $Blacklistcheck = False
 						If $StateTroop[$i][2] Then
 							Local $Blacklist = StringSplit(StringReplace($StateTroop[$i][4],"\r\n","|"), "|")
@@ -198,7 +189,7 @@ Func DonateCC($DonateChat = True)
 
 							If GUICtrlRead($chkMultiMode) = $GUI_UNCHECKED And $CountResult = 1 Then
 								SetLog("Multi Troops Mode is DISABLED, Donate " & $NameStateTroop[$i] & " only", $COLOR_ORANGE)
-								ExitLoop; we force exit because we only need the first good result
+								ExitLoop
 							EndIf
 						EndIf
 					EndIf
@@ -208,31 +199,21 @@ Func DonateCC($DonateChat = True)
 				If $CountResult > 0 Then
 					Click($DonatePixel[0], $DonatePixel[1] + 11); openning donation window
 					DonateTroops($CountResult, $DonatePixel[1]);donate troops
-				Else
-					ExitLoop
 				EndIf
-
 				If _Sleep(500) Then Return
-				If $SucessDonate <> True Then ExitLoop
-				ClickP($TopLeftClient) ;Click Away
 			Else
-				ExitLoop (2)
+				ExitLoop
 			EndIf
 		WEnd
-		If $SucessDonate <> True Then; fail on first demand checking if there is another one..
-			_Sleep(500) ; we need wait a bit befor the next processing in this case
+		ClickP($TopLeftClient) ;Click Away
+		_Sleep(500)
+		$Scroll = _PixelSearch(285, 650, 287, 700, Hex(0x97E405, 6), 20)
+		If IsArray($Scroll) Then
+			$SavePos = -1
+			Click($Scroll[0], $Scroll[1])
+			If _Sleep(500) Then ExitLoop
 		Else
-			$Savepos = -1
-			$DonatePixel = _MultiPixelSearch(202, 119, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20); checking if there is other demands ..
-			If Not IsArray($DonatePixel) Then
-				$Scroll = _PixelSearch(285, 650, 287, 700, Hex(0x97E405, 6), 20);checking green indicator for troops demands
-				If IsArray($Scroll) Then
-					Click($Scroll[0], $Scroll[1])
-					If _Sleep(500) Then ExitLoop
-				Else
-					ExitLoop;we quit loop because there is nore more demands
-				EndIf
-			EndIf
+			ExitLoop
 		EndIf
 	WEnd
 
