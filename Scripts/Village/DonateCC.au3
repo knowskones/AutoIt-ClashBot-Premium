@@ -65,7 +65,7 @@ Func DonateTroops($NbTroops, $PosYDemand)
 					Click($PosUnits[$UnitIndex][0], $CurrentPosY); we give 1 troop of this type
 					$SucessDonate = True
 					ProcessNbTroops($UnitIndex, 1)
-					If $SaveNb > 1 And GUICtrlRead($chkMixDonateTroops) = $GUI_CHECKED Then
+					If $SaveNb > 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
 						_Sleep(250)
 						ExitLoop; we alternate troops, else we just spam the same troop
 					EndIf
