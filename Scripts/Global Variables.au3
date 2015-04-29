@@ -228,7 +228,6 @@ Global $NameStateTroop[14] = ["Barbarian","Archer","Giant","Balloon","Wizard","H
 
 Global $ichkMultiMode
 Global $SaveIndexComboTxt
-Global $SucessDonate
 Global $indexDonate
 
 ;Troop Settings
