@@ -1,236 +1,5 @@
 ;Donates troops
 
-Func DonateCC($DonateChat = True)
-   Global $ColDist = 1, $RowDist = 0 ; default to archer
-   ;Global $BClick1 = Number(GUICtrlRead($NoOfBarbarians1)), $BClick2 = Number(GUICtrlRead($NoOfBarbarians2)), $BClick3 = Number(GUICtrlRead($NoOfBarbarians3))
-   Global $AClick1 = Number(GUICtrlRead($NoOfArchers1)), $AClick2 = Number(GUICtrlRead($NoOfArchers2)), $AClick3 = Number(GUICtrlRead($NoOfArchers3))
-   Global $GClick1 = Number(GUICtrlRead($NoOfGiants1)), $GClick2 = Number(GUICtrlRead($NoOfGiants2)), $GClick3 = Number(GUICtrlRead($NoOfGiants3))
-
-	Global $Donate = $ichkDonateBarbarians = 1 Or $ichkDonateArchers = 1 Or $ichkDonateGiants = 1 Or $ichkDonateAllBarbarians = 1 Or $ichkDonateAllArchers = 1 Or $ichkDonateAllGiants = 1
-	If $Donate = False Then Return
-	Local $y = 119
-	SetLog("Donating Troops", $COLOR_BLUE)
-
-	_CaptureRegion()
-	If $DonateChat = False Then
-	  If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 Then
-		 SetLog("No new chats, skip donating", $COLOR_ORANGE)
-		 Return
-	  EndIf
-   EndIf
-
-	ClickP($TopLeftClient) ;Click Away
-	If _ColorCheck(_GetPixelColor(331, 330), Hex(0xF0A03B, 6), 20) = False Then Click(19, 349) ;Clicks chat thing
-	If _Sleep(500) Then Return
-	Click(189, 24) ; clicking clan tab
-
-	While $Donate
-		Local $offColors[3][3] = [[0x000000, 0, -2], [0x262926, 0, 1], [0xF8FCF0, 0, 11]]
-		While 1
-			If _Sleep(1000) Then ExitLoop
-			Global $DonatePixel = _MultiPixelSearch(202, $y, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20)
-			If IsArray($DonatePixel) Then
-				$Donate = False
-				If ($ichkDonateAllBarbarians = 0 And $ichkDonateAllArchers = 0 And $ichkDonateAllGiants = 0) And ($ichkDonateBarbarians = 1 Or $ichkDonateArchers = 1 Or $ichkDonateGiants = 1) Then
-					_CaptureRegion(0, 0, 435, $DonatePixel[1] + 50)
-					Local $String = getString($DonatePixel[1] - 28)
-					If $String = "" Then
-						$String = getString($DonatePixel[1] - 17)
-					Else
-						$String = $String & @CRLF & getString($DonatePixel[1] - 17)
-					EndIf
-
-					Local $BlacklistCheck = 0
-					If $ichkBlacklist = 1 Then
-						Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
-						For $i = 0 To UBound($Blacklist) - 1
-							If CheckDonate($Blacklist[$i], $String) Then
-								$BlacklistCheck = 1
-								SetLog("Chat Text: " & $String, $COLOR_RED)
-								SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
-							EndIf
-						Next
-					EndIf
-
-					If $BlacklistCheck = 0 Then SetLog("Chat Text: " & $String, $COLOR_GREEN)
-
-					If $ichkDonateBarbarians = 1 And $BlacklistCheck = 0 Then
-						Local $Barbs = StringSplit($itxtDonateBarbarians, @CRLF)
-						For $i = 0 To UBound($Barbs) - 1
-							If CheckDonate($Barbs[$i], $String) Then
-							   GetTroopCoord(GUICtrlRead($cmbDonateBarbarians1))
-							   DonateTroops(GUICtrlRead($cmbDonateBarbarians1), Number(GUICtrlRead($NoOfBarbarians1)))
-							   If GUICtrlRead($cmbDonateBarbarians2) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateBarbarians2))
-								 DonateTroops(GUICtrlRead($cmbDonateBarbarians2), Number(GUICtrlRead($NoOfBarbarians2)))
-							   EndIf
-							   If GUICtrlRead($cmbDonateBarbarians3) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateBarbarians3))
-								 DonateTroops(GUICtrlRead($cmbDonateBarbarians3), Number(GUICtrlRead($NoOfBarbarians3)))
-							   EndIf
-							   ExitLoop
-						    EndIf
-						Next
-						If $Donate Then
-							If _Sleep(500) Then ExitLoop
-							$y = $DonatePixel[1] + 10
-							ExitLoop
-						EndIf
-					EndIf
-					If $ichkDonateArchers = 1 And $BlacklistCheck = 0 Then
-						Local $Archers = StringSplit($itxtDonateArchers, @CRLF)
-						For $i = 0 To UBound($Archers) - 1
-							If CheckDonate($Archers[$i], $String) Then
-							   GetTroopCoord(GUICtrlRead($cmbDonateArchers1))
-							   DonateTroops(GUICtrlRead($cmbDonateArchers1), Number(GUICtrlRead($NoOfArchers1)))
-							   If GUICtrlRead($cmbDonateArchers2) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateArchers2))
-								 DonateTroops(GUICtrlRead($cmbDonateArchers2), Number(GUICtrlRead($NoOfArchers2)))
-							   EndIf
-							   If GUICtrlRead($cmbDonateArchers3) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateArchers3))
-								 DonateTroops(GUICtrlRead($cmbDonateArchers3), Number(GUICtrlRead($NoOfArchers3)))
-							   EndIf
-							   ExitLoop
-							EndIf
-						Next
-						If $Donate Then
-							If _Sleep(500) Then ExitLoop
-							$y = $DonatePixel[1] + 10
-							ExitLoop
-						EndIf
-					EndIf
-					If $ichkDonateGiants = 1 And $BlacklistCheck = 0 Then
-						Local $Giants = StringSplit($itxtDonateGiants, @CRLF)
-						For $i = 0 To UBound($Giants) - 1
-							If CheckDonate($Giants[$i], $String) Then
-							   GetTroopCoord(GUICtrlRead($cmbDonateGiants1))
-							   DonateTroops(GUICtrlRead($cmbDonateGiants1), Number(GUICtrlRead($NoOfGiants1)))
-							   If GUICtrlRead($cmbDonateGiants2) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateGiants2))
-								 DonateTroops(GUICtrlRead($cmbDonateGiants2), Number(GUICtrlRead($NoOfGiants2)))
-							   EndIf
-							   If GUICtrlRead($cmbDonateGiants3) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateGiants3))
-								 DonateTroops(GUICtrlRead($cmbDonateGiants3), Number(GUICtrlRead($NoOfGiants3)))
-							   EndIf
-							   ExitLoop
-							EndIf
-						Next
-						If $Donate Then
-							If _Sleep(500) Then ExitLoop
-							$y = $DonatePixel[1] + 10
-							ExitLoop
-						EndIf
-					EndIf
-				Else
-					_CaptureRegion(0, 0, 435, $DonatePixel[1] + 50)
-					Local $String = getString($DonatePixel[1] - 28)
-					If $String = "" Then
-						$String = getString($DonatePixel[1] - 17)
-					Else
-						$String = $String & @CRLF & getString($DonatePixel[1] - 17)
-					 EndIf
-
-					Local $BlacklistCheck = 0
-					If $ichkBlacklist = 1 Then
-						Local $Blacklist = StringSplit($itxtNotDonate, @CRLF)
-						For $i = 0 To UBound($Blacklist) - 1
-							If CheckDonate($Blacklist[$i], $String) Then
-								$BlacklistCheck = 1
-								SetLog("Chat Text: " & $String, $COLOR_RED)
-								SetLog("Blacklist Keyword found in Chat Text, skip donating...", $COLOR_RED)
-							EndIf
-						Next
-					EndIf
-					Select
-						Case $ichkDonateAllBarbarians = 1 And $BlacklistCheck = 0
-							   GetTroopCoord(GUICtrlRead($cmbDonateBarbarians1))
-							   DonateTroops(GUICtrlRead($cmbDonateBarbarians1), Number(GUICtrlRead($NoOfBarbarians1)))
-							   If GUICtrlRead($cmbDonateBarbarians2) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateBarbarians2))
-								 DonateTroops(GUICtrlRead($cmbDonateBarbarians2), Number(GUICtrlRead($NoOfBarbarians2)))
-							   EndIf
-							   If GUICtrlRead($cmbDonateBarbarians3) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateBarbarians3))
-								 DonateTroops(GUICtrlRead($cmbDonateBarbarians3), Number(GUICtrlRead($NoOfBarbarians3)))
-							   EndIf
-						Case $ichkDonateAllArchers = 1 And $BlacklistCheck = 0
-							   GetTroopCoord(GUICtrlRead($cmbDonateArchers1))
-							   DonateTroops(GUICtrlRead($cmbDonateArchers1), Number(GUICtrlRead($NoOfArchers1)))
-							   If GUICtrlRead($cmbDonateArchers2) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateArchers2))
-								 DonateTroops(GUICtrlRead($cmbDonateArchers2), Number(GUICtrlRead($NoOfArchers2)))
-							   EndIf
-							   If GUICtrlRead($cmbDonateArchers3) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateArchers3))
-								 DonateTroops(GUICtrlRead($cmbDonateArchers3), Number(GUICtrlRead($NoOfArchers3)))
-							   EndIf
-						Case $ichkDonateAllGiants = 1 And $BlacklistCheck = 0
-							   GetTroopCoord(GUICtrlRead($cmbDonateGiants1))
-							   DonateTroops(GUICtrlRead($cmbDonateGiants1), Number(GUICtrlRead($NoOfGiants1)))
-							   If GUICtrlRead($cmbDonateGiants2) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateGiants2))
-								 DonateTroops(GUICtrlRead($cmbDonateGiants2), Number(GUICtrlRead($NoOfGiants2)))
-							   EndIf
-							   If GUICtrlRead($cmbDonateGiants3) = "None" Then
-								  ExitLoop
-							   Else
-								 GetTroopCoord(GUICtrlRead($cmbDonateGiants3))
-								 DonateTroops(GUICtrlRead($cmbDonateGiants3), Number(GUICtrlRead($NoOfGiants3)))
-							   EndIf
-					EndSelect
-				EndIf
-			Else
-				ExitLoop
-			EndIf
-			If _Sleep(500) Then Return
-			ClickP($TopLeftClient) ;Click Away
-			$y = $DonatePixel[1] + 10
-		WEnd
-		ClickP($TopLeftClient) ;Click Away
-		If _Sleep(1000) Then ExitLoop
-		$DonatePixel = _MultiPixelSearch(202, $y, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20)
-		Local $Scroll = _PixelSearch(285, 650, 287, 700, Hex(0x97E405, 6), 20)
-		$Donate = True
-		If IsArray($Scroll) Then
-			Click($Scroll[0], $Scroll[1])
-			$y = 119
-			If _Sleep(700) Then ExitLoop
-		ElseIf Not IsArray($DonatePixel) Then
-			$Donate = False
-		EndIf
-	WEnd
-
-	If _WaitForPixel(331, 330, Hex(0xF0A03B, 6), 20) Then
-		Click(331, 330) ;Clicks chat thing
-		If _Sleep(500) Then Return
-	EndIf
-	SetLog("Finished Donating", $COLOR_BLUE)
-EndFunc   ;==>DonateCC
-
 Func CheckDonate($String, $clanString) ;Checks if it exact
 	$Contains = StringMid($String, 1, 1) & StringMid($String, StringLen($String), 1)
 	If $Contains = "[]" Then
@@ -246,84 +15,220 @@ Func CheckDonate($String, $clanString) ;Checks if it exact
 			Return False
 		EndIf
 	EndIf
-EndFunc   ;==>CheckDonate
+ EndFunc   ;==>CheckDonate
 
-Func DonateTroops($Troop, $number)
-   Local $x, $y
-   If $ichkDonateAllBarbarians = 1 Or $ichkDonateAllArchers= 1 Or $ichkDonateAllGiants= 1 Then
-       Click($DonatePixel[0], $DonatePixel[1] + 11)
-   ElseIf _ColorCheck(_GetPixelColor($DonatePixel[0], $DonatePixel[1]), Hex(0x262926, 6), 10) Then
-       Click($DonatePixel[0], $DonatePixel[1] + 11)
-   EndIf
-   If _Sleep(1000) Then Return
-   _CaptureRegion(0, 0, 860, $DonatePixel[1] + 200)
-   If $ColDist >= 0 Then $x = 237 + $ColDist * 80
-   If $RowDist = 0 Then
-	  $y = $DonatePixel[1] - 5
-   ElseIf $RowDist = 1 Then
-	  $y = $DonatePixel[1] + 91
-   Else
-	  $y = $DonatePixel[1] + 185
-   EndIf
-   If _ColorCheck(_GetPixelColor($x, $y), Hex(0x507C00, 6), 10) Or _ColorCheck(_GetPixelColor($x, $y - 5), Hex(0x507C00, 6), 10) Then
-	   SetLog("Donating " & $number & " " & $Troop, $COLOR_BLUE)
-	   If _Sleep(500) Then Return
-	   Click($x, $y, $number, 50)
-	   $Donate = True
-	   Select
-		  Case $Troop = "Barbarian"
-			  $CurBarb += $number
-			  $ArmyComp -= 1*$number
-		  Case $Troop = "WallBreaker"
-			  $CurWB += $number
-			  $ArmyComp -= 2*$number
-		  Case $Troop = "Archer"
-			  $CurArch += $number
-			  $ArmyComp -= 1*$number
-		  Case $Troop = "Giant"
-			  $CurGiant += $number
-			  $ArmyComp -= 5*$number
-		  Case $Troop = "Goblin"
-			  $CurGoblin += $number
-			  $ArmyComp -= 1*$number
-	   EndSelect
-	Else
-	  SetLog("No " & $Troop & " available for donation or Clan Castle don't have enough space.", $COLOR_ORANGE)
-	  Return
-   EndIf
-   If _Sleep(500) Then Return
+ Func ProcessNbTroops($indexTroop, $Value)
+   ;here we make a special processing for barbarians, archers & giants (training Algorithm)
+	Switch $indexTroop
+		Case 0;barbs
+			$CurBarb += $Value
+			$ArmyComp -= 1*$Value
+		Case 1;archs
+			$CurArch += $Value
+			$ArmyComp -= 1*$Value
+		Case 2;giants
+			$CurGiant += $Value
+			$ArmyComp -= 5*$Value
+	EndSwitch
+
+EndFunc ;==>CalculateNbTroops
+
+Func DonateTroops($NbTroops, $PosYDemand)
+	Local $IndexTable = 0
+    Local $UnitIndex
+    Local $CurrentPosY
+    Local $SaveNb = $NbTroops
+
+
+   ;inform user of donation state
+	If $NbTroops = 1 Then SetLog("Donating " & $NameStateTroop[$indexDonate.Item(0)], $COLOR_BLUE)
+	If $NbTroops > 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
+		$NbTroops -= 1
+		Local $TextTroops = "Multi Troops Mode : "
+		For $i = 0 To $NbTroops
+			$TextTroops = $TextTroops & $NameStateTroop[$indexDonate.Item($i)] & ", "
+		Next
+		SetLog(StringTrimRight($TextTroops, 2), $COLOR_BLUE)
+	EndIf
+
+
+	_Sleep(250)
+
+	While 1 ; infinite loop because we can't know how much troops we can give (Clan donate bonus - currently 8 max..)
+		_Sleep(250)
+		_CaptureRegion();capture new screen
+		If _ColorCheck(_GetPixelColor(193, $PosYDemand), Hex(0xF8FCFF, 6)) Then; check if the donation window is open
+			$UnitIndex = $indexDonate.Item($IndexTable); loading troop index with the loop index
+			$CurrentPosY = $PosYDemand + $PosUnits[$UnitIndex][1]
+			If _ColorCheck(_GetPixelColor($PosUnits[$UnitIndex][0], $CurrentPosY), Hex(0x507C00, 6), 10) Then; check if the troop is available
+				While _WaitForPixelCapture(0, 0, 860, 720, $PosUnits[$UnitIndex][0], $CurrentPosY, Hex(0x507C00, 6), 10, 800, 50)
+					Click($PosUnits[$UnitIndex][0], $CurrentPosY); we give 1 troop of this type
+					$SucessDonate = True
+					ProcessNbTroops($UnitIndex, 1)
+					If $SaveNb > 1 And GUICtrlRead($chkMixDonateTroops) = $GUI_CHECKED Then
+						_Sleep(250)
+						ExitLoop; we alternate troops, else we just spam the same troop
+					EndIf
+				WEnd
+			Else
+				SetLog($NameStateTroop[$UnitIndex] & " can't be given or is not available for donation", $COLOR_ORANGE)
+				If $SaveNb = 1 And GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then ExitLoop ;only one troop can be given and the bot can't then go out of this loop
+			EndIF
+		Else
+			ExitLoop ;donation window disapear (end of donation)
+		EndIf
+
+		$IndexTable += 1;we increment index
+		If $IndexTable > $NbTroops Then $IndexTable = 0 ; out of table range, we reset the index
+	WEnd
+
+	ProcessNbTroops($UnitIndex, -1);_WaitForPixel tends to allow one extra click due to delay in picture going grey, the the last unit get -1 in value (if it's recognized)
 EndFunc   ;==>DonateTroops
 
-Func GetTroopCoord($Troop)
-   Switch $Troop
-	  Case "Barbarian", "Healer", "Witch"
-		 $ColDist = 0
-	  Case "Archer", "Dragon", "Lava"
-		 $ColDist = 1
-	  Case "Giant", "Pekka"
-		 $ColDist = 2
-	  Case "Goblin", "Minion"
-		 $ColDist = 3
-	  Case "WallBreaker", "Hog"
-		 $ColDist = 4
-	  Case "Balloon", "Valkyrie"
-		 $ColDist = 5
-	  Case "Wizard", "Golem"
-		 $ColDist = 6
-  	  Case Else
-		 SetLog("Unable to determine troop ($i) to donate.", $COLOR_RED)
-		 $ColDist = -1
-   EndSwitch
+Func DonateCC($DonateChat = True)
+	If StringReplace(GUICtrlRead($txtDonationStatus), @CRLF, "\r\n") = "None" Then
+		SetLog("No donation settings, skip donating", $COLOR_ORANGE)
+		Return
+	EndIf
 
-   Switch $Troop
-	  Case "Barbarian", "Archer", "Giant", "Goblin", "WallBreaker", "Balloon", "Wizard"
-		 $RowDist = 0
-	  Case "Healer", "Dragon", "Pekka", "Minion", "Hog", "Valkyrie", "Golem"
-		 $RowDist = 1
-	  Case "Witch", "Lava"
-		 $RowDist = 2
-	  Case Else
-		 SetLog("Unable to determine troop ($row) to donate.", $COLOR_RED)
-		 $RowDist = -1
-   EndSwitch
-EndFunc ;==> Select troop color and button coordinate
+	Local $offColors[3][3] = [[0x000000, 0, -2], [0x262926, 0, 1], [0xF8FCF0, 0, 11]]
+	Local $CountResult = 0
+	Local $Filters
+	Local $DonatePixel
+	Local $Savepos = -1
+	Local $SizeTableTroop = UBound($StateTroop) - 1
+	Local $Scroll
+	$SucessDonate = False
+	$indexDonate = ObjCreate("System.Collections.ArrayList")
+
+	SetLog("Donating Troops", $COLOR_BLUE)
+
+	_CaptureRegion()
+	If Not $DonateChat Then
+		If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 Then
+			SetLog("No new chats, skip donating", $COLOR_ORANGE)
+			Return
+		EndIf
+	EndIf
+
+	ClickP($TopLeftClient) ;Click Away
+	If _ColorCheck(_GetPixelColor(331, 330), Hex(0xF0A03B, 6), 20) = False Then Click(19, 349) ;Clicks chat thing
+	If _Sleep(500) Then Return
+	Click(189, 24) ; clicking clan tab
+
+	While 1
+		While 1
+			If $SucessDonate Or $Savepos = -1 Then;first turn or the donation was a succes, then we can take the same screen dimension
+				$DonatePixel = _MultiPixelSearch(202, 119, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20)
+			Else;we take special screen to avoid fails result in the past
+				If ($Savepos + 30) > 720 Then ExitLoop (2);we quit this donation tab because we are out of screen
+				$DonatePixel = _MultiPixelSearch(202, $Savepos + 30, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20)
+			EndIf
+			$SucessDonate = False
+			If IsArray($DonatePixel) Then
+				$CountResult = 0
+				$indexDonate.RemoveAll
+
+				;identify donate button & associated text
+				_CaptureRegion(0, 0, 435, $DonatePixel[1] + 50)
+				Local $String = getString($DonatePixel[1] - 28)
+				If $String = "" Then
+					$String = getString($DonatePixel[1] - 17)
+				Else
+					$String = $String & @CRLF & getString($DonatePixel[1] - 17)
+				EndIf
+
+				SetLog("Chat Text: " & $String, $COLOR_GREEN)
+
+				;searching words in troops table
+				For $i = 0 To $SizeTableTroop ; run donate troop
+					If $StateTroop[$i][0] Then ;here we got a give to all option then we give this unit
+						Local $Blacklistcheck = False
+						If $StateTroop[$i][2] Then
+							Local $Blacklist = StringSplit(StringReplace($StateTroop[$i][4],"\r\n","|"), "|")
+							For $j = 0 To UBound($Blacklist) - 1
+								If CheckDonate($Blacklist[$j], $String) Then
+									$BlacklistCheck = True
+									SetLog("Blacklist Keywords found in Chat Text, skip donating...", $COLOR_RED)
+									ExitLoop
+								EndIf
+							Next
+						EndIf
+						If Not $Blacklistcheck Then
+							SetLog("Give " & $NameStateTroop[$i] & " to ALL requests", $COLOR_ORANGE)
+							$indexDonate.Add($i)
+							$CountResult = 1
+							ExitLoop
+						EndIf
+					EndIf
+
+					If $StateTroop[$i][1] Then ;here we check all filters to find keywords
+						Local $Blacklistcheck = False
+						If $StateTroop[$i][2] Then
+							Local $Blacklist = StringSplit(StringReplace($StateTroop[$i][4],"\r\n","|"), "|")
+							For $j = 0 To UBound($Blacklist) - 1
+								If CheckDonate($Blacklist[$j], $String) Then
+									$BlacklistCheck = True
+									SetLog("Blacklist Keywords found in Chat Text, skip donating...", $COLOR_RED)
+									ExitLoop
+								EndIf
+							Next
+						EndIf
+						If Not $BlacklistCheck Then
+							$Filters = StringSplit(StringReplace($StateTroop[$i][3],"\r\n","|"), "|")
+
+							For $j = 0 To UBound($Filters) - 1
+								If CheckDonate($Filters[$j], $String) Then
+									SetLog("Donation Keywords found for : " & $NameStateTroop[$i], $COLOR_ORANGE)
+									$indexDonate.Add($i)
+									$CountResult += 1
+									ExitLoop
+								EndIf
+							Next
+
+							If GUICtrlRead($chkMultiMode) = $GUI_UNCHECKED And $CountResult = 1 Then
+								SetLog("Multi Troops Mode is DISABLED, Donate " & $NameStateTroop[$i] & " only", $COLOR_ORANGE)
+								ExitLoop; we force exit because we only need the first good result
+							EndIf
+						EndIf
+					EndIf
+				Next
+
+				$Savepos = $DonatePixel[1]
+				If $CountResult > 0 Then
+					Click($DonatePixel[0], $DonatePixel[1] + 11); openning donation window
+					DonateTroops($CountResult, $DonatePixel[1]);donate troops
+				Else
+					ExitLoop
+				EndIf
+
+				If _Sleep(500) Then Return
+				If $SucessDonate <> True Then ExitLoop
+				ClickP($TopLeftClient) ;Click Away
+			Else
+				ExitLoop (2)
+			EndIf
+		WEnd
+		If $SucessDonate <> True Then; fail on first demand checking if there is another one..
+			_Sleep(500) ; we need wait a bit befor the next processing in this case
+		Else
+			$Savepos = -1
+			$DonatePixel = _MultiPixelSearch(202, 119, 203, 670, 1, 1, Hex(0x262926, 6), $offColors, 20); checking if there is other demands ..
+			If Not IsArray($DonatePixel) Then
+				$Scroll = _PixelSearch(285, 650, 287, 700, Hex(0x97E405, 6), 20);checking green indicator for troops demands
+				If IsArray($Scroll) Then
+					Click($Scroll[0], $Scroll[1])
+					If _Sleep(500) Then ExitLoop
+				Else
+					ExitLoop;we quit loop because there is nore more demands
+				EndIf
+			EndIf
+		EndIf
+	WEnd
+
+	If _WaitForPixel(331, 330, Hex(0xF0A03B, 6), 20) Then
+		Click(331, 330) ;Clicks chat thing
+		If _Sleep(500) Then Return
+	EndIf
+	SetLog("Finished Donating", $COLOR_BLUE)
+ EndFunc   ;==>DonateCC

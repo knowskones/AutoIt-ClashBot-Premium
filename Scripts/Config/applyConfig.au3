@@ -215,87 +215,66 @@ Func applyConfig() ;Applies the data from config to the controls in GUI
 	Randomspeedatk()
 
 	;Donate Settings-------------------------------------------------------------------------
-	If $ichkBlacklist = 1 Then
-		GUICtrlSetState($chkBlacklist, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkBlacklist, $GUI_UNCHECKED)
-	EndIf
-	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If $ichkRequest = 1 Then
 		GUICtrlSetState($chkRequest, $GUI_CHECKED)
 	Else
 		GUICtrlSetState($chkRequest, $GUI_UNCHECKED)
 	EndIf
-	If $ichkRequestOnce = 1 Then
-		GUICtrlSetState($chkRequestOnce, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkRequestOnce, $GUI_UNCHECKED)
-	EndIf
-	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	If $ichkDonateBarbarians = 1 Then
-		GUICtrlSetState($chkDonateBarbarians, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDonateBarbarians, $GUI_UNCHECKED)
-	EndIf
-	If $ichkDonateAllBarbarians = 1 Then
-		GUICtrlSetState($chkDonateAllBarbarians, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDonateAllBarbarians, $GUI_UNCHECKED)
-	EndIf
-	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	If $ichkDonateArchers = 1 Then
-		GUICtrlSetState($chkDonateArchers, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDonateArchers, $GUI_UNCHECKED)
-	EndIf
-	If $ichkDonateAllArchers = 1 Then
-		GUICtrlSetState($chkDonateAllArchers, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDonateAllArchers, $GUI_UNCHECKED)
-	EndIf
-	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	If $ichkDonateGiants = 1 Then
-		GUICtrlSetState($chkDonateGiants, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDonateGiants, $GUI_UNCHECKED)
-	EndIf
-	If $ichkDonateAllGiants = 1 Then
-		GUICtrlSetState($chkDonateAllGiants, $GUI_CHECKED)
-	Else
-		GUICtrlSetState($chkDonateAllGiants, $GUI_UNCHECKED)
-	EndIf
-
-	GUICtrlSetData($txtDonateBarbarians, $itxtDonateBarbarians)
-	GUICtrlSetData($txtDonateArchers, $itxtDonateArchers)
-	GUICtrlSetData($txtDonateGiants, $itxtDonateGiants)
-	GUICtrlSetData($cmbDonateBarbarians1, IniRead($config, "donate", "donate11", "Barbarian"), "Barbarian")
-	GUICtrlSetData($cmbDonateBarbarians2, IniRead($config, "donate", "donate12", "None"), "None")
-	GUICtrlSetData($cmbDonateBarbarians3, IniRead($config, "donate", "donate13", "None"), "None")
-	GUICtrlSetData($NoOfBarbarians1, IniRead($config, "donate", "amount11", 1), 1)
-	GUICtrlSetData($NoOfBarbarians2, IniRead($config, "donate", "amount12", 1), 1)
-	GUICtrlSetData($NoOfBarbarians3, IniRead($config, "donate", "amount13", 1), 1)
-	GUICtrlSetData($cmbDonateArchers1, IniRead($config, "donate", "donate21", "Archer"), "Archer")
-	GUICtrlSetData($cmbDonateArchers2, IniRead($config, "donate", "donate22", "None"), "None")
-	GUICtrlSetData($cmbDonateArchers3, IniRead($config, "donate", "donate23", "None"), "None")
-	GUICtrlSetData($NoOfArchers1, IniRead($config, "donate", "amount21", 1), 1)
-	GUICtrlSetData($NoOfArchers2, IniRead($config, "donate", "amount22", 1), 1)
-	GUICtrlSetData($NoOfArchers3, IniRead($config, "donate", "amount23", 1), 1)
-	GUICtrlSetData($cmbDonateGiants1, IniRead($config, "donate", "donate31", "Giant"), "Giant")
-	GUICtrlSetData($cmbDonateGiants2, IniRead($config, "donate", "donate32", "None"), "None")
-	GUICtrlSetData($cmbDonateGiants3, IniRead($config, "donate", "donate33", "None"), "None")
-	GUICtrlSetData($NoOfGiants1, IniRead($config, "donate", "amount31", 1), 1)
-	GUICtrlSetData($NoOfGiants2, IniRead($config, "donate", "amount32", 1), 1)
-	GUICtrlSetData($NoOfGiants3, IniRead($config, "donate", "amount33", 1), 1)
-
-	GUICtrlSetData($txtDonateBarbarians, $itxtDonateBarbarians)
-	GUICtrlSetData($txtDonateArchers, $itxtDonateArchers)
-	GUICtrlSetData($txtDonateGiants, $itxtDonateGiants)
-
 	GUICtrlSetData($txtRequest, $itxtRequest)
 	chkRequest()
 
-	GUICtrlSetData($txtNotDonate, $itxtNotDonate)
-	chkBlacklist()
+	If $ichkMultiMode = 1 Then
+		GUICtrlSetState($chkMultiMode, $GUI_CHECKED)
+	Else
+		GUICtrlSetState($chkMultiMode, $GUI_UNCHECKED)
+	EndIf
+	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
+	If $StateTroop[$index][0] Then
+		GUICtrlSetState($chkDonateToAll, $GUI_CHECKED)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		GUICtrlSetState($chkMultiMode, $GUI_UNCHECKED)
+		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
+	Else
+		If $StateTroop[$index][1] = False Then
+			GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+			GUICtrlSetState($chkDonationBlacklist, $GUI_DISABLE)
+			$StateTroop[$index][2] = False
+			GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		EndIf
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+	EndIf
+
+	If $StateTroop[$index][1] Then
+		GUICtrlSetState($chkSmartDonate, $GUI_CHECKED)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		GUICtrlSetState($txtDonationKeywords, $GUI_ENABLE)
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+	Else
+		If $StateTroop[$index][0] = False Then
+			GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+			GUICtrlSetState($chkDonationBlacklist, $GUI_DISABLE)
+			$StateTroop[$index][2] = False
+			GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		EndIf
+		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
+	EndIf
+
+	If $StateTroop[$index][2] Then
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_CHECKED)
+		GUICtrlSetState($txtDonationBlacklist, $GUI_ENABLE)
+	Else
+		GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+	EndIf
+
+	_GUICtrlEdit_SetText($txtDonationKeywords, StringFormat($StateTroop[$index][3]))
+	_GUICtrlEdit_SetText($txtDonationBlacklist, StringFormat($StateTroop[$index][4]))
+
+	DonationStatus()
+
 	;Troop Settings--------------------------------------------------------------------------
 	_GUICtrlComboBox_SetCurSel($cmbTroopComp, $icmbTroopComp)
 	_GUICtrlComboBox_SetCurSel($cmbRaidcap, $icmbRaidcap)

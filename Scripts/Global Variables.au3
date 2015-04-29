@@ -222,20 +222,14 @@ Global $RequestTroop[2]
 Global $ichkRequest = 0 ;Checkbox for Request box
 Global $itxtRequest = "" ;Request textbox
 
-Global $ichkDonateAllBarbarians = 0
-Global $ichkDonateBarbarians = 0
-Global $itxtDonateBarbarians = ""
+Global $PosUnits[14][2] = [[236, -5], [316, -5], [396, -5], [664, -5], [744, -5], [264, 92], [316, 92], [396, 92], [476, 92], [556, 92], [636, 92], [716, 92], [236, 189], [316, 189]]
+Global $StateTroop[14][5] = [[False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""], [False, False, False, "", ""]]
+Global $NameStateTroop[14] = ["Barbarian","Archer","Giant","Balloon","Wizard","Healer","Dragon","P.E.K.K.A","Minion","Hog","Valkyrie","Golem","Witch","Lava"]
 
-Global $ichkDonateAllArchers = 0
-Global $ichkDonateArchers = 0
-Global $itxtDonateArchers = ""
-
-Global $ichkDonateAllGiants = 0
-Global $ichkDonateGiants = 0
-Global $itxtDonateGiants = ""
-
-Global $itxtNotDonate = ""
-Global $ichkBlacklist
+Global $ichkMultiMode
+Global $SaveIndexComboTxt
+Global $SucessDonate
+Global $indexDonate
 
 ;Troop Settings
 Global $icmbRaidcap

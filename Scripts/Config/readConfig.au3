@@ -79,22 +79,32 @@ Func readConfig() ;Reads config and sets it to the variables
 		$CCPos[1] = IniRead($config, "donate", "yCCPos", "0")
 
 		$ichkRequest = IniRead($config, "donate", "chkRequest", "1")
-		$ichkRequestOnce = IniRead($config, "donate", "chkRequestOnce", "0")
 		$itxtRequest = IniRead($config, "donate", "txtRequest", "any")
-		$itxtNotDonate = StringReplace(IniRead($config, "donate", "blacklist", "cw|clan war|max|level|lvl"), "|", @CRLF)
-		$ichkBlacklist = IniRead($config, "donate", "chkBlacklist", "1")
+		$ichkMultiMode = IniRead($config, "donate", "chkMultiMode", "0")
 
-		$ichkDonateBarbarians = IniRead($config, "donate", "chkDonateBarbarians", "0")
-		$ichkDonateAllBarbarians = IniRead($config, "donate", "chkDonateAllBarbarians", "0")
-		$itxtDonateBarbarians = StringReplace(IniRead($config, "donate", "txtDonateBarbarians", "barbarians|barb|any"), "|", @CRLF)
+		For $i = 0 To UBound($StateTroop) - 1 ; other donate troop
+			If IniRead($config, "donate", "chkDonatetoAll" & $i, "0") == 1 Then
+			   $StateTroop[$i][0] = True
+			Else
+			   $StateTroop[$i][0] = False
+			EndIf
 
-		$ichkDonateArchers = IniRead($config, "donate", "chkDonateArchers", "1")
-		$ichkDonateAllArchers = IniRead($config, "donate", "chkDonateAllArchers", "0")
-		$itxtDonateArchers = StringReplace(IniRead($config, "donate", "txtDonateArchers", "archers|arch|any"), "|", @CRLF)
+			If IniRead($config, "donate", "chkSmartDonate" & $i, "0") == 1 Then
+			   $StateTroop[$i][1] = True
+			Else
+			   $StateTroop[$i][1] = False
+			EndIf
 
-		$ichkDonateGiants = IniRead($config, "donate", "chkDonateGiants", "0")
-		$ichkDonateAllGiants = IniRead($config, "donate", "chkDonateAllGiants", "0")
-		$itxtDonateGiants = StringReplace(IniRead($config, "donate", "txtDonateGiants", "giants|giant|any"), "|", @CRLF)
+			If IniRead($config, "donate", "chkDonationBlacklist" & $i, "0") == 1 Then
+			   $StateTroop[$i][2] = True
+			Else
+			   $StateTroop[$i][2] = False
+			EndIf
+
+			$StateTroop[$i][3] = IniRead($config, "donate", "DonationKeywords" & $i, "")
+			$StateTroop[$i][4] = IniRead($config, "donate", "DonationBlacklist" & $i, "")
+		Next
+
 		;Troop Settings--------------------------------------------------------------------------
 		$icmbRaidcap = IniRead($config, "troop", "raidcapacity", "100")
 		$icmbTroopComp = IniRead($config, "troop", "composition", "8")

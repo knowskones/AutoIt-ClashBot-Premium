@@ -10,6 +10,7 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 	Local $nNotifyCode = BitShift($wParam, 16)
 	Local $nID = BitAND($wParam, 0x0000FFFF)
 	Local $hCtrl = $lParam
+	Local $iCode = _WinAPI_HiWord($wParam)
 	#forceref $hWind, $iMsg, $wParam, $lParam
 	Switch $iMsg
 		Case 273
@@ -30,8 +31,33 @@ Func GUIControl($hWind, $iMsg, $wParam, $lParam)
 					cmbTroopComp()
 				Case $chkRequest
 					chkRequest()
-				Case $chkBlacklist
-					chkBlacklist()
+				Case $chkSmartDonate
+					chkSmartDonate()
+				Case $chkDonateToAll
+					chkDonateToAll()
+				Case $chkDonationBlacklist
+					chkDonationBlacklist()
+				Case $chkMultiMode
+					chkMultiMode()
+				Case $cmbDonateTroop
+					Switch $iCode
+						Case $CBN_SELCHANGE
+							cmbDonateTroop()
+					EndSwitch
+				Case $txtDonationKeywords
+					Switch $iCode
+						Case $EN_KILLFOCUS
+							txtDonationKeywords()
+						Case $EN_CHANGE
+							GetIndexCombo()
+					EndSwitch
+				Case $txtDonationBlacklist
+					Switch $iCode
+						Case $EN_KILLFOCUS
+							txtDonationBlacklist()
+						Case $EN_CHANGE
+							GetIndexCombo()
+					EndSwitch
 				Case $tabMain
 					tabMain()
 				Case $chkRandomSpeedAtk_vip
@@ -993,15 +1019,173 @@ Func chkRequest()
 	EndIf
 EndFunc   ;==>chkRequest
 
-Func chkBlacklist()
-	If GUICtrlRead($chkBlacklist) = $GUI_CHECKED Then
-		$ichkBlacklist = 1
-		GUICtrlSetState($txtNotDonate, $GUI_ENABLE)
+Func chkDonateToAll()
+	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
+	If GUICtrlRead($chkDonateToAll) = $GUI_CHECKED Then
+		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		$ichkMultiMode = 0
+		GUICtrlSetState($chkMultiMode, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
+		$StateTroop[$index][0] = True
+	    $StateTroop[$index][1] = False
 	Else
-		$ichkBlacklist = 0
-		GUICtrlSetState($txtNotDonate, $GUI_DISABLE)
+		If GUICtrlRead($chkSmartDonate) = $GUI_UNCHECKED Then
+			GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+			GUICtrlSetState($chkDonationBlacklist, $GUI_DISABLE)
+			$StateTroop[$index][2] = False
+			GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		EndIf
+		$StateTroop[$index][0] = False
 	EndIf
-EndFunc   ;==>chkBlacklist
+
+	DonationStatus()
+EndFunc   ;==>chkDonateToAll
+
+Func chkSmartDonate()
+	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
+	If GUICtrlRead($chkSmartDonate) = $GUI_CHECKED Then
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		GUICtrlSetState($txtDonationKeywords, $GUI_ENABLE)
+		$StateTroop[$index][0] = False
+		$StateTroop[$index][1] = True
+	Else
+		If GUICtrlRead($chkDonateToAll) = $GUI_UNCHECKED Then
+			GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+			GUICtrlSetState($chkDonationBlacklist, $GUI_DISABLE)
+			$StateTroop[$index][2] = False
+			GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		EndIf
+		 GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
+		 $StateTroop[$index][1] = False
+	EndIf
+
+	DonationStatus()
+EndFunc   ;==>chkSmartDonate
+
+Func chkDonationBlacklist()
+	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
+	If GUICtrlRead($chkDonationBlacklist) = $GUI_CHECKED Then
+		GUICtrlSetState($txtDonationBlacklist, $GUI_ENABLE)
+		$StateTroop[$index][2] = True
+	Else
+		GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		$StateTroop[$index][2] = False
+	EndIf
+
+	DonationStatus()
+EndFunc   ;==>chkDonationBlacklist
+
+Func chkMultiMode()
+	If GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
+		$ichkMultiMode = 1
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+		For $i = 0 to UBound($StateTroop) - 1
+			$StateTroop[$i][0] = False
+		Next
+	Else
+		$ichkMultiMode = 0
+	EndIf
+
+	DonationStatus()
+EndFunc
+
+Func cmbDonateTroop()
+	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
+	If $StateTroop[$index][0] Then
+		GUICtrlSetState($chkDonateToAll, $GUI_CHECKED)
+		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
+	Else
+		If $StateTroop[$index][1] = False Then
+			GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+			GUICtrlSetState($chkDonationBlacklist, $GUI_DISABLE)
+			$StateTroop[$index][2] = False
+			GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		EndIf
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+	EndIf
+
+	If $StateTroop[$index][1] Then
+		GUICtrlSetState($chkSmartDonate, $GUI_CHECKED)
+		GUICtrlSetState($txtDonationKeywords, $GUI_ENABLE)
+		GUICtrlSetState($chkDonateToAll, $GUI_UNCHECKED)
+	Else
+		If $StateTroop[$index][0] = False Then
+			GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+			GUICtrlSetState($chkDonationBlacklist, $GUI_DISABLE)
+			$StateTroop[$index][2] = False
+			GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+		EndIf
+		GUICtrlSetState($chkSmartDonate, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationKeywords, $GUI_DISABLE)
+	EndIf
+
+	If $StateTroop[$index][2] Then
+		GUICtrlSetState($chkDonationBlacklist, $GUI_ENABLE)
+		GUICtrlSetState($chkDonationBlacklist, $GUI_CHECKED)
+		GUICtrlSetState($txtDonationBlacklist, $GUI_ENABLE)
+	Else
+		GUICtrlSetState($chkDonationBlacklist, $GUI_UNCHECKED)
+		GUICtrlSetState($txtDonationBlacklist, $GUI_DISABLE)
+	EndIf
+
+	_GUICtrlEdit_SetText($txtDonationKeywords, StringFormat($StateTroop[$index][3]))
+	_GUICtrlEdit_SetText($txtDonationBlacklist, StringFormat($StateTroop[$index][4]))
+EndFunc   ;==>cmbDonateTroop
+
+Func GetIndexCombo()
+	$SaveIndexComboTxt = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
+EndFunc   ;==>GetIndexCombo
+
+Func txtDonationKeywords()
+	$StateTroop[$SaveIndexComboTxt][3] = StringReplace(GUICtrlRead($txtDonationKeywords), @CRLF, "\r\n")
+EndFunc   ;==>txtDonationKeywords
+
+Func txtDonationBlacklist()
+	$StateTroop[$SaveIndexComboTxt][4] = StringReplace(GUICtrlRead($txtDonationBlacklist), @CRLF, "\r\n")
+EndFunc   ;==>txtDonationBlacklist
+
+Func DonationStatus()
+	Local $statusstr = ""
+	Local $flag = False
+	If GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
+		$statusstr = $statusstr & "Multi Troops Mode" & @CRLF
+	Else
+		$statusstr = $statusstr & "Single Troop Mode" & @CRLF
+	EndIf
+	If GUICtrlRead($chkMultiMode) = $GUI_UNCHECKED Then
+		For $i = 0 to UBound($StateTroop) - 1
+			If $StateTroop[$i][0] Then
+				$statusstr = $statusstr & $NameStateTroop[$i] & "(Donate To ALL: Enable"
+				If $StateTroop[$i][2] Then
+					$statusstr = $statusstr & ", Donation Blacklist: Enable)"
+				Else
+					$statusstr = $statusstr & ")"
+				EndIf
+				$flag = True
+				ExitLoop
+			EndIf
+		Next
+	EndIf
+	If $flag = False Then
+		For $i = 0 to UBound($StateTroop) - 1
+			If $StateTroop[$i][1] Then
+				$statusstr = $statusstr & $NameStateTroop[$i] & "(SMART Donate: Enable"
+				If $StateTroop[$i][2] Then
+					$statusstr = $statusstr & ", Donation Blacklist: Enable)" & @CRLF
+				Else
+					$statusstr = $statusstr & ")" & @CRLF
+				EndIf
+			EndIf
+		Next
+	EndIf
+	If ($statusstr = "Multi Troops Mode" & @CRLF) Or ($statusstr = "Single Troop Mode" & @CRLF) Then
+		$statusstr = "None"
+	EndIf
+	_GUICtrlEdit_SetText($txtDonationStatus, $statusstr)
+EndFunc
 
 Func Randomspeedatk()
 	If $LoginType = 2 Then

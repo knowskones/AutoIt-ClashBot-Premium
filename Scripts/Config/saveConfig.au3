@@ -183,87 +183,45 @@ Func saveConfig() ;Saves the controls settings to the config
 	EndIf
 
 	;Donate Settings-------------------------------------------------------------------------
-	If GUICtrlRead($chkBlacklist) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkBlacklist", 1)
-	Else
-		IniWrite($config, "donate", "chkBlacklist", 0)
-	EndIf
-	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	If GUICtrlRead($chkRequest) = $GUI_CHECKED Then
 		IniWrite($config, "donate", "chkRequest", 1)
 	Else
 		IniWrite($config, "donate", "chkRequest", 0)
 	EndIf
-	If GUICtrlRead($chkRequestOnce) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkRequestOnce", 1)
+	IniWrite($config, "donate", "txtRequest", GUICtrlRead($txtRequest))
+
+	If GUICtrlRead($chkMultiMode) = $GUI_CHECKED Then
+	  IniWrite($config, "donate", "chkMultiMode", 1)
 	Else
-		IniWrite($config, "donate", "chkRequestOnce", 0)
-	EndIf
-	;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	If GUICtrlRead($chkDonateAllBarbarians) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkDonateAllBarbarians", 1)
-	Else
-		IniWrite($config, "donate", "chkDonateAllBarbarians", 0)
+	  IniWrite($config, "donate", "chkMultiMode", 0)
 	EndIf
 
-	If GUICtrlRead($chkDonateAllArchers) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkDonateAllArchers", 1)
-	Else
-		IniWrite($config, "donate", "chkDonateAllArchers", 0)
-	EndIf
+	For $i = 0 To UBound($StateTroop) - 1
+		If $StateTroop[$i][0] Then
+			IniWrite($config, "donate", "chkDonatetoAll" & $i, 1)
+		Else
+			IniWrite($config, "donate", "chkDonatetoAll" & $i, 0)
+		EndIf
 
-	If GUICtrlRead($chkDonateAllGiants) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkDonateAllGiants", 1)
-	Else
-		IniWrite($config, "donate", "chkDonateAllGiants", 0)
-	EndIf
-	;```````````````````````````````````````````````
-	If GUICtrlRead($chkDonateBarbarians) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkDonateBarbarians", 1)
-	Else
-		IniWrite($config, "donate", "chkDonateBarbarians", 0)
-	EndIf
+		If $StateTroop[$i][1] Then
+			IniWrite($config, "donate", "chkSmartDonate" & $i, 1)
+		Else
+			IniWrite($config, "donate", "chkSmartDonate" & $i, 0)
+		EndIf
 
-	If GUICtrlRead($chkDonateArchers) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkDonateArchers", 1)
-	Else
-		IniWrite($config, "donate", "chkDonateArchers", 0)
-	EndIf
+		If $StateTroop[$i][2] Then
+			IniWrite($config, "donate", "chkDonationBlacklist" & $i, 1)
+		Else
+			IniWrite($config, "donate", "chkDonationBlacklist" & $i, 0)
+		EndIf
 
-	If GUICtrlRead($chkDonateGiants) = $GUI_CHECKED Then
-		IniWrite($config, "donate", "chkDonateGiants", 1)
-	Else
-		IniWrite($config, "donate", "chkDonateGiants", 0)
-	EndIf
-
-	IniWrite($config, "donate", "donate11", GUICtrlRead($cmbDonateBarbarians1))
-	IniWrite($config, "donate", "donate12", GUICtrlRead($cmbDonateBarbarians2))
-	IniWrite($config, "donate", "donate13", GUICtrlRead($cmbDonateBarbarians3))
-	IniWrite($config, "donate", "amount11", Number(GUICtrlRead($NoOfBarbarians1)))
-	IniWrite($config, "donate", "amount12", Number(GUICtrlRead($NoOfBarbarians2)))
-	IniWrite($config, "donate", "amount13", Number(GUICtrlRead($NoOfBarbarians3)))
-	IniWrite($config, "donate", "donate21", GUICtrlRead($cmbDonateArchers1))
-	IniWrite($config, "donate", "donate22", GUICtrlRead($cmbDonateArchers2))
-	IniWrite($config, "donate", "donate23", GUICtrlRead($cmbDonateArchers3))
-	IniWrite($config, "donate", "amount21", Number(GUICtrlRead($NoOfArchers1)))
-	IniWrite($config, "donate", "amount22", Number(GUICtrlRead($NoOfArchers2)))
-	IniWrite($config, "donate", "amount23", Number(GUICtrlRead($NoOfArchers3)))
-	IniWrite($config, "donate", "donate31", GUICtrlRead($cmbDonateGiants1))
-	IniWrite($config, "donate", "donate32", GUICtrlRead($cmbDonateGiants2))
-	IniWrite($config, "donate", "donate33", GUICtrlRead($cmbDonateGiants3))
-	IniWrite($config, "donate", "amount31", Number(GUICtrlRead($NoOfGiants1)))
-	IniWrite($config, "donate", "amount32", Number(GUICtrlRead($NoOfGiants2)))
-	IniWrite($config, "donate", "amount33", Number(GUICtrlRead($NoOfGiants3)))
+		IniWrite($config, "donate", "DonationKeywords" & $i, $StateTroop[$i][3])
+		IniWrite($config, "donate", "DonationBlacklist" & $i, $StateTroop[$i][4])
+	Next
 
 	IniWrite($config, "donate", "xCCPos", $CCPos[0])
 	IniWrite($config, "donate", "yCCPos", $CCPos[1])
 
-	IniWrite($config, "donate", "txtRequest", GUICtrlRead($txtRequest))
-
-	IniWrite($config, "donate", "blacklist", StringReplace(GUICtrlRead($txtNotDonate), @CRLF, "|"))
-	IniWrite($config, "donate", "txtDonateBarbarians", StringReplace(GUICtrlRead($txtDonateBarbarians), @CRLF, "|"))
-	IniWrite($config, "donate", "txtDonateArchers", StringReplace(GUICtrlRead($txtDonateArchers), @CRLF, "|"))
-	IniWrite($config, "donate", "txtDonateGiants", StringReplace(GUICtrlRead($txtDonateGiants), @CRLF, "|"))
 	;Troop Settings--------------------------------------------------------------------------
 	IniWrite($config, "troop", "raidcapacity", _GUICtrlComboBox_GetCurSel($cmbRaidcap))
 	IniWrite($config, "troop", "composition", _GUICtrlComboBox_GetCurSel($cmbTroopComp))
