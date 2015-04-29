@@ -149,7 +149,7 @@ Func DonateCC($DonateChat = True)
 							For $j = 0 To UBound($Blacklist) - 1
 								If CheckDonate($Blacklist[$j], $String) Then
 									$BlacklistCheck = True
-									SetLog("Blacklist Keywords found in Chat Text, skip donating...", $COLOR_RED)
+									SetLog("Donation Blacklist found in Chat Text, skip donating...", $COLOR_RED)
 									ExitLoop
 								EndIf
 							Next
@@ -169,7 +169,7 @@ Func DonateCC($DonateChat = True)
 							For $j = 0 To UBound($Blacklist) - 1
 								If CheckDonate($Blacklist[$j], $String) Then
 									$BlacklistCheck = True
-									SetLog("Blacklist Keywords found in Chat Text, skip donating...", $COLOR_RED)
+									SetLog("Donation Blacklist found in Chat Text, skip donating...", $COLOR_RED)
 									ExitLoop
 								EndIf
 							Next

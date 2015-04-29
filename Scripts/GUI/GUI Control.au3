@@ -1089,7 +1089,7 @@ Func chkMultiMode()
 	EndIf
 
 	DonationStatus()
-EndFunc
+EndFunc   ;==>chkMultiMode
 
 Func cmbDonateTroop()
 	Local $index = _GUICtrlComboBox_GetCurSel($cmbDonateTroop)
