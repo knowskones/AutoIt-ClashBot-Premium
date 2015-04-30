@@ -1,7 +1,8 @@
 Global $AuthTimer, $AuthConnected = True
 
 Func AuthCheck()
-$LoginType = 2
+     $LoginType = 2
+     SetAuthMode() 
 EndFunc   ;==>AuthCheck
 
 Func SetAuthMode()
