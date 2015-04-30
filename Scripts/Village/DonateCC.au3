@@ -91,7 +91,7 @@ EndFunc   ;==>DonateTroops
 
 Func DonateCC($DonateChat = True)
 	If StringReplace(GUICtrlRead($txtDonationStatus), @CRLF, "\r\n") = "None" Then
-		SetLog("No donation settings, skip donating", $COLOR_ORANGE)
+		SetLog("No donation settings, skip donating", $COLOR_RED)
 		Return
 	EndIf
 
@@ -109,7 +109,7 @@ Func DonateCC($DonateChat = True)
 	_CaptureRegion()
 	If Not $DonateChat Then
 		If _ColorCheck(_GetPixelColor(34, 321), Hex(0xE00300, 6), 20) = False And $CommandStop <> 3 Then
-			SetLog("No new chats, skip donating", $COLOR_ORANGE)
+			SetLog("No new chats, skip donating", $COLOR_RED)
 			Return
 		EndIf
 	EndIf
@@ -150,7 +150,7 @@ Func DonateCC($DonateChat = True)
 							For $j = 0 To UBound($Blacklist) - 1
 								If CheckDonate($Blacklist[$j], $String) Then
 									$BlacklistCheck = True
-									SetLog("Donation Blacklist found in Chat Text, skip donating...", $COLOR_RED)
+									SetLog("Donation Blacklist found in Chat Text, skip donating", $COLOR_RED)
 									ExitLoop
 								EndIf
 							Next
@@ -170,7 +170,7 @@ Func DonateCC($DonateChat = True)
 							For $j = 0 To UBound($Blacklist) - 1
 								If CheckDonate($Blacklist[$j], $String) Then
 									$BlacklistCheck = True
-									SetLog("Donation Blacklist found in Chat Text, skip donating...", $COLOR_RED)
+									SetLog("Donation Blacklist found in Chat Text, skip donating", $COLOR_RED)
 									ExitLoop
 								EndIf
 							Next
