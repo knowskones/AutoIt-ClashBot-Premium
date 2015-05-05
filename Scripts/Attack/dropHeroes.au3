@@ -15,7 +15,7 @@ Func dropHeroes($x, $y, $KingSlot = -1, $QueenSlot = -1, $CenterLoc = 1) ;Drops 
 			If _Sleep(500) Then Return
 			Click($x, $y, 1, 0, $CenterLoc)
 			$KingTimer = TimerInit()
-			AdlibRegister("UseKingSkill")
+			AdlibRegister("UseKingSkill",1000)
 		EndIf
 
 		If _Sleep(1000) Then ExitLoop
@@ -26,7 +26,7 @@ Func dropHeroes($x, $y, $KingSlot = -1, $QueenSlot = -1, $CenterLoc = 1) ;Drops 
 			If _Sleep(500) Then Return
 			Click($x, $y, 1, 0, $CenterLoc)
 			$QueenTimer = TimerInit()
-			AdlibRegister("UseQueenSkill")
+			AdlibRegister("UseQueenSkill",1000)
 		EndIf
 
 		ExitLoop
@@ -36,16 +36,14 @@ EndFunc   ;==>dropHeroes
 
 ; function used to check for king skill in background and activate it as necessary
 Func UseKingSkill()
-	If $iSkillActivateCond = 1 And $LoginType = 2 Then ; Activate by hero health
-		_CaptureRegion(0, 550, 800, 560)
-		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $King), 555 - 550), Hex(0xDD8208, 6), 10) Or TimerDiff($KingTimer) > 90000 Then
-;			SetLog("Activate King's power", $COLOR_BLUE)
-;			SelectDropTroupe($King)
-;			AdlibUnRegister("UseKingSkill")
-;		ElseIf TimerDiff($KingTimer) > 90000 Then
-			; If still in battle activate skill after 90s regardless
+	If $iSkillActivateCond = 1 Then ; Activate by hero health
+		_CaptureRegion(0, 553, 660, 557)
+		If _Sleep(100) Then ExitLoop
+		If _ColorCheck(_GetPixelColor(68 + (72 * $King), 555 - 553), Hex(0x00B4A0, 6), 10, "Red") Then
+			If _Sleep(100) Then ExitLoop
 			If getGold(51, 66) <> "" Then
 				SetLog("Activate King's power", $COLOR_BLUE)
+				If _Sleep(100) Then ExitLoop
 				SelectDropTroupe($King)
 			EndIf
 			AdlibUnRegister("UseKingSkill")
@@ -61,16 +59,14 @@ EndFunc   ;==>UseKingSkill
 
 ; function used to check for queen skill in background and activate it as necessary
 Func UseQueenSkill()
-	If $iSkillActivateCond = 1 And $LoginType = 2 Then ; Activate by hero health
-		_CaptureRegion(0, 550, 800, 560)
-		If _ColorCheckHeroHealth(_GetPixelColor(47 + (72 * $Queen), 555 - 550), Hex(0xDD8208, 6), 10) Or TimerDiff($QueenTimer) > 90000 Then
-;			SetLog("Activate Queen's power", $COLOR_BLUE)
-;			SelectDropTroupe($Queen)
-;			AdlibUnRegister("UseQueenSkill")
-;		ElseIf TimerDiff($QueenTimer) > 90000 Then
-			; If still in battle activate skill after 90s regardless
+	If $iSkillActivateCond = 1 Then ; Activate by hero health
+		_CaptureRegion(0, 553, 660, 557)
+	 	If _Sleep(100) Then ExitLoop
+	 	If _ColorCheck(_GetPixelColor(68 + (72 * $Queen), 555 - 553), Hex(0x007E1E, 6), 10, "Red") Then
+			If _Sleep(100) Then ExitLoop
 			If getGold(51, 66) <> "" Then
 				SetLog("Activate Queen's power", $COLOR_BLUE)
+				If _Sleep(100) Then ExitLoop
 				SelectDropTroupe($Queen)
 			EndIf
 			AdlibUnRegister("UseQueenSkill")
@@ -85,5 +81,5 @@ Func UseQueenSkill()
 EndFunc   ;==>UseQueenSkill
 
 Func IsSkillAutoActivate()
-	Return ($iSkillActivateCond = 1 And $LoginType = 2)
+	Return ($iSkillActivateCond = 1)
 EndFunc
