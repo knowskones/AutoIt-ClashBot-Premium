@@ -1,5 +1,5 @@
 Func CreateSpell()
-	If $SpellDarkStorage = 0 Or $CreateSpell = False Or $LoginType < 2 Then Return
+	If $SpellDarkStorage = 0 Or $CreateSpell = False Then Return
 
 	SetLog("Create Lightning Spells...", $COLOR_BLUE)
 
@@ -13,21 +13,39 @@ Func CreateSpell()
 	If _Sleep(500) Then Return
 
 	Click($SFactoryPos[0], $SFactoryPos[1]) ;Click Spell Factory
+					 If _Sleep(600) Then Return
+					  _CaptureRegion()
+					  If _Sleep(600) Then Return
+			     If _ColorCheck(_GetPixelColor(555, 616), Hex(0xFFFFFF, 6), 20) Or _
+					_ColorCheck(_GetPixelColor(555, 616), Hex(0x838669, 6), 20)  Then
+						SetLog("Create Lighning Spell", $COLOR_BLUE)
+						Click(566,599) ;click create spell
+						 If _Sleep(1000) Then Return
+							     _CaptureRegion()
+								 If _Sleep(600) Then Return
+						   If  _ColorCheck(_GetPixelColor(237, 354), Hex(0xFFFFFF, 6), 20) = False Then
+							  setlog("Not enoug Elixir to create Spell", $COLOR_RED)
+						       Elseif  _ColorCheck(_GetPixelColor(200, 346), Hex(0x1A1A1A, 6), 20) Then
+							   setlog("Spell Factory Full", $COLOR_RED)
+						     Else
+							  Click(252,354)
+							  If _Sleep(600) Then Return
+							  Click(252,354)
+							  If _Sleep(600) Then Return
+							  Click(252,354)
+							  If _Sleep(600) Then Return
+							  Click(252,354)
+							  If _Sleep(600) Then Return
+							  Click(252,354)
+							  If _Sleep(600) Then Return
+						   EndIf
+					     Else
+						   setlog("Spell Factory is not available, Skip Create", $COLOR_RED)
 
-	Local $CreatePos = _WaitForPixelSearch(440, 596, 600, 603, Hex(0x001048, 6)) ;Finds Create Spells button
-	If IsArray($CreatePos) = False Then
-		SetLog("Spell Factory is not available", $COLOR_RED)
-		If _Sleep(500) Then Return
-	Else
-		Click($CreatePos[0], $CreatePos[1]) ;Click Create Spell
-		While _WaitForPixel(250, 357, Hex(0xCC4FC6, 6), 20, $TrainTimeout, $TrainDelay)
-			Click(220, 320, 1) ;Lightning Spell
-		WEnd
-		$CreateSpell = False
-	EndIf
-
-	If _Sleep(500) Then Return
-	Click($TopLeftClient[0], $TopLeftClient[1], 2, 250); Click away twice with 250ms delay
-	SetLog("Create Spell Complete...", $COLOR_BLUE)
-
-EndFunc   ;==>CreateSpell
+			    EndIf
+	   EndIf
+        If _Sleep(250) Then Return
+		Click(1, 1)
+		If _Sleep(250) Then Return
+ EndIf
+EndFunc
