@@ -70,7 +70,7 @@ Func GoldElixirChange()
 			GUICtrlSetData($lblresultvillagesattacked, GUICtrlRead($lblresultvillagesattacked) + 1)
 			Return False
 		 Else
-			"SetLog("De above 15% ( " & $Dark2 & " )and Gold or Elixir or Dark change detected, waiting...", $COLOR_GREEN)
+			SetLog("De above 15% ( " & $Dark2 & " )and Gold or Elixir or Dark change detected, waiting...", $COLOR_GREEN)
 			Return True
 		 EndIf
 
