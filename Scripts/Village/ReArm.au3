@@ -15,7 +15,7 @@ Func ReArm()
 	Click($TownHallPos[0], $TownHallPos[1])
 	If _Sleep(500) Then Return
 
-	Local $x1 = 290, $y1 = 562, $x2 = 670, $y2 = 564 ;Coordinates for button search
+	Local $y = 562 ;Coordinates for button search
 
 ;	Traps
 	Local $offColors[3][3] = [[0x887d79, 24, 34], [0xF3EC55, 69, 7], [0xECEEE9, 77, 0]] ; 2nd pixel brown wrench, 3rd pixel gold, 4th pixel edge of button
