@@ -54,4 +54,3 @@ Func ReArm()
 	EndIf
 
 	ClickP($TopLeftClient) ; Click away
-EndFunc   ;==>ReArm
