@@ -6,7 +6,7 @@ Func SetSleep($type)
 			If $LoginType < 2 Then Return 10
 
 			If $iRandomspeedatk = 1 Then
-				Return Round(Random(1, 10)) * 10
+				Return Round(Random(1, 5)) * 10
 			Else
 				Return ($icmbUnitDelay + 1) * 10
 			EndIf
@@ -14,7 +14,7 @@ Func SetSleep($type)
 			If $LoginType < 2 Then Return 100
 
 			If $iRandomspeedatk = 1 Then
-				Return Round(Random(1, 10)) * 100
+				Return Round(Random(1, 5)) * 100
 			Else
 				Return ($icmbWaveDelay + 1) * 100
 			EndIf
@@ -556,7 +556,8 @@ Func algorithm_AllTroops() ;Attack Algorithm for all existing troops
 	; ========= Here is coded the main attack strategy ===============================
 	; ========= Feel free to experiment something else ===============================
 	; ================================================================================?
-	If LaunchTroop($eGiant, True, $nbSides, 1, 1, 1, ($OuterQuad And $attackTH = 2)) Then
+	; LaunchTroop($troopKind, $SlowDeploy, $nbSides, $waveNb, $maxWaveNb, $slotsPerEdge = 0, $miniEdge = False)
+	If LaunchTroop($eGiant, True, $nbSides, 1, 2, 4, ($OuterQuad And $attackTH = 2)) Then
 		If _Sleep(SetSleep(1)) Then Return
 	EndIf
 	If LaunchTroop($eBarbarian, False, $nbSides, 1, 2, 0, ($OuterQuad And $attackTH = 2)) Then
