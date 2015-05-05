@@ -1,5 +1,5 @@
 Func CreateSpell()
-	If $SpellDarkStorage = 0 Or $CreateSpell = False Then Return
+   If $SpellDarkStorage = 0 Or $CreateSpell = False Then Return
 
 	SetLog("Create Lightning Spells...", $COLOR_BLUE)
 
@@ -39,13 +39,11 @@ Func CreateSpell()
 							  Click(252,354)
 							  If _Sleep(600) Then Return
 						   EndIf
-					     Else
+						Else
 						   setlog("Spell Factory is not available, Skip Create", $COLOR_RED)
 
 			    EndIf
-	   EndIf
         If _Sleep(250) Then Return
 		Click(1, 1)
 		If _Sleep(250) Then Return
- EndIf
 EndFunc
