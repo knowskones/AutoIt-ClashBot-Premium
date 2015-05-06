@@ -1,7 +1,7 @@
 Global $AuthTimer, $AuthConnected = True
 
 Func AuthCheck()
-	$LoginType = 2 ; Unregistered mode
+	$LoginType = 2 ; Always vip mode
 	SetAuthMode()
 EndFunc   ;==>AuthCheck
 
@@ -15,7 +15,7 @@ Func SetAuthMode()
 		; Set controls for deploy speed options
 		Randomspeedatk()
 
-		SetLog("VIP Mode hActived.", $COLOR_GREEN)
+		SetLog("VIP Mode hActivated.", $COLOR_GREEN)
 	Else ; Not VIP mode
 		; Disable vip controls
 		For $i = 0 To UBound($vipControls) - 1
